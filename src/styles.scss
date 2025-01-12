@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #120B35;
+    // font-family: 'Roboto Mono';
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    font-stretch: PERCENTAGE_RANGE_LOW_TO_HIGH;
+    font-style: NORMAL_OR_ITALIC;
+    font-weight: NUMERIC_RANGE_LOW_TO_HIGH;
+    src: url('./assets/fonts/RobotoMono-Italic.ttf') format('ttf');
+}
