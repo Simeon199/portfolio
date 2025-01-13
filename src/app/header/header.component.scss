@@ -1,0 +1,19 @@
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto Mono';
+    color: #E15544;
+    padding-top: 40px;
+
+    span {
+        cursor: pointer;
+    }
+
+    nav {
+        display: flex;
+        gap: 24px;
+    }
+}
