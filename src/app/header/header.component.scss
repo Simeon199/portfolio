@@ -2,11 +2,9 @@ header {
     width: 1440px;
     display: flex;
     justify-content: space-between;
-    font-family: 'Roboto Mono';
     color: #E15544;
     height: 92px;
     padding: 24px 140px 24px 140px;
-
 
     a {
         text-decoration: none;
@@ -16,6 +14,27 @@ header {
 
     nav {
         display: flex;
-        gap: 24px;
+        align-items: center;
+        gap: 32px;
+
+        a:nth-child(1) {
+            font-family: 'Handjet';
+            font-size: 48px;
+        }
+
+        a {
+            font-family: 'Roboto Mono';
+            font-size: 22px;
+        }
+    }
+
+    .language-selection {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+
+        span {
+            cursor: pointer;
+        }
     }
 }

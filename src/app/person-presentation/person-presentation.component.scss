@@ -1,8 +1,7 @@
 .about-me {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
-    gap: 24px;
     padding-left: 105px;
 
     .contact {
@@ -13,31 +12,54 @@
 
 
         .contact-me-link {
-            transform: rotate(90deg);
+            transform: rotate(-90deg);
 
             a {
                 text-decoration: none;
                 color: #E15544;
                 border: 1px solid #02F4BF;
-                padding: 8px;
+                font-family: 'Roboto Mono';
+                font-weight: 400;
+                font-size: 18px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-right: 30px;
+                padding-left: 30px;
             }
         }
+    }
+
+    .arrow-down-image {
+        width: 22px;
+        position: absolute;
+        right: calc((100% - 22px) / 2);
+        cursor: pointer;
     }
 
     .name-and-profession {
         display: flex;
         flex-direction: column;
-        align-items: center;
         color: #02F4BF;
-        width: 16%;
-        min-width: 190px;
+        width: 55%;
 
         span:nth-child(2) {
-            font-weight: bold;
+            font-family: 'Roboto Mono';
+            font-size: 82px;
+            color: #02F4BF;
+            font-weight: 800;
+            line-height: 98.4px;
+        }
+
+        span:nth-child(1) {
+            font-weight: 500;
+            font-family: 'Roboto Mono';
+            color: #02F4BF;
+            font-size: 54px;
+            line-height: 64.8px;
         }
     }
 
     .image-container-me img {
-        width: 264px;
+        width: 388px;
     }
 }

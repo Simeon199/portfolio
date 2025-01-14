@@ -10,6 +10,14 @@
     font-family: 'Roboto Mono';
     font-stretch: normal;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
     src: url('./assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Handjet';
+    font-stretch: normal;
+    font-style: italic;
+    font-weight: 400;
+    src: url('./assets/fonts/Handjet-Regular.ttf') format('truetype');
 }
