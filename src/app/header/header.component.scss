@@ -1,12 +1,12 @@
 header {
-    position: absolute;
-    top: 0;
-    width: 100%;
+    width: 1440px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: 'Roboto Mono';
     color: #E15544;
-    padding-top: 40px;
+    height: 92px;
+    padding: 24px 140px 24px 140px;
+
 
     a {
         text-decoration: none;

@@ -1,17 +1,16 @@
 .about-me {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    gap: 24px;
+    padding-left: 105px;
 
     .contact {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         gap: 82px;
 
-        .name-and-profession {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
         .contact-me-link {
             transform: rotate(90deg);
@@ -19,11 +18,26 @@
             a {
                 text-decoration: none;
                 color: #E15544;
+                border: 1px solid #02F4BF;
+                padding: 8px;
             }
         }
     }
 
+    .name-and-profession {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #02F4BF;
+        width: 16%;
+        min-width: 190px;
+
+        span:nth-child(2) {
+            font-weight: bold;
+        }
+    }
+
     .image-container-me img {
-        width: 100px;
+        width: 264px;
     }
 }
