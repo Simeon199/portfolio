@@ -32,7 +32,7 @@
     .arrow-down-image {
         width: 22px;
         position: absolute;
-        right: calc((100% - 22px) / 2);
+        right: calc((100% - 22px) / 1.75);
         cursor: pointer;
     }
 
@@ -60,6 +60,6 @@
     }
 
     .image-container-me img {
-        width: 388px;
+        width: 539px;
     }
 }
