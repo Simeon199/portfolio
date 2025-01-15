@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
 import { PersonPresentationComponent } from "./person-presentation/person-presentation.component";
+import { PersonDescriptionComponent } from './person-description/person-description.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
-  selector: 'app-main-component',
+  selector: 'app-main-content',
   standalone: true,
-  imports: [PersonPresentationComponent],
+  imports: [
+    HeaderComponent,
+    PersonPresentationComponent,
+    PersonDescriptionComponent,
+    FooterComponent
+  ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })
-export class MainComponentComponent {
+export class MainContentComponent {
 
 }

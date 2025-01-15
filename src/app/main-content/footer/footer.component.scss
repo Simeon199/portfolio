@@ -1,11 +1,10 @@
 footer {
-    position: absolute;
-    bottom: 0;
     padding-bottom: 40px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     gap: 40px;
+    width: 1224px;
 
     span {
         color: #E15544;
@@ -25,11 +24,19 @@ footer {
         .privacy-and-legal-notice {
             display: flex;
             gap: 24px;
+
+            span {
+                cursor: pointer;
+            }
         }
     }
 
     .social-media-section {
         display: flex;
         gap: 16px;
+
+        img {
+            cursor: pointer;
+        }
     }
 }
