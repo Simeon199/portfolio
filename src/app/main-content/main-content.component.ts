@@ -3,6 +3,8 @@ import { PersonPresentationComponent } from "./person-presentation/person-presen
 import { PersonDescriptionComponent } from './person-description/person-description.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SkillsComponent } from './skills/skills.component';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
 
 @Component({
   selector: 'app-main-content',
@@ -11,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     PersonPresentationComponent,
     PersonDescriptionComponent,
+    SkillsComponent,
+    MyProjectsComponent,
     FooterComponent
   ],
   templateUrl: './main-content.component.html',
