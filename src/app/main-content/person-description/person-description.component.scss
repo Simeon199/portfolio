@@ -4,23 +4,71 @@
     display: flex;
 
     .reason-why-me-section {
+
+        h2 {
+            font-size: 54px;
+            font-weight: 500;
+            line-height: 64.8px;
+        }
+
+        span {
+            color: #02F4BF;
+        }
+
         .i-am-graphics-section {
             padding-top: 24px;
             display: flex;
-            // flex-direction: column;
             gap: 24px;
+
+            h2 {
+                font-size: 48px;
+                width: 172px;
+            }
 
             .all-graphics-section {
                 display: flex;
-                // justify-content: space-between;
-                align-items: center;
+
+                .location-and-computer-section {
+                    width: 192px;
+                }
 
                 .arrow-and-relocation-section {
                     display: flex;
                     flex-direction: column-reverse;
+                    justify-content: center;
+                    z-index: 10;
+                    width: 80px;
 
                     .relocate-to-talk-section {
                         display: flex;
+                    }
+                }
+
+                .arrow-to-talk-section {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: end;
+
+                    .button-style {
+
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        padding-right: 30px;
+                        padding-left: 30px;
+                        background: #02F4BF;
+
+
+                        a {
+                            display: flex;
+                            width: 110px;
+                            font-size: 18px;
+                            font-weight: 500;
+                            line-height: 21.6px;
+                            text-decoration: none;
+                            color: #0B042D;
+                            background: #02F4BF;
+                        }
                     }
                 }
             }
@@ -28,6 +76,9 @@
             .image-text-area {
                 display: flex;
                 align-items: center;
+                padding-left: 16px;
+                padding-bottom: 10px;
+                gap: 8px;
 
                 span {
                     font-size: 18px;
