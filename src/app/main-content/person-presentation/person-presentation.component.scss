@@ -1,66 +1,101 @@
-.about-me {
+.me-presentation {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    padding-left: 105px;
-
-
-    .contact {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 82px;
-
-
-        .contact-me-link {
-            transform: rotate(-90deg);
-
-            a {
-                text-decoration: none;
-                color: #E15544;
-                border: 1px solid #02F4BF;
-                font-family: 'Roboto Mono';
-                font-weight: 400;
-                font-size: 18px;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                padding-right: 30px;
-                padding-left: 30px;
-            }
-        }
-    }
-
-    .arrow-down-image {
-        width: 22px;
-        position: absolute;
-        right: calc((100% - 22px) / 1.75);
-        cursor: pointer;
-    }
+    justify-content: center;
+    height: 900px;
 
     .name-and-profession {
         display: flex;
         flex-direction: column;
-        color: #02F4BF;
-        width: 55%;
+        align-items: center;
+        gap: 40px;
 
-        span:nth-child(2) {
-            font-family: 'Roboto Mono';
-            font-size: 82px;
-            color: #02F4BF;
-            font-weight: 800;
-            line-height: 98.4px;
+        h2:nth-child(1) {
+            font-family: 'Fira Code';
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 40px;
+            color: rgba(217, 217, 217, 1);
         }
 
-        span:nth-child(1) {
-            font-weight: 500;
-            font-family: 'Roboto Mono';
-            color: #02F4BF;
-            font-size: 54px;
-            line-height: 64.8px;
+        h2:nth-child(2) {
+            font-family: 'Karla';
+            font-size: 128px;
+            font-weight: 700;
+            line-height: 128px;
+            color: rgba(217, 217, 217, 1);
+        }
+
+        .contact-and-work-buttons {
+            display: flex;
+            gap: 48px;
+
+            button {
+                padding: 12px 32px 12px 32px;
+                gap: 56px;
+                border-radius: 100px;
+                border: 1px solid rgba(255, 255, 255, 1);
+                opacity: 0px;
+                font-family: Karla;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 21.6px;
+                text-align: left;
+                color: rgba(255, 255, 255, 1);
+                cursor: pointer;
+                background-color: rgb(18 48 43);
+            }
+
+            button:hover {
+                color: rgba(61, 207, 182, 1);
+            }
         }
     }
 
-    .image-container-me img {
-        width: 539px;
+    .marquee-section {
+        position: absolute;
+        top: 837.7px;
+        left: -21px;
+        background-color: rgba(255, 255, 255, 0.12);
+        display: flex;
+        justify-content: space-evenly;
+        color: rgba(61, 207, 182, 1);
+        padding: 12px 32px 12px 32px;
+        gap: 56px;
+        transform: rotate(-3deg);
+        width: 100%;
+
+        li {
+            font-family: Karla;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 38.4px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+    }
+
+    .skills-and-mail {
+        position: absolute;
+        top: 583px;
+        right: 96px;
+
+        .icon-container {
+            display: flex;
+            max-width: 40px;
+            flex-direction: column-reverse;
+
+            a {
+                text-decoration: none;
+                color: rgba(61, 207, 182, 1);
+            }
+        }
+    }
+
+    .left-lateral {
+        position: absolute;
+        top: 619px;
+        left: 96px;
     }
 }

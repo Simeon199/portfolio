@@ -1,5 +1,5 @@
 header {
-    width: 1440px;
+    // width: 1440px;
     display: flex;
     justify-content: space-between;
     color: rgba(255, 255, 255, 1);
@@ -28,13 +28,43 @@ header {
         }
     }
 
+    .my-logo {
+        font-size: 24px;
+    }
+
     .language-selection {
         font-size: 18px;
         display: flex;
         align-items: center;
+        border: 2px solid rgba(61, 207, 182, 1);
+        border-radius: 100px;
+        gap: 10px;
 
-        span {
+        button {
+            border-radius: 100px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 16px;
+            line-height: 19.2px;
+            font-family: 'Fira Code';
             cursor: pointer;
+            border: none;
+        }
+
+        button:nth-child(1) {
+            background-color: rgba(61, 207, 182, 1);
+            font-weight: 700;
+            color: rgba(255, 255, 255, 1);
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        button:nth-child(2) {
+            background-color: rgb(19, 47, 42);
+            color: rgba(61, 207, 182, 0.5);
+            font-weight: 400;
+            padding-right: 12px;
+            padding-left: 12px;
         }
     }
 }
