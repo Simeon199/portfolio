@@ -2,12 +2,14 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Mono';
+    font-family: 'Karla';
+    // font-family: 'Roboto Mono';
     scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(174.25deg, #0B042D 24.9%, #1F0B80 39.2%, #0B042F 72.02%, #241085 106.54%);
+    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    // background: linear-gradient(174.25deg, #0B042D 24.9%, #1F0B80 39.2%, #0B042F 72.02%, #241085 106.54%);
 }
 
 @font-face {
@@ -24,4 +26,20 @@ body {
     font-style: italic;
     font-weight: 400;
     src: url('./assets/fonts/Handjet-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    font-stretch: normal;
+    font-style: italic;
+    font-weight: 400;
+    src: url('./assets/fonts/FiraCode-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Karla';
+    font-stretch: normal;
+    font-style: italic;
+    font-weight: 400;
+    src: url('./assets/fonts/Karla-Regular.ttf') format('truetype');
 }
