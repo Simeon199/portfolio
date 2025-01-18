@@ -1,5 +1,4 @@
 header {
-    // width: 1440px;
     display: flex;
     justify-content: space-between;
     color: rgba(255, 255, 255, 1);
@@ -23,13 +22,32 @@ header {
         }
 
         a {
+            position: relative;
             font-family: 'Roboto Mono';
             font-size: 22px;
+        }
+
+        ::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            width: 8px;
+            height: 8px;
+            background-color: rgb(61, 207, 182);
+            border-radius: 50%;
+            transition: transform 0.1s ease-in-out;
+        }
+
+        a:hover::after {
+            transform: translateX(-50%) scale(1);
         }
     }
 
     .my-logo {
         font-size: 24px;
+        cursor: pointer;
     }
 
     .language-selection {

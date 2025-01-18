@@ -48,7 +48,31 @@
             }
 
             button:hover {
-                color: rgba(61, 207, 182, 1);
+                overflow: hidden;
+                border: 1px solid rgba(61, 207, 182, 1);
+
+                p {
+                    animation: transport-p-tag 2s ease-in-out infinite;
+                    will-change: transform;
+                    color: rgba(61, 207, 182, 1);
+                    transform: translateX(0);
+                    white-space: nowrap;
+                    transition: none;
+                }
+
+                @keyframes transport-p-tag {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    50% {
+                        transform: translateX(-150%);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
             }
         }
     }
@@ -65,17 +89,36 @@
         gap: 56px;
         transform: rotate(-3deg);
         width: 100%;
+        overflow: hidden;
         // filter: blur(5.300000190734863px);
 
+        ul {
+            display: flex;
+            gap: 180px;
+            animation: scroll-marquee 20s linear infinite;
+            will-change: transform;
+            white-space: nowrap;
 
-        li {
-            font-family: Karla;
-            font-size: 32px;
-            font-weight: 400;
-            line-height: 38.4px;
-            text-align: left;
-            text-underline-position: from-font;
-            text-decoration-skip-ink: none;
+            li {
+                // list-style: none;
+                font-family: Karla;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 38.4px;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+            }
+        }
+
+        @keyframes scroll-marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
     }
 
