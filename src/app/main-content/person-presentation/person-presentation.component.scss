@@ -1,8 +1,9 @@
 .me-presentation {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
-    height: 900px;
+    height: calc(100vh - 92px); // Update 92px if header height changes!
 
     .name-and-profession {
         display: flex;
@@ -54,7 +55,7 @@
 
     .marquee-section {
         position: absolute;
-        top: 837.7px;
+        bottom: 10%;
         left: -21px;
         background-color: rgba(255, 255, 255, 0.12);
         display: flex;
@@ -64,6 +65,8 @@
         gap: 56px;
         transform: rotate(-3deg);
         width: 100%;
+        // filter: blur(5.300000190734863px);
+
 
         li {
             font-family: Karla;
@@ -78,24 +81,46 @@
 
     .skills-and-mail {
         position: absolute;
-        top: 583px;
+        bottom: 5%;
         right: 96px;
+        display: flex;
+        flex-direction: column;
+
+
+        .center-image {
+            display: flex;
+            justify-content: center;
+        }
 
         .icon-container {
             display: flex;
-            max-width: 40px;
+            width: 40px;
+            gap: 16px;
             flex-direction: column-reverse;
+            align-items: center;
 
-            a {
-                text-decoration: none;
-                color: rgba(61, 207, 182, 1);
+            .email-link {
+                transform: rotate(180deg);
+                writing-mode: vertical-rl;
+
+                a {
+                    text-decoration: none;
+                    color: rgba(61, 207, 182, 1);
+                }
             }
         }
     }
 
     .left-lateral {
         position: absolute;
-        top: 619px;
+        bottom: 5%;
         left: 96px;
+    }
+
+    .line {
+        position: absolute;
+        top: 805px;
+        border: 2px solid white;
+        width: 100%;
     }
 }
