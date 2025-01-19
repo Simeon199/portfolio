@@ -1,0 +1,40 @@
+button {
+    padding: 12px 32px 12px 32px;
+    gap: 56px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    opacity: 0px;
+    font-family: Karla;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    background-color: rgb(18 48 43);
+    overflow: hidden;
+    position: relative;
+}
+
+button:hover {
+    border: 1px solid rgba(61, 207, 182, 1);
+}
+
+button:hover p {
+    animation: transport-p-tag 2s ease-in-out infinite;
+    color: rgba(61, 207, 182, 1);
+}
+
+@keyframes transport-p-tag {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-150%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DescriptionWrapperComponent } from './description-wrapper/description-wrapper.component';
+import { DescriptionWrapperComponent } from '../shared/description-wrapper/description-wrapper.component';
+
 
 @Component({
   selector: 'app-person-description',
