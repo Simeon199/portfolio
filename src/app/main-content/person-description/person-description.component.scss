@@ -14,26 +14,9 @@
     flex-direction: column;
     align-self: end;
     gap: 16px;
-
-    h2 {
-        font-family: 'Karla';
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 28.06px;
-    }
 }
 
-.description-who-i-am {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 32px;
-    border-radius: 30px;
-    background-color: rgb(31, 46, 43);
-    border: 1px solid rgba(61, 207, 182, 1);
-    max-width: 568px;
-    flex-wrap: wrap;
-
+app-description-wrapper {
     h2 {
         font-size: 64px;
         font-family: 'Fira Code';
@@ -61,4 +44,11 @@ img {
     height: 568px;
     border-radius: 30px;
     align-self: start;
+}
+
+h2 {
+    font-family: 'Karla';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.06px;
 }
