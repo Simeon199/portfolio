@@ -4,7 +4,7 @@ import { PersonDescriptionComponent } from './person-description/person-descript
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SkillsComponent } from './skills/skills.component';
-import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @Component({
   selector: 'app-main-content',
@@ -14,7 +14,7 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
     PersonPresentationComponent,
     PersonDescriptionComponent,
     SkillsComponent,
-    MyProjectsComponent,
+    ProjectsComponent,
     FooterComponent
   ],
   templateUrl: './main-content.component.html',

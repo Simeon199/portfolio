@@ -1,0 +1,23 @@
+.projects {
+    margin: 0 auto;
+    width: calc(100% - 192px);
+    color: rgba(61, 207, 182, 1);
+    padding-top: 96px;
+}
+
+h2:nth-child(1) {
+    font-family: Karla;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.06px;
+    text-align: left;
+}
+
+h2:nth-child(2) {
+    font-family: Fira Code;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: -0.03em;
+    text-align: left;
+}
