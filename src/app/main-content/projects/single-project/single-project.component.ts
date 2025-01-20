@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-single-project',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './single-project.component.scss'
 })
 export class SingleProjectComponent {
-
+  @Input() title!: string;
+  @Input() technologies!: string;
 }

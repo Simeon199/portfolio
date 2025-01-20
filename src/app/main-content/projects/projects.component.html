@@ -1,32 +1,14 @@
 <div class="projects">
-    <h2>Portfolio</h2>
-    <h2>Featured Projects</h2>
-    <span>
-        Explore a selection of my work here - Interact with
-        projects to see my skills in action.
-    </span>
-    <app-single-project>
-        <div class="project-title">
-            Join
-        </div>
-        <div class="project-technologies">
-            HTML | CSS | JavaScript
-        </div>
-    </app-single-project>
-    <app-single-project>
-        <div class="project-title">
-            El Pollo Loco
-        </div>
-        <div class="project-technologies">
-            HTML | CSS | JavaScript
-        </div>
-    </app-single-project>
-    <app-single-project>
-        <div class="project-title">
-            DA Bubble (Coming Soon)
-        </div>
-        <div class="project-technologies">
-            Angular | TypeScript | HTML | CSS | Firebase
-        </div>
+    <div class="content-above-single-projects">
+        <h2>Portfolio</h2>
+        <h2>Featured Projects</h2>
+        <span>
+            Explore a selection of my work here - Interact with
+            projects to see my skills in action.
+        </span>
+    </div>
+    <app-single-project [title]="projects.join" [technologies]="'JavaScript | HTML | CSS'"></app-single-project>
+    <app-single-project [title]="projects.elPolloLoco" [technologies]="'JavaScript | HTML | CSS'"></app-single-project>
+    <app-single-project [title]="projects.daBubble" [technologies]="'Angular | TypeScript | Firebase | HTML | CSS'">
     </app-single-project>
 </div>

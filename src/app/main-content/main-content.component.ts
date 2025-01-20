@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { RecencyComponent } from './recency/recency.component';
 
 @Component({
   selector: 'app-main-content',
@@ -15,6 +16,7 @@ import { ProjectsComponent } from './projects/projects.component';
     PersonDescriptionComponent,
     SkillsComponent,
     ProjectsComponent,
+    RecencyComponent,
     FooterComponent
   ],
   templateUrl: './main-content.component.html',

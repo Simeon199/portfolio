@@ -1,9 +1,21 @@
 .single-project {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid rgba(61, 207, 182, 1);
+    border-bottom: 1px solid rgba(61, 207, 182, 1);
+    display: flex;
+    padding: 40px 32px 40px 32px;
+    justify-content: space-between;
+    cursor: pointer;
 
     .project-title {
+        font-family: Fira Code;
         font-size: 24px;
-        color: aliceblue;
+        font-weight: 700;
+        line-height: 28.8px;
     }
+}
+
+:hover {
+    background-color: rgba(61, 207, 182, 1);
 }
