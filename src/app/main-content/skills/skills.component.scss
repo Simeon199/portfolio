@@ -1,3 +1,62 @@
+.skills-section {
+    padding-top: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+}
+
+.my-skillset-description {
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+}
+
+.all-skills-listed {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 632px;
+    gap: 72px;
+
+    img:hover {
+        transform: scale(1.125);
+    }
+}
+
 h2 {
     color: rgba(61, 207, 182, 1);
+}
+
+app-description-wrapper {
+
+    h2 {
+        font-size: 64px;
+        font-family: 'Fira Code';
+        font-weight: 700;
+        line-height: 64px;
+    }
+
+    .h3-section {
+        display: flex;
+        gap: 16px;
+
+        h3 {
+            font-family: 'Fira Code';
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28.8px;
+        }
+
+        h3:nth-child(1) {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        h3:nth-child(2) {
+            color: rgba(61, 207, 182, 1);
+        }
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.8);
+    }
 }
