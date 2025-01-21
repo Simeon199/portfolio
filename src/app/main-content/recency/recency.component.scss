@@ -3,13 +3,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 48px;
     padding-top: 96px;
     overflow: hidden;
+    background-color: linear-gradient(90deg, #1C1C1C 0%, rgba(28, 28, 28, 0) 10%, rgba(28, 28, 28, 0) 90%, #1C1C1C 100%);
+
 
     .recency-carousel {
         display: flex;
         justify-content: space-evenly;
+        gap: 40px;
         overflow: hidden;
     }
 
@@ -19,5 +22,19 @@
 
     h2 {
         color: rgba(61, 207, 182, 1);
+    }
+
+    .navigate-section {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        img:nth-child(1) {
+            cursor: pointer;
+        }
+
+        img:nth-child(5) {
+            cursor: pointer;
+        }
     }
 }

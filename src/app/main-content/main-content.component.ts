@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RecencyComponent } from './recency/recency.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-main-content',
@@ -17,6 +18,7 @@ import { RecencyComponent } from './recency/recency.component';
     SkillsComponent,
     ProjectsComponent,
     RecencyComponent,
+    ContactComponent,
     FooterComponent
   ],
   templateUrl: './main-content.component.html',

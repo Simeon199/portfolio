@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-// import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { SingleRecencyComponent } from './single-recency/single-recency.component';
 import { recencies } from './recency.model';
@@ -17,7 +16,7 @@ import { recencies } from './recency.model';
 export class RecencyComponent {
   currentIndex = 0;
   currentTranslateX = 0;
-  commentWidth = 400;
+  commentWidth = 632;
 
   recencies: recencies = {
     recency1: 'I had the good fortune of working with Lukas in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool and focused, and made sure our team was set up for success. He is super knowledgeable, easy to work with, an I would happily work with him again given the chance',
@@ -29,9 +28,24 @@ export class RecencyComponent {
     return Object.keys(this.recencies);
   }
 
-  testFunction() {
-    for (let key in this.getKeys()) {
-      console.log('key: ', key);
+  navigate(direction: string) {
+    const totalItems = this.getKeys().length;
+    if (direction === 'left') {
+      this.currentIndex = (this.currentIndex - 1) % totalItems;
+    } else if (direction === 'right') {
+      this.currentIndex = (this.currentIndex + 1) % totalItems;
     }
+    this.currentTranslateX = -this.currentIndex * this.commentWidth;
   }
+
+  // navigate(direction: string) {
+  //   if (direction == 'left' && this.currentIndex >= 0) {
+  //     this.currentIndex--;
+  //   } else if (direction == 'left' && this.currentIndex == 0) {
+  //     this.currentIndex = this.getKeys().length - 1;
+  //   } else if (direction == 'right' && this.currentIndex < this.getKeys().length - 1) {
+  //     this.currentIndex++;
+  //   }
+  //   this.currentTranslateX = -this.currentIndex * this.commentWidth;
+  // }
 }
