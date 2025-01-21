@@ -1,5 +1,21 @@
 .recency-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
     padding-top: 96px;
+    overflow: hidden;
+
+    .recency-carousel {
+        display: flex;
+        justify-content: space-evenly;
+        overflow: hidden;
+    }
+
+    app-description-wrapper {
+        color: rgba(255, 255, 255, 0.8);
+    }
 
     h2 {
         color: rgba(61, 207, 182, 1);

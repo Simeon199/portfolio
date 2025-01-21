@@ -1,0 +1,18 @@
+.single-recency {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(31, 46, 43);
+    border: 1px solid rgba(61, 207, 182, 1);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 568px;
+    flex-wrap: wrap;
+    width: 632px;
+    height: 248px;
+    padding: 48px 40px 48px 40px;
+    gap: 44px;
+    border-radius: 32px;
+    // span {
+    //     color: rgba(255, 255, 255, 0.8);
+
+    // }
+}

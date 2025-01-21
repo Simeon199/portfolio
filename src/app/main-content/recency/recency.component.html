@@ -1,3 +1,14 @@
 <div class="recency-section">
     <h2>What my colleagues said about me</h2>
+    <div class="recency-carousel">
+        <app-single-recency *ngFor="let key of getKeys()">
+            {{recencies[key]}}
+        </app-single-recency>
+        <!-- <app-single-recency [recency]="recencies.recency1">
+        </app-single-recency>
+        <app-single-recency [recency]="recencies.recency2">
+        </app-single-recency>
+        <app-single-recency [recency]="recencies.recency3">
+        </app-single-recency> -->
+    </div>
 </div>
