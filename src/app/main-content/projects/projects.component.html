@@ -1,29 +1,37 @@
 <div class="projects">
-    <div class="content-above-single-projects">
-        <h2>Portfolio</h2>
-        <h2>Featured Projects</h2>
-        <span>
-            Explore a selection of my work here - Interact with
-            projects to see my skills in action.
-        </span>
+    <div class="content-wrapper-without-pop-ups">
+        <div class="content-above-single-projects">
+            <h2>Portfolio</h2>
+            <h2>Featured Projects</h2>
+            <span>
+                Explore a selection of my work here - Interact with
+                projects to see my skills in action.
+            </span>
+        </div>
+        <div class="collection-of-single-projects">
+            <div class="single-project-including-pop-up">
+                <app-single-project [title]="projects.join" [technologies]="'JavaScript | HTML | CSS'"
+                    (mouseenter)="onMouseEnter(projects.join)"
+                    (mouseleave)="onMouseLeave(projects.join)"></app-single-project>
+            </div>
+            <div class="single-project-including-pop-up">
+                <app-single-project [title]="projects.elPolloLoco" [technologies]="'JavaScript | HTML | CSS'"
+                    (mouseenter)="onMouseEnter(projects.elPolloLoco)"
+                    (mouseleave)="onMouseLeave(projects.elPolloLoco)"></app-single-project>
+            </div>
+            <div class="single-project-including-pop-up">
+                <app-single-project [title]="projects.daBubble"
+                    [technologies]="'Angular | TypeScript | Firebase | HTML | CSS'"
+                    (mouseenter)="onMouseEnter(projects.daBubble)" (mouseleave)="onMouseLeave(projects.daBubble)">
+                </app-single-project>
+            </div>
+        </div>
     </div>
-    <div class="collection-of-single-projects">
-        <div class="single-project-including-pop-up">
-            <app-single-project [title]="projects.join" [technologies]="'JavaScript | HTML | CSS'"
-                (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"></app-single-project>
-            <app-single-project-faded-in *ngIf="isHovered"></app-single-project-faded-in>
-        </div>
-        <div class="single-project-including-pop-up">
-            <app-single-project [title]="projects.elPolloLoco"
-                [technologies]="'JavaScript | HTML | CSS'"></app-single-project>
-            <app-single-project-faded-in></app-single-project-faded-in>
-        </div>
-        <div class="single-project-including-pop-up">
-            <app-single-project [title]="projects.elPolloLoco"
-                [technologies]="'JavaScript | HTML | CSS'"><app-single-project [title]="projects.daBubble"
-                    [technologies]="'Angular | TypeScript | Firebase | HTML | CSS'">
-                </app-single-project></app-single-project>
-            <app-single-project-faded-in></app-single-project-faded-in>
-        </div>
+    <div class="test-pop-up">
+        <app-single-project-faded-in *ngIf="isHoveredJoin" style="align-self: baseline;"></app-single-project-faded-in>
+        <app-single-project-faded-in *ngIf="isHoveredPolloLoco"
+            style="align-self: center;"></app-single-project-faded-in>
+        <app-single-project-faded-in *ngIf="isHoveredDABubble"
+            style="align-self: flex-end;"></app-single-project-faded-in>
     </div>
 </div>

@@ -1,9 +1,17 @@
 .projects {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
     padding-left: 96px;
     padding-top: 96px;
     padding-right: 96px;
     padding-left: 96px;
     color: rgba(255, 255, 255, 0.8);
+}
+
+.content-wrapper-without-pop-ups {
+    display: flex;
+    flex-direction: column;
 }
 
 .content-above-single-projects {
@@ -17,7 +25,6 @@
 
 .single-project-including-pop-up {
     display: flex;
-    align-items: baseline;
     justify-content: space-between;
 }
 
@@ -38,4 +45,12 @@ h2:nth-child(2) {
     text-align: left;
     padding-bottom: 16px;
     padding-top: 16px;
+}
+
+.test-pop-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
 }
