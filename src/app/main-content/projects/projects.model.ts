@@ -4,3 +4,9 @@ export interface Projects {
     daBubble: string;
 }
 
+export interface ProjectImageSources {
+    joinImageSrc: string;
+    elPolloLocoImageSrc: string;
+    daBubbleImageSrc: string;
+}
+

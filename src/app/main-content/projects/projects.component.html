@@ -28,10 +28,11 @@
         </div>
     </div>
     <div class="test-pop-up">
-        <app-single-project-faded-in *ngIf="isHoveredJoin" style="align-self: baseline;"></app-single-project-faded-in>
-        <app-single-project-faded-in *ngIf="isHoveredPolloLoco"
-            style="align-self: center;"></app-single-project-faded-in>
-        <app-single-project-faded-in *ngIf="isHoveredDABubble"
-            style="align-self: flex-end;"></app-single-project-faded-in>
+        <app-single-project-faded-in *ngIf="isHoveredJoin" style="align-self: baseline;"
+            [imageSource]="projectImageSources.joinImageSrc"></app-single-project-faded-in>
+        <app-single-project-faded-in *ngIf="isHoveredPolloLoco" style="align-self: center;"
+            [imageSource]="projectImageSources.elPolloLocoImageSrc"></app-single-project-faded-in>
+        <app-single-project-faded-in *ngIf="isHoveredDABubble" style="align-self: flex-end;"
+            [imageSource]="projectImageSources.daBubbleImageSrc"></app-single-project-faded-in>
     </div>
 </div>

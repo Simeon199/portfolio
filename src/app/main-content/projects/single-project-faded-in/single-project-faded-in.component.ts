@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './single-project-faded-in.component.html',
   styleUrl: './single-project-faded-in.component.scss'
 })
-export class SingleProjectFadedInComponent { }
+export class SingleProjectFadedInComponent {
+  @Input() imageSource!: string;
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SingleProjectComponent } from './single-project/single-project.component';
 import { SingleProjectFadedInComponent } from './single-project-faded-in/single-project-faded-in.component';
 import { Projects } from './projects.model';
+import { ProjectImageSources } from './projects.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,6 +10,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     SingleProjectComponent,
+    SingleProjectFadedInComponent,
     SingleProjectFadedInComponent,
     CommonModule
   ],
@@ -27,6 +29,12 @@ export class ProjectsComponent {
     elPolloLoco: 'El Pollo Loco',
     daBubble: 'DA Bubble'
   };
+
+  projectImageSources: ProjectImageSources = {
+    joinImageSrc: '../../../../assets/img/join_image.png',
+    elPolloLocoImageSrc: '../../../../assets/img/pollo_loco.png',
+    daBubbleImageSrc: '../../../../assets/img/da-bubble.png'
+  }
 
   onMouseEnter(projectname: string) {
     if (projectname == this.projects.join) {
