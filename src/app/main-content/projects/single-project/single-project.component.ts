@@ -10,4 +10,14 @@ import { Component, Input } from '@angular/core';
 export class SingleProjectComponent {
   @Input() title!: string;
   @Input() technologies!: string;
+
+  // isHovered: boolean = false;
+
+  // onMouseEnter() {
+  //   this.isHovered = true;
+  // }
+
+  // onMouseLeave() {
+  //   this.isHovered = false;
+  // }
 }

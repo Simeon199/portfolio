@@ -1,17 +1,25 @@
 .projects {
     padding-left: 96px;
     padding-top: 96px;
+    padding-right: 96px;
+    padding-left: 96px;
     color: rgba(255, 255, 255, 0.8);
-    max-width: 880px;
 }
 
 .content-above-single-projects {
     padding-bottom: 16px;
 }
 
-// span {
-//     color: rgba(255, 255, 255, 0.8);
-// }
+.collection-of-single-projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-project-including-pop-up {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
 
 h2:nth-child(1) {
     font-family: Karla;

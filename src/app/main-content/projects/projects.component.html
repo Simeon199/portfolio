@@ -7,8 +7,23 @@
             projects to see my skills in action.
         </span>
     </div>
-    <app-single-project [title]="projects.join" [technologies]="'JavaScript | HTML | CSS'"></app-single-project>
-    <app-single-project [title]="projects.elPolloLoco" [technologies]="'JavaScript | HTML | CSS'"></app-single-project>
-    <app-single-project [title]="projects.daBubble" [technologies]="'Angular | TypeScript | Firebase | HTML | CSS'">
-    </app-single-project>
+    <div class="collection-of-single-projects">
+        <div class="single-project-including-pop-up">
+            <app-single-project [title]="projects.join" [technologies]="'JavaScript | HTML | CSS'"
+                (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"></app-single-project>
+            <app-single-project-faded-in *ngIf="isHovered"></app-single-project-faded-in>
+        </div>
+        <div class="single-project-including-pop-up">
+            <app-single-project [title]="projects.elPolloLoco"
+                [technologies]="'JavaScript | HTML | CSS'"></app-single-project>
+            <app-single-project-faded-in></app-single-project-faded-in>
+        </div>
+        <div class="single-project-including-pop-up">
+            <app-single-project [title]="projects.elPolloLoco"
+                [technologies]="'JavaScript | HTML | CSS'"><app-single-project [title]="projects.daBubble"
+                    [technologies]="'Angular | TypeScript | Firebase | HTML | CSS'">
+                </app-single-project></app-single-project>
+            <app-single-project-faded-in></app-single-project-faded-in>
+        </div>
+    </div>
 </div>
