@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SingleProjectComponent } from './single-project/single-project.component';
 import { SingleProjectFadedInComponent } from './single-project-faded-in/single-project-faded-in.component';
+import { SingleProjectPopUpComponent } from './single-project-pop-up/single-project-pop-up.component';
 import { Projects } from './projects.model';
 import { ProjectImageSources } from './projects.model';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
     SingleProjectComponent,
     SingleProjectFadedInComponent,
     SingleProjectFadedInComponent,
+    SingleProjectPopUpComponent,
     CommonModule
   ],
   templateUrl: './projects.component.html',
@@ -54,5 +56,9 @@ export class ProjectsComponent {
     } else if (projectName == this.projects.daBubble) {
       this.isHoveredDABubble = false;
     }
+  }
+
+  openSingleProjectInBigPopUp(projectName: string) {
+    console.log('Hier kommt der Projektname: ', projectName);
   }
 }

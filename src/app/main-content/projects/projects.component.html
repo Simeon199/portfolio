@@ -1,4 +1,7 @@
 <div class="projects">
+    <div class="big-single-project-pop-up">
+        <app-single-project-pop-up></app-single-project-pop-up>
+    </div>
     <div class="content-wrapper-without-pop-ups">
         <div class="content-above-single-projects">
             <h2>Portfolio</h2>
@@ -11,18 +14,19 @@
         <div class="collection-of-single-projects">
             <div class="single-project-including-pop-up">
                 <app-single-project [title]="projects.join" [technologies]="'JavaScript | HTML | CSS'"
-                    (mouseenter)="onMouseEnter(projects.join)"
-                    (mouseleave)="onMouseLeave(projects.join)"></app-single-project>
+                    (mouseenter)="onMouseEnter(projects.join)" (mouseleave)="onMouseLeave(projects.join)"
+                    (click)="openSingleProjectInBigPopUp(projects.join)"></app-single-project>
             </div>
             <div class="single-project-including-pop-up">
                 <app-single-project [title]="projects.elPolloLoco" [technologies]="'JavaScript | HTML | CSS'"
-                    (mouseenter)="onMouseEnter(projects.elPolloLoco)"
-                    (mouseleave)="onMouseLeave(projects.elPolloLoco)"></app-single-project>
+                    (mouseenter)="onMouseEnter(projects.elPolloLoco)" (mouseleave)="onMouseLeave(projects.elPolloLoco)"
+                    (click)="openSingleProjectInBigPopUp(projects.elPolloLoco)"></app-single-project>
             </div>
             <div class="single-project-including-pop-up">
                 <app-single-project [title]="projects.daBubble"
                     [technologies]="'Angular | TypeScript | Firebase | HTML | CSS'"
-                    (mouseenter)="onMouseEnter(projects.daBubble)" (mouseleave)="onMouseLeave(projects.daBubble)">
+                    (mouseenter)="onMouseEnter(projects.daBubble)" (mouseleave)="onMouseLeave(projects.daBubble)"
+                    (click)="openSingleProjectInBigPopUp(projects.daBubble)">
                 </app-single-project>
             </div>
         </div>
