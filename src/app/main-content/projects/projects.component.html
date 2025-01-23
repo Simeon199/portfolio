@@ -1,7 +1,8 @@
 <div class="projects">
-    <div class="big-single-project-pop-up">
-        <app-single-project-pop-up></app-single-project-pop-up>
-    </div>
+    <app-overlay *ngIf="isOverlayVisible" [title]="projectDescription.join.title"
+        [description]="projectDescription.join.description" [technologies]="projectDescription.join.technologies"
+        [imageSrc]="projectDescription.join.projectImageSource">
+    </app-overlay>
     <div class="content-wrapper-without-pop-ups">
         <div class="content-above-single-projects">
             <h2>Portfolio</h2>
