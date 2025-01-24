@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './single-project-faded-in.component.scss'
 })
 export class SingleProjectFadedInComponent {
-  @Input() imageSource!: string;
+  @Input() imageSource: string | undefined = '';
 }

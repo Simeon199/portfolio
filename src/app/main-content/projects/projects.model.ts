@@ -31,3 +31,9 @@ export interface ProjectDescription {
     };
 }
 
+export interface SingleProject {
+    title: string;
+    description: string;
+    technologies: string;
+    projectImageSource: string;
+}
