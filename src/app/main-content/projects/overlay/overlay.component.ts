@@ -8,8 +8,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './overlay.component.scss'
 })
 export class OverlayComponent {
-  @Input() title!: string;
-  @Input() description!: string;
-  @Input() technologies!: any;
-  @Input() imageSrc!: string;
+  @Input() index: string = '0';
+  @Input() title: string = '';
+  @Input() description: string = '';
+  @Input() technologies: any; // Hier müsste eine komplexere Datenstruktur reinkommen --> Nur vorübergehend any-type !!!
+  @Input() imageSrc: string = '';
 }

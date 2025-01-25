@@ -1,8 +1,15 @@
 <div class="overlay">
     <div class="content-box">
-        <h2>{{title}}</h2>
-        <span>{{description}}</span>
-        <span>{{technologies}}</span>
-        <img src="{{ imageSrc }}" alt="imageSrc">
+        <div class="project-information">
+            <h1>{{index}}</h1>
+            <h2>{{title}}</h2>
+            <h3>What is this project about?</h3>
+            <span>{{description}}</span>
+            <span>{{technologies}}</span>
+            <!-- <div class="used-technologies"></div> -->
+        </div>
+        <div class="project-image">
+            <img src="{{ imageSrc }}" alt="imageSrc">
+        </div>
     </div>
 </div>

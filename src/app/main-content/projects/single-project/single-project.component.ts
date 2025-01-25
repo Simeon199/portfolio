@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './single-project.component.scss'
 })
 export class SingleProjectComponent {
-  @Input() title!: string;
-  @Input() technologies!: string;
+  @Input() index: string = '0';
+  @Input() title: string = '';
+  @Input() technologies: string = '';
 }

@@ -3,6 +3,7 @@ import { SingleProjectComponent } from './single-project/single-project.componen
 import { SingleProjectFadedInComponent } from './single-project-faded-in/single-project-faded-in.component';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CommonModule } from '@angular/common';
+// import { allProjectsListed } from './projects.data';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
     SingleProjectFadedInComponent,
     SingleProjectComponent,
     OverlayComponent,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
@@ -22,6 +23,7 @@ export class ProjectsComponent {
 
   currentHoveredProject: string = '';
   currentHoveredProjectImageSrc: string = '';
+  currentHoveredProjectIndex: string = '0';
 
   hoveredProjectLocation = '';
 
@@ -31,21 +33,25 @@ export class ProjectsComponent {
   currentProjectOpenedTechnologies: string = '';
 
   isOverlayVisible = false;
+  // allProjectsListed: any;
 
   allProjectsListed = [
     {
+      index: '01',
       title: 'Join',
       description: 'What is this project about? Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
       technologies: 'HTML | CSS | JavaScript',
       projectImageSource: '../../../../assets/img/join_image.png'
     },
     {
+      index: '02',
       title: 'El Pollo Loco',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
       technologies: 'HTML | CSS | JavaScript',
       projectImageSource: '../../../../assets/img/pollo_loco.png'
     },
     {
+      index: '03',
       title: 'DABubble',
       description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization',
       technologies: 'Angular | TypeScript | Firebase | SCSS | HTML',
@@ -53,9 +59,10 @@ export class ProjectsComponent {
     }
   ]
 
-  onMouseEnter(projectname: string, projectImageSource: string) {
+  onMouseEnter(projectname: string, projectImageSource: string, projectIndex: string) {
     this.currentHoveredProject = projectname;
     this.currentHoveredProjectImageSrc = projectImageSource;
+    this.currentHoveredProjectIndex = projectIndex;
   }
 
   onMouseLeave() {
