@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 })
 export class SingleProjectFadedInComponent {
   @Input() imageSource: string | undefined = '';
+  @Input() ngStyle: string | undefined;
 }

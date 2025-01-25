@@ -13,19 +13,12 @@
         </div>
         <div class="collection-of-single-projects" *ngFor="let singleProject of allProjectsListed">
             <app-single-project [title]="singleProject.title" [technologies]="singleProject.technologies"
-                (mouseenter)="onMouseEnter(singleProject.title)" (mouseleave)="onMouseLeave(singleProject.title)"
-                (click)="openSingleProjectInBigPopUp(singleProject.title)">
+                (mouseenter)="onMouseEnter(singleProject.title, singleProject.projectImageSource)"
+                (mouseleave)="onMouseLeave()" (click)="openSingleProjectInBigPopUp(singleProject.title)">
             </app-single-project>
         </div>
     </div>
-    <div class="test-pop-up">
-        <!-- <app-single-project-faded-in *ngIf="isHoveredDABubble" style="align-self: flex-end;"
-            [imageSource]="projectImageSources.daBubbleImageSrc"></app-single-project-faded-in> -->
-        <app-single-project-faded-in *ngIf="isHoveredJoin" style="align-self: baseline;"
-            [imageSource]="projectImageSources.joinImageSrc"></app-single-project-faded-in>
-        <app-single-project-faded-in *ngIf="isHoveredPolloLoco" style="align-self: center;"
-            [imageSource]="projectImageSources.elPolloLocoImageSrc"></app-single-project-faded-in>
-        <app-single-project-faded-in *ngIf="isHoveredDABubble" style="align-self: flex-end;"
-            [imageSource]="projectImageSources.daBubbleImageSrc"></app-single-project-faded-in>
+    <div class="text-pop-up" [style]="returnRightLocation(currentHoveredProject)">
+        <app-single-project-faded-in [imageSource]="currentHoveredProjectImageSrc"></app-single-project-faded-in>
     </div>
 </div>
