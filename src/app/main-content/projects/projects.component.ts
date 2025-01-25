@@ -3,8 +3,7 @@ import { SingleProjectComponent } from './single-project/single-project.componen
 import { SingleProjectFadedInComponent } from './single-project-faded-in/single-project-faded-in.component';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CommonModule } from '@angular/common';
-// import { allProjectsListed } from './projects.data';
-
+// import { technologyData } from './projects.model';
 
 @Component({
   selector: 'app-projects',
@@ -33,7 +32,6 @@ export class ProjectsComponent {
   currentProjectOpenedTechnologies: string = '';
 
   isOverlayVisible = false;
-  // allProjectsListed: any;
 
   allProjectsListed = [
     {
@@ -57,7 +55,36 @@ export class ProjectsComponent {
       technologies: 'Angular | TypeScript | Firebase | SCSS | HTML',
       projectImageSource: '../../../../assets/img/da-bubble.png'
     }
-  ]
+  ];
+
+  // technologyData: technologyData = {
+  //   join: {
+  //     technologyList: ['HTML', 'CSS', 'JavaScript'],
+  //     technologyImageIcons: [
+  //       '../../../../assets/img/html-technology.svg',
+  //       '../../../../assets/img/css-technology.svg',
+  //       '../../../../assets/img/javascript-technology.svg'
+  //     ]
+  //   },
+  //   elPolloLoco: {
+  //     technologyList: ['HTML', 'CSS', 'JavaScript'],
+  //     technologyImageIcons: [
+  //       '../../../../assets/img/html-technology.svg',
+  //       '../../../../assets/img/css-technology.svg',
+  //       '../../../../assets/img/javascript-technology.svg'
+  //     ]
+  //   },
+  //   daBubble: {
+  //     technologyList: ['Angular', 'TypeScript', 'Firebase', 'SCSS', 'HTML'],
+  //     technologyImageIcons: [
+  //       '../../../../assets/img/angular-technology.svg',
+  //       '../../../../assets/img/typescript-technology.svg',
+  //       '../../../../assets/img/firebase-technology.svg',
+  //       '../../../../assets/img/css-technology.svg',
+  //       '../../../../assets/img/html-technology.svg'
+  //     ]
+  //   }
+  // }
 
   onMouseEnter(projectname: string, projectImageSource: string, projectIndex: string) {
     this.currentHoveredProject = projectname;
@@ -103,6 +130,7 @@ export class ProjectsComponent {
         this.currentProjectOpenedDescription = project.description;
         this.currentProjectOpenedImageSrc = project.projectImageSource;
         this.currentProjectOpenedTechnologies = project.technologies;
+        console.log(this.currentProjectOpened);
       }
     })
   }

@@ -6,7 +6,13 @@
             <h3>What is this project about?</h3>
             <span>{{description}}</span>
             <span>{{technologies}}</span>
-            <!-- <div class="used-technologies"></div> -->
+            <div class="used-technologies" *ngFor="let technology of technologyData | keyvalue">
+                <h2>{{technology.key}}</h2>
+                <h2>{{title}}</h2>
+                <div class="test-div" *ngIf="technology.key == title">
+                    <h2>{{technology.key}}</h2>
+                </div>
+            </div>
         </div>
         <div class="project-image">
             <img src="{{ imageSrc }}" alt="imageSrc">
