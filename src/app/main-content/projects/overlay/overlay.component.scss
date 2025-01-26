@@ -12,6 +12,7 @@
 }
 
 .content-box {
+    position: relative;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     display: flex;
     align-items: center;
@@ -19,6 +20,13 @@
     height: 656px;
     border-radius: 30px;
     border: 1px solid rgb(61, 207, 182);
+
+    .close-button-img {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        cursor: pointer;
+    }
 
     h1 {
         font-family: Karla;
@@ -64,22 +72,34 @@
 }
 
 .project-information {
-    gap: 40px;
+    gap: 24px;
     padding: 16px;
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-.project-image {
+.all-images {
     display: flex;
+    flex-direction: column;
     width: 50%;
+    align-items: end;
+    padding-right: 16px;
+    gap: 40px;
+
+    .project-image {
+        img {
+            width: 520px;
+            height: 369.78px;
+            gap: 0px;
+            border-radius: 30px;
+        }
+    }
 
     img {
-        width: 520px;
-        height: 369.78px;
-        gap: 0px;
-        border-radius: 30px;
+        cursor: pointer;
+        width: 150px;
+        height: auto;
     }
 }
 
@@ -97,4 +117,30 @@
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.links-to-project {
+    display: flex;
+    gap: 32px;
+
+    button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 16px 24px 16px 24px;
+        gap: 10px;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 1);
+        background-color: transparent;
+
+        a {
+            text-decoration: none;
+            font-family: Karla;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-align: left;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
 }

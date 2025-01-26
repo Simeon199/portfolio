@@ -1,5 +1,8 @@
 <div class="overlay">
     <div class="content-box">
+        <div class="close-button-img">
+            <img src="../../../../assets/img/close_button.svg" alt="close-button">
+        </div>
         <div class="project-information">
             <h1>{{index}}</h1>
             <h2>{{title}}</h2>
@@ -11,12 +14,24 @@
                         <span>{{item}}</span>
                         <img src="{{technology.value.technologyImageIcons[i]}}" alt="technologyImageIcons">
                     </div>
-                    <!-- <h2>{{ technology.value.technologyList }}</h2> -->
                 </div>
             </div>
+            <div class="links-to-project">
+                <button>
+                    <a href="#">GitHub</a>
+                    <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
+                </button>
+                <button>
+                    <a href="">Live Test</a>
+                    <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
+                </button>
+            </div>
         </div>
-        <div class="project-image">
-            <img src="{{ imageSrc }}" alt="imageSrc">
+        <div class="all-images">
+            <div class="project-image">
+                <img src="{{ imageSrc }}" alt="imageSrc">
+            </div>
+            <img src="../../../../assets/img/next_project.svg" alt="next-project-arrow">
         </div>
     </div>
 </div>
