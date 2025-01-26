@@ -82,3 +82,19 @@
         border-radius: 30px;
     }
 }
+
+.used-technologies {
+    display: flex;
+}
+
+.test-section {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.list-section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

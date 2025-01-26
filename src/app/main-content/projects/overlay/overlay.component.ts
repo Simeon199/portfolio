@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+// import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { technologyData } from '../projects.model';
-// import { ProjectsComponent } from '../projects.component';
 
 @Component({
   selector: 'app-overlay',
@@ -12,15 +12,16 @@ import { technologyData } from '../projects.model';
   templateUrl: './overlay.component.html',
   styleUrl: './overlay.component.scss'
 })
-export class OverlayComponent {
+export class OverlayComponent implements OnChanges {
   @Input() currentProjectOpened: string = '';
   @Input() index: string = '0';
   @Input() title: string = '';
   @Input() description: string = '';
-  @Input() technologies: any; // Hier müsste eine komplexere Datenstruktur reinkommen --> Nur vorübergehend any-type !!!
+  @Input() technologies: any;
   @Input() imageSrc: string = '';
   @Input() technologyData: technologyData = {
     join: {
+      title: 'Join',
       technologyList: ['HTML', 'CSS', 'JavaScript'],
       technologyImageIcons: [
         '../../../../assets/img/html-technology.svg',
@@ -29,6 +30,7 @@ export class OverlayComponent {
       ]
     },
     elPolloLoco: {
+      title: 'El Pollo Loco',
       technologyList: ['HTML', 'CSS', 'JavaScript'],
       technologyImageIcons: [
         '../../../../assets/img/html-technology.svg',
@@ -37,6 +39,7 @@ export class OverlayComponent {
       ]
     },
     daBubble: {
+      title: 'DABubble',
       technologyList: ['Angular', 'TypeScript', 'Firebase', 'SCSS', 'HTML'],
       technologyImageIcons: [
         '../../../../assets/img/angular-technology.svg',
@@ -48,7 +51,13 @@ export class OverlayComponent {
     }
   }
 
-  ngOnInit() {
-    console.log('current project opened in der Kindkomponente: ', this.currentProjectOpened);
+
+  constructor(private cdr: ChangeDetectorRef) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['title']) {
+      console.log('title updated:', changes['title'].currentValue);
+      this.cdr.detectChanges();
+    }
   }
 }
