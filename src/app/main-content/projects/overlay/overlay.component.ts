@@ -1,5 +1,5 @@
 // import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Component, Input, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { technologyData } from '../projects.model';
 
@@ -13,6 +13,7 @@ import { technologyData } from '../projects.model';
   styleUrl: './overlay.component.scss'
 })
 export class OverlayComponent implements OnChanges {
+  @Output() close = new EventEmitter<void>();
   @Input() currentProjectOpened: string = '';
   @Input() index: string = '0';
   @Input() title: string = '';
@@ -49,6 +50,10 @@ export class OverlayComponent implements OnChanges {
         '../../../../assets/img/html-technology.svg'
       ]
     }
+  }
+
+  closeOverlay() {
+    this.close.emit();
   }
 
 

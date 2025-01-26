@@ -3,7 +3,6 @@ import { SingleProjectComponent } from './single-project/single-project.componen
 import { SingleProjectFadedInComponent } from './single-project-faded-in/single-project-faded-in.component';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CommonModule } from '@angular/common';
-// import { technologyData } from './projects.model';
 
 @Component({
   selector: 'app-projects',
@@ -57,35 +56,6 @@ export class ProjectsComponent {
     }
   ];
 
-  // technologyData: technologyData = {
-  //   join: {
-  //     technologyList: ['HTML', 'CSS', 'JavaScript'],
-  //     technologyImageIcons: [
-  //       '../../../../assets/img/html-technology.svg',
-  //       '../../../../assets/img/css-technology.svg',
-  //       '../../../../assets/img/javascript-technology.svg'
-  //     ]
-  //   },
-  //   elPolloLoco: {
-  //     technologyList: ['HTML', 'CSS', 'JavaScript'],
-  //     technologyImageIcons: [
-  //       '../../../../assets/img/html-technology.svg',
-  //       '../../../../assets/img/css-technology.svg',
-  //       '../../../../assets/img/javascript-technology.svg'
-  //     ]
-  //   },
-  //   daBubble: {
-  //     technologyList: ['Angular', 'TypeScript', 'Firebase', 'SCSS', 'HTML'],
-  //     technologyImageIcons: [
-  //       '../../../../assets/img/angular-technology.svg',
-  //       '../../../../assets/img/typescript-technology.svg',
-  //       '../../../../assets/img/firebase-technology.svg',
-  //       '../../../../assets/img/css-technology.svg',
-  //       '../../../../assets/img/html-technology.svg'
-  //     ]
-  //   }
-  // }
-
   onMouseEnter(projectname: string, projectImageSource: string, projectIndex: string) {
     this.currentHoveredProject = projectname;
     this.currentHoveredProjectImageSrc = projectImageSource;
@@ -130,8 +100,11 @@ export class ProjectsComponent {
         this.currentProjectOpenedDescription = project.description;
         this.currentProjectOpenedImageSrc = project.projectImageSource;
         this.currentProjectOpenedTechnologies = project.technologies;
-        console.log(this.currentProjectOpened);
       }
     })
+  }
+
+  closeOverlay() {
+    this.isOverlayVisible = false;
   }
 }

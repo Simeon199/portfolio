@@ -1,7 +1,7 @@
 <div class="projects">
-    <app-overlay *ngIf="isOverlayVisible" [index]="currentHoveredProjectIndex" [title]="currentProjectOpened"
-        [description]="currentProjectOpenedDescription" [technologies]="currentProjectOpenedTechnologies"
-        [imageSrc]="currentProjectOpenedImageSrc">
+    <app-overlay (close)="closeOverlay()" *ngIf="isOverlayVisible" [index]="currentHoveredProjectIndex"
+        [title]="currentProjectOpened" [description]="currentProjectOpenedDescription"
+        [technologies]="currentProjectOpenedTechnologies" [imageSrc]="currentProjectOpenedImageSrc">
     </app-overlay>
     <div class="content-wrapper-without-pop-ups">
         <div class="content-above-single-projects">
