@@ -13,6 +13,10 @@ import { technologyData } from '../projects.model';
   styleUrl: './overlay.component.scss'
 })
 export class OverlayComponent implements OnChanges {
+
+  currentProjectOpenedIndex = null;
+
+
   @Output() close = new EventEmitter<void>();
   @Input() currentProjectOpened: string = '';
   @Input() index: string = '0';
@@ -28,7 +32,8 @@ export class OverlayComponent implements OnChanges {
         '../../../../assets/img/html-technology.svg',
         '../../../../assets/img/css-technology.svg',
         '../../../../assets/img/javascript-technology.svg'
-      ]
+      ],
+      projectIndex: 0
     },
     elPolloLoco: {
       title: 'El Pollo Loco',
@@ -37,7 +42,8 @@ export class OverlayComponent implements OnChanges {
         '../../../../assets/img/html-technology.svg',
         '../../../../assets/img/css-technology.svg',
         '../../../../assets/img/javascript-technology.svg'
-      ]
+      ],
+      projectIndex: 1
     },
     daBubble: {
       title: 'DABubble',
@@ -48,12 +54,17 @@ export class OverlayComponent implements OnChanges {
         '../../../../assets/img/firebase-technology.svg',
         '../../../../assets/img/css-technology.svg',
         '../../../../assets/img/html-technology.svg'
-      ]
+      ],
+      projectIndex: 2
     }
   }
 
   closeOverlay() {
     this.close.emit();
+  }
+
+  goToNextProject(projectIndex: number) {
+    projectIndex++;
   }
 
 

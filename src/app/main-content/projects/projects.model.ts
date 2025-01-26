@@ -11,15 +11,18 @@ export interface technologyData {
         title: string,
         technologyList: string[];
         technologyImageIcons: string[];
+        projectIndex: number;
     },
     elPolloLoco: {
         title: string,
         technologyList: string[];
         technologyImageIcons: string[];
+        projectIndex: number;
     },
     daBubble: {
         title: string,
         technologyList: string[];
         technologyImageIcons: string[];
+        projectIndex: number;
     }
 }
