@@ -1,4 +1,3 @@
-// import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Component, Input, OnChanges, SimpleChanges, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { technologyData } from '../projects.model';
@@ -6,16 +5,13 @@ import { technologyData } from '../projects.model';
 @Component({
   selector: 'app-overlay',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './overlay.component.html',
   styleUrl: './overlay.component.scss'
 })
 export class OverlayComponent implements OnChanges {
 
   currentProjectOpenedIndex = null;
-
 
   @Output() close = new EventEmitter<void>();
   @Input() currentProjectOpened: string = '';
@@ -59,12 +55,40 @@ export class OverlayComponent implements OnChanges {
     }
   }
 
+  nextIndex: number = 0
+  currentIndex: number = 0;
+  keyValues = Object.keys(this.technologyData);
+  projectValues = Object.values(this.technologyData);
+
+  projectNameConverter(key: string) {
+    if (key == 'join') {
+      return 'Join';
+    } else if (key == 'elPolloLoco') {
+      return 'El Pollo Loco';
+    } else if (key == 'daBubble') {
+      return 'DABubble';
+    } else {
+      return 'Error';
+    }
+  }
+
   closeOverlay() {
     this.close.emit();
   }
 
-  goToNextProject(projectIndex: number) {
-    projectIndex++;
+  goToNextProject(title: string) {
+    for (let key in this.technologyData) {
+      let convertedKey = this.projectNameConverter(key);
+      if (convertedKey == title) {
+        this.currentIndex = this.keyValues.indexOf(key);
+        if (this.nextIndex < 2) {
+          this.nextIndex = this.currentIndex + 1;
+        } else {
+          this.nextIndex = 0;
+        }
+      }
+    }
+    console.log('nextIndex value: ', this.nextIndex);
   }
 
 
