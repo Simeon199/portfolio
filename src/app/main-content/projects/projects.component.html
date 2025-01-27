@@ -1,7 +1,8 @@
 <div class="projects">
     <app-overlay (close)="closeOverlay()" *ngIf="isOverlayVisible" [index]="currentHoveredProjectIndex"
         [title]="currentProjectOpened" [description]="currentProjectOpenedDescription"
-        [technologies]="currentProjectOpenedTechnologies" [imageSrc]="currentProjectOpenedImageSrc">
+        [technologies]="currentProjectOpenedTechnologies" [imageSrc]="currentProjectOpenedImageSrc"
+        (updateParentVariables)="updateVariablesFromChild($event)">
     </app-overlay>
     <div class="content-wrapper-without-pop-ups">
         <div class="content-above-single-projects">

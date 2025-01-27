@@ -29,6 +29,7 @@ export class ProjectsComponent {
   currentProjectOpenedDescription: string = '';
   currentProjectOpenedImageSrc: string = '';
   currentProjectOpenedTechnologies: string = '';
+  currentProjectOpenedIndexAsString = '';
 
   isOverlayVisible = false;
 
@@ -55,6 +56,20 @@ export class ProjectsComponent {
       projectImageSource: '../../../../assets/img/da-bubble.png'
     }
   ];
+
+  updateVariablesFromChild(updatedValues: {
+    currentProjectOpened: string,
+    currentProjectOpenedDescription: string,
+    currentProjectOpenedImageSrc: string,
+    currentProjectOpenedTechnologies: string,
+    currentHoveredProjectIndex: string
+  }) {
+    this.currentProjectOpened = updatedValues.currentProjectOpened;
+    this.currentProjectOpenedDescription = updatedValues.currentProjectOpenedDescription;
+    this.currentProjectOpenedImageSrc = updatedValues.currentProjectOpenedImageSrc;
+    this.currentProjectOpenedTechnologies = updatedValues.currentProjectOpenedTechnologies;
+    this.currentHoveredProjectIndex = updatedValues.currentHoveredProjectIndex;
+  }
 
   onMouseEnter(projectname: string, projectImageSource: string, projectIndex: string) {
     this.currentHoveredProject = projectname;
