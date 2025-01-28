@@ -63,6 +63,7 @@ export class OverlayComponent {
   }
 
   goToNextProject(title: string) {
+    // debugger;
     for (let key in this.technologyData) {
       let convertedKey = this.projectNameConverter(key);
       if (convertedKey == title) {
@@ -74,7 +75,7 @@ export class OverlayComponent {
         }
       }
     }
-    console.log(this.projectValues[this.nextIndex].projectIndexAsString);
+    // console.log(this.projectValues[this.nextIndex].projectIndexAsString);
     this.updateVariablesInParent({
       currentProjectOpened: this.projectValues[this.nextIndex].title,
       currentProjectOpenedDescription: this.projectValues[this.nextIndex].description,

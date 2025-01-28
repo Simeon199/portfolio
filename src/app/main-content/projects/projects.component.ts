@@ -78,7 +78,7 @@ export class ProjectsComponent {
       this.hoveredProjectLocation = "align-self: flex-start";
     } else if (currentHoveredProject == "El Pollo Loco") {
       this.hoveredProjectLocation = "align-self: center";
-    } else {
+    } else if (currentHoveredProject == "DABubble") {
       this.hoveredProjectLocation = "align-self: flex-end";
     }
   }
