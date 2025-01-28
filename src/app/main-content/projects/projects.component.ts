@@ -3,6 +3,7 @@ import { SingleProjectComponent } from './single-project/single-project.componen
 import { SingleProjectFadedInComponent } from './single-project-faded-in/single-project-faded-in.component';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CommonModule } from '@angular/common';
+import { TECHNOLOGY_DATA } from './projects.data';
 
 @Component({
   selector: 'app-projects',
@@ -28,40 +29,86 @@ export class ProjectsComponent {
   currentProjectOpened: string = '';
   currentProjectOpenedDescription: string = '';
   currentProjectOpenedImageSrc: string = '';
-  currentProjectOpenedTechnologies: string = '';
+  currentProjectOpenedTechnologies: string[] = [];
   currentProjectOpenedIndexAsString = '';
 
   isOverlayVisible = false;
+  technologyData = TECHNOLOGY_DATA;
 
-  allProjectsListed = [
-    {
-      index: '01',
-      title: 'Join',
-      description: 'What is this project about? Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      technologies: 'HTML | CSS | JavaScript',
-      projectImageSource: '../../../../assets/img/join_image.png'
-    },
-    {
-      index: '02',
-      title: 'El Pollo Loco',
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      technologies: 'HTML | CSS | JavaScript',
-      projectImageSource: '../../../../assets/img/pollo_loco.png'
-    },
-    {
-      index: '03',
-      title: 'DABubble',
-      description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization',
-      technologies: 'Angular | TypeScript | Firebase | SCSS | HTML',
-      projectImageSource: '../../../../assets/img/da-bubble.png'
-    }
-  ];
+  // technologyData: technologyData = {
+  //   join: {
+  //     title: 'Join',
+  //     projectImageSource: '../../../../assets/img/join_image.png',
+  //     description: 'What is this project about? Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+  //     technologyList: ['HTML', 'CSS', 'JavaScript'],
+  //     technologyImageIcons: [
+  //       '../../../../assets/img/html-technology.svg',
+  //       '../../../../assets/img/css-technology.svg',
+  //       '../../../../assets/img/javascript-technology.svg'
+  //     ],
+  //     projectIndex: 0,
+  //     projectIndexAsString: '01'
+  //   },
+  //   elPolloLoco: {
+  //     title: 'El Pollo Loco',
+  //     projectImageSource: '../../../../assets/img/pollo_loco.png',
+  //     description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+  //     technologyList: ['HTML', 'CSS', 'JavaScript'],
+  //     technologyImageIcons: [
+  //       '../../../../assets/img/html-technology.svg',
+  //       '../../../../assets/img/css-technology.svg',
+  //       '../../../../assets/img/javascript-technology.svg'
+  //     ],
+  //     projectIndex: 1,
+  //     projectIndexAsString: '02'
+  //   },
+  //   daBubble: {
+  //     title: 'DABubble',
+  //     projectImageSource: '../../../../assets/img/da-bubble.png',
+  //     description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization',
+  //     technologyList: ['Angular', 'TypeScript', 'Firebase', 'SCSS', 'HTML'],
+  //     technologyImageIcons: [
+  //       '../../../../assets/img/angular-technology.svg',
+  //       '../../../../assets/img/typescript-technology.svg',
+  //       '../../../../assets/img/firebase-technology.svg',
+  //       '../../../../assets/img/css-technology.svg',
+  //       '../../../../assets/img/html-technology.svg'
+  //     ],
+  //     projectIndex: 2,
+  //     projectIndexAsString: '03'
+  //   }
+  // }
+
+  // allProjectsListed = [
+  //   {
+  //     index: '01',
+  //     title: 'Join',
+  //     description: 'What is this project about? Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+  //     technologies: 'HTML | CSS | JavaScript',
+  //     projectImageSource: '../../../../assets/img/join_image.png'
+  //   },
+  //   {
+  //     index: '02',
+  //     title: 'El Pollo Loco',
+  //     description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+  //     technologies: 'HTML | CSS | JavaScript',
+  //     projectImageSource: '../../../../assets/img/pollo_loco.png'
+  //   },
+  //   {
+  //     index: '03',
+  //     title: 'DABubble',
+  //     description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization',
+  //     technologies: 'Angular | TypeScript | Firebase | SCSS | HTML',
+  //     projectImageSource: '../../../../assets/img/da-bubble.png'
+  //   }
+  // ];
+  Object: any;
 
   updateVariablesFromChild(updatedValues: {
     currentProjectOpened: string,
     currentProjectOpenedDescription: string,
     currentProjectOpenedImageSrc: string,
-    currentProjectOpenedTechnologies: string,
+    currentProjectOpenedTechnologies: string[],
     currentHoveredProjectIndex: string
   }) {
     this.currentProjectOpened = updatedValues.currentProjectOpened;
@@ -100,6 +147,7 @@ export class ProjectsComponent {
   }
 
   openSingleProjectInBigPopUp(projectName: string) {
+    // debugger;
     this.currentProjectOpened = projectName;
     if (this.isOverlayVisible == true) {
       this.isOverlayVisible = false;
@@ -109,12 +157,24 @@ export class ProjectsComponent {
     this.generateRemainingProjectInformation();
   }
 
+  // generateRemainingProjectInformation() {
+  //   this.allProjectsListed.forEach(project => {
+  //     if (project.title == this.currentProjectOpened) {
+  //       this.currentProjectOpenedDescription = project.description;
+  //       this.currentProjectOpenedImageSrc = project.projectImageSource;
+  //       this.currentProjectOpenedTechnologies = project.technologies;
+  //     }
+  //   })
+  // }
+
   generateRemainingProjectInformation() {
-    this.allProjectsListed.forEach(project => {
+    // debugger;
+    Object.values(this.technologyData).forEach(project => {
+      // console.log('each project value: ', project.technologyList);
       if (project.title == this.currentProjectOpened) {
         this.currentProjectOpenedDescription = project.description;
         this.currentProjectOpenedImageSrc = project.projectImageSource;
-        this.currentProjectOpenedTechnologies = project.technologies;
+        this.currentProjectOpenedTechnologies = project.technologyList;
       }
     })
   }

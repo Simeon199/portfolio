@@ -1,10 +1,9 @@
-export interface SingleProject {
-    index: string;
-    title: string;
-    description: string;
-    technologies: string;
-    projectImageSource: string;
-}
+// export interface singleProject {
+//     title: string;
+//     description: string;
+//     projectImageSource: string;
+//     technologies: string;
+// }
 
 export interface technologyData {
     join: {

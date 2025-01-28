@@ -10,5 +10,5 @@ import { Component, Input } from '@angular/core';
 export class SingleProjectComponent {
   @Input() index: string = '0';
   @Input() title: string = '';
-  @Input() technologies: string = '';
+  @Input() technologies: string[] = [];
 }
