@@ -28,6 +28,29 @@ export class RecencyComponent {
     return Object.keys(this.recencies);
   }
 
+  getValues(): string[] {
+    return Object.values(this.recencies);
+  }
+
+  allItemValues = this.getKeys();
+  allRecencyValues = this.getValues();
+
+  navigateFunction(direction: string) {
+    let initializeRecencyOne = this.allRecencyValues[0];
+    let initializeRecencyTwo = this.allRecencyValues[1];
+    let initializeRecencyThree = this.allRecencyValues[2];
+    if (direction == 'right') {
+      this.allRecencyValues[0] = initializeRecencyThree;
+      this.allRecencyValues[1] = initializeRecencyOne;
+      this.allRecencyValues[2] = initializeRecencyTwo;
+    } else if (direction == 'left') {
+      this.allRecencyValues[0] = initializeRecencyTwo;
+      this.allRecencyValues[1] = initializeRecencyThree;
+      this.allRecencyValues[2] = initializeRecencyOne;
+    }
+    console.log('permuted allItemValues-Array: ', this.allRecencyValues);
+  }
+
   navigate(direction: string) {
     const totalItems = this.getKeys().length;
     if (direction === 'left') {
@@ -37,15 +60,4 @@ export class RecencyComponent {
     }
     this.currentTranslateX = -this.currentIndex * this.commentWidth;
   }
-
-  // navigate(direction: string) {
-  //   if (direction == 'left' && this.currentIndex >= 0) {
-  //     this.currentIndex--;
-  //   } else if (direction == 'left' && this.currentIndex == 0) {
-  //     this.currentIndex = this.getKeys().length - 1;
-  //   } else if (direction == 'right' && this.currentIndex < this.getKeys().length - 1) {
-  //     this.currentIndex++;
-  //   }
-  //   this.currentTranslateX = -this.currentIndex * this.commentWidth;
-  // }
 }
