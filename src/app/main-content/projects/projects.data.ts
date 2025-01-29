@@ -43,5 +43,5 @@ export const TECHNOLOGY_DATA: technologyData = {
     }
 }
 
-export const keyValues = Object.keys(TECHNOLOGY_DATA);
-export const projectValues = Object.values(TECHNOLOGY_DATA);
+// export const keyValues = Object.keys(TECHNOLOGY_DATA);
+// export const projectValues = Object.values(TECHNOLOGY_DATA);

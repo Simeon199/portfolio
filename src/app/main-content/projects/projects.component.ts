@@ -4,8 +4,8 @@ import { SingleProjectFadedInComponent } from './single-project-faded-in/single-
 import { OverlayComponent } from './overlay/overlay.component';
 import { CommonModule } from '@angular/common';
 import { TECHNOLOGY_DATA } from './projects.data';
-import { keyValues } from './projects.data';
-import { projectValues } from './projects.data';
+// import { keyValues } from './projects.data';
+// import { projectValues } from './projects.data';
 
 @Component({
   selector: 'app-projects',
@@ -22,8 +22,8 @@ import { projectValues } from './projects.data';
 
 export class ProjectsComponent {
 
-  keyValues = keyValues;
-  projectValues = projectValues;
+  // keyValues = keyValues;
+  // projectValues = projectValues;
 
   currentHoveredProject: string = '';
   currentHoveredProjectImageSrc: string = '';

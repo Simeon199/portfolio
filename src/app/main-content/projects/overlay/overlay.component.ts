@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TECHNOLOGY_DATA } from '../projects.data';
 import { technologyData } from '../projects.model';
@@ -11,9 +11,6 @@ import { technologyData } from '../projects.model';
   styleUrl: './overlay.component.scss'
 })
 export class OverlayComponent {
-
-
-  currentProjectOpenedIndex = null;
   @Input() technologyData: technologyData = TECHNOLOGY_DATA;
   @Input() allProjectsListed: any;
   @Input() currentProjectOpened: string = '';
@@ -63,19 +60,17 @@ export class OverlayComponent {
   }
 
   goToNextProject(title: string) {
-    // debugger;
-    for (let key in this.technologyData) {
+    this.keyValues.forEach(key => {
       let convertedKey = this.projectNameConverter(key);
       if (convertedKey == title) {
         this.currentIndex = this.keyValues.indexOf(key);
-        if (this.nextIndex < 2) {
+        if (this.currentIndex < 2) {
           this.nextIndex = this.currentIndex + 1;
         } else {
           this.nextIndex = 0;
         }
       }
-    }
-    // console.log(this.projectValues[this.nextIndex].projectIndexAsString);
+    })
     this.updateVariablesInParent({
       currentProjectOpened: this.projectValues[this.nextIndex].title,
       currentProjectOpenedDescription: this.projectValues[this.nextIndex].description,
@@ -83,14 +78,5 @@ export class OverlayComponent {
       currentProjectOpenedTechnologies: this.projectValues[this.nextIndex].technologies,
       currentHoveredProjectIndex: this.projectValues[this.nextIndex].projectIndexAsString
     });
-  }
-
-  constructor(private cdr: ChangeDetectorRef) { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['title']) {
-      console.log('title updated:', changes['title'].currentValue);
-      this.cdr.detectChanges();
-    }
   }
 }
