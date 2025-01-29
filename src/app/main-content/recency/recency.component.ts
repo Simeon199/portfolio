@@ -14,9 +14,10 @@ import { recencies } from './recency.model';
   styleUrl: './recency.component.scss'
 })
 export class RecencyComponent {
-  currentIndex = 0;
+  animationDuration = 500;
+  isAnimating = false;
   currentTranslateX = 0;
-  commentWidth = 632;
+  commentWidth = 636;
 
   recencies: recencies = {
     recency1: 'I had the good fortune of working with Lukas in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool and focused, and made sure our team was set up for success. He is super knowledgeable, easy to work with, an I would happily work with him again given the chance',
@@ -35,29 +36,47 @@ export class RecencyComponent {
   allItemValues = this.getKeys();
   allRecencyValues = this.getValues();
 
-  navigateFunction(direction: string) {
-    let initializeRecencyOne = this.allRecencyValues[0];
-    let initializeRecencyTwo = this.allRecencyValues[1];
-    let initializeRecencyThree = this.allRecencyValues[2];
-    if (direction == 'right') {
-      this.allRecencyValues[0] = initializeRecencyThree;
-      this.allRecencyValues[1] = initializeRecencyOne;
-      this.allRecencyValues[2] = initializeRecencyTwo;
-    } else if (direction == 'left') {
-      this.allRecencyValues[0] = initializeRecencyTwo;
-      this.allRecencyValues[1] = initializeRecencyThree;
-      this.allRecencyValues[2] = initializeRecencyOne;
-    }
-    console.log('permuted allItemValues-Array: ', this.allRecencyValues);
-  }
 
-  navigate(direction: string) {
-    const totalItems = this.getKeys().length;
-    if (direction === 'left') {
-      this.currentIndex = (this.currentIndex - 1) % totalItems;
-    } else if (direction === 'right') {
-      this.currentIndex = (this.currentIndex + 1) % totalItems;
+  // navigateFunction(direction: string) {
+  //   let initializeRecencyOne = this.allRecencyValues[0];
+  //   let initializeRecencyTwo = this.allRecencyValues[1];
+  //   let initializeRecencyThree = this.allRecencyValues[2];
+  //   if (direction == 'right') {
+  //     setTimeout(() => {
+  //       this.allRecencyValues[0] = initializeRecencyThree;
+  //       this.allRecencyValues[1] = initializeRecencyOne;
+  //       this.allRecencyValues[2] = initializeRecencyTwo;
+  //     }, 500);
+  //   } else if (direction == 'left') {
+  //     setTimeout(() => {
+  //       this.allRecencyValues[0] = initializeRecencyTwo;
+  //       this.allRecencyValues[1] = initializeRecencyThree;
+  //       this.allRecencyValues[2] = initializeRecencyOne;
+  //     }, 500);
+  //   }
+  // }
+
+  navigateFunction(direction: string) {
+    if (this.isAnimating) {
+      return;
     }
-    this.currentTranslateX = -this.currentIndex * this.commentWidth;
+    this.isAnimating = true;
+    const shiftAmount = direction === 'right' ? -this.commentWidth : this.commentWidth
+    this.currentTranslateX += shiftAmount;
+    setTimeout(() => {
+      if (direction === 'right') {
+        const firstItem = this.allRecencyValues.shift();
+        if (firstItem) {
+          this.allRecencyValues.push(firstItem);
+        }
+      } else {
+        const lastItem = this.allRecencyValues.pop();
+        if (lastItem) {
+          this.allRecencyValues.unshift(lastItem);
+        }
+      }
+      this.currentTranslateX = 0;
+      this.isAnimating = false;
+    }, this.animationDuration);
   }
 }

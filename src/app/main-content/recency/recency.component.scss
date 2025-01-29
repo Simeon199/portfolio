@@ -6,14 +6,22 @@
     gap: 48px;
     padding-top: 96px;
     overflow: hidden;
-    background-color: linear-gradient(90deg, #1C1C1C 0%, rgba(28, 28, 28, 0) 10%, rgba(28, 28, 28, 0) 90%, #1C1C1C 100%);
+    // background-color: linear-gradient(90deg, #1C1C1C 0%, rgba(28, 28, 28, 0) 10%, rgba(28, 28, 28, 0) 90%, #1C1C1C 100%);
 
 
     .recency-carousel {
         display: flex;
         justify-content: space-evenly;
-        gap: 40px;
+        // gap: 40px;
         overflow: hidden;
+        background: linear-gradient(90deg, #1C1C1C 0%, rgba(28, 28, 28, 0) 10%, rgba(28, 28, 28, 0) 90%, #1C1C1C 100%);
+
+    }
+
+    .recency-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 80px;
     }
 
     app-description-wrapper {
