@@ -2,16 +2,17 @@
     <h2>What my colleagues said about me</h2>
     <div class="recency-carousel">
         <div class="recency-track" [style.transform]="'translateX(' + currentTranslateX + 'px)'"
-            [style.transition]="transitionEnabled ? 'transform 0.5s ease-in-out' : 'none'">
-            <app-single-recency *ngFor="let recency of allRecencyValues" [recency]="recency">
+            [style.transition]="transitionEnabled ? 'transform 0.5s ease-in-out': 'none'">
+            <app-single-recency *ngFor="let recency of allRecencyValues; let i = index" [recency]="recency"
+                [ngClass]="{'active': i === 1}">
             </app-single-recency>
         </div>
     </div>
     <div class="navigate-section">
         <img src="../../../assets/img/arrow_left.svg" alt="arrow-left" (click)="navigateFunction('left')">
-        <img src="../../../assets/img/ellipse.svg" alt="ellipse1">
-        <img src="../../../assets/img/ellipse.svg" alt="ellipse2">
-        <img src="../../../assets/img/ellipse.svg" alt="ellipse3">
+        <img src="../../../assets/img/ellipse.svg" alt="ellipse1" [ngClass]="{'active-ellipse': currentIndex === 0}">
+        <img src="../../../assets/img/ellipse.svg" alt="ellipse2" [ngClass]="{'active-ellipse': currentIndex === 1}">
+        <img src="../../../assets/img/ellipse.svg" alt="ellipse3" [ngClass]="{'active-ellipse': currentIndex === 2}">
         <img src="../../../assets/img/arrow_right.svg" alt="arrow-right" (click)="navigateFunction('right')">
     </div>
 </div>

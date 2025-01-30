@@ -14,6 +14,7 @@ import { recencies } from './recency.model';
   styleUrl: './recency.component.scss'
 })
 export class RecencyComponent {
+  currentIndex = 0;
   animationDuration = 500;
   isAnimating = false;
   currentTranslateX = 0;
@@ -41,6 +42,11 @@ export class RecencyComponent {
     this.currentTranslateX += this.determineCorrectShiftAmount(direction);
     setTimeout(() => {
       this.permuteRecencyArrayDependingOnMovingDirection(direction);
+      if (direction == 'right') {
+        this.currentIndex = (this.currentIndex + 1) % this.allRecencyValues.length;
+      } else {
+        this.currentIndex = (this.currentIndex - 1 + this.allRecencyValues.length) % this.allRecencyValues.length;
+      }
       this.setVariablesBackToOriginalValues();
     }, this.animationDuration);
   }
