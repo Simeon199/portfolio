@@ -20,6 +20,8 @@ export class RecencyComponent {
   currentTranslateX = 0;
   commentWidth = 636;
   transitionEnabled = true;
+
+
   recencies: recencies = {
     recency1: 'I had the good fortune of working with Lukas in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool and focused, and made sure our team was set up for success. He is super knowledgeable, easy to work with, an I would happily work with him again given the chance',
     recency2: 'Our project benefited enormously from Lukas efficient way of working.',
