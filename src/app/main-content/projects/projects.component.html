@@ -13,11 +13,11 @@
                 projects to see my skills in action.
             </span>
         </div>
-        <div class="collection-of-single-projects" *ngFor="let singleProject of technologyData | keyvalue">
-            <app-single-project [index]='singleProject.value.projectIndexAsString' [title]="singleProject.value.title"
-                [technologies]="singleProject.value.technologyList"
-                (mouseenter)="onMouseEnter(singleProject.value.title, singleProject.value.projectImageSource, singleProject.value.projectIndexAsString)"
-                (mouseleave)="onMouseLeave()" (click)="openSingleProjectInBigPopUp(singleProject.value.title)">
+        <div class="collection-of-single-projects" *ngFor="let singleProject of technologyArray">
+            <app-single-project [index]='singleProject.projectIndexAsString' [title]="singleProject.title"
+                [technologies]="singleProject.technologyList"
+                (mouseenter)="onMouseEnter(singleProject.title, singleProject.projectImageSource, singleProject.projectIndexAsString)"
+                (mouseleave)="onMouseLeave()" (click)="openSingleProjectInBigPopUp(singleProject.title)">
             </app-single-project>
         </div>
     </div>

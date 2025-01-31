@@ -34,7 +34,7 @@ export class ProjectsComponent {
 
   isOverlayVisible = false;
   technologyData = TECHNOLOGY_DATA;
-  Object: any;
+  technologyArray = Object.values(this.technologyData);
 
   updateVariablesFromChild(updatedValues: {
     currentProjectOpened: string,
@@ -54,6 +54,7 @@ export class ProjectsComponent {
     this.currentHoveredProject = projectname;
     this.currentHoveredProjectImageSrc = projectImageSource;
     this.currentHoveredProjectIndex = projectIndex;
+    console.log('technology array value: ', this.technologyArray);
   }
 
   onMouseLeave() {
@@ -70,11 +71,11 @@ export class ProjectsComponent {
 
   setHoveredProjectLocation(currentHoveredProject: string) {
     if (currentHoveredProject == "Join") {
-      this.hoveredProjectLocation = "align-self: flex-end";
+      this.hoveredProjectLocation = "align-self: flex-start";
     } else if (currentHoveredProject == "El Pollo Loco") {
       this.hoveredProjectLocation = "align-self: center";
     } else if (currentHoveredProject == "DABubble") {
-      this.hoveredProjectLocation = "align-self: flex-start";
+      this.hoveredProjectLocation = "align-self: flex-end";
     }
   }
 
