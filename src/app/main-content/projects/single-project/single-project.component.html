@@ -3,6 +3,8 @@
         {{title}}
     </div>
     <div class="project-technologies">
-        {{technologies}}
+        <div class="technology" *ngFor="let technology of technologies">
+            {{technology}}
+        </div>
     </div>
 </div>
