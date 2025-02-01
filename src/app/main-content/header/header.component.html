@@ -2,8 +2,16 @@
     <nav>
         <div class="language-selection">
             <div class="languageSelection">
-                <button>EN</button>
-                <button>DE</button>
+                <button
+                    [ngClass]="{'active-button-style': !isGermanButtonActive, 'inactive-button-style': isGermanButtonActive}"
+                    (click)="checkActiveButtonStyle('english')">
+                    EN
+                </button>
+                <button
+                    [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"
+                    (click)="checkActiveButtonStyle('german')">
+                    DE
+                </button>
             </div>
         </div>
         <a href="">About me</a>
