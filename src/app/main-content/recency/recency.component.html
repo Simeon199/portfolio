@@ -1,6 +1,9 @@
 <div class="recency-section">
     <h2>What my colleagues said about me</h2>
     <div class="recency-carousel">
+        <div class="quotes-image-wrapper">
+            <img src="../../../assets/img/quotes.svg" alt="quotes">
+        </div>
         <div class="recency-track" [style.transform]="'translateX(' + currentTranslateX + 'px)'"
             [style.transition]="transitionEnabled ? 'transform 0.5s ease-in-out': 'none'">
             <app-single-recency *ngFor="let recency of allRecencyValues; let i = index" [recency]="recency"

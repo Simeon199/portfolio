@@ -1,5 +1,5 @@
-<div class="overlay">
-    <div class="content-box">
+<div class="overlay" (click)="closeOverlay()">
+    <div class="content-box" (click)="stopPropagation($event)">
         <div class="close-button-img" (click)="closeOverlay()">
             <img src="../../../../assets/img/close_button.svg" alt="close-button">
         </div>

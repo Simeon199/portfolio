@@ -79,4 +79,8 @@ export class OverlayComponent {
       currentHoveredProjectIndex: this.projectValues[this.nextIndex].projectIndexAsString
     });
   }
+
+  stopPropagation(event: Event) {
+    event.stopPropagation();
+  }
 }
