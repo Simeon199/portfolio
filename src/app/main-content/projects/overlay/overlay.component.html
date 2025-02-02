@@ -8,11 +8,13 @@
             <h2>{{title}}</h2>
             <h3>What is this project about?</h3>
             <span>{{description}}</span>
-            <div class="used-technologies" *ngFor="let technology of technologyData | keyvalue">
-                <div class="test-section" *ngIf="technology.value.title === title">
-                    <div class="list-section" *ngFor="let item of technology.value.technologyList; let i = index">
-                        <span>{{item}}</span>
-                        <img src="{{technology.value.technologyImageIcons[i]}}" alt="technologyImageIcons">
+            <div class="used-technologies" *ngFor="let technology of projectValues; let i = index">
+                <div class="test-section" *ngIf="technology.title === title">
+                    <div class="list-section" *ngFor="let item of technology.technologyList; let i = index">
+                        <ng-container *ngIf="item !== '|'">
+                            <span>{{item}}</span>
+                            <img src={{technology.technologyImageIcons[i]}}>
+                        </ng-container>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,4 @@
 .contact-form-container {
-    // color: rgba(61, 207, 182, 1);
 
     form {
         display: flex;
@@ -7,14 +6,15 @@
         width: 500px;
         color: rgba(61, 207, 182, 1);
         border-width: 1px, 0px, 1px, 0px;
-        gap: 24px;
-        // border-style: solid;
-        // border-color: rgba(61, 207, 182, 0.5);
 
         .form-group {
 
             display: flex;
             flex-direction: column;
+            gap: 16px;
+            border-top: 1px solid rgba(61, 207, 182, 0.5);
+            border-bottom: 1px solid rgba(61, 207, 182, 0.5);
+            padding: 32px;
 
             label {
                 font-family: Fira Code;
@@ -71,6 +71,8 @@
             padding: 0px 24px 0px 24px;
             gap: 10px;
             border-radius: 100px;
+            margin-top: 24px;
+            align-self: center;
         }
     }
 }

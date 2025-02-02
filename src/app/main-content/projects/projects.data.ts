@@ -7,7 +7,9 @@ export const TECHNOLOGY_DATA: technologyData = {
         technologyList: ['HTML', '|', 'CSS', '|', 'JavaScript'],
         technologyImageIcons: [
             '../../../../assets/img/html-technology.svg',
+            '|',
             '../../../../assets/img/css-technology.svg',
+            '|',
             '../../../../assets/img/javascript-technology.svg'
         ],
         projectIndex: 0,
@@ -20,7 +22,9 @@ export const TECHNOLOGY_DATA: technologyData = {
         technologyList: ['HTML', '|', 'CSS', '|', 'JavaScript'],
         technologyImageIcons: [
             '../../../../assets/img/html-technology.svg',
+            '|',
             '../../../../assets/img/css-technology.svg',
+            '|',
             '../../../../assets/img/javascript-technology.svg'
         ],
         projectIndex: 1,
@@ -33,9 +37,13 @@ export const TECHNOLOGY_DATA: technologyData = {
         technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
         technologyImageIcons: [
             '../../../../assets/img/angular-technology.svg',
+            '|',
             '../../../../assets/img/typescript-technology.svg',
+            '|',
             '../../../../assets/img/firebase-technology.svg',
+            '|',
             '../../../../assets/img/css-technology.svg',
+            '|',
             '../../../../assets/img/html-technology.svg'
         ],
         projectIndex: 2,
