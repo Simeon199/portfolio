@@ -19,6 +19,8 @@ export class OverlayComponent {
   @Input() description: string = '';
   @Input() technologies: any;
   @Input() imageSrc: string = '';
+  @Input() gitHubLink: string = '';
+  @Input() projectLink: string = '';
   @Output() close = new EventEmitter<void>();
   @Output() updateParentVariables = new EventEmitter<{
     currentProjectOpened: string;
@@ -26,6 +28,8 @@ export class OverlayComponent {
     currentProjectOpenedImageSrc: string;
     currentProjectOpenedTechnologies: string[];
     currentHoveredProjectIndex: string;
+    currentProjectOpenedGitHubLink: string;
+    currentProjectOpenedProjectLink: string;
   }>();
 
   nextIndex: number = 0
@@ -39,6 +43,8 @@ export class OverlayComponent {
     currentProjectOpenedImageSrc: string;
     currentProjectOpenedTechnologies: string[];
     currentHoveredProjectIndex: string;
+    currentProjectOpenedGitHubLink: string;
+    currentProjectOpenedProjectLink: string;
   }) {
     this.updateParentVariables.emit(updatedValues);
   }
@@ -76,7 +82,9 @@ export class OverlayComponent {
       currentProjectOpenedDescription: this.projectValues[this.nextIndex].description,
       currentProjectOpenedImageSrc: this.projectValues[this.nextIndex].projectImageSource,
       currentProjectOpenedTechnologies: this.projectValues[this.nextIndex].technologies,
-      currentHoveredProjectIndex: this.projectValues[this.nextIndex].projectIndexAsString
+      currentHoveredProjectIndex: this.projectValues[this.nextIndex].projectIndexAsString,
+      currentProjectOpenedGitHubLink: this.projectValues[this.nextIndex].gitHubLink,
+      currentProjectOpenedProjectLink: this.projectValues[this.nextIndex].projectLink
     });
   }
 

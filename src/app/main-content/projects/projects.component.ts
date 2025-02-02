@@ -30,7 +30,9 @@ export class ProjectsComponent {
   currentProjectOpenedDescription: string = '';
   currentProjectOpenedImageSrc: string = '';
   currentProjectOpenedTechnologies: string[] = [];
-  currentProjectOpenedIndexAsString = '';
+  currentProjectOpenedIndexAsString: string = '';
+  currentProjectOpenedGitHubLink: string = '';
+  currentProjectOpenedProjectLink: string = '';
 
   isOverlayVisible = false;
   technologyData = TECHNOLOGY_DATA;
@@ -41,20 +43,23 @@ export class ProjectsComponent {
     currentProjectOpenedDescription: string,
     currentProjectOpenedImageSrc: string,
     currentProjectOpenedTechnologies: string[],
-    currentHoveredProjectIndex: string
+    currentHoveredProjectIndex: string,
+    currentProjectOpenedGitHubLink: string,
+    currentProjectOpenedProjectLink: string;
   }) {
     this.currentProjectOpened = updatedValues.currentProjectOpened;
     this.currentProjectOpenedDescription = updatedValues.currentProjectOpenedDescription;
     this.currentProjectOpenedImageSrc = updatedValues.currentProjectOpenedImageSrc;
     this.currentProjectOpenedTechnologies = updatedValues.currentProjectOpenedTechnologies;
     this.currentHoveredProjectIndex = updatedValues.currentHoveredProjectIndex;
+    this.currentProjectOpenedGitHubLink = updatedValues.currentProjectOpenedGitHubLink;
+    this.currentProjectOpenedProjectLink = updatedValues.currentProjectOpenedProjectLink;
   }
 
   onMouseEnter(projectname: string, projectImageSource: string, projectIndex: string) {
     this.currentHoveredProject = projectname;
     this.currentHoveredProjectImageSrc = projectImageSource;
     this.currentHoveredProjectIndex = projectIndex;
-    console.log('technology array value: ', this.technologyArray);
   }
 
   onMouseLeave() {
@@ -95,6 +100,8 @@ export class ProjectsComponent {
         this.currentProjectOpenedDescription = project.description;
         this.currentProjectOpenedImageSrc = project.projectImageSource;
         this.currentProjectOpenedTechnologies = project.technologyList;
+        this.currentProjectOpenedGitHubLink = project.gitHubLink;
+        this.currentProjectOpenedProjectLink = project.projectLink;
       }
     })
   }

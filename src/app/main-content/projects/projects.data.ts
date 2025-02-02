@@ -13,7 +13,9 @@ export const TECHNOLOGY_DATA: technologyData = {
             '../../../../assets/img/javascript-technology.svg'
         ],
         projectIndex: 0,
-        projectIndexAsString: '01'
+        projectIndexAsString: '01',
+        projectLink: 'https://simon-kiesner.developerakademie.net/MyJoin/login.html',
+        gitHubLink: 'https://github.com/Simeon199/MyJoin'
     },
     elPolloLoco: {
         title: 'El Pollo Loco',
@@ -28,7 +30,9 @@ export const TECHNOLOGY_DATA: technologyData = {
             '../../../../assets/img/javascript-technology.svg'
         ],
         projectIndex: 1,
-        projectIndexAsString: '02'
+        projectIndexAsString: '02',
+        projectLink: 'https://simon-kiesner.developerakademie.net/el_pollo_loco/index.html',
+        gitHubLink: 'https://github.com/Simeon199/el_pollo_loco'
     },
     daBubble: {
         title: 'DABubble',
@@ -47,6 +51,8 @@ export const TECHNOLOGY_DATA: technologyData = {
             '../../../../assets/img/html-technology.svg'
         ],
         projectIndex: 2,
-        projectIndexAsString: '03'
+        projectIndexAsString: '03',
+        projectLink: 'Not found',
+        gitHubLink: 'Not found'
     }
 }

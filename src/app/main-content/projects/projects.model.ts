@@ -7,6 +7,8 @@ export interface technologyData {
         technologyImageIcons: string[];
         projectIndex: number;
         projectIndexAsString: string;
+        projectLink: string;
+        gitHubLink: string;
     },
     elPolloLoco: {
         title: string,
@@ -16,6 +18,8 @@ export interface technologyData {
         technologyImageIcons: string[];
         projectIndex: number;
         projectIndexAsString: string;
+        projectLink: string;
+        gitHubLink: string;
     },
     daBubble: {
         title: string,
@@ -25,5 +29,7 @@ export interface technologyData {
         technologyImageIcons: string[];
         projectIndex: number;
         projectIndexAsString: string;
+        projectLink: string;
+        gitHubLink: string;
     }
 }
