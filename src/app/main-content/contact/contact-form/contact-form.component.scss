@@ -1,0 +1,76 @@
+.contact-form-container {
+    // color: rgba(61, 207, 182, 1);
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        color: rgba(61, 207, 182, 1);
+        border-width: 1px, 0px, 1px, 0px;
+        gap: 24px;
+        // border-style: solid;
+        // border-color: rgba(61, 207, 182, 0.5);
+
+        .form-group {
+
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-family: Fira Code;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 28.8px;
+            }
+
+            input {
+                border: none;
+                background-color: #1C1C1C;
+            }
+        }
+
+        #mail {
+            font-family: Karla;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        #name {
+            font-family: Karla;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        #subject {
+            font-family: Karla;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        #submit-input {
+            cursor: pointer;
+            font-family: Karla;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.8);
+            background-color: #1C1C1C;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            width: 139px;
+            height: 48px;
+            padding: 0px 24px 0px 24px;
+            gap: 10px;
+            border-radius: 100px;
+        }
+    }
+}
