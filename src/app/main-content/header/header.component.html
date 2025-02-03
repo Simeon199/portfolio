@@ -1,9 +1,29 @@
-<header>
+<header (click)="showOrHideDropdown()">
     <div class="navbar-responsive-design">
         <div class="my-logo-responsive">
             <h3>SK</h3>
         </div>
-        <img src="../../../assets/img/menu_icon.svg" alt="menu-icon">
+        <img src="../../../assets/img/menu_icon.svg" (click)="showOrHideDropdown(); stopEventPropagation($event)"
+            alt="menu-icon">
+        <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated">
+            <a href="#person-description-section">About me</a>
+            <a href="#skills-section">Skills</a>
+            <a href="#projects">Projects</a>
+            <div class="language-selection-responsive">
+                <div class="languageSelection">
+                    <button
+                        [ngClass]="{'active-button-style': !isGermanButtonActive, 'inactive-button-style': isGermanButtonActive}"
+                        (click)="checkActiveButtonStyle('english')">
+                        EN
+                    </button>
+                    <button
+                        [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"
+                        (click)="checkActiveButtonStyle('german')">
+                        DE
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
     <nav>
         <div class="language-selection">

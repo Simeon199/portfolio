@@ -4,6 +4,7 @@ header {
     justify-content: space-between;
     color: rgba(255, 255, 255, 1);
     padding: 24px 140px 24px 140px;
+    position: relative;
 
     @media(max-width: 1350px) {
         padding-right: 0;
@@ -12,12 +13,11 @@ header {
         padding-left: 24px;
     }
 
-
-
     .navbar-responsive-design {
         display: none;
 
-        @media(max-width: 1200px) {
+
+        @media(max-width: 1350px) {
             display: flex;
             align-items: center;
             width: 100%;
@@ -26,7 +26,55 @@ header {
             .my-logo-responsive {
                 font-size: 32px;
                 color: rgba(61, 207, 182, 1);
+            }
 
+            .dropdown-responsive {
+                position: absolute;
+                display: flex;
+                right: 2%;
+                top: 80%;
+                flex-direction: column;
+                gap: 8px;
+                z-index: 99;
+                padding: 40px; // Original 40px 77px 40px 77px;
+                gap: 10px;
+                border-radius: 30px;
+                border: 1px solid rgba(61, 207, 182, 1);
+                background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+                .language-selection-responsive {
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    border: 2px solid rgba(61, 207, 182, 1);
+                    border-radius: 100px;
+
+                    button {
+                        border-radius: 100px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        font-size: 12px;
+                        font-family: 'Fira Code';
+                        cursor: pointer;
+                        border: none;
+                    }
+
+                    .active-button-style {
+                        background-color: rgba(61, 207, 182, 1);
+                        font-weight: 700;
+                        color: rgba(255, 255, 255, 1);
+                        padding-right: 10px;
+                        padding-left: 10px;
+                    }
+
+                    .inactive-button-style {
+                        background-color: rgb(19, 47, 42);
+                        color: rgba(61, 207, 182, 0.5);
+                        font-weight: 400;
+                        padding-right: 12px;
+                        padding-left: 12px;
+                    }
+                }
             }
         }
     }

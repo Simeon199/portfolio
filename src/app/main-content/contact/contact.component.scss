@@ -8,6 +8,11 @@
         flex-direction: column;
         width: 568px;
         height: 337px;
+
+        @media(max-width: 600px) {
+            width: unset;
+            height: unset;
+        }
     }
 
     .h2-contact-section {
