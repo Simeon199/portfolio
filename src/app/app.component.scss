@@ -1,6 +1,16 @@
 .router-outlet-container {
     margin: 0 auto;
-    width: 1440px;
+    max-width: 1440px;
+    padding-right: 24px;
+    padding-left: 24px;
     z-index: 20;
-    // background-image: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+    @media(max-width: 1440px) {
+        .router-outlet-container {
+            max-width: 1000px;
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
 }

@@ -6,84 +6,110 @@ header {
     height: 92px;
     padding: 24px 140px 24px 140px;
 
+    .navbar-responsive-design {
+        display: none;
+
+        @media(max-width: 1200px) {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+
+            .my-logo-responsive {
+                font-size: 32px;
+                color: rgba(61, 207, 182, 1);
+
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    a:nth-child(1) {
+        font-family: 'Handjet';
+        font-size: 48px;
+    }
+
     a {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 1);
-        cursor: pointer;
+        position: relative;
+        font-family: 'Roboto Mono';
+        font-size: 22px;
     }
 
-    nav {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-
-        a:nth-child(1) {
-            font-family: 'Handjet';
-            font-size: 48px;
-        }
-
-        a {
-            position: relative;
-            font-family: 'Roboto Mono';
-            font-size: 22px;
-        }
-
-        ::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%) scale(0);
-            width: 8px;
-            height: 8px;
-            background-color: rgb(61, 207, 182);
-            border-radius: 50%;
-            transition: transform 0.1s ease-in-out;
-        }
-
-        a:hover::after {
-            transform: translateX(-50%) scale(1);
-        }
+    ::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        width: 8px;
+        height: 8px;
+        background-color: rgb(61, 207, 182);
+        border-radius: 50%;
+        transition: transform 0.1s ease-in-out;
     }
 
-    .my-logo {
-        font-size: 24px;
-        cursor: pointer;
+    a:hover::after {
+        transform: translateX(-50%) scale(1);
     }
 
-    .language-selection {
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        border: 2px solid rgba(61, 207, 182, 1);
+    @media(max-width: 1200px) {
+        display: none;
+    }
+}
+
+.my-logo {
+    font-size: 24px;
+    cursor: pointer;
+
+
+    @media(max-width: 1200px) {
+        display: none;
+    }
+}
+
+.language-selection {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    border: 2px solid rgba(61, 207, 182, 1);
+    border-radius: 100px;
+    gap: 10px;
+
+    button {
         border-radius: 100px;
-        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 16px;
+        line-height: 19.2px;
+        font-family: 'Fira Code';
+        cursor: pointer;
+        border: none;
+    }
 
-        button {
-            border-radius: 100px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            font-size: 16px;
-            line-height: 19.2px;
-            font-family: 'Fira Code';
-            cursor: pointer;
-            border: none;
-        }
+    .active-button-style {
+        background-color: rgba(61, 207, 182, 1);
+        font-weight: 700;
+        color: rgba(255, 255, 255, 1);
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 
-        .active-button-style {
-            background-color: rgba(61, 207, 182, 1);
-            font-weight: 700;
-            color: rgba(255, 255, 255, 1);
-            padding-right: 20px;
-            padding-left: 20px;
-        }
-
-        .inactive-button-style {
-            background-color: rgb(19, 47, 42);
-            color: rgba(61, 207, 182, 0.5);
-            font-weight: 400;
-            padding-right: 12px;
-            padding-left: 12px;
-        }
+    .inactive-button-style {
+        background-color: rgb(19, 47, 42);
+        color: rgba(61, 207, 182, 0.5);
+        font-weight: 400;
+        padding-right: 12px;
+        padding-left: 12px;
     }
 }
