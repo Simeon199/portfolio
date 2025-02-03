@@ -24,6 +24,10 @@
     .technology:nth-child(even) {
         color: rgba(61, 207, 182, 1);
     }
+
+    @media(max-width: 1350px) {
+        width: 560px;
+    }
 }
 
 :hover {

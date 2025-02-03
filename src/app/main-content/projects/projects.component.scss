@@ -4,6 +4,10 @@
     align-items: end;
     padding-top: 96px;
     color: rgba(255, 255, 255, 0.8);
+
+    @media(max-width: 1350px) {
+        justify-content: center;
+    }
 }
 
 .content-wrapper-without-pop-ups {

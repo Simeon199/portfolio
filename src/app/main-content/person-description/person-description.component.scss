@@ -2,12 +2,19 @@
     display: flex;
     justify-content: space-around;
     color: rgba(61, 207, 182, 1);
-    display: flex;
     color: rgb(61, 207, 182);
     margin: 0 auto;
     height: 850px;
     padding-top: 96px;
     padding-bottom: 96px;
+
+    @media(max-width: 1200px) {
+        height: unset;
+        margin: unset;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
 .who-i-am-section {
@@ -15,6 +22,11 @@
     flex-direction: column;
     align-self: end;
     gap: 20px;
+
+    @media(max-width: 1200px) {
+        padding-top: 20px;
+        align-self: unset;
+    }
 }
 
 app-description-wrapper {
@@ -45,6 +57,10 @@ img {
     height: auto;
     border-radius: 30px;
     align-self: start;
+
+    @media(max-width: 1200px) {
+        align-self: unset;
+    }
 }
 
 h2 {
