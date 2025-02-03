@@ -57,14 +57,18 @@ export class ProjectsComponent {
   }
 
   onMouseEnter(projectname: string, projectImageSource: string, projectIndex: string) {
-    this.currentHoveredProject = projectname;
-    this.currentHoveredProjectImageSrc = projectImageSource;
-    this.currentHoveredProjectIndex = projectIndex;
+    if (window.innerWidth > 1350) {
+      this.currentHoveredProject = projectname;
+      this.currentHoveredProjectImageSrc = projectImageSource;
+      this.currentHoveredProjectIndex = projectIndex;
+    }
   }
 
   onMouseLeave() {
-    this.currentHoveredProject = '';
-    this.currentHoveredProjectImageSrc = '';
+    if (window.innerWidth > 1350) {
+      this.currentHoveredProject = '';
+      this.currentHoveredProjectImageSrc = '';
+    }
   }
 
   returnRightLocation(currentHoveredProject: string) {

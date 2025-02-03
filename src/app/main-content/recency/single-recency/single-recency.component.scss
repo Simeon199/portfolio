@@ -11,4 +11,11 @@
     padding: 48px 40px 48px 40px;
     gap: 44px;
     border-radius: 32px;
+
+    @media(max-width: 1200px) {
+        width: 358px;
+        padding: 40px; // Original: 40px 0px 0px 0px
+        gap: 0px;
+        justify: space-between;
+    }
 }

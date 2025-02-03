@@ -14,6 +14,10 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
+
+        @media(max-width: 1350px) {
+            gap: 16px;
+        }
     }
 
     @media(max-width: 1350px) {
@@ -47,11 +51,16 @@ h2:nth-child(2) {
     font-size: 64px;
     font-weight: 700;
     line-height: 64px;
-    letter-spacing: -0.03em;
+
+    @media(max-width: 1350px) {
+        font-size: 56px;
+        line-height: 56px;
+        text-align: left;
+    }
 }
 
 span {
-    font-family: Karla;
+    font-family: 'Karla';
     font-size: 16px;
     line-height: 19.2px;
     text-align: left;
