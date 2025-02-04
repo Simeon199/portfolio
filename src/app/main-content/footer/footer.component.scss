@@ -4,6 +4,10 @@ footer {
     justify-content: space-between;
     margin-top: 96px;
     height: 126px;
+
+    @media(max-width: 600px) {
+        height: 240px;
+    }
 }
 
 .my-person-box {
@@ -23,6 +27,10 @@ footer {
         gap: 8px;
         color: rgba(255, 255, 255, 0.8);
     }
+
+    @media(max-width: 600px) {
+        height: unset;
+    }
 }
 
 .copyright-section {
@@ -32,6 +40,13 @@ footer {
     line-height: 21.6px;
     text-align: left;
     color: rgba(61, 207, 182, 1);
+
+    @media(max-width: 600px) {
+        display: flex;
+        justify-content: center;
+        align-self: flex-end;
+        width: 100%;
+    }
 }
 
 .platform-links {
