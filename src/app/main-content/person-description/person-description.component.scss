@@ -15,6 +15,12 @@
         align-items: center;
         flex-direction: column;
     }
+
+    @media(max-width: 700px) {
+        max-width: 500px;
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
 .who-i-am-section {

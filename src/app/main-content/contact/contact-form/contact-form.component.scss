@@ -7,6 +7,10 @@
         color: rgba(61, 207, 182, 1);
         border-width: 1px, 0px, 1px, 0px;
 
+        @media(max-width: 700px) {
+            align-items: center;
+        }
+
         .form-group {
 
             display: flex;
@@ -33,6 +37,11 @@
                 font-weight: 500;
                 line-height: 24px;
                 text-align: left;
+            }
+
+            @media(max-width: 700px) {
+                max-width: 560px;
+                width: 90%;
             }
         }
 
@@ -94,6 +103,11 @@
         align-items: center;
         gap: 8px;
         padding-top: 100px;
+
+        @media(max-width: 700px) {
+            width: 80%;
+            margin: 0 auto;
+        }
 
         span {
             font-family: Karla;

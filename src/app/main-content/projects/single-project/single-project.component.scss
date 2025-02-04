@@ -19,6 +19,10 @@
     .project-technologies {
         display: flex;
         gap: 16px;
+
+        @media(max-width: 700px) {
+            gap: 4px;
+        }
     }
 
     .technology:nth-child(even) {
@@ -27,6 +31,11 @@
 
     @media(max-width: 1350px) {
         width: 560px;
+    }
+
+    @media(max-width: 700px) {
+        max-width: 560px;
+        width: 90%;
     }
 }
 

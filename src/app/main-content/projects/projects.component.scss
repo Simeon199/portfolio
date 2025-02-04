@@ -13,10 +13,19 @@
 .content-wrapper-without-pop-ups {
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 1350px) {
+        max-width: 560px;
+    }
 }
 
 .content-above-single-projects {
     padding-bottom: 16px;
+
+    @media(max-width: 700px) {
+        width: 90%;
+        gap: 16px;
+    }
 }
 
 .collection-of-single-projects {
