@@ -21,6 +21,10 @@
     border-radius: 30px;
     border: 1px solid rgb(61, 207, 182);
 
+    .next-project-image-section-responsive {
+        display: none;
+    }
+
     .close-button-img {
         position: absolute;
         top: 1%;
@@ -29,7 +33,7 @@
     }
 
     h1 {
-        font-family: Karla;
+        font-family: 'Karla';
         font-size: 128px;
         font-weight: 700;
         line-height: 100px;
@@ -38,42 +42,67 @@
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
         color: rgb(61, 207, 182);
+
+        @media(max-width: 1350px) {
+            font-size: 72px;
+        }
     }
 
     h2 {
-        font-family: Fira Code;
+        font-family: 'Fira Code';
         font-size: 64px;
         font-weight: 700;
         line-height: 51.2px;
         letter-spacing: -0.03em;
         text-align: left;
         color: rgba(255, 255, 255, 0.8);
+
+        @media(max-width: 1350px) {
+            font-size: 56px;
+        }
     }
 
     h3 {
-        font-family: Fira Code;
+        font-family: 'Fira Code';
         font-size: 24px;
         font-weight: 700;
         line-height: 28.8px;
         text-align: left;
         color: rgb(61, 207, 182);
+
+        @media(max-width: 1350px) {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: left;
+        }
     }
 
     span {
-        font-family: Karla;
+        font-family: 'Karla';
         font-size: 18px;
         font-weight: 400;
         line-height: 21.6px;
         text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
         color: rgba(255, 255, 255, 0.8);
+
+        @media(max-width: 1350px) {
+            font-size: 16px;
+            line-height: 19.2px;
+            text-align: left;
+        }
     }
 
     @media(max-width: 1350px) {
         width: 80%;
         height: unset;
         flex-direction: column-reverse;
+
+        .next-project-image-section-responsive {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 0;
+        }
     }
 }
 
@@ -109,7 +138,6 @@
                 flex-direction: unset;
                 width: 96%;
                 justify-content: center;
-                padding-top: 24px;
                 padding-right: unset;
                 gap: unset;
             }
@@ -118,6 +146,8 @@
         @media(max-width: 1350px) {
             display: flex;
             justify-content: center;
+            align-items: end;
+            height: 420px;
         }
     }
 
@@ -188,11 +218,17 @@
                 transform: scale(1.2);
             }
         }
+
+        @media(max-width: 1350px) {
+            font-size: 12px;
+            padding: 8px;
+        }
     }
 
     @media(max-width: 1350px) {
         display: flex;
         justify-content: space-between;
+        padding-bottom: 24px;
     }
 }
 
