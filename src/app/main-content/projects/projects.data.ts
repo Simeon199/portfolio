@@ -35,7 +35,7 @@ export const TECHNOLOGY_DATA: technologyData = {
         gitHubLink: 'https://github.com/Simeon199/el_pollo_loco'
     },
     daBubble: {
-        title: 'DABubble',
+        title: 'DABubble (Coming Soon)',
         projectImageSource: '../../../../assets/img/da-bubble.png',
         description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization',
         technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
