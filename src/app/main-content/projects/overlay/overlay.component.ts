@@ -55,7 +55,7 @@ export class OverlayComponent {
     } else if (key == 'elPolloLoco') {
       return 'El Pollo Loco';
     } else if (key == 'daBubble') {
-      return 'DABubble';
+      return 'DABubble (Coming Soon)';
     } else {
       return 'Error';
     }

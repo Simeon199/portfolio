@@ -16,11 +16,11 @@
         flex-direction: column;
     }
 
-    @media(max-width: 700px) {
-        max-width: 500px;
-        width: 80%;
-        margin: 0 auto;
-    }
+    // @media(max-width: 700px) {
+    //     max-width: 500px;
+    //     width: 80%;
+    //     margin: 0 auto;
+    // }
 }
 
 .who-i-am-section {
@@ -32,6 +32,10 @@
     @media(max-width: 1350px) {
         padding-top: 20px;
         align-self: unset;
+    }
+
+    @media(max-width: 700px) {
+        width: 96%;
     }
 }
 
@@ -95,6 +99,10 @@ img {
 
     @media(max-width: 1350px) {
         align-self: unset;
+    }
+
+    @media(max-width: 700px) {
+        width: 96%;
     }
 }
 

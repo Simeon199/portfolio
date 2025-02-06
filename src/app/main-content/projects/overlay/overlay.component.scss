@@ -139,6 +139,14 @@
 
 .next-project-image-section-responsive {
     display: none;
+
+    @media(max-width: 1300px) {
+        display: flex;
+
+        span {
+            color: rgb(61, 207, 182);
+        }
+    }
 }
 
 .close-button-img {
