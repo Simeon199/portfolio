@@ -35,7 +35,17 @@
     }
 }
 
-app-description-wrapper {
+.about-me-description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    border-radius: 30px;
+    background-color: rgb(31, 46, 43);
+    border: 1px solid rgba(61, 207, 182, 1);
+    max-width: 568px;
+    flex-wrap: wrap;
+
     h2 {
         font-size: 64px;
         font-family: 'Fira Code';
@@ -51,7 +61,7 @@ app-description-wrapper {
         gap: 16px;
 
         h2 {
-            font-family: Fira Code;
+            font-family: 'Fira Code';
             font-size: 56px;
             font-weight: 700;
             line-height: 44.8px;
@@ -59,13 +69,45 @@ app-description-wrapper {
         }
 
         span {
-            font-family: Karla;
+            font-family: 'Karla';
             font-size: 16px;
             font-weight: 400;
             line-height: 19.2px;
         }
     }
 }
+
+// app-description-wrapper {
+//     h2 {
+//         font-size: 64px;
+//         font-family: 'Fira Code';
+//         font-weight: 700;
+//         line-height: 64px;
+//     }
+
+//     span {
+//         color: rgba(255, 255, 255, 0.8);
+//     }
+
+//     @media(max-width: 1350px) {
+//         gap: 16px;
+
+//         h2 {
+//             font-family: Fira Code;
+//             font-size: 56px;
+//             font-weight: 700;
+//             line-height: 44.8px;
+//             text-align: left;
+//         }
+
+//         span {
+//             font-family: Karla;
+//             font-size: 16px;
+//             font-weight: 400;
+//             line-height: 19.2px;
+//         }
+//     }
+// }
 
 .information-wrapper {
     display: flex;
