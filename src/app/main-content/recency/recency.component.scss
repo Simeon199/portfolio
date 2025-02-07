@@ -10,6 +10,8 @@
 
     @media(max-width: 500px) {
         gap: 32px;
+        padding-bottom: 48px;
+        padding-top: 48px;
     }
 
     .recency-carousel {
@@ -25,6 +27,11 @@
             z-index: 20;
             top: 0;
             left: 32%;
+
+
+            @media(max-width: 500px) {
+                left: 34%;
+            }
 
             img {
 
@@ -79,5 +86,9 @@
 
     h2 {
         color: rgba(61, 207, 182, 1);
+
+        @media(max-width: 500px) {
+            padding-left: 24px;
+        }
     }
 }

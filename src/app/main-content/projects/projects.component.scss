@@ -8,6 +8,10 @@
     @media(max-width: 1350px) {
         justify-content: center;
     }
+
+    @media(max-width: 500px) {
+        padding-top: 48px;
+    }
 }
 
 .content-wrapper-without-pop-ups {
@@ -69,6 +73,10 @@ h2:nth-child(2) {
         font-weight: 700;
         line-height: 56px;
         text-align: left;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 44px;
     }
 }
 

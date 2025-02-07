@@ -15,6 +15,10 @@
             -webkit-backdrop-filter: blur(5.300000190734863px);
             backdrop-filter: blur(5.300000190734863px);
         }
+
+        @media(max-width: 500px) {
+            left: 16px;
+        }
     }
 
     @media(max-width: 1200px) {
@@ -29,6 +33,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+
 
     h2:nth-child(1) {
         font-family: 'Fira Code';
@@ -49,6 +54,10 @@
     .contact-and-work-buttons {
         display: flex;
         gap: 48px;
+
+        @media(max-width: 500px) {
+            gap: 32px;
+        }
     }
 
     @media(max-width: 1200px) {
@@ -59,10 +68,16 @@
         }
 
         h2:nth-child(2) {
-            font-family: Karla;
+            font-family: 'Karla';
             font-size: 62px;
             line-height: 62px;
             text-align: left;
+        }
+    }
+
+    @media(max-width: 500px) {
+        h2:nth-child(2) {
+            font-size: 44px;
         }
     }
 }
@@ -89,7 +104,7 @@
         white-space: nowrap;
 
         li {
-            font-family: Karla;
+            font-family: 'Karla';
             font-size: 32px;
             font-weight: 400;
             line-height: 38.4px;
@@ -118,6 +133,10 @@
     .center-image {
         display: flex;
         justify-content: center;
+    }
+
+    @media(max-width: 500px) {
+        right: 16px;
     }
 }
 
