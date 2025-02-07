@@ -4,6 +4,8 @@ footer {
     justify-content: space-between;
     margin-top: 96px;
     height: 126px;
+    padding-right: 24px;
+    padding-left: 24px;
 
     @media(max-width: 600px) {
         height: 240px;

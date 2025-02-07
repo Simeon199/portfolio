@@ -5,9 +5,12 @@
     justify-content: center;
     gap: 48px;
     padding-top: 96px;
+    padding-bottom: 96px;
     overflow: hidden;
 
-
+    @media(max-width: 500px) {
+        gap: 32px;
+    }
 
     .recency-carousel {
         display: flex;
@@ -22,6 +25,14 @@
             z-index: 20;
             top: 0;
             left: 32%;
+
+            img {
+
+                @media(max-width: 500px) {
+                    width: 64px;
+                    height: auto
+                }
+            }
         }
     }
 
