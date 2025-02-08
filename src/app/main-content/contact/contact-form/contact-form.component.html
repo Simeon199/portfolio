@@ -1,16 +1,22 @@
 <div class="contact-form-container">
-    <form action="/action_page.php">
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="form-group">
             <label for="name">What's your name?</label>
-            <input type="text" id="name" name="name" placeholder="Your name goes here">
+            <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name goes here"
+                required>
         </div>
         <div class="form-group">
             <label for="email">What's your email?</label>
-            <input type="text" id="mail" name="email" placeholder="youremail@email.com">
+            <input [(ngModel)]="contactData.email" type="email" id="mail" name="email" placeholder="youremail@email.com"
+                required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
         </div>
         <div class="form-group">
             <label for="subject">How can I help you?</label>
-            <input id="subject" name="subject" placeholder="Hello Simon, I am interested in...">
+            <input #message="ngModel" [(ngModel)]="contactData.message" id="subject" name="subject"
+                placeholder="Hello Simon, I am interested in..." required>
+            @if(!message.valid && message.touched){
+            <span>Please enter a message</span>
+            }
         </div>
         <div class="checkbox-validation-section">
             <div class="checkbox-and-validation">
