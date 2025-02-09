@@ -1,6 +1,6 @@
 export interface recencies {
     [key: string]: string;
-    recency1: string;
-    recency2: string;
+    'A. Qarar': string;
+    'M. Žalec': string;
     recency3: string;
 }
