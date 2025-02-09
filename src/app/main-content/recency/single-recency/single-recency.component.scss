@@ -6,14 +6,15 @@
     color: rgba(255, 255, 255, 0.8);
     max-width: 568px;
     flex-wrap: wrap;
-    width: 632px;
-    height: 248px;
+    width: 650px;
+    height: 275px;
     padding: 48px 40px 48px 40px;
     gap: 44px;
     border-radius: 32px;
 
     @media(max-width: 1200px) {
-        width: 358px;
+        width: 400px;
+        height: 275px;
         padding: 40px;
         gap: 0px;
         justify: space-between;
@@ -22,5 +23,6 @@
     @media(max-width: 500px) {
         width: 270px;
         font-size: 14px;
+        padding: 16px;
     }
 }

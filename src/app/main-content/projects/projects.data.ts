@@ -3,7 +3,7 @@ export const TECHNOLOGY_DATA: technologyData = {
     join: {
         title: 'Join',
         projectImageSource: '../../../../assets/img/join_image.png',
-        description: 'What is this project about? Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+        description: 'Bei dieser Anwendung handelt es sich um einen Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Tasks mit Hilfe der Drag-and-Drop-Funktionalität und weisen Benutzer und Kategorien zu.',
         technologyList: ['HTML', '|', 'CSS', '|', 'JavaScript'],
         technologyImageIcons: [
             '../../../../assets/img/html-technology.svg',
@@ -20,7 +20,7 @@ export const TECHNOLOGY_DATA: technologyData = {
     elPolloLoco: {
         title: 'El Pollo Loco',
         projectImageSource: '../../../../assets/img/pollo_loco.png',
-        description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+        description: 'In diesem Jump-and-Run-Spiel, das mit objektorientierter Programmierung realisiert wurde, kämpft Pepe Peligroso gegen eine Gruppe verrückter Hühner. Seien Sie dabei und unterstützen Sie ihn bei diesem Abenteuer!',
         technologyList: ['HTML', '|', 'CSS', '|', 'JavaScript'],
         technologyImageIcons: [
             '../../../../assets/img/html-technology.svg',
@@ -37,7 +37,7 @@ export const TECHNOLOGY_DATA: technologyData = {
     daBubble: {
         title: 'DABubble (Coming Soon)',
         projectImageSource: '../../../../assets/img/da-bubble.png',
-        description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization',
+        description: 'In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht.',
         technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
         technologyImageIcons: [
             '../../../../assets/img/angular-technology.svg',

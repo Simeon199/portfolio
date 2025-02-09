@@ -15,8 +15,8 @@ export class ContactFormComponent {
 
 
   @Input() emailPlaceHolder: string = 'youremail@email.com';
-  @Input() namePlaceHolder: string = 'Your name goes here';
-  @Input() messagePlaceHolder: string = 'Hello Simon, I am interested in...';
+  @Input() namePlaceHolder: string = 'Geben Sie Ihren Namen hier an';
+  @Input() messagePlaceHolder: string = 'Hallo Simon, Ich bin interessiert an...';
 
   contactData = {
     name: "",

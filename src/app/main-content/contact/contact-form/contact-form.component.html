@@ -1,34 +1,34 @@
 <div class="contact-form-container">
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="form-group">
-            <label for="name">What's your name?</label>
+            <label for="name">Wie ist Ihr Name?</label>
             <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
                 placeholder={{namePlaceHolder}} required>
             @if(!name.valid && name.touched){
-            <span style="color: #EC7B7BCC; font-size: 16px">Oops! It seems your name is missing</span>
+            <span style="color: #EC7B7BCC; font-size: 16px">Oops! Es scheint, als würde Ihr Name fehlen</span>
             }
         </div>
         <div class="form-group">
-            <label for="email">What's your email?</label>
+            <label for="email">Wie ist Ihre E-Mail?</label>
             <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="mail" name="email"
                 placeholder={{emailPlaceHolder}} required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
             @if(!email.valid && email.touched){
-            <span style="color: #EC7B7BCC; font-size: 16px">Hoppla! Your email is required</span>
+            <span style="color: #EC7B7BCC; font-size: 16px">Hoppla! Ihre E-Mail ist erfordert</span>
             }
         </div>
         <div class="form-group">
-            <label for="subject">How can I help you?</label>
+            <label for="subject">Wie kann ich Ihnen helfen?</label>
             <input #message="ngModel" [(ngModel)]="contactData.message" minlength="4" id="subject" name="subject"
                 placeholder={{messagePlaceHolder}} required>
             @if(!message.valid && message.touched){
-            <span style="color: #EC7B7BCC; font-size: 16px">What do you need to develop?</span>
+            <span style="color: #EC7B7BCC; font-size: 16px">Wie kann ich Ihnen helfen?</span>
             }
         </div>
         <div class="checkbox-validation-section">
             <div class="checkbox-and-validation">
                 <img src="../../../../assets/img/checkbox_icon_blank.svg" alt="checkbox_blank">
-                <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as
-                    outlined.
+                <span>Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner
+                    Daten, wie angegeben, zu.
                 </span>
             </div>
             <input id="submit-input" type="submit" value="Say Hello">
