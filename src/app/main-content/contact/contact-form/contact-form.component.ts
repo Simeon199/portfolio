@@ -22,7 +22,8 @@ export class ContactFormComponent {
     name: "",
     email: "",
     message: "",
-    submitted: false
+    submitted: false,
+    agreedToPrivacy: false
   }
 
   // mailTest = true;

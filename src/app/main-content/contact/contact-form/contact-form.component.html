@@ -21,17 +21,24 @@
             <input #message="ngModel" [(ngModel)]="contactData.message" minlength="4" id="subject" name="subject"
                 placeholder={{messagePlaceHolder}} required>
             @if(!message.valid && message.touched){
-            <span style="color: #EC7B7BCC; font-size: 16px">Wie kann ich Ihnen helfen?</span>
+            <span style="color: #EC7B7BCC; font-size: 16px">Es scheint als würde die Nachricht fehlen</span>
             }
         </div>
         <div class="checkbox-validation-section">
             <div class="checkbox-and-validation">
-                <img src="../../../../assets/img/checkbox_icon_blank.svg" alt="checkbox_blank">
-                <span>Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner
-                    Daten, wie angegeben, zu.
-                </span>
+                <label>
+                    <input #checkbox="ngModel" [(ngModel)]="contactData.agreedToPrivacy" type="checkbox"
+                        name="agreedToPrivacy" #checkboxId>
+                    <!-- <img src="../../../../assets/img/checkbox_icon_blank.svg" alt="checkbox_blank"> -->
+                    <span>Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner
+                        Daten, wie angegeben, zu.
+                    </span>
+                </label>
             </div>
-            <input id="submit-input" type="submit" value="Say Hello">
+            @if(!checkbox.valid && checkbox.touched){
+            <span style="color: #EC7B7BCC; font-size: 16px">Bitte akzeptieren Sie die Datenschutzerklärung</span>
+            }
+            <input id="submit-input" type="submit" value="Say Hello" [disabled]="!contactForm.valid">
         </div>
     </form>
 </div>
