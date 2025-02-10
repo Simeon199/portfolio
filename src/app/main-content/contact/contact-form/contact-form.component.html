@@ -28,15 +28,15 @@
             <div class="checkbox-and-validation">
                 <label>
                     <input #checkbox="ngModel" [(ngModel)]="contactData.agreedToPrivacy" type="checkbox"
-                        name="agreedToPrivacy" #checkboxId>
-                    <!-- <img src="../../../../assets/img/checkbox_icon_blank.svg" alt="checkbox_blank"> -->
+                        name="agreedToPrivacy">
                     <span>Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner
                         Daten, wie angegeben, zu.
                     </span>
                 </label>
             </div>
             @if(!checkbox.valid && checkbox.touched){
-            <span style="color: #EC7B7BCC; font-size: 16px">Bitte akzeptieren Sie die Datenschutzerklärung</span>
+            <span style="color: #EC7B7BCC; font-size: 16px">Um Fortzufahren akzeptieren Sie bitte die
+                Datenschutzerklärung</span>
             }
             <input id="submit-input" type="submit" value="Say Hello" [disabled]="!contactForm.valid">
         </div>
