@@ -7,6 +7,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RecencyComponent } from './recency/recency.component';
 import { ContactComponent } from './contact/contact.component';
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-main-content',
@@ -25,5 +26,9 @@ import { ContactComponent } from './contact/contact.component';
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
+  constructor(private dbService: DatabaseService) { }
 
+  addEntry() {
+    this.dbService.addTestEntry();
+  }
 }
