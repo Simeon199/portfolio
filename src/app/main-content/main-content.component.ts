@@ -7,6 +7,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RecencyComponent } from './recency/recency.component';
 import { ContactComponent } from './contact/contact.component';
+// import { DatabaseServiceComponent } from '../database-service/database-service.component';
 import { DatabaseService } from '../database.service';
 
 @Component({
@@ -20,7 +21,7 @@ import { DatabaseService } from '../database.service';
     ProjectsComponent,
     RecencyComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
@@ -29,6 +30,6 @@ export class MainContentComponent {
   constructor(private dbService: DatabaseService) { }
 
   addEntry() {
-    this.dbService.addTestEntry();
+    this.dbService.getTranslation('hallo');
   }
 }

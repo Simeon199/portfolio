@@ -1,9 +1,9 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 import { routes } from './app.routes';
-import { provideFirebaseApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 // import { collection, addDoc } from '@firebase/firestore';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
