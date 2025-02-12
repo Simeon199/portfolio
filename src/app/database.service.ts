@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Firestore, collection, query, where, getDocs } from '@angular/fire/firestore';
 import { BehaviorSubject } from 'rxjs';
 
@@ -30,18 +30,14 @@ export class DatabaseService {
         }
         return null;
     }
-    // private firestore = inject(Firestore);
 
-    // async addTestEntry() {
-    //     try {
-    //         const testCollection = collection(this.firestore, "testCollection");
-    //         const docRef = await addDoc(testCollection, {
-    //             name: "Test-Eintrag",
-    //             timestamp: new Date()
-    //         });
-    //         console.log("Dokument erfolgreich hinzugefügt mit ID:", docRef.id);
-    //     } catch (error) {
-    //         console.error("Fehler beim Hinzufügen des Dokuments: ", error);
-    //     }
-    // }
+    async getDocumentsByKey(collectionName: string) {
+        const colRef = collection(this.firestore, collectionName);
+        // console.log('Collection Reference:', colRef);
+        const snapshot = await getDocs(colRef);
+        console.log(snapshot.docs.map(doc => doc.data()));
+        // console.log('Snapshot:', snapshot);
+        // console.log('Gibt es Dokumente?', !snapshot.empty);
+        // console.log('Alle Dokumente:', snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+    }
 }

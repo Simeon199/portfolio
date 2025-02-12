@@ -30,6 +30,6 @@ export class MainContentComponent {
   constructor(private dbService: DatabaseService) { }
 
   addEntry() {
-    this.dbService.getTranslation('hallo');
+    this.dbService.getDocumentsByKey('aboutMe');
   }
 }
