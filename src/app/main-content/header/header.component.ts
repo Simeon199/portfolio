@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,13 @@ export class HeaderComponent {
 
   isGermanButtonActive: boolean = false;
   isDropdownMenuActivated: boolean = false;
+
+  constructor(private sharedService: SharedService) { }
+
+  toggleLanguage() {
+    this.isGermanButtonActive = !this.isGermanButtonActive;
+    this.sharedService.setGermanButtonActive(this.isGermanButtonActive);
+  }
 
   checkActiveButtonStyle(activateLanguage: string) {
     if (activateLanguage == 'german') {
