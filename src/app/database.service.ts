@@ -37,6 +37,6 @@ export class DatabaseService {
     async getDocumentsByKey(collectionName: string) {
         const colRef = collection(this.firestore, collectionName);
         const snapshot = await getDocs(colRef);
-        console.log(snapshot.docs.map(doc => doc.data()));
+        return snapshot.docs.map(doc => doc.data());
     }
 }

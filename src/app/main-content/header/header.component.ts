@@ -18,17 +18,13 @@ export class HeaderComponent {
 
   constructor(private sharedService: SharedService) { }
 
-  toggleLanguage() {
-    this.isGermanButtonActive = !this.isGermanButtonActive;
-    this.sharedService.setGermanButtonActive(this.isGermanButtonActive);
-  }
-
   checkActiveButtonStyle(activateLanguage: string) {
     if (activateLanguage == 'german') {
       this.isGermanButtonActive = true;
     } else if (activateLanguage == 'english') {
       this.isGermanButtonActive = false;
     }
+    this.sharedService.setGermanButtonActive(this.isGermanButtonActive);
   }
 
   showOrHideDropdown() {
