@@ -1,4 +1,14 @@
 {
+    "header": {
+        "navbarTitleFirst": "Über Mich",
+        "navbarTitleSecond": "Fähigkeiten",
+        "navbarTitleThird": "Projekte"
+    },
+    "personPresentation": {
+        "frontendTitle": "Frontend Entwickler",
+        "buttonContentOne": "Meine Projekte",
+        "buttonContentTwo": "Kontakt"
+    },
     "aboutMe": {
         "h2First": "Wer ich bin",
         "h2Second": "Über Mich",
@@ -6,5 +16,55 @@
         "spanSecond": "Ich bin sowohl vor Ort als auch remote einsatzbereit – je nach Anforderung.",
         "spanThird": "Ich lege Wert darauf, mich ständig weiterzuentwickeln, neue Herausforderungen anzunehmen und Ideen in funktionierende und benutzerfreundliche Produkte umzusetzen.",
         "spanFourth": "Ich freue mich auf den Austausch mit Ihnen – vielleicht ergibt sich ja ein spannendes Projekt!"
+    },
+    "skillSet": {
+        "h2First": "Technologien",
+        "h2Second": "Fähigkeiten",
+        "h2Third": "Ihnen fehlt eine Fähigkeit",
+        "spanFirst": "In meinen Projekten habe ich mit verschiedenen Frontend-Technologien gearbeitet und immer wieder neue Konzepte kennengelernt. Da sich die Webentwicklung ständig weiterentwickelt, bleibe ich neugierig und offen für neue Tools und Methoden.",
+        "spanSecond": "Lassen Sie es mich wissen! Ich bin immer offen dafür, Neues zu lernen und meinen Horizont zu erweitern."
+    },
+    "featuredProjects": {
+        "h2First": "Vorgestelle Projekte",
+        "spanFirst": "Entdecken Sie hier eine Auswahl meiner Arbeiten. Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
+    },
+    "Join": {
+        "whatIsProjectAbout": "Worum geht es in diesem Projekt?",
+        "content": "Bei dieser Anwendung handelt es sich um einen Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Tasks mit Hilfe der Drag-and-Drop-Funktionalität und weisen Benutzer und Kategorien zu."
+    },
+    "elPolloLoco": {
+        "whatIsProjectAbout": "Worum geht es in diesem Problem?",
+        "content": "In diesem Jump-and-Run-Spiel, das mit objektorientierter Programmierung realisiert wurde, kämpft Pepe Peligroso gegen eine Gruppe verrückter Hühner. Seien Sie dabei und unterstützen Sie ihn bei diesem Abenteuer!"
+    },
+    "daBubble": {
+        "whatIsProjectAbout": "Worum geht es in diesem Problem?",
+        "content": "In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht."
+    },
+    "recencies": {
+        "title": "Was meine Kollegen über mich sagen",
+        "firstRecency": "Simons Mitarbeit bei unserem Join-Gruppenprojekt war sehr erfrischend und bereichernd, da er immer zur Stelle war, wenn es ein Problem gab und auch ausdauernd auf die Lösung hingearbeitet hat. Auch wenn man einmal Unterstützung brauchte, konnte man ihn einfach fragen und er hat sich die Zeit genommen, einem die Fragen zu beantworten.",
+        "secondRecency": "Ich hatte das Vergnügen, mit Simon an unserem gemeinsamen Projekt zu arbeiten. Er war immer zuverlässig und brachte sich tatkräftig in alle Aufgaben ein. Besonders beeindruckt hat mich, wie schnell er neue Konzepte und Technologien aufgenommen hat. Simon ist ein sehr wertvoller Partner, der stets auf uns zugegangen ist und maßgeblich dazu beitrug, dass wir unser Ziel erfolgreich erreichen konnten."
+    },
+    "contact": {
+        "h2First": "Kontakt",
+        "h2Second": "Lassen Sie uns zusammenarbeiten",
+        "h2Third": "Sie benötigen Hilfe bei einem Problem?",
+        "spanFirst": "Nutzen Sie gerne das Kontaktformular, um mir eine Nachricht zu senden. Ich freue mich darauf, mehr über Ihre Ideen zu erfahren und Ihr Projekt zu unterstützen. Benötigen Sie Unterstützung im Frontend-Bereich? Lassen Sie uns gerne darüber sprechen!"
+    },
+    "contactFormular": {
+        "firstInput": "Wie ist Ihr Name?",
+        "secondInput": "Wie ist Ihre E-Mail?",
+        "thirdInput": "Wie kann Ich Ihnen helfen",
+        "firstInputPlaceholder": "Geben Sie Ihren Namen ein",
+        "secondInputPlaceholder": "Geben Sie Ihre E-Mail ein",
+        "thirdInputPlaceholder": "Hallo Simon, Ich bin interessiert an...",
+        "firstInputError": "Oops! Es scheint, als würde Ihr Name fehlen",
+        "secondInputError": "Hoppla! Ihre E-Mail ist erfordert",
+        "thirdInputError": "Es scheint als würde die Nachricht fehlen",
+        "legalNoticeMessage": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten, wie angegeben, zu."
+    },
+    "footer": {
+        "jobTitle": "Webentwickler",
+        "location": "Deutschland"
     }
 }

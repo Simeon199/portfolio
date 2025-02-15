@@ -1,4 +1,14 @@
 {
+    "header": {
+        "navbarTitleFirst": "About Me",
+        "navbarTitleSecond": "Skill Set",
+        "navbarTitleThird": "Projects"
+    },
+    "personPresentation": {
+        "frontendTitle": "Frontend Developer",
+        "buttonContentOne": "Check My Work",
+        "buttonContentTwo": "Contact Me"
+    },
     "aboutMe": {
         "h2First": "Who I am",
         "h2Second": "About Me",
@@ -6,5 +16,55 @@
         "spanSecond": "I am available both on site and remotely - depending on requirements.",
         "spanThird": "I attach great importance to constantly developing myself, taking on new challenges and turning ideas into functioning and user-friendly products.",
         "spanFourth": "I look forward to exchanging ideas with you - perhaps an exciting project will arise!"
+    },
+    "skillSet": {
+        "h2First": "Technologies",
+        "h2Second": "Skill Set",
+        "h2Third": "Are you missing a specific skill?",
+        "spanFirst": "In my projects, I have worked with various front-end technologies and have continuously learned new concepts. As web development is constantly evolving, I remain curious and open to new tools and methods.",
+        "spanSecond": "Let me know! I'm always open to learning new things and broadening my horizons."
+    },
+    "featuredProjects": {
+        "h2First": "Featured Projects",
+        "spanFirst": "Discover a selection of my work here. Interact with the projects to see my skills in action."
+    },
+    "Join": {
+        "whatIsProjectAbout": "What's this project about?",
+        "content": "This application is a task manager based on the Kanban system. Create and organize tasks using the drag-and-drop functionality and assign users and categories."
+    },
+    "elPolloLoco": {
+        "whatIsProjectAbout": "What's this project about?",
+        "content": "In this jump-and-run game, which was realized with object-oriented programming, Pepe Peligroso fights against a group of crazy chickens. Join him and support him in this adventure!"
+    },
+    "daBubble": {
+        "whatIsProjectAbout": "What's this project about?",
+        "content": "Based on Slack, this app offers a user-friendly platform for optimizing team communication. Real-time messages and a structured channel organization make communication within the team noticeably easier."
+    },
+    "recencies": {
+        "title": "What my colleagues say about me",
+        "firstRecency": "Simons Mitarbeit bei unserem Join-Gruppenprojekt war sehr erfrischend und bereichernd, da er immer zur Stelle war, wenn es ein Problem gab und auch ausdauernd auf die Lösung hingearbeitet hat. Auch wenn man einmal Unterstützung brauchte, konnte man ihn einfach fragen und er hat sich die Zeit genommen, einem die Fragen zu beantworten.",
+        "secondRecency": "Ich hatte das Vergnügen, mit Simon an unserem gemeinsamen Projekt zu arbeiten. Er war immer zuverlässig und brachte sich tatkräftig in alle Aufgaben ein. Besonders beeindruckt hat mich, wie schnell er neue Konzepte und Technologien aufgenommen hat. Simon ist ein sehr wertvoller Partner, der stets auf uns zugegangen ist und maßgeblich dazu beitrug, dass wir unser Ziel erfolgreich erreichen konnten."
+    },
+    "contact": {
+        "h2First": "Kontakt",
+        "h2Second": "Let's work together",
+        "h2Third": "Got a problem to solve?",
+        "spanFirst": "Please feel free to use the contact form to send me a message. I look forward to learning more about your ideas and supporting your project. Do you need support in the frontend area? Let's talk about it!"
+    },
+    "contactFormular": {
+        "firstInput": "What's your name?",
+        "secondInput": "What's your email?",
+        "thirdInput": "How can I help you?",
+        "firstInputPlaceholder": "Your name goes here",
+        "secondInputPlaceholder": "Please enter your email",
+        "thirdInputPlaceholder": "Hello Simon, I am interested in...",
+        "firstInputError": "Oops! It seems your name is missing",
+        "secondInputError": "Hoppla! Your e-mail is required",
+        "thirdInputError": "It seems like the message is missing",
+        "legalNoticeMessage": "I have read the privacy policy and agree to the processing of my data as stated."
+    },
+    "footer": {
+        "jobTitle": "Web Developer",
+        "location": "Germany"
     }
 }
