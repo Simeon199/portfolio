@@ -4,15 +4,17 @@ import { NgOptimizedImage } from '@angular/common';
 // import { DatabaseService } from '../../database.service';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
+import { TranslateModule } from '@ngx-translate/core';
 // import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-person-description',
   standalone: true,
-  imports: [NgOptimizedImage, CommonModule],
+  imports: [NgOptimizedImage, CommonModule, TranslateModule],
   templateUrl: './person-description.component.html',
   styleUrl: './person-description.component.scss'
 })
+
 export class PersonDescriptionComponent {
   // allAboutMeContainer: any[] = [];
   currentLanguage: string = 'de';
