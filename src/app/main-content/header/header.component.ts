@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { SharedService } from '../../shared.service';
+import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -29,8 +27,6 @@ export class HeaderComponent {
     this.languageService.setLanguage(newLang);
   }
 
-  // Dem Konstruktor wurde ursprünglich das folgende Argument übergeben: private sharedService: SharedService
-
   checkActiveButtonStyle(language: string) {
     const newLang = language === 'german' ? 'de' : 'en';
     this.languageService.setLanguage(newLang);
@@ -39,8 +35,6 @@ export class HeaderComponent {
     } else if (language == 'english') {
       this.isGermanButtonActive = false;
     }
-    // this.sharedService.setGermanButtonActive(this.isGermanButtonActive);
-    // this.languageService.setGermanButtonActive(this.isGermanButtonActive);
   }
 
   showOrHideDropdown() {

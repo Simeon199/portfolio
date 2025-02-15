@@ -11,13 +11,9 @@ export class LanguageService {
     currentLanguage$ = this.currentLanguageSubject.asObservable();
 
     constructor(private translate: TranslateService) {
-        // Ünterstützte Sprache definieren
         this.translate.addLangs(['de', 'en']);
-
-        // Standardsprache setzen
         const browserLang = navigator.language.split('-')[0];
         const defaultLang = this.translate.getLangs().includes(browserLang) ? browserLang : 'de';
-
         this.setLanguage(defaultLang);
     }
 
@@ -29,19 +25,4 @@ export class LanguageService {
     getCurrentLanguage(): string {
         return this.currentLanguageSubject.value;
     }
-
-    // getCurrentLanguage(): string {
-    //     return this.translate.currentLang
-    // }
-
-    // private isGermanButtonActiveSource = new BehaviorSubject<boolean>(false);
-    // isGermanButtonActive$ = this.isGermanButtonActiveSource.asObservable();
-
-    // setGermanButtonActive(state: boolean) {
-    //     this.isGermanButtonActiveSource.next(state);
-    // }
-
-    // switchLanguage(lang: string) {
-    //     this.translate.use(lang);
-    // }
 }
