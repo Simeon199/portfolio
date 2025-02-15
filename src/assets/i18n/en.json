@@ -24,7 +24,8 @@
     "skillSet": {
         "h2First": "Technologies",
         "h2Second": "Skill Set",
-        "h2Third": "Are you missing a specific skill?",
+        "h3First": "Are you missing a",
+        "h3Second": "specific skill?",
         "spanFirst": "In my projects, I have worked with various front-end technologies and have continuously learned new concepts. As web development is constantly evolving, I remain curious and open to new tools and methods.",
         "spanSecond": "Let me know! I'm always open to learning new things and broadening my horizons."
     },
@@ -46,8 +47,8 @@
     },
     "recencies": {
         "title": "What my colleagues say about me",
-        "firstRecency": "Simons Mitarbeit bei unserem Join-Gruppenprojekt war sehr erfrischend und bereichernd, da er immer zur Stelle war, wenn es ein Problem gab und auch ausdauernd auf die Lösung hingearbeitet hat. Auch wenn man einmal Unterstützung brauchte, konnte man ihn einfach fragen und er hat sich die Zeit genommen, einem die Fragen zu beantworten.",
-        "secondRecency": "Ich hatte das Vergnügen, mit Simon an unserem gemeinsamen Projekt zu arbeiten. Er war immer zuverlässig und brachte sich tatkräftig in alle Aufgaben ein. Besonders beeindruckt hat mich, wie schnell er neue Konzepte und Technologien aufgenommen hat. Simon ist ein sehr wertvoller Partner, der stets auf uns zugegangen ist und maßgeblich dazu beitrug, dass wir unser Ziel erfolgreich erreichen konnten."
+        "firstRecency": "Simon's involvement in our Join group project was very refreshing and enriching, as he was always on hand when there was a problem and also persistently worked towards a solution. Even if you needed support, you could just ask him and he would take the time to answer your questions.",
+        "secondRecency": "I had the pleasure of working with Simon on our joint project. He was always reliable and actively involved in all tasks. I was particularly impressed by how quickly he picked up new concepts and technologies. Simon is a very valuable partner who always approached us and was instrumental in helping us achieve our goal."
     },
     "contact": {
         "h2First": "Kontakt",

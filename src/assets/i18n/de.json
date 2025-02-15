@@ -24,7 +24,8 @@
     "skillSet": {
         "h2First": "Technologien",
         "h2Second": "Fähigkeiten",
-        "h2Third": "Ihnen fehlt eine Fähigkeit",
+        "h3First": "Ihnen fehlt",
+        "h3Second": "eine Fähigkeit",
         "spanFirst": "In meinen Projekten habe ich mit verschiedenen Frontend-Technologien gearbeitet und immer wieder neue Konzepte kennengelernt. Da sich die Webentwicklung ständig weiterentwickelt, bleibe ich neugierig und offen für neue Tools und Methoden.",
         "spanSecond": "Lassen Sie es mich wissen! Ich bin immer offen dafür, Neues zu lernen und meinen Horizont zu erweitern."
     },
