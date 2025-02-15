@@ -7,7 +7,11 @@
     "personPresentation": {
         "frontendTitle": "Frontend Entwickler",
         "buttonContentOne": "Meine Projekte",
-        "buttonContentTwo": "Kontakt"
+        "buttonContentTwo": "Kontakt",
+        "sliderContentOne": "Frontend Entwickler",
+        "sliderContentTwo": "Sitz in Rust",
+        "sliderContentThree": "Verfügbar für Präsenzarbeit",
+        "sliderContentFour": "Verfügbar für Remote-Arbeit"
     },
     "aboutMe": {
         "h2First": "Wer ich bin",
