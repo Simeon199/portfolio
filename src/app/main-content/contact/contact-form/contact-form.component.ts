@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from '../../../language.service';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, TranslateModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
@@ -24,6 +26,13 @@ export class ContactFormComponent {
     message: "",
     submitted: false,
     agreedToPrivacy: false
+  }
+
+  currentLanguage: string = "de";
+  constructor(private languageService: LanguageService) {
+    this.languageService.currentLanguage$.subscribe(lang => {
+      this.currentLanguage = lang;
+    });
   }
 
   // mailTest = true;

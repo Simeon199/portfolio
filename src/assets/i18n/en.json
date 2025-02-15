@@ -66,7 +66,8 @@
         "firstInputError": "Oops! It seems your name is missing",
         "secondInputError": "Hoppla! Your e-mail is required",
         "thirdInputError": "It seems like the message is missing",
-        "legalNoticeMessage": "I have read the privacy policy and agree to the processing of my data as stated."
+        "legalNoticeMessage": "I have read the privacy policy and agree to the processing of my data as stated.",
+        "legalNoticeMessageError": "To continue, please accept the privacy policy"
     },
     "footer": {
         "jobTitle": "Web Developer",

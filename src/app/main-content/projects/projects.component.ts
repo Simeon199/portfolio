@@ -4,6 +4,8 @@ import { SingleProjectFadedInComponent } from './single-project-faded-in/single-
 import { OverlayComponent } from './overlay/overlay.component';
 import { CommonModule } from '@angular/common';
 import { TECHNOLOGY_DATA } from './projects.data';
+import { LanguageService } from '../../language.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
@@ -13,6 +15,7 @@ import { TECHNOLOGY_DATA } from './projects.data';
     SingleProjectComponent,
     OverlayComponent,
     CommonModule,
+    TranslateModule
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
@@ -37,6 +40,13 @@ export class ProjectsComponent {
   isOverlayVisible = false;
   technologyData = TECHNOLOGY_DATA;
   technologyArray = Object.values(this.technologyData);
+
+  currentLanguage: string = "de";
+  constructor(private languageService: LanguageService) {
+    this.languageService.currentLanguage$.subscribe(lang => {
+      this.currentLanguage = lang;
+    });
+  }
 
   updateVariablesFromChild(updatedValues: {
     currentProjectOpened: string,

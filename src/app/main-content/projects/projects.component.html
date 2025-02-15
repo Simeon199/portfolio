@@ -8,11 +8,8 @@
     <div class="content-wrapper-without-pop-ups">
         <div class="content-above-single-projects">
             <h2>Portfolio</h2>
-            <h2>Vorgestellte Projekte</h2>
-            <span>
-                Entdecken Sie hier eine Auswahl meiner Arbeiten. Interagieren Sie mit den
-                Projekten, um meine Fähigkeiten in Aktion zu sehen.
-            </span>
+            <h2>{{"featuredProjects.h2First" | translate}}</h2>
+            <span>{{"featuredProjects.spanFirst" | translate}}</span>
         </div>
         <div class="collection-of-single-projects" *ngFor="let singleProject of technologyArray">
             <app-single-project [index]='singleProject.projectIndexAsString' [title]="singleProject.title"

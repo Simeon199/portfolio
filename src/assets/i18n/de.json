@@ -66,7 +66,8 @@
         "firstInputError": "Oops! Es scheint, als würde Ihr Name fehlen",
         "secondInputError": "Hoppla! Ihre E-Mail ist erfordert",
         "thirdInputError": "Es scheint als würde die Nachricht fehlen",
-        "legalNoticeMessage": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten, wie angegeben, zu."
+        "legalNoticeMessage": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten, wie angegeben, zu.",
+        "legalNoticeMessageError": "Um Fortzufahren akzeptieren Sie bitte die Datenschutzerklärung"
     },
     "footer": {
         "jobTitle": "Webentwickler",
