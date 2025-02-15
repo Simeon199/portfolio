@@ -11,12 +11,12 @@
             <a href="#projects">Projekte</a>
             <div class="language-selection-responsive">
                 <div class="languageSelection">
-                    <button
+                    <button (click)="toggleLanguage()"
                         [ngClass]="{'active-button-style': !isGermanButtonActive, 'inactive-button-style': isGermanButtonActive}"
                         (click)="checkActiveButtonStyle('english')">
                         EN
                     </button>
-                    <button
+                    <button (click)="toggleLanguage()"
                         [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"
                         (click)="checkActiveButtonStyle('german')">
                         DE
@@ -28,12 +28,12 @@
     <nav>
         <div class="language-selection">
             <div class="languageSelection">
-                <button
+                <button (click)="toggleLanguage()"
                     [ngClass]="{'active-button-style': !isGermanButtonActive, 'inactive-button-style': isGermanButtonActive}"
                     (click)="checkActiveButtonStyle('english')">
                     EN
                 </button>
-                <button
+                <button (click)="toggleLanguage()"
                     [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"
                     (click)="checkActiveButtonStyle('german')">
                     DE

@@ -9,19 +9,19 @@ import { LanguageService } from '../../language.service';
 @Component({
   selector: 'app-person-description',
   standalone: true,
-  imports: [
-    NgOptimizedImage,
-    CommonModule
-  ],
+  imports: [NgOptimizedImage, CommonModule],
   templateUrl: './person-description.component.html',
   styleUrl: './person-description.component.scss'
 })
 export class PersonDescriptionComponent {
-  allAboutMeContainer: any[] = [];
+  // allAboutMeContainer: any[] = [];
   currentLanguage: string = 'de';
 
   constructor(private languageService: LanguageService) {
-    this.currentLanguage = this.languageService.getCurrentLanguage();
+    this.languageService.currentLanguage$.subscribe(lang => {
+      this.currentLanguage = lang;
+    });
+    // this.currentLanguage = this.languageService.getCurrentLanguage();
     // this.sharedService.isGermanButtonActive$.subscribe(async (state) => {
     //   this.allAboutMeContainer = await this.databaseService.getDocumentsByKey('aboutMe');
     //   this.setRespectiveLanguage(state);

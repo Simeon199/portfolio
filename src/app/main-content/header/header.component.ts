@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedService } from '../../shared.service';
+// import { SharedService } from '../../shared.service';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-header',
@@ -14,17 +15,32 @@ import { SharedService } from '../../shared.service';
 export class HeaderComponent {
 
   isGermanButtonActive: boolean = false;
+  currentLanguage: string = 'de';
   isDropdownMenuActivated: boolean = false;
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private languageService: LanguageService) {
+    this.languageService.currentLanguage$.subscribe(lang => {
+      this.currentLanguage = lang;
+    });
+  }
 
-  checkActiveButtonStyle(activateLanguage: string) {
-    if (activateLanguage == 'german') {
+  toggleLanguage() {
+    const newLang = this.currentLanguage === 'de' ? 'en' : 'de';
+    this.languageService.setLanguage(newLang);
+  }
+
+  // Dem Konstruktor wurde ursprünglich das folgende Argument übergeben: private sharedService: SharedService
+
+  checkActiveButtonStyle(language: string) {
+    const newLang = language === 'german' ? 'de' : 'en';
+    this.languageService.setLanguage(newLang);
+    if (language == 'german') {
       this.isGermanButtonActive = true;
-    } else if (activateLanguage == 'english') {
+    } else if (language == 'english') {
       this.isGermanButtonActive = false;
     }
-    this.sharedService.setGermanButtonActive(this.isGermanButtonActive);
+    // this.sharedService.setGermanButtonActive(this.isGermanButtonActive);
+    // this.languageService.setGermanButtonActive(this.isGermanButtonActive);
   }
 
   showOrHideDropdown() {
@@ -35,7 +51,6 @@ export class HeaderComponent {
         this.isDropdownMenuActivated = false;
       }
     }
-    console.log('function is triggered');
   }
 
   stopEventPropagation(event: Event) {
