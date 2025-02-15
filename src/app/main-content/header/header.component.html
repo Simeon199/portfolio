@@ -6,9 +6,9 @@
         <img src="../../../assets/img/menu_icon.svg" (click)="showOrHideDropdown(); stopEventPropagation($event)"
             alt="menu-icon">
         <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated">
-            <a href="#person-description-section">Über Mich</a>
-            <a href="#skills-section">Fähigkeiten</a>
-            <a href="#projects">Projekte</a>
+            <a href="#person-description-section">{{"header.navbarTitleFirst" | translate}}</a>
+            <a href="#skills-section">{{"header.navbarTitleSecond" | translate}}</a>
+            <a href="#projects">{{"header.navbarTitleThird" | translate}}</a>
             <div class="language-selection-responsive">
                 <div class="languageSelection">
                     <button (click)="toggleLanguage()"
@@ -40,9 +40,9 @@
                 </button>
             </div>
         </div>
-        <a href="#person-description-section">Über Mich</a>
-        <a href="#skills-section">Fähigkeiten</a>
-        <a href="#projects">Projekte</a>
+        <a href="#person-description-section">{{"header.navbarTitleFirst" | translate}}</a>
+        <a href="#skills-section">{{"header.navbarTitleSecond" | translate}}</a>
+        <a href="#projects">{{"header.navbarTitleThird" | translate}}</a>
     </nav>
     <div class="my-logo">
         <h3>Simon</h3>

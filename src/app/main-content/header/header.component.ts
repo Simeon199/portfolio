@@ -13,8 +13,8 @@ import { LanguageService } from '../../language.service';
 export class HeaderComponent {
 
   isGermanButtonActive: boolean = false;
-  currentLanguage: string = 'de';
   isDropdownMenuActivated: boolean = false;
+  currentLanguage: string = 'de';
 
   constructor(private languageService: LanguageService) {
     this.languageService.currentLanguage$.subscribe(lang => {
