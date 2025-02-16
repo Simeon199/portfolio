@@ -33,6 +33,7 @@
         "h2First": "Featured Projects",
         "spanFirst": "Discover a selection of my work here. Interact with the projects to see my skills in action."
     },
+    "projectDescription": "{{description}}",
     "Join": {
         "whatIsProjectAbout": "What's this project about?",
         "content": "This application is a task manager based on the Kanban system. Create and organize tasks using the drag-and-drop functionality and assign users and categories."

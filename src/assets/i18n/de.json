@@ -33,6 +33,7 @@
         "h2First": "Vorgestelle Projekte",
         "spanFirst": "Entdecken Sie hier eine Auswahl meiner Arbeiten. Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
     },
+    "projectDescription": "{{description}}",
     "Join": {
         "whatIsProjectAbout": "Worum geht es in diesem Projekt?",
         "content": "Bei dieser Anwendung handelt es sich um einen Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Tasks mit Hilfe der Drag-and-Drop-Funktionalität und weisen Benutzer und Kategorien zu."

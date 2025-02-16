@@ -1,5 +1,5 @@
-import { technologyData } from "./projects.model";
-export const TECHNOLOGY_DATA: technologyData = {
+import { projectsModel } from "./projects.model";
+export const projectsData: projectsModel = {
     join: {
         title: 'Join',
         projectImageSource: '../../../../assets/img/join_image.png',

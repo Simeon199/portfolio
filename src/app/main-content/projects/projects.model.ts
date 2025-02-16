@@ -1,4 +1,4 @@
-export interface technologyData {
+export interface projectsModel {
     join: {
         title: string,
         projectImageSource: string,

@@ -11,7 +11,7 @@
             <h2>{{"featuredProjects.h2First" | translate}}</h2>
             <span>{{"featuredProjects.spanFirst" | translate}}</span>
         </div>
-        <div class="collection-of-single-projects" *ngFor="let singleProject of technologyArray">
+        <div class="collection-of-single-projects" *ngFor="let singleProject of projectsArray">
             <app-single-project [index]='singleProject.projectIndexAsString' [title]="singleProject.title"
                 [technologies]="singleProject.technologyList"
                 (mouseenter)="onMouseEnter(singleProject.title, singleProject.projectImageSource, singleProject.projectIndexAsString)"

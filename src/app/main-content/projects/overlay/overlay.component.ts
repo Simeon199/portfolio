@@ -1,17 +1,21 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TECHNOLOGY_DATA } from '../projects.data';
-import { technologyData } from '../projects.model';
+import { projectsData } from '../projects.data';
+import { projectsModel } from '../projects.model';
+// import { LanguageService } from '../../../language.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-overlay',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './overlay.component.html',
   styleUrl: './overlay.component.scss'
 })
 export class OverlayComponent {
-  @Input() technologyData: technologyData = TECHNOLOGY_DATA;
+  @Input() projectsData: projectsModel = projectsData;
   @Input() allProjectsListed: any;
   @Input() currentProjectOpened: string = '';
   @Input() index: string = '0';
@@ -34,8 +38,21 @@ export class OverlayComponent {
 
   nextIndex: number = 0
   currentIndex: number = 0;
-  keyValues = Object.keys(this.technologyData);
-  projectValues = Object.values(this.technologyData);
+  keyValues = Object.keys(this.projectsData);
+  projectValues = Object.values(this.projectsData);
+
+  currentLanguage: string = 'de';
+  allProjects: projectsModel = projectsData;
+  projectDescription: string = '';
+
+  constructor(private translate: TranslateService) {
+    this.translate.get('projectDescription', { description: this.description }).subscribe((res: string) => {
+      this.projectDescription = res;
+    })
+    // this.languageService.currentLanguage$.subscribe(lang => {
+    //   this.currentLanguage = lang;
+    // });
+  }
 
   updateVariablesInParent(updatedValues: {
     currentProjectOpened: string;

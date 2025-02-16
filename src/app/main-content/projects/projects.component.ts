@@ -3,7 +3,8 @@ import { SingleProjectComponent } from './single-project/single-project.componen
 import { SingleProjectFadedInComponent } from './single-project-faded-in/single-project-faded-in.component';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CommonModule } from '@angular/common';
-import { TECHNOLOGY_DATA } from './projects.data';
+import { projectsData } from './projects.data';
+import { projectsModel } from './projects.model';
 import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -38,10 +39,11 @@ export class ProjectsComponent {
   currentProjectOpenedProjectLink: string = '';
 
   isOverlayVisible = false;
-  technologyData = TECHNOLOGY_DATA;
-  technologyArray = Object.values(this.technologyData);
+  projectsData = projectsData;
+  projectsArray = Object.values(this.projectsData);
 
   currentLanguage: string = "de";
+  allProjects: projectsModel = projectsData;
   constructor(private languageService: LanguageService) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
@@ -109,7 +111,7 @@ export class ProjectsComponent {
   }
 
   generateRemainingProjectInformation() {
-    Object.values(this.technologyData).forEach(project => {
+    Object.values(this.projectsData).forEach(project => {
       if (project.title == this.currentProjectOpened) {
         this.currentProjectOpenedDescription = project.description;
         this.currentProjectOpenedImageSrc = project.projectImageSource;
