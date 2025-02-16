@@ -7,7 +7,8 @@
             <h1>{{index}}</h1>
             <h2>{{title}}</h2>
             <h3>Worum geht es in diesem Problem?</h3>
-            <span>{{description}}</span>
+            <span [translate]="'projectDescription.description'" [translateParams]="getTranslationParams"></span>
+            <!-- <span>{{"projectDescription.description"| translate}}</span> -->
             <div class="used-technologies" *ngFor="let project of projectValues; let i = index">
                 <div class="test-section" *ngIf="project.title === title">
                     <div class="list-section" *ngFor="let item of project.technologyList; let i = index">

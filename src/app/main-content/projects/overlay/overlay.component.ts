@@ -2,7 +2,6 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { projectsData } from '../projects.data';
 import { projectsModel } from '../projects.model';
-// import { LanguageService } from '../../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -42,16 +41,16 @@ export class OverlayComponent {
   projectValues = Object.values(this.projectsData);
 
   currentLanguage: string = 'de';
-  allProjects: projectsModel = projectsData;
-  projectDescription: string = '';
 
-  constructor(private translate: TranslateService) {
-    this.translate.get('projectDescription', { description: this.description }).subscribe((res: string) => {
-      this.projectDescription = res;
-    })
-    // this.languageService.currentLanguage$.subscribe(lang => {
-    //   this.currentLanguage = lang;
-    // });
+  constructor(private translate: TranslateService) { }
+
+  getTranslationParams() {
+    return { description: this.description };
+  }
+
+  toggleLanguage() {
+    this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
+    this.translate.use(this.currentLanguage);
   }
 
   updateVariablesInParent(updatedValues: {
