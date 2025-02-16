@@ -33,7 +33,7 @@
         "h2First": "Vorgestelle Projekte",
         "spanFirst": "Entdecken Sie hier eine Auswahl meiner Arbeiten. Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
     },
-    "projectDescription": {
+    "allProjectData": {
         "join": {
             "title": "Join",
             "projectImageSource": "../../../../assets/img/join_image.png",

@@ -41,8 +41,14 @@ export class OverlayComponent {
   projectValues = Object.values(this.projectsData);
 
   currentLanguage: string = 'de';
+  translateKey: string = '';
 
   constructor(private translate: TranslateService) { }
+
+  ngOnInit() {
+    let titleUpdated = this.revertProjectNameConverter(this.title);
+    this.translateKey = `allProjectData.${titleUpdated}.description`;
+  }
 
   getTranslationParams() {
     return { description: this.description };
@@ -72,6 +78,18 @@ export class OverlayComponent {
       return 'El Pollo Loco';
     } else if (key == 'daBubble') {
       return 'DABubble (Coming Soon)';
+    } else {
+      return 'Error';
+    }
+  }
+
+  revertProjectNameConverter(key: string) {
+    if (key == 'Join') {
+      return 'join';
+    } else if (key == 'El Pollo Loco') {
+      return 'elPolloLoco';
+    } else if (key == 'DABubble (Coming Soon)') {
+      return 'daBubble';
     } else {
       return 'Error';
     }
