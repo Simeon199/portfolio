@@ -6,9 +6,8 @@
         <div class="project-information">
             <h1>{{index}}</h1>
             <h2>{{title}}</h2>
-            <h3>Worum geht es in diesem Projekt?</h3>
+            <h3>{{"allProjectData.whatIsProjectAbout" | translate}}</h3>
             <span [translate]="translateKey"></span>
-            <!-- <span>{{"projectDescription.description"| translate}}</span> -->
             <div class="used-technologies" *ngFor="let project of projectValues; let i = index">
                 <div class="test-section" *ngIf="project.title === title">
                     <div class="list-section" *ngFor="let item of project.technologyList; let i = index">

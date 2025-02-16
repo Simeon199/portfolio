@@ -40,6 +40,7 @@ export class OverlayComponent {
   keyValues = Object.keys(this.projectsData);
   projectValues = Object.values(this.projectsData);
 
+
   currentLanguage: string = 'de';
   translateKey: string = '';
 
@@ -120,6 +121,8 @@ export class OverlayComponent {
       currentProjectOpenedGitHubLink: this.projectValues[this.nextIndex].gitHubLink,
       currentProjectOpenedProjectLink: this.projectValues[this.nextIndex].projectLink
     });
+    let titleUpdated = this.revertProjectNameConverter(this.projectValues[this.nextIndex].title);
+    this.translateKey = `allProjectData.${titleUpdated}.description`;
   }
 
   stopPropagation(event: Event) {
