@@ -56,14 +56,23 @@ export class RecencyComponent {
     setTimeout(() => {
       this.transitionEnabled = false;
       if (direction == 'right') {
+
+        // shift: Entfernt das erste Element eines Arrays und verschiebt alle verbleibenden Elemente nach vorne. Gibt das entfernte Element zurück.
+
         let firstItem = this.allRecencyValues.shift();
         if (firstItem) {
           this.allRecencyValues.push(firstItem);
         }
         this.currentIndex = (this.currentIndex + 1) % this.allRecencyValues.length;
       } else {
+
+        // pop: Entfernt das letzte Element eines Arrays und gibt das entfernte Element zurück.
+
         let lastItem = this.allRecencyValues.pop();
         if (lastItem) {
+
+          // Fügt ein oder mehrere Elemente am Anfang eines Arrays hinzu und gibt die neue Länge des Arrays zurück. 
+
           this.allRecencyValues.unshift(lastItem);
         }
         this.currentIndex = (this.currentIndex - 1 + this.allRecencyValues.length) % this.allRecencyValues.length;
@@ -71,30 +80,6 @@ export class RecencyComponent {
       this.setVariablesBackToOriginalValues();
     }, this.animationDuration);
   }
-
-  // updateRecencyArray() {
-  //   this.allRecencyValues = Object.values(this.recencies);
-  //   for (let i = 0; i < this.currentIndex; i++) {
-  //     let firstItem = this.allRecencyValues.shift();
-  //     if (firstItem) {
-  //       this.allRecencyValues.push(firstItem);
-  //     }
-  //   }
-  // }
-
-  // navigateFunction(direction: string) {
-  //   this.initializeVariables();
-  //   this.currentTranslateX += this.determineCorrectShiftAmount(direction);
-  //   setTimeout(() => {
-  //     this.permuteRecencyArrayDependingOnMovingDirection(direction);
-  //     if (direction == 'right') {
-  //       this.currentIndex = (this.currentIndex + 1) % this.allRecencyValues.length;
-  //     } else {
-  //       this.currentIndex = (this.currentIndex - 1 + this.allRecencyValues.length) % this.allRecencyValues.length;
-  //     }
-  //     this.setVariablesBackToOriginalValues();
-  //   }, this.animationDuration);
-  // }
 
   determineCorrectShiftAmount(direction: string) {
     let shiftAmount = 0;

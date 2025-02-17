@@ -135,7 +135,8 @@
         "h2First": "Kontakt",
         "h2Second": "Let's work together",
         "h2Third": "Got a problem to solve?",
-        "spanFirst": "Please feel free to use the contact form to send me a message. I look forward to learning more about your ideas and supporting your project. Do you need support in the frontend area? Let's talk about it!"
+        "spanFirst": "Please feel free to use the contact form to send me a message. I look forward to learning more about your ideas and supporting your project. Do you need support in the frontend area?",
+        "spanSecond": "Let's talk about it!"
     },
     "contactFormular": {
         "firstInput": "What's your name?",

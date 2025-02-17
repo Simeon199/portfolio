@@ -12,7 +12,7 @@ import { LanguageService } from '../../language.service';
 })
 export class HeaderComponent {
 
-  isGermanButtonActive: boolean = false;
+  isGermanButtonActive: boolean = true;
   isDropdownMenuActivated: boolean = false;
   currentLanguage: string = 'de';
 
