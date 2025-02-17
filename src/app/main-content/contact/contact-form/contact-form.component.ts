@@ -3,6 +3,7 @@ import { Component, inject, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../../language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -29,10 +30,27 @@ export class ContactFormComponent {
   }
 
   currentLanguage: string = "de";
-  constructor(private languageService: LanguageService) {
+
+  constructor(private languageService: LanguageService, private translate: TranslateService) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
+
+    this.translate.onLangChange.subscribe(() => {
+      this.loadTranslations();
+    })
+  }
+
+  loadTranslations() {
+    this.translate.get('contactFormular.firstInputPlaceholder').subscribe((firstInputPlaceholder) => {
+      this.namePlaceHolder = firstInputPlaceholder;
+    });
+    this.translate.get('contactFormular.secondInputPlaceholder').subscribe((secondInputPlaceholder) => {
+      this.emailPlaceHolder = secondInputPlaceholder;
+    });
+    this.translate.get('contactFormular.thirdInputPlaceholder').subscribe((thirdInputPlaceholder) => {
+      this.messagePlaceHolder = thirdInputPlaceholder;
+    })
   }
 
   // mailTest = true;

@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SingleRecencyComponent } from './single-recency/single-recency.component';
-// import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
-// import { recencies } from './recency.model';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -56,15 +54,47 @@ export class RecencyComponent {
     this.initializeVariables();
     this.currentTranslateX += this.determineCorrectShiftAmount(direction);
     setTimeout(() => {
-      this.permuteRecencyArrayDependingOnMovingDirection(direction);
+      this.transitionEnabled = false;
       if (direction == 'right') {
+        let firstItem = this.allRecencyValues.shift();
+        if (firstItem) {
+          this.allRecencyValues.push(firstItem);
+        }
         this.currentIndex = (this.currentIndex + 1) % this.allRecencyValues.length;
       } else {
+        let lastItem = this.allRecencyValues.pop();
+        if (lastItem) {
+          this.allRecencyValues.unshift(lastItem);
+        }
         this.currentIndex = (this.currentIndex - 1 + this.allRecencyValues.length) % this.allRecencyValues.length;
       }
       this.setVariablesBackToOriginalValues();
     }, this.animationDuration);
   }
+
+  // updateRecencyArray() {
+  //   this.allRecencyValues = Object.values(this.recencies);
+  //   for (let i = 0; i < this.currentIndex; i++) {
+  //     let firstItem = this.allRecencyValues.shift();
+  //     if (firstItem) {
+  //       this.allRecencyValues.push(firstItem);
+  //     }
+  //   }
+  // }
+
+  // navigateFunction(direction: string) {
+  //   this.initializeVariables();
+  //   this.currentTranslateX += this.determineCorrectShiftAmount(direction);
+  //   setTimeout(() => {
+  //     this.permuteRecencyArrayDependingOnMovingDirection(direction);
+  //     if (direction == 'right') {
+  //       this.currentIndex = (this.currentIndex + 1) % this.allRecencyValues.length;
+  //     } else {
+  //       this.currentIndex = (this.currentIndex - 1 + this.allRecencyValues.length) % this.allRecencyValues.length;
+  //     }
+  //     this.setVariablesBackToOriginalValues();
+  //   }, this.animationDuration);
+  // }
 
   determineCorrectShiftAmount(direction: string) {
     let shiftAmount = 0;

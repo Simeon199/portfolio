@@ -3,7 +3,7 @@
         <div class="form-group">
             <label for="name">{{"contactFormular.firstInput" | translate}}</label>
             <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
-                placeholder={{namePlaceHolder}} required>
+                placeholder={{[namePlaceHolder]}} required>
             @if(!name.valid && name.touched){
             <span style="color: #EC7B7BCC; font-size: 16px">{{"contactFormular.firstInputError" | translate}}</span>
             }
@@ -11,7 +11,7 @@
         <div class="form-group">
             <label for="email">{{"contactFormular.secondInput" | translate}}</label>
             <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="mail" name="email"
-                placeholder={{emailPlaceHolder}} required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                placeholder={{[emailPlaceHolder]}} required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
             @if(!email.valid && email.touched){
             <span style="color: #EC7B7BCC; font-size: 16px">{{"contactFormular.secondInputError" | translate}}</span>
             }
@@ -19,7 +19,7 @@
         <div class="form-group">
             <label for="subject">{{"contactFormular.thirdInput" | translate}}</label>
             <input #message="ngModel" [(ngModel)]="contactData.message" minlength="4" id="subject" name="subject"
-                placeholder={{messagePlaceHolder}} required>
+                placeholder={{[messagePlaceHolder]}} required>
             @if(!message.valid && message.touched){
             <span style="color: #EC7B7BCC; font-size: 16px">{{"contactFormular.thirdInputError" | translate}}</span>
             }
