@@ -47,6 +47,27 @@ export class HeaderComponent {
     }
   }
 
+
+  // --- Alternative zum Aktivieren/Deaktivieren des Dropdown-Menüs ---
+
+  showDropdown() {
+    if (window.innerWidth <= 1350) {
+      if (!this.isDropdownMenuActivated) {
+        this.isDropdownMenuActivated = true;
+      }
+    }
+  }
+
+  hideDropdown() {
+    if (window.innerWidth <= 1350) {
+      if (this.isDropdownMenuActivated) {
+        this.isDropdownMenuActivated = false;
+      }
+    }
+  }
+
+  // --- Alternative Ende zum Aktivieren/Deaktivieren des Dropdown-Menüs ---
+
   stopEventPropagation(event: Event) {
     event.stopPropagation();
   }
