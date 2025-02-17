@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SingleRecencyComponent } from './single-recency/single-recency.component';
-import { LanguageService } from '../../language.service';
+// import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { recencies } from './recency.model';
+// import { recencies } from './recency.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-recency',
@@ -23,26 +24,21 @@ export class RecencyComponent {
   currentTranslateX = 0;
   commentWidth = 636;
   transitionEnabled = true;
-  recencys: any = '';
-
-  recencies: recencies = {
-    'A. Qarar': 'Ich hatte das Vergnügen, mit Simon an unserem gemeinsamen Projekt zu arbeiten. Er war immer zuverlässig und brachte sich tatkräftig in alle Aufgaben ein. Besonders beeindruckt hat mich, wie schnell er neue Konzepte und Technologien aufgenommen hat. Simon ist ein sehr wertvoller Partner, der stets auf uns zugegangen ist und maßgeblich dazu beitrug, dass wir unser Ziel erfolgreich erreichen konnten.',
-    'M. Žalec': 'Simons Mitarbeit bei unserem Join-Gruppenprojekt war sehr erfrischend und bereichernd, da er immer zur Stelle war, wenn es ein Problem gab und auch ausdauernd auf die Lösung hingearbeitet hat. Auch wenn man einmal Unterstützung brauchte, konnte man ihn einfach fragen und er hat sich die Zeit genommen, einem die Fragen zu beantworten.',
-    recency3: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-  };
+  recencies: any = '';
 
   currentLanguage: string = 'de';
 
-  constructor(private languageService: LanguageService) {
-    this.languageService.currentLanguage$.subscribe(lang => {
-      this.currentLanguage = lang;
-    });
-    this.testFunction();
+  constructor(private translate: TranslateService) {
+    this.loadTranslations();
+    this.translate.onLangChange.subscribe(() => {
+      this.loadTranslations();
+    })
   }
 
-  testFunction() {
-    this.recencys = `allProjectData.recencies`;
-    console.log(this.recencys);
+  loadTranslations() {
+    this.translate.get('recencies').subscribe((translatedRecencies) => {
+      this.recencies = Object.values(translatedRecencies).slice(1);
+    });
   }
 
   getKeys(): string[] {
