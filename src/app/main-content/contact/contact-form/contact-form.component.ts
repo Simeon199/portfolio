@@ -53,60 +53,33 @@ export class ContactFormComponent {
     })
   }
 
-  // mailTest = true;
-
-  // post = {
-  //   endPoint: 'https://deineDomain.de/sendMail.php',
-  //   body: (payload: any) => JSON.stringify(payload),
-  //   options: {
-  //     headers: {
-  //       'Content-Type': 'text/plain',
-  //       responseType: 'text',
-  //     },
-  //   },
-  // };
-
-  // onSubmit(ngForm: NgForm) {
-  //   if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //       .subscribe({
-  //         next: (response) => {
-
-  //           ngForm.resetForm();
-  //         },
-  //         error: (error) => {
-  //           console.error(error);
-  //         },
-  //         complete: () => console.info('send post complete'),
-  //       });
-  //   } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-  //     ngForm.resetForm();
-  //   }
-  // }
+  mailTest = false;
+  post = {
+    endPoint: 'https://simon-kiesner.developerakademie.net/angular-projects/portfolio_test/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
   onSubmit(ngForm: NgForm) {
-    // this.checkForInvalidEntries();
-    // this.contactData.submitted = true;
-    // if (ngForm.valid) {
-    //   console.log("Form submitted: ", this.contactData);
-    // }
-    // this.contactData.submitted = false;
-    // ngForm.resetForm();
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            console.log('response: ', response);
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
     }
   }
-
-  // checkForInvalidEntries() {
-  //   if (this.namePlaceHolder == 'Your name goes here') {
-  //     this.namePlaceHolder = 'Oops! It seems your name is missing';
-  //   } else if (this.emailPlaceHolder == 'youremail@email.com') {
-  //     this.emailPlaceHolder = 'Hoppla! Your email is required';
-  //   } else if (this.messagePlaceHolder == 'Hello Simon, I am interested in...') {
-  //     this.messagePlaceHolder = 'What do you need to develop?'
-  //   }
-  //   return;
-  // }
 }
