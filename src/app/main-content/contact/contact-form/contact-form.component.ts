@@ -4,16 +4,21 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../../language.service';
 import { TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule, TranslateModule],
+  imports: [
+    FormsModule,
+    TranslateModule,
+    CommonModule
+  ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
-
+  formSubmitted = false;
   http = inject(HttpClient);
 
 
@@ -53,7 +58,7 @@ export class ContactFormComponent {
     })
   }
 
-  mailTest = false;
+  mailTest = true;
   post = {
     endPoint: 'https://simon-kiesner.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -65,21 +70,50 @@ export class ContactFormComponent {
     },
   };
 
+  //   onSubmit(ngForm: NgForm) {
+  //     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+  //       this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  //         .subscribe({
+  //           next: (response) => {
+  //             console.log('response: ', response);
+  //             ngForm.resetForm();
+  //           },
+  //           error: (error) => {
+  //             console.error(error);
+  //           },
+  //           complete: () => console.info('send post complete'),
+  //         });
+  //     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+  //       ngForm.resetForm();
+  //     }
+  //   }
+  // }
+
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    this.formSubmitted = true;
+    if (ngForm.invalid) {
+      Object.values(ngForm.controls).forEach(control => {
+        control.markAsTouched();
+      });
+      return;
+    }
+
+    if (!this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
             console.log('response: ', response);
             ngForm.resetForm();
+            this.formSubmitted = false;
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    } else {
       ngForm.resetForm();
+      this.formSubmitted = false;
     }
   }
 }

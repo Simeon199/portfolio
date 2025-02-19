@@ -1,5 +1,5 @@
-<div class="contact-form-container">
-    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+<!-- <div class="contact-form-container">
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
         <div class="form-group">
             <label for="name">{{"contactFormular.firstInput" | translate}}</label>
             <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
@@ -38,5 +38,53 @@
             }
             <input id="submit-input" type="submit" value="Say Hello" [disabled]="!contactForm.valid">
         </div>
+    </form>
+</div> -->
+
+<div class="contact-form-container">
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="name">{{ "contactFormular.firstInput" | translate }}</label>
+            <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
+                [placeholder]="namePlaceHolder" required>
+            <span *ngIf="name.invalid && (name.touched || formSubmitted)" style="color: #EC7B7BCC; font-size: 16px">
+                {{ "contactFormular.firstInputError" | translate }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">{{ "contactFormular.secondInput" | translate }}</label>
+            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="mail" name="email"
+                [placeholder]="emailPlaceHolder" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            <span *ngIf="email.invalid && (email.touched || formSubmitted)" style="color: #EC7B7BCC; font-size: 16px">
+                {{ "contactFormular.secondInputError" | translate }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="subject">{{ "contactFormular.thirdInput" | translate }}</label>
+            <input #message="ngModel" [(ngModel)]="contactData.message" minlength="4" id="subject" name="subject"
+                [placeholder]="messagePlaceHolder" required>
+            <span *ngIf="message.invalid && (message.touched || formSubmitted)"
+                style="color: #EC7B7BCC; font-size: 16px">
+                {{ "contactFormular.thirdInputError" | translate }}
+            </span>
+        </div>
+
+        <div class="checkbox-validation-section">
+            <div class="checkbox-and-validation">
+                <label>
+                    <input #checkbox="ngModel" [(ngModel)]="contactData.agreedToPrivacy" type="checkbox"
+                        name="agreedToPrivacy" required>
+                    <span>{{ "contactFormular.legalNoticeMessage" | translate }}</span>
+                </label>
+            </div>
+            <span *ngIf="checkbox.invalid && (checkbox.touched || contactForm.submitted)"
+                style="color: #EC7B7BCC; font-size: 16px">
+                {{ "contactFormular.legalNoticeMessageError" | translate }}
+            </span>
+        </div>
+
+        <input id="submit-input" type="submit" value="Say Hello" [disabled]="!contactForm.valid">
     </form>
 </div>
