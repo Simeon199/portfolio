@@ -16,6 +16,12 @@
         flex-direction: column;
     }
 
+    @media(max-width: 950px) {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
     @media(max-width: 500px) {
         padding-top: 48px;
         padding-bottom: 48px;
@@ -27,6 +33,7 @@
     flex-direction: column;
     align-self: end;
     gap: 20px;
+    padding: 16px;
 
     @media(max-width: 1350px) {
         padding-top: 20px;
@@ -34,13 +41,19 @@
     }
 
     @media(max-width: 700px) {
-        width: 96%;
+        width: 100%;
     }
 
     @media(max-width: 500px) {
         width: 90%;
     }
 }
+
+// .who-i-am-wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+// }
 
 .about-me-description {
     display: flex;
@@ -50,6 +63,7 @@
     border-radius: 30px;
     background-color: rgb(31, 46, 43);
     border: 1px solid rgba(61, 207, 182, 1);
+    max-width: 560px;
     // max-width: 568px;
     flex-wrap: wrap;
 
@@ -65,7 +79,10 @@
     }
 
     @media(max-width: 1350px) {
-        gap: 16px;
+        // max-width: unset;
+        // width: 50%;
+        // align-self: center;
+        // gap: 16px;
 
         h2 {
             font-family: 'Fira Code';
@@ -83,7 +100,14 @@
         }
     }
 
+    // @media(max-width: 1200px) {
+    //     max-width: unset;
+    //     width: 90%;
+    //     align-self: center;
+    // }
+
     @media(max-width: 950px) {
+
         h2 {
             font-size: 48px;
         }
@@ -93,6 +117,9 @@
         h2 {
             font-size: 40px;
         }
+
+        max-width: unset;
+        width: 100%;
     }
 
     @media(max-width: 500px) {

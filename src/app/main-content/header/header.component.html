@@ -1,7 +1,9 @@
 <header (click)="showOrHideDropdown()">
     <div class="navbar-responsive-design">
         <div class="my-logo-responsive">
-            <h3>SK</h3>
+            <a routerLink="/">
+                <h3>SK</h3>
+            </a>
         </div>
         <img src="../../../assets/img/menu_icon.svg" (click)="showOrHideDropdown(); stopEventPropagation($event)"
             alt="menu-icon">

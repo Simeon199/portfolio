@@ -6,6 +6,8 @@ footer {
     padding-right: 24px;
     padding-left: 24px;
     padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
 
     @media(max-width: 600px) {
         height: 240px;
@@ -14,6 +16,12 @@ footer {
     @media(max-width: 500px) {
         margin-top: 48px;
     }
+}
+
+.my-person-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .my-person-box {

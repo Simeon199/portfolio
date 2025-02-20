@@ -1,4 +1,7 @@
 .skills-section {
+    width: 90%;
+    margin: 0 auto;
+    align-self: center;
     padding-top: 96px;
     display: flex;
     align-items: center;
@@ -10,6 +13,7 @@
         padding-top: 0;
         flex-direction: column;
         justify-content: center;
+        width: 100%;
     }
 
     @media(max-width: 700px) {
@@ -27,8 +31,10 @@
     flex-direction: column;
     gap: 20px;
     padding-bottom: 96px;
+    max-width: 560px;
 
     @media(max-width: 700px) {
+        max-width: unset;
         width: 96%;
     }
 
