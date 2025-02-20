@@ -20,8 +20,8 @@
 
         <div class="form-group">
             <label for="subject">{{ "contactFormular.thirdInput" | translate }}</label>
-            <input #message="ngModel" [(ngModel)]="contactData.message" minlength="4" id="subject" name="subject"
-                [placeholder]="messagePlaceHolder" required>
+            <textarea #message="ngModel" [(ngModel)]="contactData.message" minlength="4" id="subject" name="subject"
+                [placeholder]="messagePlaceHolder" required></textarea>
             <span *ngIf="message.invalid && (message.touched || formSubmitted)"
                 style="color: #EC7B7BCC; font-size: 16px">
                 {{ "contactFormular.thirdInputError" | translate }}
