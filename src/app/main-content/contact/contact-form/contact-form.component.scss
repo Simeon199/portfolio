@@ -99,16 +99,19 @@
     }
 
     .checkbox-validation-section {
+
         display: flex;
         flex-direction: column;
+        gap: 16px;
         justify-content: center;
     }
 
     .checkbox-and-validation {
+
         display: flex;
         align-items: center;
         gap: 8px;
-        padding-top: 100px;
+        padding-top: 56px;
 
         label {
             display: flex;
@@ -127,6 +130,10 @@
             a {
                 color: rgba(61, 207, 182, 0.5);
                 text-decoration: none;
+            }
+
+            @media(max-width: 700px) {
+                align-self: center;
             }
         }
 

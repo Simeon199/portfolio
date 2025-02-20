@@ -3,9 +3,9 @@ footer {
     align-items: center;
     justify-content: space-between;
     margin-top: 96px;
-    height: 126px;
     padding-right: 24px;
     padding-left: 24px;
+    padding-bottom: 24px;
 
     @media(max-width: 600px) {
         height: 240px;
@@ -22,6 +22,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    gap: 8px;
 
     h2 {
         color: rgba(61, 207, 182, 1);
