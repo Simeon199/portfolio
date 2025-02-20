@@ -70,25 +70,6 @@ export class ContactFormComponent {
     },
   };
 
-  //   onSubmit(ngForm: NgForm) {
-  //     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-  //       this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //         .subscribe({
-  //           next: (response) => {
-  //             console.log('response: ', response);
-  //             ngForm.resetForm();
-  //           },
-  //           error: (error) => {
-  //             console.error(error);
-  //           },
-  //           complete: () => console.info('send post complete'),
-  //         });
-  //     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-  //       ngForm.resetForm();
-  //     }
-  //   }
-  // }
-
   onSubmit(ngForm: NgForm) {
     this.formSubmitted = true;
     if (ngForm.invalid) {
