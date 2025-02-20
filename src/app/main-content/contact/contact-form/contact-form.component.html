@@ -84,7 +84,6 @@
                 {{ "contactFormular.legalNoticeMessageError" | translate }}
             </span>
         </div>
-
-        <input id="submit-input" type="submit" value="Say Hello" [disabled]="!contactForm.valid">
+        <input id="submit-input" type="submit" value="Say Hello" [ngClass]="{'disabled-button': contactForm.invalid}">
     </form>
 </div>
