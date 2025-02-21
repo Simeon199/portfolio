@@ -14,8 +14,8 @@ export const projectsData: projectsModel = {
         ],
         projectIndex: 0,
         projectIndexAsString: '01',
-        projectLink: 'https://simon-kiesner.developerakademie.net/MyJoin/login.html',
-        gitHubLink: 'https://github.com/Simeon199/MyJoin'
+        projectLink: 'https://join.simon-kiesner.de/login.html',
+        gitHubLink: 'https://github.com/Simeon199/Join'
     },
     elPolloLoco: {
         title: 'El Pollo Loco',
@@ -31,7 +31,7 @@ export const projectsData: projectsModel = {
         ],
         projectIndex: 1,
         projectIndexAsString: '02',
-        projectLink: 'https://simon-kiesner.developerakademie.net/el_pollo_loco/index.html',
+        projectLink: 'https://el-pollo-loco.simon-kiesner.de/index.html',
         gitHubLink: 'https://github.com/Simeon199/el_pollo_loco'
     },
     daBubble: {
