@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../../language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact-form',
@@ -36,7 +37,8 @@ export class ContactFormComponent {
 
   currentLanguage: string = "de";
 
-  constructor(private languageService: LanguageService, private translate: TranslateService) {
+  constructor(private languageService: LanguageService,
+    private translate: TranslateService, private snackBar: MatSnackBar) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
@@ -70,31 +72,113 @@ export class ContactFormComponent {
     },
   };
 
+  //   onSubmit(ngForm: NgForm) {
+  //     this.formSubmitted = true;
+  //     if (ngForm.invalid) {
+  //       Object.values(ngForm.controls).forEach(control => {
+  //         control.markAsTouched();
+  //       });
+  //       return;
+  //     }
+
+  //     if (!this.mailTest) {
+  //       this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  //         .subscribe({
+  //           next: (response) => {
+  //             console.log('response: ', response);
+  //             ngForm.resetForm();
+  //             this.formSubmitted = false;
+  //           },
+  //           error: (error) => {
+  //             console.error(error);
+  //           },
+  //           complete: () => console.info('send post complete'),
+  //         });
+  //     } else {
+  //       ngForm.resetForm();
+  //       this.formSubmitted = false;
+  //     }
+  //   }
+  // }
+
+  // onSubmit(ngForm: NgForm) {
+  //   this.formSubmitted = true;
+  //   if (ngForm.invalid) {
+  //     Object.values(ngForm.controls).forEach(control => control.markAsTouched());
+  //     return;
+  //   }
+
+  //   this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
+  //     next: () => {
+  //       debugger;
+  //       this.snackBar.open("Nachricht erfolgreich gesendet!", "Schließen", {
+  //         duration: 3000,
+  //         horizontalPosition: "center",
+  //         verticalPosition: "top",
+  //       });
+  //       ngForm.resetForm();
+  //     },
+  //     error: (error) => console.error(error),
+  //   });
+  //   if (!this.mailTest) {
+  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  //       .subscribe({
+  //         next: (response) => {
+  //           console.log('response: ', response);
+  //           ngForm.resetForm();
+  //           this.formSubmitted = false;
+  //         },
+  //         error: (error) => {
+  //           console.error(error);
+  //         },
+  //         complete: () => console.info('send post complete'),
+  //       });
+  //   } else {
+  //     ngForm.resetForm();
+  //     this.formSubmitted = false;
+  //   }
+  // }
+
   onSubmit(ngForm: NgForm) {
     this.formSubmitted = true;
+
     if (ngForm.invalid) {
-      Object.values(ngForm.controls).forEach(control => {
-        control.markAsTouched();
-      });
+      Object.values(ngForm.controls).forEach(control => control.markAsTouched());
       return;
     }
 
     if (!this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            console.log('response: ', response);
-            ngForm.resetForm();
-            this.formSubmitted = false;
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
+      this.sendMail(ngForm);
     } else {
-      ngForm.resetForm();
-      this.formSubmitted = false;
+      this.resetForm(ngForm);
     }
   }
+
+  private sendMail(ngForm: NgForm) {
+    this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      .subscribe({
+        next: () => {
+          this.snackBar.open("Nachricht erfolgreich gesendet!", "Schließen", {
+            duration: 3000,
+            horizontalPosition: "center",
+            verticalPosition: "top",
+          });
+          this.resetForm(ngForm);
+        },
+        error: (error) => {
+          console.error(error);
+          this.snackBar.open("Fehler beim Senden der Nachricht!", "Schließen", {
+            duration: 3000,
+            horizontalPosition: "center",
+            verticalPosition: "top",
+          });
+        }
+      });
+  }
+
+  private resetForm(ngForm: NgForm) {
+    ngForm.resetForm();
+    this.formSubmitted = false;
+  }
+
 }
