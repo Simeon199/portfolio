@@ -16,7 +16,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     CommonModule
   ],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss'
+  styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent {
   formSubmitted = false;
@@ -60,7 +60,7 @@ export class ContactFormComponent {
     })
   }
 
-  mailTest = true;
+  mailTest = false;
   post = {
     endPoint: 'https://simon-kiesner.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -158,10 +158,12 @@ export class ContactFormComponent {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
         next: () => {
+          // debugger;
           this.snackBar.open("Nachricht erfolgreich gesendet!", "Schließen", {
             duration: 3000,
             horizontalPosition: "center",
             verticalPosition: "top",
+            panelClass: ['custom-snackbar']
           });
           this.resetForm(ngForm);
         },
@@ -171,6 +173,7 @@ export class ContactFormComponent {
             duration: 3000,
             horizontalPosition: "center",
             verticalPosition: "top",
+            panelClass: ['custom-error']
           });
         }
       });
@@ -180,5 +183,4 @@ export class ContactFormComponent {
     ngForm.resetForm();
     this.formSubmitted = false;
   }
-
 }

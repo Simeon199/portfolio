@@ -1,3 +1,11 @@
+// @use '@angular/material' as mat;
+
+// :root {
+//     @include mat.snack-bar-overrides((container-color: orange,
+//             supporting-text-color: red,
+//         ));
+// }
+
 .contact-form-container {
 
     form {
@@ -182,4 +190,21 @@
         opacity: 0.5;
         cursor: not-allowed;
     }
+
+    // .custom-snackbar {
+    //     background-color: aliceblue;
+    //     color: black;
+    //     font-size: 16px;
+    //     border-radius: 8px;
+    //     padding: 12px;
+    // }
 }
+
+// ::ng-deep .mat-snack-bar-container {
+//     background-color: #4caf50 !important;
+//     color: white !important;
+//     border-radius: 8px;
+//     font-size: 16px;
+//     padding: 12px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+// }
