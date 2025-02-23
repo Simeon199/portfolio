@@ -104,3 +104,17 @@ footer {
         transform: translateX(-50%) scale(1);
     }
 }
+
+.signature {
+    position: relative;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    img {
+        position: absolute;
+        right: 0;
+    }
+}
