@@ -89,5 +89,10 @@ h2:nth-child(2) {
 }
 
 .text-pop-up {
-    border-radius: 16px;
+    display: flex;
+
+    img {
+        width: 320px;
+        height: auto;
+    }
 }
