@@ -47,10 +47,9 @@ export class RecencyComponent {
     return Object.values(this.recencies);
   }
 
-  allItemValues = this.getKeys();
-  allRecencyValues = this.getValues();
 
   navigateFunction(direction: string) {
+    console.log('all recencies: ', this.getValues());
     this.initializeVariables();
     this.currentTranslateX += this.determineCorrectShiftAmount(direction);
     setTimeout(() => {
@@ -59,23 +58,23 @@ export class RecencyComponent {
 
         // shift: Entfernt das erste Element eines Arrays und verschiebt alle verbleibenden Elemente nach vorne. Gibt das entfernte Element zurück.
 
-        let firstItem = this.allRecencyValues.shift();
+        let firstItem = this.getValues().shift();
         if (firstItem) {
-          this.allRecencyValues.push(firstItem);
+          this.getValues().push(firstItem);
         }
-        this.currentIndex = (this.currentIndex + 1) % this.allRecencyValues.length;
+        this.currentIndex = (this.currentIndex + 1) % this.getValues().length;
       } else {
 
         // pop: Entfernt das letzte Element eines Arrays und gibt das entfernte Element zurück.
 
-        let lastItem = this.allRecencyValues.pop();
+        let lastItem = this.getValues().pop();
         if (lastItem) {
 
           // Fügt ein oder mehrere Elemente am Anfang eines Arrays hinzu und gibt die neue Länge des Arrays zurück. 
 
-          this.allRecencyValues.unshift(lastItem);
+          this.getValues().unshift(lastItem);
         }
-        this.currentIndex = (this.currentIndex - 1 + this.allRecencyValues.length) % this.allRecencyValues.length;
+        this.currentIndex = (this.currentIndex - 1 + this.getValues().length) % this.getValues().length;
       }
       this.setVariablesBackToOriginalValues();
     }, this.animationDuration);
@@ -109,14 +108,14 @@ export class RecencyComponent {
   permuteRecencyArrayDependingOnMovingDirection(direction: string) {
     this.transitionEnabled = false;
     if (direction === 'right') {
-      let firstItem = this.allRecencyValues.shift();
+      let firstItem = this.getValues().shift();
       if (firstItem) {
-        this.allRecencyValues.push(firstItem);
+        this.getValues().push(firstItem);
       }
     } else {
-      let lastItem = this.allRecencyValues.pop();
+      let lastItem = this.getValues().pop();
       if (lastItem) {
-        this.allRecencyValues.unshift(lastItem);
+        this.getValues().unshift(lastItem);
       }
     }
   }
