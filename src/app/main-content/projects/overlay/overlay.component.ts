@@ -37,7 +37,6 @@ export class OverlayComponent {
 
   nextIndex: number = 0
   currentIndex: number = 0;
-  // isDisabled: boolean = false;
 
   keyValues = Object.keys(this.projectsData);
   projectValues = Object.values(this.projectsData);
