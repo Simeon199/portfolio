@@ -19,7 +19,7 @@ import { ContactComponent } from './contact/contact.component';
     ProjectsComponent,
     RecencyComponent,
     ContactComponent,
-    FooterComponent,
+    FooterComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
