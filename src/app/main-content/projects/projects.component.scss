@@ -17,6 +17,7 @@
 .content-wrapper-without-pop-ups {
     display: flex;
     flex-direction: column;
+    max-width: 600px;
 
     @media(max-width: 1350px) {
         max-width: 560px;
