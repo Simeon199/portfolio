@@ -19,14 +19,12 @@
                 </div>
             </div>
             <div class="links-to-project">
-                <button [ngStyle]="{'cursor': title === 'DABubble (Coming Soon)' ? 'not-allowed' : 'cursor'}">
-                    <a [ngStyle]="{'cursor': title === 'DABubble (Coming Soon)' ? 'not-allowed' : 'cursor'}"
-                        href={{gitHubLink}} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <button [class.disabled]="title === 'DABubble (Coming Soon)'">
+                    <a href={{gitHubLink}} target="_blank" rel="noopener noreferrer">GitHub</a>
                     <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
                 </button>
-                <button [ngStyle]="{'cursor': title === 'DABubble (Coming Soon)' ? 'not-allowed' : 'cursor'}">
-                    <a [ngStyle]="{'cursor': title === 'DABubble (Coming Soon)' ? 'not-allowed' : 'cursor'}"
-                        href={{projectLink}} target="_blank" rel="noopener noreferrer">Live Test</a>
+                <button [class.disabled]="title === 'DABubble (Coming Soon)'">
+                    <a href={{projectLink}} target="_blank" rel="noopener noreferrer">Live Test</a>
                     <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
                 </button>
             </div>

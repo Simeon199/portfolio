@@ -128,10 +128,6 @@
     @media(max-width: 450px) {
         height: 98%;
     }
-
-    // @media(max-width: 360px) {
-    //     height: 90%;
-    // }
 }
 
 .next-project-image-section-responsive {
@@ -203,8 +199,6 @@
 .project-image {
     img {
         width: 520px;
-        // max-width: 520px;
-        // width: 80%;
         height: 369.78px;
         gap: 0px;
         border-radius: 30px;
@@ -358,4 +352,10 @@ button {
     @media(max-width: 1300px) {
         display: none;
     }
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
 }
