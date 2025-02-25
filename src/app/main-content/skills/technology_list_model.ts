@@ -38,10 +38,5 @@ export interface technologyListModel {
     scrum: {
         name: string,
         imageSrc: string
-    },
-    growthMindset: {
-        name: string,
-        imageSrcUnhovered: string,
-        imageSrcHovered: string
     }
 }

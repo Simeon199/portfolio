@@ -4,7 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
 import { CommonModule } from '@angular/common';
 import { technologyListData } from './technology_list_data';
-import { SingleTechnologyComponent } from './single-technology/single-technology.component';
 import { technologyListModel } from './technology_list_model';
 
 @Component({
@@ -13,7 +12,6 @@ import { technologyListModel } from './technology_list_model';
   imports: [
     ButtonStyleComponent,
     TranslateModule,
-    SingleTechnologyComponent,
     CommonModule
   ],
   templateUrl: './skills.component.html',
@@ -26,6 +24,9 @@ export class SkillsComponent {
   technologyListData: technologyListModel = technologyListData;
 
   constructor(private languageService: LanguageService) {
+    for (let singleProject of this.getTechnologyListValues()) {
+      console.log(singleProject.name);
+    }
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });

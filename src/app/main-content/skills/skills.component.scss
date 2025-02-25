@@ -43,22 +43,11 @@
     }
 }
 
-.all-skills-listed-icons-section {
-    width: 560px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.all-skills-listed {
+.all-skills-listed-section {
     display: flex;
     flex-wrap: wrap;
     max-width: 636px;
     gap: 72px;
-
-    img:hover {
-        transform: scale(1.125);
-    }
 
     @media(max-width: 1350px) {
         max-width: 560px;
@@ -69,6 +58,14 @@
     @media(max-width: 500px) {
         gap: 32px;
     }
+}
+
+.single-technology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 1);
 }
 
 h2 {
