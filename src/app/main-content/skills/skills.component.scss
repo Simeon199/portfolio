@@ -45,8 +45,10 @@
 
 .all-skills-listed-section {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    max-width: 636px;
+    max-width: 600px;
     gap: 72px;
 
     @media(max-width: 1350px) {

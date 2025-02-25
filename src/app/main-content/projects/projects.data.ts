@@ -36,7 +36,7 @@ export const projectsData: projectsModel = {
     },
     daBubble: {
         title: 'DABubble (Coming Soon)',
-        projectImageSource: '../../../../assets/img/da-bubble.png',
+        projectImageSource: '../../../../assets/img/dabubble.svg',
         description: 'In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht.',
         technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
         technologyImageIcons: [

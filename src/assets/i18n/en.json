@@ -82,7 +82,7 @@
         },
         "daBubble": {
             "title": "DABubble (Coming Soon)",
-            "projectImageSource": "../../../../assets/img/da-bubble.png",
+            "projectImageSource": "../../../../assets/img/dabubble.svg",
             "description": "Based on Slack, this app offers a user-friendly platform for optimizing team communication. Real-time messages and a structured channel organization make communication within the team noticeably easier.",
             "technologyList": [
                 "Angular",
