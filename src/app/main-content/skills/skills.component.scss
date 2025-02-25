@@ -170,3 +170,19 @@ h2 {
         }
     }
 }
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: flex;
+}
+
+.technology-icon-wrapper.hovered {
+    display: block;
+}
+
+// .technology-icon-wrapper.d-none {
+//     display: none;
+// }

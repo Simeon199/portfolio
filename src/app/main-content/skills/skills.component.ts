@@ -22,14 +22,22 @@ export class SkillsComponent {
 
   currentLanguage: string = "de";
   technologyListData: technologyListModel = technologyListData;
+  isHovered: boolean = false;
+  styleValueHovered: string | any = 'block';
 
   constructor(private languageService: LanguageService) {
-    for (let singleProject of this.getTechnologyListValues()) {
-      console.log(singleProject.name);
-    }
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
+  }
+
+  setHovered(isHovered: boolean) {
+    this.isHovered = isHovered;
+    if (this.isHovered) {
+      this.styleValueHovered = 'none';
+    } else {
+      this.styleValueHovered = 'block';
+    }
   }
 
   getTechnologyListKeys() {

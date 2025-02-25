@@ -22,10 +22,11 @@
             </div>
         </div>
         <div class="growth-mindset-wrapper">
-            <div class="technology-icon-wrapper">
+            <div class="technology-icon-wrapper" (mouseenter)="setHovered(true)" (mouseleave)="setHovered(false)"
+                [ngStyle]="{display: styleValueHovered}">
                 <img src="../../../../assets/img/growth-mindset-unhovered.svg" alt="growth-mindset-unhovered">
             </div>
-            <div class="technology-icon-wrapper" style="display: none;">
+            <div class="technology-icon-wrapper" [ngStyle]="{display: isHovered == true ? 'block' : 'none'}">
                 <img src="../../../../assets/img/growth-mindset-hovered.svg" alt="growth-mindset-hovered">
             </div>
         </div>
