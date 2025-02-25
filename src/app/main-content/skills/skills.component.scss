@@ -68,6 +68,27 @@
     align-items: center;
     gap: 8px;
     color: rgba(255, 255, 255, 1);
+
+    p {
+        font-family: "Fira Code";
+        font-weight: normal;
+        font-size: 16px;
+        // line-height: 21.6px;
+        text-align: center;
+    }
+
+    &:hover {
+
+        transform: scale(1.2);
+
+        // img {
+        //     transform: scale(1.2);
+        // }
+
+        p {
+            color: rgba(61, 207, 182, 1);
+        }
+    }
 }
 
 h2 {
@@ -170,19 +191,3 @@ h2 {
         }
     }
 }
-
-.d-none {
-    display: none;
-}
-
-.d-block {
-    display: flex;
-}
-
-.technology-icon-wrapper.hovered {
-    display: block;
-}
-
-// .technology-icon-wrapper.d-none {
-//     display: none;
-// }
