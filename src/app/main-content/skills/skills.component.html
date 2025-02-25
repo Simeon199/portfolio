@@ -14,20 +14,18 @@
     </div>
     <div class="all-skills-listed-section">
         <div class="single-technology" *ngFor="let singleTechnology of getTechnologyListValues()">
-            <div class="technology-icon-wrapper">
-                <img src={{singleTechnology.imageSrc}} alt="imgSrc">
-            </div>
-            <div class="technology-name-wrapper">
-                <p>{{singleTechnology.name}}</p>
-            </div>
+            <img src={{singleTechnology.imageSrc}} alt="imgSrc">
+            <p>{{singleTechnology.name}}</p>
         </div>
-        <div class="growth-mindset-wrapper">
-            <div class="technology-icon-wrapper" (mouseenter)="setHovered(true)" (mouseleave)="setHovered(false)"
-                [ngStyle]="{display: styleValueHovered}">
-                <img src="../../../../assets/img/growth-mindset-unhovered.svg" alt="growth-mindset-unhovered">
-            </div>
-            <div class="technology-icon-wrapper" [ngStyle]="{display: isHovered == true ? 'block' : 'none'}">
-                <img src="../../../../assets/img/growth-mindset-hovered.svg" alt="growth-mindset-hovered">
+        <div class="growth-mindset-wrapper" (mouseenter)="setHovered(true)" (mouseleave)="setHovered(false)">
+            <div class="growth-mindset-unhovered">
+                <img [ngStyle]="{'transform': isHovered ? 'scale(1.125)': 'none'}"
+                    src="../../../../assets/img/growth-mindset-green.svg" alt="growth-mindset-green">
+                @if(isHovered == true){
+                <p [ngStyle]="{'color': 'rgba(61, 207, 182, 1)'}">Growth mindset</p>
+                } @else {
+                <p [ngStyle]="{'color': 'rgba(255, 255, 255, 1)'}">Growth mindset</p>
+                }
             </div>
         </div>
     </div>
