@@ -4,17 +4,14 @@
     background-color: rgb(31, 46, 43);
     border: 1px solid rgba(61, 207, 182, 1);
     color: rgba(255, 255, 255, 0.8);
-    max-width: 568px;
+    max-width: 560px;
     flex-wrap: wrap;
-    width: 650px;
-    // height: 275px;
     padding: 48px 40px 48px 40px;
     gap: 44px;
     border-radius: 32px;
 
     @media(max-width: 1200px) {
         width: 400px;
-        // height: 275px;
         padding: 40px;
         gap: 0px;
         justify: space-between;

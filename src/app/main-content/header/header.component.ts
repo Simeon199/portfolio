@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -16,10 +17,15 @@ export class HeaderComponent {
   isDropdownMenuActivated: boolean = false;
   currentLanguage: string = 'de';
 
-  constructor(private languageService: LanguageService) {
+  constructor(private languageService: LanguageService, public router: Router) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
+  }
+
+  isHiddenRoute() {
+    const hiddenRoutes = ['/legal-notice'];
+    return hiddenRoutes.includes(this.router.url);
   }
 
   toggleLanguage() {
@@ -46,7 +52,6 @@ export class HeaderComponent {
       }
     }
   }
-
 
   // --- Alternative zum Aktivieren/Deaktivieren des Dropdown-Menüs ---
 

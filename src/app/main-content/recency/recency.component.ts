@@ -20,7 +20,7 @@ export class RecencyComponent {
   animationDuration = 500;
   isAnimating = false;
   currentTranslateX = 0;
-  commentWidth = 636;
+  commentWidth = 720;
   transitionEnabled = true;
   recencies: any = '';
   recencyValues: any = '';
@@ -61,7 +61,6 @@ export class RecencyComponent {
     return Object.values(this.recencies);
   }
 
-
   navigateFunction(direction: string) {
     this.initializeVariables();
     this.currentTranslateX += this.determineCorrectShiftAmount(direction);
@@ -73,11 +72,15 @@ export class RecencyComponent {
   }
 
   changeOrderOfRecencyArray(direction: string) {
-    if (direction == 'right') {
+    if (this.isMovingDirectionRight(direction)) {
       this.shiftFirstRecencyToEndOfRecenciesArray();
     } else {
       this.shiftLastRecencyToBeginningofRecenciesArray();
     }
+  }
+
+  isMovingDirectionRight(direction: string) {
+    return direction == 'right';
   }
 
   shiftFirstRecencyToEndOfRecenciesArray() {
@@ -85,6 +88,7 @@ export class RecencyComponent {
     if (firstItem) {
       this.recencies.push(firstItem);
     }
+    this.currentIndex = (this.currentIndex + 1) % this.getValues().length;
   }
 
   shiftLastRecencyToBeginningofRecenciesArray() {
@@ -92,14 +96,14 @@ export class RecencyComponent {
     if (lastItem) {
       this.recencies.unshift(lastItem);
     }
+    this.currentIndex = (this.currentIndex - 1 + this.getValues().length) % this.getValues().length;
   }
 
   determineCorrectShiftAmount(direction: string) {
-    let shiftAmount = 0;
-    if (direction == 'right') {
-      return shiftAmount = -this.commentWidth;
+    if (this.isMovingDirectionRight(direction)) {
+      return this.currentTranslateX = -this.commentWidth;
     } else {
-      return shiftAmount = this.commentWidth;
+      return this.currentTranslateX = this.commentWidth;
     }
   }
 
