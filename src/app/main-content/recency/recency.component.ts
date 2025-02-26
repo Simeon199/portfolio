@@ -25,12 +25,22 @@ export class RecencyComponent {
   recencies: any = '';
 
   currentLanguage: string = 'de';
+  isLeftArrowHovered: boolean = false;
+  isRightArrowHovered: boolean = false;
 
   constructor(private translate: TranslateService) {
     this.loadTranslations();
     this.translate.onLangChange.subscribe(() => {
       this.loadTranslations();
     })
+  }
+
+  setHoverStatus(booleanValue: boolean, correctArrow: string) {
+    if (correctArrow == 'rightArrow') {
+      this.isRightArrowHovered = booleanValue;
+    } else if (correctArrow == 'leftArrow') {
+      this.isLeftArrowHovered = booleanValue;
+    }
   }
 
   loadTranslations() {

@@ -92,3 +92,22 @@
         }
     }
 }
+
+.arrow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrow-wrapper:first-child:hover {
+    svg {
+        transform: scale(1.125);
+    }
+}
+
+.arrow-wrapper:last-child:hover {
+    svg {
+        transform: scale(1.125);
+    }
+}
