@@ -1,3 +1,4 @@
+<!-- all recencies here -->
 <div class="recency-section">
     <h2>{{'recencies.title' | translate}}</h2>
     <div class="recency-carousel">
@@ -11,9 +12,10 @@
         </div>
     </div>
 
-
+    <!-- navigation here -->
     <div class="navigate-section">
 
+        <!-- left arrow -->
         <div class="arrow-wrapper" (click)="navigateFunction('left')" (mouseenter)="setHoverStatus(true, 'leftArrow')"
             (mouseleave)="setHoverStatus(false, 'leftArrow')">
             <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +30,7 @@
             </svg>
         </div>
 
+        <!-- all ellipse icons -->
         <div class="all-ellipse-container">
             <svg *ngFor="let recency of getValues(); let i = index" width="8" height="8" viewBox="0 0 8 8" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -35,6 +38,7 @@
             </svg>
         </div>
 
+        <!-- right Arrow -->
         <div class="arrow-wrapper" (click)="navigateFunction('right')" (mouseenter)="setHoverStatus(true, 'rightArrow')"
             (mouseleave)="setHoverStatus(false, 'rightArrow')">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
