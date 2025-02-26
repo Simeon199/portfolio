@@ -7,8 +7,8 @@
         </div>
         <div class="recency-track" [style.transform]="'translateX(' + currentTranslateX + 'px)'"
             [style.transition]="transitionEnabled ? 'transform 0.5s ease-in-out': 'none'">
-            <app-single-recency *ngFor="let recency of recencies; let i = index" [recency]="recency"
-                [ngClass]="{'active': i===1}"></app-single-recency>
+            <app-single-recency *ngFor="let recencyObject of recencies; let i = index" [recency]="recencyObject.recency"
+                [recencyAuthor]="recencyObject.author" [ngClass]="{'active': i===1}"></app-single-recency>
         </div>
     </div>
 

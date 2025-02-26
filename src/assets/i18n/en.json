@@ -127,8 +127,14 @@
     },
     "recencies": {
         "title": "What my colleagues say about me",
-        "recency1": "Simon's involvement in our Join group project was very refreshing and enriching, as he was always on hand when there was a problem and also persistently worked towards a solution. Even if you needed support, you could just ask him and he would take the time to answer your questions.",
-        "recency2": "I had the pleasure of working with Simon on our joint project. He was always reliable and actively involved in all tasks. I was particularly impressed by how quickly he picked up new concepts and technologies. Simon is a very valuable partner who always approached us and was instrumental in helping us achieve our goal."
+        "recency1": {
+            "author": "Marcel Žalec - Team Partner",
+            "recency": "Simon's involvement in our Join group project was very refreshing and enriching, as he was always on hand when there was a problem and also persistently worked towards a solution. Even if you needed support, you could just ask him and he would take the time to answer your questions."
+        },
+        "recency2": {
+            "author": "Ayyub Qarar - Team Partner",
+            "recency": "I had the pleasure of working with Simon on our joint project. He was always reliable and actively involved in all tasks. I was particularly impressed by how quickly he picked up new concepts and technologies. Simon is a very valuable partner who always approached us and was instrumental in helping us achieve our goal."
+        }
     },
     "contact": {
         "h2First": "Kontakt",

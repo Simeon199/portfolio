@@ -23,16 +23,25 @@ export class RecencyComponent {
   commentWidth = 636;
   transitionEnabled = true;
   recencies: any = '';
+  recencyValues: any = '';
+  recencyKeys: any = '';
 
   currentLanguage: string = 'de';
   isLeftArrowHovered: boolean = false;
   isRightArrowHovered: boolean = false;
 
   constructor(private translate: TranslateService) {
+    console.log('recencies: ', this.recencies);
     this.loadTranslations();
+    this.invokeRecencyObject();
     this.translate.onLangChange.subscribe(() => {
       this.loadTranslations();
     })
+  }
+
+  invokeRecencyObject() {
+    this.getValues();
+    this.getKeys();
   }
 
   setHoverStatus(booleanValue: boolean, correctArrow: string) {
@@ -50,25 +59,31 @@ export class RecencyComponent {
   }
 
   getKeys(): string[] {
+    this.recencyKeys = Object.keys(this.recencies);
+    console.log('recencyKeys: ', this.recencyKeys);
     return Object.keys(this.recencies);
   }
 
   getValues(): string[] {
+    this.recencyValues = Object.keys(this.recencies);
+    console.log('recencyValues: ', this.recencyValues);
     return Object.values(this.recencies);
   }
 
-
   navigateFunction(direction: string) {
-    console.log('all recencies: ', this.getValues());
+
+    // Ersetze getValues() durch this.recencyKeys und schaue, ob diese übernommen werden
+
     this.initializeVariables();
     this.currentTranslateX += this.determineCorrectShiftAmount(direction);
     setTimeout(() => {
       this.transitionEnabled = false;
       if (direction == 'right') {
-
+        debugger;
         // shift: Entfernt das erste Element eines Arrays und verschiebt alle verbleibenden Elemente nach vorne. Gibt das entfernte Element zurück.
 
-        let firstItem = this.getValues().shift();
+        // let firstItem = this.getValues().shift();
+        let firstItem = this.recencyValues.shift();
         if (firstItem) {
           this.getValues().push(firstItem);
         }

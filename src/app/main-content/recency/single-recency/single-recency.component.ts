@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class SingleRecencyComponent {
   @Input() recency!: string;
+  @Input() recencyAuthor!: string;
 }
