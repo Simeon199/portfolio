@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -13,9 +14,14 @@ import { TranslateModule } from '@ngx-translate/core';
 
 export class FooterComponent {
   currentLanguage: string = '';
-  constructor(private languageService: LanguageService) {
+
+  constructor(private languageService: LanguageService, public router: Router) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     })
+  }
+
+  isLegalNoticePage() {
+    return this.router.url === '/legal-notice';
   }
 }

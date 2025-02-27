@@ -14,7 +14,8 @@
             <a href="#person-description-section">{{"header.navbarTitleFirst" | translate}}</a>
             <a href="#skills-section">{{"header.navbarTitleSecond" | translate}}</a>
             <a href="#projects">{{"header.navbarTitleThird" | translate}}</a>
-            <div class="language-selection-responsive" *ngIf="!isHiddenRoute()">
+            <div class="language-selection-responsive">
+                <!-- *ngIf="!isHiddenRoute()" -->
                 <div class="languageSelection">
                     <button (click)="toggleLanguage()"
                         [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"
@@ -31,7 +32,8 @@
         </div>
     </div>
     <nav>
-        <div class="language-selection" *ngIf="!isHiddenRoute()">
+        <div class="language-selection">
+            <!-- *ngIf="!isHiddenRoute()" -->
             <div class="languageSelection">
                 <button (click)="toggleLanguage()"
                     [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"

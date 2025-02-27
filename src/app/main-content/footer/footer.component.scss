@@ -1,13 +1,17 @@
 footer {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 96px;
+    flex-direction: column;
     padding-right: 24px;
     padding-left: 24px;
-    padding-bottom: 24px;
-    display: flex;
-    flex-direction: column;
+    height: 200px;
+    position: relative;
+
+    img {
+        width: 400px;
+        position: absolute;
+        bottom: 12px;
+        right: calc((100% - 400px) / 2);
+    }
 
     @media(max-width: 600px) {
         height: 240px;
@@ -52,7 +56,7 @@ footer {
     font-size: 18px;
     font-weight: 400;
     line-height: 21.6px;
-    text-align: left;
+    text-align: center;
     color: rgba(61, 207, 182, 1);
 
     @media(max-width: 600px) {
@@ -105,16 +109,7 @@ footer {
     }
 }
 
-.signature {
-    position: relative;
-    right: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
-
-    img {
-        position: absolute;
-        right: 0;
-    }
+.add-spacing-top {
+    padding-top: 160px;
+    height: 350px;
 }

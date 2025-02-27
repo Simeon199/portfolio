@@ -2,6 +2,7 @@
     margin: 0 auto;
     max-width: 1440px;
     z-index: 20;
+    min-height: 100%;
 
     @media(max-width: 1440px) {
         .router-outlet-container {
