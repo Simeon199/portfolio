@@ -168,6 +168,10 @@
             opacity: 1;
         }
     }
+
+    @media(max-width: 700px) {
+        width: 80%;
+    }
 }
 
 h2 {
