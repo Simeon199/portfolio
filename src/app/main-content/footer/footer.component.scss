@@ -109,8 +109,25 @@ footer {
     }
 }
 
-.add-spacing-top {
-    // position: unset;
-    padding-top: 160px;
-    height: 350px;
-}
+// Alternative footer styling
+
+// display: flex;
+// flex-direction: column;
+// padding-right: 24px;
+// padding-left: 24px;
+// height: 200px;
+// position: absolute;
+// bottom: 0;
+// right: 0;
+// left: 0;
+// max-width: 1440px;
+// margin: 0 auto;
+
+// Nochmal Alternative::after
+
+// position: relative;
+
+// .add-spacing-top {
+//     padding-top: 160px;
+//     height: 350px;
+// }

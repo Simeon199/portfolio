@@ -1,4 +1,6 @@
-<footer [class.add-spacing-top]="isLegalNoticePage()">
+<footer
+    [ngStyle]="isLegalNoticePage() ? {'position': 'absolute', 'bottom': '0', 'right': '0', 'left': '0', 'max-width': '1440px', 'margin': '0 auto'} : {'position': 'relative'}">
+    <!-- [class.add-spacing-top]="isLegalNoticePage()" -->
     <div class="footer-content-wrapper">
         <div class="my-person-wrapper">
             <div class="my-person-box">
@@ -22,7 +24,6 @@
         <div class="copyright-section">
             © Simon Kiesner 2025
         </div>
-        <!-- <img src="../../../assets/img/signature.svg" alt="signature"> -->
     </div>
     <img src="../../../assets/img/signature.svg" alt="signature">
 </footer>
