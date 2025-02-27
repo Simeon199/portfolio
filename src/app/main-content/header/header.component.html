@@ -1,11 +1,14 @@
-<header (click)="showOrHideDropdown()">
+<!-- <header (click)="showOrHideDropdown()"> -->
+<header (click)="hideDropdown()">
     <div class="navbar-responsive-design">
         <div class="my-logo-responsive">
             <a routerLink="/">
                 <h3>SK</h3>
             </a>
         </div>
-        <img src="../../../assets/img/menu_icon.svg" (click)="showOrHideDropdown(); stopEventPropagation($event)"
+        <!-- <img src="../../../assets/img/menu_icon.svg" (click)="showOrHideDropdown(); stopEventPropagation($event)"
+            alt="menu-icon"> -->
+        <img src="../../../assets/img/menu_icon.svg" (click)="showDropdown(); stopEventPropagation($event)"
             alt="menu-icon">
         <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated">
             <a href="#person-description-section">{{"header.navbarTitleFirst" | translate}}</a>
