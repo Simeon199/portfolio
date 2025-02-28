@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SingleRecencyComponent } from './single-recency/single-recency.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -29,12 +29,18 @@ export class RecencyComponent {
   currentLanguage: string = 'de';
   isLeftArrowHovered: boolean = false;
   isRightArrowHovered: boolean = false;
+  isSmallScreen: boolean = window.innerWidth < 950;
 
   constructor(private translate: TranslateService) {
     this.loadTranslations();
     this.translate.onLangChange.subscribe(() => {
       this.loadTranslations();
     })
+  }
+
+  @HostListener('window: resize', ['$event'])
+  onResize() {
+    this.isSmallScreen = window.innerWidth < 950;
   }
 
   setHoverStatus(booleanValue: boolean, correctArrow: string) {
