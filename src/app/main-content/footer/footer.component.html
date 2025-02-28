@@ -1,5 +1,5 @@
 <footer
-    [ngStyle]="isLegalNoticePage() ? {'position': 'absolute', 'bottom': '0', 'right': '0', 'left': '0', 'max-width': '1440px', 'margin': '0 auto'} : {'position': 'relative'}">
+    [ngStyle]="isLegalOrPrivacyPage() ? {'position': 'absolute', 'bottom': '0', 'right': '0', 'left': '0', 'max-width': '1440px', 'margin': '0 auto'} : {'position': 'relative'}">
     <!-- [class.add-spacing-top]="isLegalNoticePage()" -->
     <div class="footer-content-wrapper">
         <div class="my-person-wrapper">
@@ -19,6 +19,7 @@
                     rel="noopener noreferrer">LinkedIn</a>
                 <a href="mailto:simon.kiesner@gmx.de">Email</a>
                 <a routerLink="/legal-notice">Legal Notice</a>
+                <a routerLink="/privacy-policy">Privacy Policy</a>
             </div>
         </div>
         <div class="copyright-section">

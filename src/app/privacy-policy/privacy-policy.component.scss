@@ -1,0 +1,43 @@
+* {
+    background: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
+}
+
+.privacy-policy-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    gap: 24px;
+    padding: 64px;
+    top: 100px;
+    border-radius: 8px;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .small-section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.item-class {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .single-item {
+        display: flex;
+        gap: 8px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}

@@ -23,10 +23,10 @@ export class HeaderComponent {
     });
   }
 
-  // isHiddenRoute() {
-  //   const hiddenRoutes = ['/legal-notice'];
-  //   return hiddenRoutes.includes(this.router.url);
-  // }
+  isHiddenRoute() {
+    const hiddenRoutes = ['/privacy-policy'];
+    return hiddenRoutes.includes(this.router.url);
+  }
 
   toggleLanguage() {
     const newLang = this.currentLanguage === 'de' ? 'en' : 'de';

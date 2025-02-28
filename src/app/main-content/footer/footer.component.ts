@@ -22,7 +22,7 @@ export class FooterComponent {
     })
   }
 
-  isLegalNoticePage() {
-    return this.router.url === '/legal-notice';
+  isLegalOrPrivacyPage() {
+    return (this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
   }
 }
