@@ -22,7 +22,45 @@ export class FooterComponent {
     })
   }
 
+  // getDynamicStyles() {
+  //   const url = this.router.url;
+  //   if (this.isLegalOrPrivacyPage()) {
+  //     return { 'position': 'absolute', 'bottom': '0', 'right': '0', 'left': '0', 'max-width': '1440px', 'margin': '0 auto' }
+  //   } else if (url !== '/' && url !== '/legal-notice' && url !== '/privacy-policy') {
+  //     return { 'position': 'relative', 'height': '350px' }
+  //   } else {
+  //     return { 'position': 'relative' };
+  //   }
+  // }
+
+  getDynamicStyles() {
+    const url = this.router.url;
+    if (this.isLegalNoticePage()) {
+      return { 'position': 'absolute', 'bottom': '0', 'right': '0', 'left': '0', 'max-width': '1440px', 'margin': '0 auto' }
+    } else if (this.isPrivacyPolicyPage()) {
+      return { 'position': 'relative', 'height': '350px' }
+    } else {
+      return { 'position': 'relative' };
+    }
+  }
+
   isLegalOrPrivacyPage() {
-    return (this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
+    return this.isLegalNoticePage() || this.isPrivacyPolicyPage()
+  }
+
+  isLegalNoticePage() {
+    return this.router.url === '/legal-notice';
+  }
+
+  isPrivacyPolicyPage() {
+    return this.router.url === '/privacy-policy';
+  }
+
+  getFooterWrapperStyle() {
+    if (this.isPrivacyPolicyPage()) {
+      return { 'position': 'absolute', 'bottom': '60px', 'width': '96%' }
+    } else {
+      return null;
+    }
   }
 }

@@ -1,7 +1,5 @@
-<footer
-    [ngStyle]="isLegalOrPrivacyPage() ? {'position': 'absolute', 'bottom': '0', 'right': '0', 'left': '0', 'max-width': '1440px', 'margin': '0 auto'} : {'position': 'relative'}">
-    <!-- [class.add-spacing-top]="isLegalNoticePage()" -->
-    <div class="footer-content-wrapper">
+<footer [ngStyle]="getDynamicStyles()">
+    <div class="footer-content-wrapper" [ngStyle]="getFooterWrapperStyle()">
         <div class="my-person-wrapper">
             <div class="my-person-box">
                 <div class="h2-footer-section">
