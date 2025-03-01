@@ -1,188 +1,193 @@
-.contact-form-container {
+@use '../../../breakpoints.scss' as breakpoint;
 
-    form {
+$standardGreen: rgba(61, 207, 182, 0.5);
+$standardWhite: rgba(255, 255, 255, 0.8);
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    color: $standardGreen;
+    border-width: 1px, 0px, 1px, 0px;
+}
+
+.checkbox-validation-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.checkbox-and-validation {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 56px;
+
+    label {
         display: flex;
-        flex-direction: column;
-        width: 500px;
-        color: rgba(61, 207, 182, 1);
-        border-width: 1px, 0px, 1px, 0px;
+        gap: 8px;
+        align-items: center;
+    }
 
-        @media(max-width: 700px) {
-            align-items: center;
-            width: unset;
-        }
+    span {
+        font-family: 'Karla';
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        color: $standardWhite;
 
-        .form-group {
-
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            border-top: 1px solid rgba(61, 207, 182, 0.5);
-            border-bottom: 1px solid rgba(61, 207, 182, 0.5);
-            padding: 32px;
-
-            label {
-                font-family: 'Fira Code';
-                font-size: 24px;
-                font-weight: 500;
-                line-height: 28.8px;
-            }
-
-            textarea {
-                background-color: #1C1C1C;
-                border: none;
-            }
-
-            input {
-                border: none;
-                background-color: #1C1C1C;
-            }
-
-            @media(max-width: 1350px) {
-                font-size: 20px;
-                font-weight: 500;
-                line-height: 24px;
-                text-align: left;
-            }
-
-            @media(max-width: 700px) {
-                max-width: 560px;
-                width: 90%;
-            }
-        }
-
-        #mail {
-            font-family: 'Karla';
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 21.6px;
-            text-align: left;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        #name {
-            font-family: 'Karla';
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 21.6px;
-            text-align: left;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        #subject {
-            font-family: 'Karla';
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 21.6px;
-            text-align: left;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        #submit-input {
-            cursor: pointer;
-            font-family: 'Karla';
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 21.6px;
-            text-align: left;
-            color: rgba(255, 255, 255, 0.8);
-            background-color: #1C1C1C;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            width: 139px;
-            height: 48px;
-            padding: 0px 24px 0px 24px;
-            gap: 10px;
-            border-radius: 100px;
-            margin-top: 24px;
-            align-self: center;
+        a {
+            color: $standardGreen;
+            text-decoration: none;
         }
     }
 
-    .checkbox-validation-section {
+    img {
+        cursor: pointer;
+    }
+}
 
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        justify-content: center;
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 20px;
+    align-self: center;
+    border: 2px solid $standardGreen;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover {
+    background-image: url("../../../../assets/img/checkbox_hover.svg");
+    border: none;
+    background-position: center;
+    background-size: auto;
+}
+
+input[type="checkbox"]:checked {
+    background-image: url("../../../../assets/img/checkbox_checked.svg");
+    border: none;
+    background-position: center;
+    background-size: auto;
+}
+
+input[type="checkbox"]:checked:hover {
+    border: none;
+    background-image: url("../../../../assets/img/checkbox_checked_hover.svg");
+    background-position: center;
+    background-size: auto;
+}
+
+.disabled-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-group {
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid $standardGreen;
+    border-bottom: 1px solid $standardGreen;
+    padding: 32px;
+
+    label {
+        font-family: 'Fira Code';
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.8px;
+    }
+
+    textarea {
+        background-color: #1C1C1C;
+        border: none;
+    }
+
+    input {
+        border: none;
+        background-color: #1C1C1C;
+    }
+}
+
+#mail {
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    color: $standardWhite;
+}
+
+#name {
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    color: $standardWhite;
+}
+
+#subject {
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    color: $standardWhite;
+}
+
+#submit-input {
+    cursor: pointer;
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    color: $standardWhite;
+    background-color: #1C1C1C;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 139px;
+    height: 48px;
+    padding: 0px 24px 0px 24px;
+    gap: 10px;
+    border-radius: 100px;
+    margin-top: 24px;
+    align-self: center;
+}
+
+@include breakpoint.screen1350 {
+    .form-group {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+    }
+}
+
+@include breakpoint.screen700 {
+    form {
+        align-items: center;
+        width: unset;
+    }
+
+    .form-group {
+        max-width: 560px;
+        width: 90%;
     }
 
     .checkbox-and-validation {
-
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding-top: 56px;
-
-        label {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
+        padding-top: 50px;
+        align-self: center;
+        width: 90%;
 
         span {
-            font-family: 'Karla';
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 18px;
-            text-align: left;
-            color: rgba(255, 255, 255, 0.8);
-
-            a {
-                color: rgba(61, 207, 182, 0.5);
-                text-decoration: none;
-            }
-
-            @media(max-width: 700px) {
-                align-self: center;
-            }
-        }
-
-        img {
-            cursor: pointer;
-        }
-
-        @media(max-width: 700px) {
-            padding-top: 50px;
             align-self: center;
-            width: 90%;
         }
-    }
-
-    input[type="checkbox"] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        width: 28px;
-        height: 20px;
-        align-self: center;
-        border: 2px solid rgba(61, 207, 182, 1);
-        border-radius: 2px;
-        cursor: pointer;
-    }
-
-    input[type="checkbox"]:hover {
-        background-image: url("../../../../assets/img/checkbox_hover.svg");
-        border: none;
-        background-position: center;
-        background-size: auto;
-    }
-
-    input[type="checkbox"]:checked {
-        background-image: url("../../../../assets/img/checkbox_checked.svg");
-        border: none;
-        background-position: center;
-        background-size: auto;
-    }
-
-    input[type="checkbox"]:checked:hover {
-        border: none;
-        background-image: url("../../../../assets/img/checkbox_checked_hover.svg");
-        background-position: center;
-        background-size: auto;
-    }
-
-    .disabled-button {
-        opacity: 0.5;
-        cursor: not-allowed;
     }
 }

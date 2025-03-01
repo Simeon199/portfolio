@@ -1,36 +1,26 @@
+@use '../../breakpoints.scss' as breakpoint;
+
+$standardGreen: rgba(61, 207, 182, 1);
+$standardWhite: rgba(255, 255, 255, 0.8);
+
 .contact {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding-bottom: 96px;
+}
 
-    .container-without-contact-form {
-        display: flex;
-        flex-direction: column;
-        width: 568px;
-        height: 337px;
+.container-without-contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 568px;
+    height: 337px;
+}
 
-        @media(max-width: 700px) {
-            width: 90%;
-            height: unset;
-        }
-    }
-
-    .h2-contact-section {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-
-        @media(max-width: 1350px) {
-            gap: 16px;
-        }
-    }
-
-    @media(max-width: 1350px) {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
+.h2-contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .letter-section {
@@ -41,7 +31,7 @@
 }
 
 h2 {
-    color: rgba(61, 207, 182, 1);
+    color: $standardGreen;
     text-align: left;
 }
 
@@ -57,24 +47,6 @@ h2:nth-child(2) {
     font-size: 64px;
     font-weight: 700;
     line-height: 64px;
-
-    @media(max-width: 1350px) {
-        font-size: 56px;
-        line-height: 56px;
-        text-align: left;
-    }
-
-    @media(max-width: 950px) {
-        font-size: 48px;
-    }
-
-    @media(max-width: 700px) {
-        font-size: 40px;
-    }
-
-    @media(max-width: 500px) {
-        font-size: 32px;
-    }
 }
 
 span {
@@ -85,11 +57,54 @@ span {
 }
 
 span:nth-child(1) {
-    color: rgba(255, 255, 255, 0.8);
+    color: $standardWhite;
     font-weight: 400;
 }
 
 span:nth-child(2) {
-    color: rgba(61, 207, 182, 1);
+    color: $standardGreen;
     font-weight: 700;
+}
+
+// All media queries listed here
+
+@include breakpoint.screen1350 {
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .h2-contact-section {
+        gap: 16px;
+    }
+
+    h2:nth-child(2) {
+        font-size: 56px;
+        line-height: 56px;
+        text-align: left;
+    }
+}
+
+@include breakpoint.screen950 {
+    h2:nth-child(2) {
+        font-size: 48px;
+    }
+}
+
+@include breakpoint.screen700 {
+    .container-without-contact-form {
+        width: 90%;
+        height: unset;
+    }
+
+    h2:nth-child(2) {
+        font-size: 40px;
+    }
+}
+
+@include breakpoint.screen500 {
+    h2:nth-child(2) {
+        font-size: 32px;
+    }
 }
