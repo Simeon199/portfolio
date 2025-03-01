@@ -1,45 +1,55 @@
+@use '../../../breakpoints.scss' as breakpoint;
+
+$standardGreen: rgba(61, 207, 182, 1);
+
 .single-project {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgba(61, 207, 182, 1);
-    border-bottom: 1px solid rgba(61, 207, 182, 1);
+    border-top: 1px solid $standardGreen;
+    border-bottom: 1px solid $standardGreen;
     padding: 40px 32px 40px 32px;
     justify-content: space-between;
     cursor: pointer;
     width: 760px;
     gap: 24px;
+}
 
-    .project-title {
-        font-family: 'Fira Code';
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 28.8px;
-    }
+.technology:nth-child(even) {
+    color: $standardGreen;
+}
 
-    .project-technologies {
-        display: flex;
-        gap: 16px;
+.project-title {
+    font-family: 'Fira Code';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+}
 
-        @media(max-width: 700px) {
-            gap: 4px;
-            flex-wrap: wrap;
-        }
-    }
-
-    .technology:nth-child(even) {
-        color: rgba(61, 207, 182, 1);
-    }
-
-    @media(max-width: 1350px) {
-        width: 560px;
-    }
-
-    @media(max-width: 700px) {
-        max-width: 560px;
-        width: 90%;
-    }
+.project-technologies {
+    display: flex;
+    gap: 16px;
 }
 
 :hover {
-    background-color: rgba(61, 207, 182, 1);
+    background-color: $standardGreen;
+}
+
+// All media queries are listed here
+
+@include breakpoint.screen1350 {
+    .single-project {
+        width: 560px;
+    }
+}
+
+@include breakpoint.screen700 {
+    .single-project {
+        max-width: 560px;
+        width: 90%;
+    }
+
+    .project-technologies {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
 }
