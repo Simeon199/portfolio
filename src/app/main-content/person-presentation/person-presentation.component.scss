@@ -1,30 +1,28 @@
+@use '../../breakpoints.scss' as breakpoint;
+
+
+$standardGreen: rgba(61, 207, 182, 1);
+$standardWhite: rgba(217, 217, 217, 1);
+$backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+$blurFilter: blur(5.300000190734863px);
+
 .me-presentation {
-    background-image: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    background-image: $backgroundPattern;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     height: calc(100vh - 92px);
+}
 
-    .left-lateral {
-        position: absolute;
-        bottom: 0;
-        left: 96px;
+.left-lateral {
+    position: absolute;
+    bottom: 0;
+    left: 96px;
 
-        img {
-            -webkit-backdrop-filter: blur(5.300000190734863px);
-            backdrop-filter: blur(5.300000190734863px);
-        }
-
-        @media(max-width: 500px) {
-            left: 16px;
-        }
-    }
-
-    @media(max-width: 1200px) {
-        padding-top: 200px;
-        justify-content: flex-start;
-        height: 100vh;
+    img {
+        -webkit-backdrop-filter: $blurFilter;
+        backdrop-filter: $blurFilter;
     }
 }
 
@@ -40,7 +38,7 @@
         font-size: 40px;
         font-weight: 400;
         line-height: 40px;
-        color: rgba(217, 217, 217, 1);
+        color: $standardWhite;
     }
 
     h2:nth-child(2) {
@@ -48,38 +46,13 @@
         font-size: 128px;
         font-weight: 700;
         line-height: 128px;
-        color: rgba(217, 217, 217, 1);
+        color: $standardWhite;
     }
+}
 
-    .contact-and-work-buttons {
-        display: flex;
-        gap: 48px;
-
-        @media(max-width: 500px) {
-            gap: 32px;
-        }
-    }
-
-    @media(max-width: 1200px) {
-        h2:nth-child(1) {
-            font-size: 24px;
-            line-height: 24px;
-            text-align: left;
-        }
-
-        h2:nth-child(2) {
-            font-family: 'Karla';
-            font-size: 62px;
-            line-height: 62px;
-            text-align: left;
-        }
-    }
-
-    @media(max-width: 500px) {
-        h2:nth-child(2) {
-            font-size: 44px;
-        }
-    }
+.contact-and-work-buttons {
+    display: flex;
+    gap: 48px;
 }
 
 .marquee-section {
@@ -89,7 +62,7 @@
     background-color: rgba(255, 255, 255, 0.12);
     display: flex;
     justify-content: space-evenly;
-    color: rgba(61, 207, 182, 1);
+    color: $standardGreen;
     padding: 12px 32px 12px 32px;
     gap: 56px;
     transform: rotate(-3deg);
@@ -134,10 +107,6 @@
         display: flex;
         justify-content: center;
     }
-
-    @media(max-width: 500px) {
-        right: 16px;
-    }
 }
 
 .icon-container {
@@ -154,20 +123,67 @@
 
     a {
         text-decoration: none;
-        color: rgba(217, 217, 217, 1);
-        font-family: Karla;
+        color: $standardWhite;
+        font-family: 'Karla';
         font-size: 18px;
         font-weight: 400;
         line-height: 21.6px;
         text-align: left;
         cursor: default;
 
-        @media (max-width: 1200px) {
-            display: none;
+        &:hover {
+            color: $standardGreen;
+        }
+    }
+}
+
+// all media queries listed here
+
+@include breakpoint.screen1200 {
+    .me-presentation {
+        padding-top: 200px;
+        justify-content: flex-start;
+        height: 100vh;
+    }
+
+    .name-and-profession {
+        h2:nth-child(1) {
+            font-size: 24px;
+            line-height: 24px;
+            text-align: left;
         }
 
-        &:hover {
-            color: rgba(61, 207, 182, 1);
+        h2:nth-child(2) {
+            font-family: 'Karla';
+            font-size: 62px;
+            line-height: 62px;
+            text-align: left;
         }
+    }
+
+    .email-link {
+        a {
+            display: none;
+        }
+    }
+}
+
+@include breakpoint.screen500 {
+    .left-lateral {
+        left: 16px;
+    }
+
+    .contact-and-work-buttons {
+        gap: 32px;
+    }
+
+    .name-and-profession {
+        h2:nth-child(2) {
+            font-size: 44px;
+        }
+    }
+
+    .skills-and-mail {
+        right: 16px;
     }
 }
