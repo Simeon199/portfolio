@@ -35,21 +35,23 @@ body {
 // scrollbar styling
 
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(46, 100, 91);
-    border-radius: 4px;
+    background: linear-gradient(180deg, rgb(46, 100, 91) 20%, rgb(38, 129, 114) 80%);
+    border-radius: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(38, 129, 114);
+    background: linear-gradient(180deg, rgb(38, 129, 114) 20%, rgb(46, 100, 91) 80%);
+    border: 3px solid rgba(255, 255, 255, 0.4);
 }
 
 // incorporated font-faces
