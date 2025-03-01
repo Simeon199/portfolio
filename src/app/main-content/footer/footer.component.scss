@@ -1,3 +1,5 @@
+@use '../../breakpoints.scss' as breakpoint;
+
 footer {
     display: flex;
     flex-direction: column;
@@ -13,27 +15,6 @@ footer {
         position: absolute;
         bottom: 12px;
         right: calc((100% - 400px) / 2);
-
-        @media(max-width: 500px) {
-            width: 310px;
-            right: calc((100% - 310px)/2);
-        }
-    }
-
-    @media(max-width: 600px) {
-        height: 240px;
-    }
-
-    @media(max-width: 500px) {
-        margin-top: 48px;
-    }
-}
-
-.footer-content-wrapper {
-    @media(max-width: 600px) {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
     }
 }
 
@@ -53,17 +34,13 @@ footer {
     h2 {
         color: rgba(61, 207, 182, 1);
     }
+}
 
-    .span-footer-section {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    @media(max-width: 600px) {
-        height: unset;
-    }
+.span-footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .copyright-section {
@@ -73,18 +50,6 @@ footer {
     line-height: 21.6px;
     text-align: center;
     color: rgba(61, 207, 182, 1);
-
-    @media(max-width: 600px) {
-        display: flex;
-        justify-content: center;
-        align-self: flex-end;
-        width: 100%;
-    }
-
-    @media(max-width: 500px) {
-        font-size: 16px;
-        padding-bottom: 16px;
-    }
 }
 
 .platform-links {
@@ -121,5 +86,46 @@ footer {
 
     a:hover::after {
         transform: translateX(-50%) scale(1);
+    }
+}
+
+// all media queries listed here
+
+@include breakpoint.screen600 {
+    footer {
+        height: 240px;
+    }
+
+    .footer-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .my-person-box {
+        height: unset;
+    }
+
+    .copyright-section {
+        display: flex;
+        justify-content: center;
+        align-self: flex-end;
+        width: 100%;
+    }
+}
+
+@include breakpoint.screen500 {
+    footer {
+        margin-top: 48px;
+
+        img {
+            width: 310px;
+            right: calc((100% - 310px)/2);
+        }
+    }
+
+    .copyright-section {
+        font-size: 16px;
+        padding-bottom: 16px;
     }
 }
