@@ -1,3 +1,10 @@
+@use '../../../breakpoints.scss' as breakpoint;
+
+$standardGreen: rgb(61, 207, 182);
+$standardWhite: rgba(255, 255, 255, 0.8);
+$backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+
 .overlay {
     position: fixed;
     display: flex;
@@ -13,13 +20,13 @@
 
 .content-box {
     position: relative;
-    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    background: $backgroundPattern;
     display: flex;
     align-items: center;
     width: 1248px;
     height: 656px;
     border-radius: 30px;
-    border: 1px solid rgb(61, 207, 182);
+    border: 1px solid $standardGreen;
 
     h1 {
         font-family: 'Karla';
@@ -30,20 +37,7 @@
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
-        color: rgb(61, 207, 182);
-
-        @media(max-width: 1300px) {
-            font-size: 72px;
-        }
-
-        @media(max-width: 950px) {
-            font-size: 64px;
-            line-height: 64px;
-        }
-
-        @media(max-width: 500px) {
-            font-size: 60px;
-        }
+        color: $standardGreen;
     }
 
     h2 {
@@ -53,23 +47,7 @@
         line-height: 51.2px;
         letter-spacing: -0.03em;
         text-align: left;
-        color: rgba(255, 255, 255, 0.8);
-
-        @media(max-width: 1300px) {
-            font-size: 56px;
-        }
-
-        @media(max-width: 950px) {
-            font-size: 32px;
-        }
-
-        @media(max-width: 500px) {
-            display: flex;
-            flex-wrap: wrap;
-            width: 220px;
-            font-size: 28px;
-            line-height: 35px;
-        }
+        color: $standardWhite;
     }
 
     h3 {
@@ -78,21 +56,7 @@
         font-weight: 700;
         line-height: 28.8px;
         text-align: left;
-        color: rgb(61, 207, 182);
-
-        @media(max-width: 1300px) {
-            font-size: 20px;
-            line-height: 24px;
-            text-align: left;
-        }
-
-        @media(max-width: 950px) {
-            font-size: 20px;
-        }
-
-        @media(max-width: 500px) {
-            font-size: 18px;
-        }
+        color: $standardGreen;
     }
 
     span {
@@ -101,34 +65,10 @@
         font-weight: 400;
         line-height: 21.6px;
         text-align: left;
-        color: rgba(255, 255, 255, 0.8);
-
-        @media(max-width: 1300px) {
-            font-size: 16px;
-            line-height: 19.2px;
-            text-align: left;
-        }
-    }
-
-    @media(max-width: 1300px) {
-        width: 96%;
-        height: unset;
-    }
-
-
-    @media(max-width: 950px) {
-        flex-direction: column-reverse;
-        height: 96%;
-    }
-
-    @media(max-width: 700px) {
-        height: 96%;
-    }
-
-    @media(max-width: 450px) {
-        height: 98%;
+        color: $standardWhite;
     }
 }
+
 
 .next-project-image-section-responsive {
     display: flex;
@@ -140,14 +80,6 @@
 
 .next-project-image-section-responsive {
     display: none;
-
-    @media(max-width: 1300px) {
-        display: flex;
-
-        span {
-            color: rgb(61, 207, 182);
-        }
-    }
 }
 
 .close-button-img {
@@ -163,14 +95,6 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-
-    @media(max-width: 1300px) {
-        gap: 8px;
-    }
-
-    @media(max-width: 950px) {
-        width: 100%;
-    }
 }
 
 .all-images {
@@ -186,14 +110,6 @@
         width: 150px;
         height: auto;
     }
-
-    @media(max-width: 1300px) {
-        flex-direction: unset;
-        width: unset;
-        align-items: unset;
-        padding-right: unset;
-        gap: unset;
-    }
 }
 
 .project-image {
@@ -202,47 +118,6 @@
         height: 369.78px;
         gap: 0px;
         border-radius: 30px;
-
-        @media(max-width: 1300px) {
-            height: auto;
-            align-self: center;
-            width: 90%;
-            max-width: unset;
-        }
-
-        @media(max-width: 950px) {
-            width: 100%;
-            height: auto;
-        }
-
-        @media(max-width: 700px) {
-            width: 80%;
-            height: auto;
-        }
-
-        @media(max-width: 500px) {
-            width: 88%;
-        }
-    }
-
-    @media(max-width: 1300px) {
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        height: 420px;
-    }
-
-    @media(max-width: 950px) {
-        height: unset;
-    }
-
-    @media(max-width: 500px) {
-        height: 260px;
-    }
-
-    @media(max-width: 400px) {
-        // Original 360px
-        height: 220px;
     }
 }
 
@@ -258,15 +133,6 @@
     display: flex;
     gap: 16px;
     align-items: center;
-
-    @media(max-width: 1300px) {
-        gap: 8px;
-    }
-
-    @media(max-width: 700px) {
-        gap: 4px;
-        flex-wrap: wrap;
-    }
 }
 
 .list-section {
@@ -278,13 +144,6 @@
 .links-to-project {
     display: flex;
     gap: 32px;
-
-    @media(max-width: 1300px) {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 32px;
-        padding-top: 16px;
-    }
 }
 
 button {
@@ -294,35 +153,29 @@ button {
     padding: 16px 24px 16px 24px;
     gap: 10px;
     border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 1px solid $standardWhite;
     background-color: transparent;
-
 
     a {
         text-decoration: none;
-        font-family: Karla;
+        font-family: 'Karla';
         font-size: 18px;
         font-weight: 400;
         line-height: 21.6px;
         text-align: left;
-        color: rgba(255, 255, 255, 1);
+        color: $standardWhite;
     }
 
     &:hover {
-        border: 1px solid rgb(61, 207, 182);
+        border: 1px solid $standardGreen;
 
         a {
-            color: rgb(61, 207, 182);
+            color: $standardGreen;
         }
 
         img {
             transform: scale(1.2);
         }
-    }
-
-    @media(max-width: 1300px) {
-        font-size: 12px;
-        padding: 8px;
     }
 }
 
@@ -332,7 +185,7 @@ button {
     cursor: pointer;
 
     span {
-        color: rgba(61, 207, 182, 1);
+        color: $standardGreen;
     }
 
     img {
@@ -342,16 +195,12 @@ button {
 
     &:hover {
         span {
-            color: rgba(255, 255, 255, 1);
+            color: $standardWhite;
         }
 
         img {
             transform: scale(1.2);
         }
-    }
-
-    @media(max-width: 1300px) {
-        display: none;
     }
 }
 
@@ -359,4 +208,178 @@ button {
     pointer-events: none;
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+// All media queries listed here
+
+@include breakpoint.screen1350 {
+    .content-box {
+        width: 96%;
+        height: unset;
+
+        h1 {
+            font-size: 72px;
+        }
+
+        h2 {
+            font-size: 56px;
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        span {
+            font-size: 16px;
+            line-height: 19.2px;
+            text-align: left;
+        }
+    }
+
+    .next-project-image-section-responsive {
+        display: flex;
+
+        span {
+            color: $standardGreen;
+        }
+    }
+
+    .project-information {
+        gap: 8px;
+    }
+
+    .project-image {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        height: 420px;
+
+        img {
+            height: auto;
+            align-self: center;
+            width: 90%;
+            max-width: unset;
+        }
+    }
+
+    .all-images {
+        flex-direction: unset;
+        width: unset;
+        align-items: unset;
+        padding-right: unset;
+        gap: unset;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .next-project-image-section {
+        display: none;
+    }
+
+    .test-section {
+        gap: 8px;
+    }
+
+    .links-to-project {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 32px;
+        padding-top: 16px;
+    }
+}
+
+@include breakpoint.screen950 {
+    .content-box {
+        flex-direction: column-reverse;
+        height: 96%;
+
+        h1 {
+            font-size: 64px;
+            line-height: 64px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    .project-information {
+        width: 100%;
+    }
+
+    .project-image {
+        height: unset;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@include breakpoint.screen700 {
+    .content-box {
+        height: 96%;
+    }
+
+    .project-image {
+        img {
+            width: 80%;
+            height: auto;
+        }
+    }
+
+    .test-section {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+}
+
+@include breakpoint.screen500 {
+    .content-box {
+        h1 {
+            font-size: 60px;
+        }
+
+        h2 {
+            display: flex;
+            flex-wrap: wrap;
+            width: 220px;
+            font-size: 28px;
+            line-height: 35px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+    }
+
+    .project-image {
+        height: 260px;
+
+        img {
+            width: 88%;
+        }
+    }
+}
+
+@include breakpoint.screen450 {
+    .content-box {
+        height: 98%;
+    }
+}
+
+@include breakpoint.screen400 {
+    .project-image {
+        height: 220px;
+    }
 }
