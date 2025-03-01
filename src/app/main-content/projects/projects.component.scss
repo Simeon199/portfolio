@@ -1,16 +1,35 @@
+@use '../../breakpoints.scss' as breakpoint;
+
+$standardWhite: rgba(255, 255, 255, 0.8);
+$standardGreen: rgba(61, 207, 182, 1);
+
 .projects {
     display: flex;
     justify-content: space-between;
     align-items: end;
     padding-top: 96px;
-    color: rgba(255, 255, 255, 0.8);
+    color: $standardWhite;
 
-    @media(max-width: 1350px) {
-        justify-content: center;
+    h2:nth-child(1) {
+        font-family: 'Karla';
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28.06px;
+        text-align: left;
+        color: $standardGreen;
+
     }
 
-    @media(max-width: 500px) {
-        padding-top: 48px;
+    h2:nth-child(2) {
+        font-family: 'Fira Code';
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 64px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        padding-bottom: 16px;
+        padding-top: 16px;
+        color: $standardGreen;
     }
 }
 
@@ -18,23 +37,10 @@
     display: flex;
     flex-direction: column;
     max-width: 600px;
-
-    @media(max-width: 1350px) {
-        max-width: 560px;
-    }
-
-    @media(max-width: 700px) {
-        width: 90%;
-    }
 }
 
 .content-above-single-projects {
     padding-bottom: 16px;
-
-    @media(max-width: 700px) {
-        width: 90%;
-        gap: 16px;
-    }
 }
 
 .collection-of-single-projects {
@@ -47,53 +53,67 @@
     justify-content: space-between;
 }
 
-h2:nth-child(1) {
-    font-family: 'Karla';
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 28.06px;
-    text-align: left;
-    color: rgba(61, 207, 182, 1);
-
-}
-
-h2:nth-child(2) {
-    font-family: 'Fira Code';
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 64px;
-    letter-spacing: -0.03em;
-    text-align: left;
-    padding-bottom: 16px;
-    padding-top: 16px;
-    color: rgba(61, 207, 182, 1);
-
-    @media(max-width: 1350px) {
-        font-family: 'Fira Code';
-        font-size: 56px;
-        font-weight: 700;
-        line-height: 56px;
-        text-align: left;
-    }
-
-    @media(max-width: 950px) {
-        font-size: 48px;
-    }
-
-    @media(max-width: 700px) {
-        font-size: 40px;
-    }
-
-    @media(max-width: 500px) {
-        font-size: 32px;
-    }
-}
-
 .text-pop-up {
     display: flex;
 
     img {
         width: 320px;
         height: auto;
+    }
+}
+
+// all media queries listed here
+
+@include breakpoint.screen1350 {
+    .projects {
+        justify-content: center;
+    }
+
+    .projects {
+        h2:nth-child(2) {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 56px;
+            text-align: left;
+        }
+    }
+
+    .content-wrapper-without-pop-ups {
+        max-width: 560px;
+    }
+}
+
+@include breakpoint.screen950 {
+    .projects {
+        h2:nth-child(2) {
+            font-size: 48px;
+        }
+    }
+}
+
+@include breakpoint.screen700 {
+    .projects {
+        h2:nth-child(2) {
+            font-size: 40px;
+        }
+    }
+
+    .content-wrapper-without-pop-ups {
+        width: 90%;
+    }
+
+    .content-above-single-projects {
+        width: 90%;
+        gap: 16px;
+    }
+}
+
+@include breakpoint.screen500 {
+    .projects {
+        padding-top: 48px;
+
+        h2:nth-child(2) {
+            font-size: 32px;
+        }
     }
 }

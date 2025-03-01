@@ -1,10 +1,15 @@
 @use '../../breakpoints.scss' as breakpoint;
 
+
+$standardGreen: rgba(61, 207, 182, 1);
+$standardWhite: rgba(255, 255, 255, 1);
+$backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
 header {
-    background-image: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    background-image: $backgroundPattern;
     display: flex;
     justify-content: space-between;
-    color: rgba(255, 255, 255, 1);
+    color: $standardWhite;
     max-width: 1440px;
     margin: 0 auto;
     padding: 24px 24px 24px 24px; // ehemals: 24px 140px 24px 140px
@@ -22,7 +27,7 @@ header {
 
 .my-logo-responsive {
     font-size: 32px;
-    color: rgba(61, 207, 182, 1);
+    color: $standardGreen;
 }
 
 .dropdown-responsive {
@@ -36,15 +41,15 @@ header {
     padding: 40px;
     gap: 10px;
     border-radius: 30px;
-    border: 1px solid rgba(61, 207, 182, 1);
-    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    border: 1px solid $standardGreen;
+    background: $backgroundPattern;
 }
 
 .language-selection-responsive {
     font-size: 12px;
     display: flex;
     align-items: center;
-    border: 2px solid rgba(61, 207, 182, 1);
+    border: 2px solid $standardGreen;
     border-radius: 100px;
 
     button {
@@ -59,16 +64,16 @@ header {
 }
 
 .active-button-style {
-    background-color: rgba(61, 207, 182, 1);
+    background-color: $standardGreen;
     font-weight: 700;
-    color: rgba(255, 255, 255, 1);
+    color: $standardWhite;
     padding-right: 12px;
     padding-left: 12px;
 }
 
 .inactive-button-style {
     background-color: rgb(19, 47, 42);
-    color: rgba(61, 207, 182, 0.5);
+    color: $standardGreen;
     font-weight: 700;
     padding-right: 12px;
     padding-left: 12px;
@@ -76,7 +81,7 @@ header {
 
 a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 1);
+    color: $standardWhite;
     cursor: pointer;
 }
 
@@ -104,7 +109,7 @@ nav {
         transform: translateX(-50%) scale(0);
         width: 8px;
         height: 8px;
-        background-color: rgb(61, 207, 182);
+        background-color: $standardGreen;
         border-radius: 50%;
         transition: transform 0.1s ease-in-out;
     }
@@ -123,7 +128,7 @@ nav {
     font-size: 18px;
     display: flex;
     align-items: center;
-    border: 2px solid rgba(61, 207, 182, 1);
+    border: 2px solid $standardGreen;
     border-radius: 100px;
     gap: 10px;
 
@@ -139,7 +144,7 @@ nav {
     }
 
     .active-button-style {
-        background-color: rgba(61, 207, 182, 1);
+        background-color: $standardGreen;
         font-weight: 700;
         color: rgba(255, 255, 255, 1);
         padding-right: 20px;
