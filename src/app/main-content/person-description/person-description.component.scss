@@ -16,6 +16,7 @@ $standardGreen: rgba(61, 207, 182, 1);
     height: 850px;
     padding-top: 96px;
     padding-bottom: 96px;
+    width: 100%;
 }
 
 .who-i-am-section {
@@ -24,6 +25,7 @@ $standardGreen: rgba(61, 207, 182, 1);
     align-self: end;
     gap: 20px;
     padding: 16px;
+    // width: 96%;
 }
 
 .about-me-description {
@@ -36,6 +38,7 @@ $standardGreen: rgba(61, 207, 182, 1);
     border: 1px solid $standardGreen;
     max-width: 560px;
     flex-wrap: wrap;
+    width: 96%;
 
     h2 {
         font-size: 64px;
@@ -81,9 +84,7 @@ $standardGreen: rgba(61, 207, 182, 1);
         border-radius: 16px;
         z-index: -1;
         opacity: 0;
-
         background: $background-pattern;
-
         transition: opacity 0.5s ease-in-out;
     }
 
@@ -158,13 +159,13 @@ h2 {
 }
 
 @include breakpoint.screen700 {
-    .who-i-am-section {
-        width: 100%;
-    }
+    // .who-i-am-section {
+    //     width: 96%;
+    // }
 
     .about-me-description {
         max-width: unset;
-        width: 100%;
+        // width: 100%;
 
         h2 {
             font-size: 40px;

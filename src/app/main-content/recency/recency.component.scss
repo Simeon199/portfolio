@@ -12,6 +12,9 @@ $backgroundPattern: linear-gradient(90deg, #1C1C1C 20%, rgba(28, 28, 28, 0) 10%,
     gap: 48px;
     padding-top: 96px;
     padding-bottom: 96px;
+    padding-right: 16px;
+    padding-left: 16px;
+    width: 100%;
     overflow: hidden;
 
     h2 {
@@ -102,10 +105,6 @@ app-description-wrapper {
         gap: 32px;
         padding-bottom: 48px;
         padding-top: 48px;
-
-        h2 {
-            padding-left: 24px;
-        }
     }
 
     .quotes-image-wrapper {

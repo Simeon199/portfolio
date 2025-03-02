@@ -102,9 +102,9 @@ footer {
 }
 
 @include breakpoint.screen600 {
-    footer {
-        height: 200px;
-    }
+    // footer {
+    //     height: 200px;
+    // }
 
     .footer-content-wrapper {
         display: flex;
@@ -121,6 +121,10 @@ footer {
         justify-content: center;
         align-self: flex-end;
         width: 100%;
+    }
+
+    .platform-links {
+        gap: 2px;
     }
 }
 

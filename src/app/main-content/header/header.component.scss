@@ -15,8 +15,8 @@ header {
     position: fixed;
     top: 0;
     z-index: 100;
-    // border-radius: 0 0 8px 8px;
-    width: min(100%, 1440px);
+    width: 100%;
+    // width: min(100%, 1440px);
 }
 
 .navbar-responsive-design {
@@ -169,7 +169,7 @@ nav {
     .navbar-responsive-design {
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 96%;
         justify-content: space-between;
     }
 

@@ -9,6 +9,8 @@ $standardGreen: rgba(61, 207, 182, 1);
     align-items: end;
     padding-top: 96px;
     color: $standardWhite;
+    padding-right: 16px;
+    padding-left: 16px;
 
     h2:nth-child(1) {
         font-family: 'Karla';
@@ -99,7 +101,7 @@ $standardGreen: rgba(61, 207, 182, 1);
     }
 
     .content-wrapper-without-pop-ups {
-        width: 90%;
+        width: 96%;
     }
 
     .content-above-single-projects {
