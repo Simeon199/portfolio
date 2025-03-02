@@ -2,16 +2,18 @@
 
 $backgroundPattern: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
 
+
 .privacy-policy-container {
-    position: relative;
+    background: $backgroundPattern;
+}
+
+.privacy-policy-content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: unset;
     gap: 24px;
-    padding: 64px;
-    top: 92px;
+    padding: 128px 64px 64px 64px;
     border-radius: 8px;
-    background: $backgroundPattern;
 }
 
 a {

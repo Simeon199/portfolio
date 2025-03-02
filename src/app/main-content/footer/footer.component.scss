@@ -1,21 +1,24 @@
 @use '../../breakpoints.scss' as breakpoint;
 
+$backgroundPattern: linear-gradient(55.22deg,
+        #1C1C1C 36.26%,
+        #08463B 93.28%);
+
 footer {
     display: flex;
     flex-direction: column;
     padding-right: 24px;
     padding-left: 24px;
-    height: 200px;
-    position: relative;
-    // align-self: center;
-    // margin: 0 auto;
+    padding-top: 24px;
     max-width: 1440px;
+    background: $backgroundPattern;
+    // border-radius: 8px 8px 0 0;
 
     img {
         width: 400px;
-        position: absolute;
-        bottom: 12px;
-        right: calc((100% - 400px) / 2);
+        align-self: center;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 }
 
@@ -94,7 +97,7 @@ footer {
 
 @include breakpoint.screen1350 {
     .my-person-wrapper {
-        width: 99%;
+        width: 100%;
     }
 }
 
@@ -124,6 +127,8 @@ footer {
 @include breakpoint.screen500 {
     footer {
         margin-top: 48px;
+        padding-right: 8px;
+        padding-left: 8px;
 
         img {
             width: 300px;
