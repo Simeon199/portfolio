@@ -6,8 +6,8 @@ $standardWhite: rgba(255, 255, 255, 1);
 $standardGreen: rgba(61, 207, 182, 1);
 
 .skills-section {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%; // 90% ehemals
+    // margin: 0 auto;
     align-self: center;
     padding-top: 96px;
     display: flex;
@@ -205,7 +205,7 @@ h2 {
 
 @include breakpoint.screen500 {
     .skills-section {
-        width: 90%;
+        width: 100%;
     }
 
     .my-skillset-description {

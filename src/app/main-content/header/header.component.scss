@@ -11,14 +11,13 @@ header {
     justify-content: space-between;
     color: $standardWhite;
     max-width: 1440px;
-    margin: 0 auto;
     padding: 24px 24px 24px 24px;
     position: fixed;
     top: 0;
-    right: 0;
-    left: 0;
+    left: calc((100% - min(100%, 1440px))/2);
     z-index: 100;
     border-radius: 0 0 8px 8px;
+    width: min(100%, 1440px);
 }
 
 .navbar-responsive-design {

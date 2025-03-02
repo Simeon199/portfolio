@@ -63,7 +63,7 @@ $blurFilter: blur(5.300000190734863px);
     display: flex;
     justify-content: space-evenly;
     color: $standardGreen;
-    padding: 12px 32px 12px 32px;
+    padding: 12px 32px 12px 32px; // 8px 12px 8px 12px
     gap: 56px;
     transform: rotate(-3deg);
     width: 100%;
@@ -141,8 +141,7 @@ $blurFilter: blur(5.300000190734863px);
 
 @include breakpoint.screen1200 {
     .me-presentation {
-        padding-top: 200px;
-        justify-content: flex-start;
+        justify-content: center;
         height: 100vh;
     }
 
@@ -164,6 +163,18 @@ $blurFilter: blur(5.300000190734863px);
     .email-link {
         a {
             display: none;
+        }
+    }
+}
+
+@include breakpoint.screen700 {
+    .marquee-section {
+        padding: 8px 12px 8px 12px;
+
+        ul {
+            li {
+                font-size: 24px;
+            }
         }
     }
 }
