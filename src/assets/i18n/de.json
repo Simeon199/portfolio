@@ -158,6 +158,13 @@
     },
     "footer": {
         "jobTitle": "Webentwickler",
-        "location": "Rust Deutschland"
+        "location": "Rust Deutschland",
+        "legalNotice": "Impressum",
+        "privacyPolicy": "Datenschutzerklärung"
+    },
+    "legalNoticeContent": {
+        "imprint": "Impressum",
+        "contact": "Kontakt",
+        "responsible": "Redaktionell verantwortlich"
     }
 }

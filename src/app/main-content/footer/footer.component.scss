@@ -91,15 +91,21 @@ footer {
 
 // all media queries listed here
 
+@include breakpoint.screen1350 {
+    .my-person-wrapper {
+        width: 99%;
+    }
+}
+
 @include breakpoint.screen600 {
     footer {
-        height: 240px;
+        height: 200px;
     }
 
     .footer-content-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 20px;
     }
 
     .my-person-box {
@@ -119,8 +125,8 @@ footer {
         margin-top: 48px;
 
         img {
-            width: 310px;
-            right: calc((100% - 310px)/2);
+            width: 300px;
+            right: calc((100% - 300px)/2);
         }
     }
 

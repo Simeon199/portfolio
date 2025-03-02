@@ -158,6 +158,13 @@
     },
     "footer": {
         "jobTitle": "Web Developer",
-        "location": "Rust Germany"
+        "location": "Rust Germany",
+        "legalNotice": "Legal Notice",
+        "privacyPolicy": "Privacy Policy"
+    },
+    "legalNoticeContent": {
+        "imprint": "Site Notice",
+        "contact": "Contact",
+        "responsible": "Person responsible for editorial"
     }
 }

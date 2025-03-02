@@ -1,3 +1,5 @@
+@use '../breakpoints.scss' as breakpoint;
+
 $backgroundPattern: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
 
 .privacy-policy-container {
@@ -7,7 +9,7 @@ $backgroundPattern: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
     align-items: unset;
     gap: 24px;
     padding: 64px;
-    top: 100px;
+    top: 92px;
     border-radius: 8px;
     background: $backgroundPattern;
 }
@@ -15,4 +17,14 @@ $backgroundPattern: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
 a {
     text-decoration: none;
     color: blue;
+    cursor: pointer;
+}
+
+// All media queries listed here
+
+@include breakpoint.screen500 {
+    .privacy-policy-container {
+        padding: 16px;
+        border-radius: unset;
+    }
 }
