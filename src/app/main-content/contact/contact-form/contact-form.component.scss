@@ -178,13 +178,19 @@ input[type="checkbox"]:checked:hover {
 
     .form-group {
         max-width: 560px;
-        width: 90%;
+        width: 100%; // ehemals 90%
     }
 
     .checkbox-and-validation {
         padding-top: 50px;
         align-self: center;
-        width: 90%;
+        width: 100%; // ehemals 90%
+
+        label {
+            input {
+                width: 36px;
+            }
+        }
 
         span {
             align-self: center;

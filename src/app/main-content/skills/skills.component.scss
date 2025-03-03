@@ -195,7 +195,7 @@ h2 {
 
     .my-skillset-description {
         max-width: unset;
-        width: 96%;
+        width: 100%; // ehemals 96% 
     }
 
     .skills-description-section {
@@ -207,7 +207,7 @@ h2 {
 
 @include breakpoint.screen500 {
     .skills-section {
-        width: 96%;
+        width: 100%; // ehemals 96%
     }
 
     .my-skillset-description {
@@ -229,14 +229,27 @@ h2 {
     }
 
     .skills-description-section {
+        padding: 16px;
+        gap: 12px;
+
         h2 {
-            font-size: 32px;
+            text-align: center;
+            font-size: 24px;
         }
+    }
+
+    .h3-section {
+        justify-content: center;
+    }
+
+    app-button-style {
+        align-self: center;
     }
 }
 
 @include breakpoint.screen400 {
     .h3-section {
         flex-direction: column;
+        align-items: center;
     }
 }

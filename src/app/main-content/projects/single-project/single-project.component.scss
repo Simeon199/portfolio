@@ -45,7 +45,7 @@ $standardGreen: rgba(61, 207, 182, 1);
 @include breakpoint.screen700 {
     .single-project {
         max-width: 560px;
-        width: 90%;
+        width: 100%; // ehemals 90%
     }
 
     .project-technologies {

@@ -96,7 +96,7 @@ span:nth-child(2) {
 
 @include breakpoint.screen700 {
     .container-without-contact-form {
-        width: 90%;
+        width: 100%; // ehemals 90%
         height: unset;
     }
 

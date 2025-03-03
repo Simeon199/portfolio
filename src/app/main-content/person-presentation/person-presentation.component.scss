@@ -4,7 +4,7 @@
 $standardGreen: rgba(61, 207, 182, 1);
 $standardWhite: rgba(217, 217, 217, 1);
 $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-$blurFilter: blur(5.300000190734863px);
+// $blurFilter: blur(5.300000190734863px);
 
 .me-presentation {
     background-image: $backgroundPattern;
@@ -20,10 +20,10 @@ $blurFilter: blur(5.300000190734863px);
     bottom: 0;
     left: 96px;
 
-    img {
-        -webkit-backdrop-filter: $blurFilter;
-        backdrop-filter: $blurFilter;
-    }
+    // img {
+    //     -webkit-backdrop-filter: $blurFilter;
+    //     backdrop-filter: $blurFilter;
+    // }
 }
 
 .name-and-profession {

@@ -25,7 +25,6 @@ $standardGreen: rgba(61, 207, 182, 1);
     align-self: end;
     gap: 20px;
     padding: 16px;
-    // width: 96%;
 }
 
 .about-me-description {
@@ -38,7 +37,7 @@ $standardGreen: rgba(61, 207, 182, 1);
     border: 1px solid $standardGreen;
     max-width: 560px;
     flex-wrap: wrap;
-    width: 96%;
+    // width: 96%;
 
     h2 {
         font-size: 64px;
@@ -79,7 +78,7 @@ $standardGreen: rgba(61, 207, 182, 1);
         position: absolute;
         top: 15px;
         left: 15px;
-        width: 102%;
+        width: 100%;
         height: 90%;
         border-radius: 16px;
         z-index: -1;
@@ -159,13 +158,8 @@ h2 {
 }
 
 @include breakpoint.screen700 {
-    // .who-i-am-section {
-    //     width: 96%;
-    // }
-
     .about-me-description {
         max-width: unset;
-        // width: 100%;
 
         h2 {
             font-size: 40px;
@@ -194,8 +188,19 @@ h2 {
     }
 
     .about-me-description {
+        padding: 12px;
+        gap: 8px;
+
         h2 {
-            font-size: 32px;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+
+    .information-wrapper {
+        img {
+            width: 24px;
+            height: 24px;
         }
     }
 }

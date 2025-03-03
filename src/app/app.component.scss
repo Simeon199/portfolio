@@ -9,7 +9,8 @@
 
 @include breakpoint.screen1440 {
     .router-outlet-container {
-        width: min(1440px, 100%);
+        max-width: 1440px;
+        width: 100%;
         flex-wrap: wrap;
     }
 }

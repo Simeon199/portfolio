@@ -101,11 +101,11 @@ $standardGreen: rgba(61, 207, 182, 1);
     }
 
     .content-wrapper-without-pop-ups {
-        width: 96%;
+        width: 100%; // ehemals 96%
     }
 
     .content-above-single-projects {
-        width: 90%;
+        width: 100%; // ehemals 90%
         gap: 16px;
     }
 }
