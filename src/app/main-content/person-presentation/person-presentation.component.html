@@ -16,9 +16,24 @@
         </div>
         <div class="skills-and-mail">
             <div class="icon-container">
-                <img src="../../../assets/img/linkedin_logo.png" alt="linkedin">
-                <img src="../../../assets/img/git_logo.png" alt="git">
-                <img src="../../../assets/img/mail-icons.svg" alt="mail-icon">
+                <div class="mail-icons">
+                    <img src="../../../assets/img/mail_icon_green.svg" alt="mail-icon-green"
+                        (mouseenter)="toggleHover(true, 'mail')" [ngClass]="{'hidden': isMailIconHovered}">
+                    <img src="../../../assets/img/mail_icon_white.svg" alt="mail-icon-white"
+                        (mouseleave)="toggleHover(false, 'mail')" [ngClass]="{'hidden': !isMailIconHovered}">
+                </div>
+                <div class="git-icons">
+                    <img src="../../../assets/img/github_icon_green.svg" alt="git-icon-green"
+                        (mouseenter)="toggleHover(true, 'github')" [ngClass]="{'hidden': isGithubIconHovered}">
+                    <img src="../../../assets/img/github_icon_white.svg" alt="git-icon-white"
+                        (mouseleave)="toggleHover(false, 'github')" [ngClass]="{'hidden': !isGithubIconHovered}">
+                </div>
+                <div class="linkedin-icons">
+                    <img src="../../../assets/img/linkedin_icon_green.svg" alt="linkedin-icon-green"
+                        (mouseenter)="toggleHover(true, 'linkedin')" [ngClass]="{'hidden': isLinkedinIconHovered}">
+                    <img src="../../../assets/img/linkedin_icon_white.svg" alt="linkedin_icon_white"
+                        (mouseleave)="toggleHover(false, 'linkedin')" [ngClass]="{'hidden': !isLinkedinIconHovered}">
+                </div>
                 <div class="email-link">
                     <a href="mailto:simon.kiesner@gmx.de">
                         simon.kiesner&#64;gmx.de

@@ -26,7 +26,7 @@ a {
 
 @include breakpoint.screen500 {
     .privacy-policy-container {
-        padding: 16px;
+        // padding: 16px;
         border-radius: unset;
     }
 }

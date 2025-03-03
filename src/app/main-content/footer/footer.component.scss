@@ -2,7 +2,7 @@
 
 $standardWhite: rgba(255, 255, 255, 0.8);
 $standardGreen: rgba(61, 207, 182, 1);
-
+$backgroundColor: #1C1C1C;
 $backgroundPattern: linear-gradient(55.22deg,
         #1C1C1C 36.26%,
         #08463B 93.28%);
@@ -14,8 +14,8 @@ footer {
     padding-left: 24px;
     padding-top: 24px;
     max-width: 1440px;
-    background: $backgroundPattern;
-    // border-radius: 8px 8px 0 0;
+    // background: $backgroundPattern;
+    background: $backgroundColor;
 
     img {
         width: 400px;
@@ -105,9 +105,6 @@ footer {
 }
 
 @include breakpoint.screen600 {
-    // footer {
-    //     height: 200px;
-    // }
 
     .footer-content-wrapper {
         display: flex;
