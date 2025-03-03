@@ -1,5 +1,8 @@
 @use '../../breakpoints.scss' as breakpoint;
 
+$standardWhite: rgba(255, 255, 255, 0.8);
+$standardGreen: rgba(61, 207, 182, 1);
+
 $backgroundPattern: linear-gradient(55.22deg,
         #1C1C1C 36.26%,
         #08463B 93.28%);
@@ -36,7 +39,7 @@ footer {
     gap: 8px;
 
     h2 {
-        color: rgba(61, 207, 182, 1);
+        color: $standardGreen;
     }
 }
 
@@ -44,7 +47,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    color: rgba(255, 255, 255, 0.8);
+    color: $standardWhite;
 }
 
 .copyright-section {
@@ -53,7 +56,7 @@ footer {
     font-weight: 400;
     line-height: 21.6px;
     text-align: center;
-    color: rgba(61, 207, 182, 1);
+    color: $standardGreen;
 }
 
 .platform-links {
@@ -68,11 +71,11 @@ footer {
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.8);
+        color: $standardWhite;
         cursor: default;
 
         &:hover {
-            color: rgba(61, 207, 182, 1);
+            color: $standardGreen;
         }
     }
 
@@ -83,7 +86,7 @@ footer {
         transform: translateX(-20%) scale(0);
         width: 8px;
         height: 8px;
-        background-color: rgb(61, 207, 182);
+        background-color: $standardGreen;
         border-radius: 50%;
         transition: transform 0.1s ease-in-out;
     }
@@ -130,7 +133,6 @@ footer {
 
 @include breakpoint.screen500 {
     footer {
-        // margin-top: 48px;
         padding-right: 8px;
         padding-left: 8px;
 
@@ -143,5 +145,33 @@ footer {
     .copyright-section {
         font-size: 16px;
         padding-bottom: 16px;
+    }
+
+    .platform-links {
+        ::after {
+            content: none;
+        }
+
+        a {
+            cursor: pointer;
+
+            &:hover {
+                color: $standardWhite;
+            }
+        }
+    }
+}
+
+@include breakpoint.screen400 {
+    .my-person-box {
+        text-align: center;
+    }
+
+    .platform-links {
+        gap: 8px;
+
+        a {
+            justify-content: center;
+        }
     }
 }

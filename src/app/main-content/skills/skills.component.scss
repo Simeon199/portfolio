@@ -238,6 +238,38 @@ h2 {
         }
     }
 
+    .single-technology {
+        width: 64px;
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .growth-mindset-wrapper {
+        width: 64px;
+        flex-wrap: wrap;
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .growth-mindset-unhovered {
+        p {
+            width: 108px;
+        }
+    }
+
+    .growth-mindset-unhovered::after {
+        top: -100px;
+        right: 50px;
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+        pointer-events: none;
+    }
+
     .h3-section {
         justify-content: center;
     }

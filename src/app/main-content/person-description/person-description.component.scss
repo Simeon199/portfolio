@@ -24,7 +24,10 @@ $standardGreen: rgba(61, 207, 182, 1);
     flex-direction: column;
     align-self: end;
     gap: 20px;
-    padding: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    padding-top: 16px;
 }
 
 .about-me-description {
@@ -37,7 +40,6 @@ $standardGreen: rgba(61, 207, 182, 1);
     border: 1px solid $standardGreen;
     max-width: 560px;
     flex-wrap: wrap;
-    // width: 96%;
 
     h2 {
         font-size: 64px;
@@ -94,8 +96,6 @@ $standardGreen: rgba(61, 207, 182, 1);
     }
 }
 
-
-
 h2 {
     font-family: 'Karla';
     font-size: 24px;
@@ -115,7 +115,7 @@ h2 {
     }
 
     .who-i-am-section {
-        padding-top: 20px;
+        padding-top: 96px;
         align-self: unset;
     }
 
@@ -137,6 +137,10 @@ h2 {
     }
 
     .me-image-container {
+        &::after {
+            height: 100%;
+        }
+
         img {
             align-self: unset;
         }

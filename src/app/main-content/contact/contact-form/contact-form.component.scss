@@ -197,3 +197,42 @@ input[type="checkbox"]:checked:hover {
         }
     }
 }
+
+@include breakpoint.screen400 {
+    .form-group {
+        text-align: center;
+    }
+
+    #name {
+        text-align: center;
+    }
+
+    #mail {
+        text-align: center;
+    }
+
+    #subject {
+        text-align: center;
+    }
+
+    .checkbox-validation-section {
+        span {
+            text-align: center;
+        }
+    }
+
+    .checkbox-and-validation {
+        label {
+            flex-direction: column-reverse;
+
+            span {
+                text-align: center;
+            }
+
+            input {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
