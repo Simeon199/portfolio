@@ -5,9 +5,9 @@
                 <h3>SK</h3>
             </a>
         </div>
-        <img src="../../../assets/img/menu_icon.svg" (click)="showDropdown(); stopEventPropagation($event)"
-            alt="menu-icon">
-        <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated">
+        <img src="../../../assets/img/menu_icon.svg"
+            (click)="setBigOverlayHeaderBoolean(); showDropdown(); stopEventPropagation($event)" alt="menu-icon">
+        <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated" (click)="stopEventPropagation($event)">
             <a routerLink="/" fragment="person-description-section">{{"header.navbarTitleFirst" | translate}}</a>
             <a routerLink="/" fragment="skills-section">{{"header.navbarTitleSecond" | translate}}</a>
             <a routerLink="/" fragment="projects">{{"header.navbarTitleThird" | translate}}</a>
@@ -49,5 +49,8 @@
     <div class="my-logo">
         <h3>Simon</h3>
         <h3>Kiesner</h3>
+    </div>
+    <div class="big-header-overlay" [ngStyle]="isBigOverlayHeaderActivated ? {'display':'block'} : {'display': 'none'}"
+        (click)="setBigOverlayHeaderBoolean()">
     </div>
 </header>

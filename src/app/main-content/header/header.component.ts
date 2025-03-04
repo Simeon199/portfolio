@@ -15,6 +15,7 @@ export class HeaderComponent {
 
   isGermanButtonActive: boolean = true;
   isDropdownMenuActivated: boolean = false;
+  isBigOverlayHeaderActivated: boolean = false;
   currentLanguage: string = 'de';
 
   constructor(private languageService: LanguageService, public router: Router) {
@@ -43,18 +44,6 @@ export class HeaderComponent {
     }
   }
 
-  showOrHideDropdown() {
-    if (window.innerWidth <= 1350) {
-      if (this.isDropdownMenuActivated == false) {
-        this.isDropdownMenuActivated = true;
-      } else if (this.isDropdownMenuActivated == true) {
-        this.isDropdownMenuActivated = false;
-      }
-    }
-  }
-
-  // --- Alternative zum Aktivieren/Deaktivieren des Dropdown-Menüs ---
-
   showDropdown() {
     if (window.innerWidth <= 1350) {
       if (!this.isDropdownMenuActivated) {
@@ -71,7 +60,9 @@ export class HeaderComponent {
     }
   }
 
-  // --- Alternative Ende zum Aktivieren/Deaktivieren des Dropdown-Menüs ---
+  setBigOverlayHeaderBoolean() {
+    this.isBigOverlayHeaderActivated = !this.isBigOverlayHeaderActivated;
+  }
 
   stopEventPropagation(event: Event) {
     event.stopPropagation();

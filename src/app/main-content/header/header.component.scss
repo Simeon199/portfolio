@@ -157,6 +157,17 @@ nav {
     }
 }
 
+.big-header-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    background: rgba(78, 77, 77, 0.9);
+    z-index: 100;
+}
+
 // All media queries listed here
 
 @include breakpoint.screen1350 {
@@ -183,6 +194,7 @@ nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        z-index: 101;
     }
 
     nav {
