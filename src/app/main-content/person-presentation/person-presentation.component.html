@@ -3,8 +3,12 @@
         <h2>{{"personPresentation.frontendTitle" | translate}}</h2>
         <h2>Simon Kiesner</h2>
         <div class="contact-and-work-buttons">
-            <app-button-style>{{"personPresentation.buttonContentOne" | translate}}</app-button-style>
-            <app-button-style>{{"personPresentation.buttonContentTwo" | translate}}</app-button-style>
+            <a routerLink="/" fragment="projects"><app-button-style>{{"personPresentation.buttonContentOne" |
+                    translate}}</app-button-style>
+            </a>
+            <a routerLink="/" fragment="contact-section">
+                <app-button-style>{{"personPresentation.buttonContentTwo" | translate}}</app-button-style>
+            </a>
         </div>
         <div class="marquee-section">
             <ul>
@@ -54,7 +58,7 @@
         </div>
         <div class="left-lateral">
             <div class="arrow-image-container">
-                <a routerLink="#contact-section">
+                <a routerLink="/" fragment="contact-section">
                     <img src="../../../assets/img/default_arrow_bottom.svg" alt="default_arrow_bottom">
                     <img src="../../../assets/img/motion_arrow_bottom.svg" alt="motion_arrow_bottom">
                 </a>
