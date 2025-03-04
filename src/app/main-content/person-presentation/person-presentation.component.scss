@@ -18,11 +18,66 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     position: absolute;
     bottom: 0;
     left: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     // img {
     //     -webkit-backdrop-filter: $blurFilter;
     //     backdrop-filter: $blurFilter;
     // }
+}
+
+.arrow-image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+    height: 60px;
+
+    img {
+        position: absolute;
+        cursor: pointer;
+    }
+
+    img:nth-child(1) {
+        opacity: 1;
+    }
+
+    img:nth-child(2) {
+        opacity: 0;
+    }
+
+    &:hover {
+        img:nth-child(1) {
+            animation: arrow-fade-out 0.25s infinite alternate;
+        }
+
+        img:nth-child(2) {
+            animation: arrow-fade-in 0.25s infinite alternate;
+        }
+    }
+}
+
+@keyframes arrow-fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes arrow-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .name-and-profession {
