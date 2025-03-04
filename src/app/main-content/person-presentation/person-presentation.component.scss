@@ -1,6 +1,5 @@
 @use '../../breakpoints.scss' as breakpoint;
 
-
 $standardGreen: rgba(61, 207, 182, 1);
 $standardWhite: rgba(217, 217, 217, 1);
 $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
@@ -63,7 +62,7 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     display: flex;
     justify-content: space-evenly;
     color: $standardGreen;
-    padding: 12px 32px 12px 32px; // 8px 12px 8px 12px
+    padding: 12px 32px 12px 32px;
     gap: 56px;
     transform: rotate(-3deg);
     width: 100%;
@@ -100,8 +99,10 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     position: absolute;
     bottom: 0;
     right: 96px;
+    width: 60px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     .center-image {
         display: flex;
@@ -129,7 +130,7 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         font-weight: 400;
         line-height: 21.6px;
         text-align: left;
-        cursor: default;
+        cursor: pointer;
 
         &:hover {
             color: $standardGreen;
@@ -137,25 +138,28 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     }
 }
 
-.git-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.mail-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
+.git-icons,
+.mail-icons,
 .linkedin-icons {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.git-icons img {
+    padding-bottom: 8px;
+}
+
+.git-icons img,
+.mail-icons img,
+.linkedin-icons img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .hidden {
@@ -182,12 +186,6 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
             font-size: 62px;
             line-height: 62px;
             text-align: left;
-        }
-    }
-
-    .email-link {
-        a {
-            display: none;
         }
     }
 }
