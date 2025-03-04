@@ -3,6 +3,7 @@ import { ButtonStyleComponent } from '../shared/button-style/button-style.compon
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-person-presentation',
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     ButtonStyleComponent,
     TranslateModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './person-presentation.component.html',
   styleUrl: './person-presentation.component.scss'

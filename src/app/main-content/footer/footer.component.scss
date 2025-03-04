@@ -14,7 +14,6 @@ footer {
     padding-left: 24px;
     padding-top: 24px;
     max-width: 1440px;
-    // background: $backgroundPattern;
     background: $backgroundColor;
 
     img {
@@ -72,7 +71,7 @@ footer {
         align-items: center;
         text-decoration: none;
         color: $standardWhite;
-        cursor: default;
+        cursor: pointer;
 
         &:hover {
             color: $standardGreen;
