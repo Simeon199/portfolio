@@ -21,16 +21,19 @@ $blurFilter: blur(5.300000190734863px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    // z-index: 0;
 
     svg {
-        // -webkit-backdrop-filter: $blurFilter;
-        // backdrop-filter: $blurFilter;
         filter: $blurFilter;
     }
 }
 
+// .marquee-section-content {
+//     filter: $blurFilter;
+// }
+
 .arrow-image-container {
-    position: relative;
+    // position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,6 +131,8 @@ $blurFilter: blur(5.300000190734863px);
     transform: rotate(-3deg);
     width: 100%;
     overflow: hidden;
+    z-index: 10;
+    backdrop-filter: $blurFilter;
 
     ul {
         display: flex;
