@@ -50,7 +50,6 @@
         <h3>Simon</h3>
         <h3>Kiesner</h3>
     </div>
-    <div class="big-header-overlay" [ngStyle]="isBigOverlayHeaderActivated ? {'display':'block'} : {'display': 'none'}"
-        (click)="setBigOverlayHeaderBoolean()">
-    </div>
+    <div class="big-header-overlay" (click)="setBigOverlayHeaderBoolean()"
+        *ngIf="sharedService.isOverlayActive$ |async"></div>
 </header>

@@ -4,6 +4,7 @@ import { projectsData } from '../projects.data';
 import { projectsModel } from '../projects.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SharedService } from '../../../shared.service';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class OverlayComponent {
   currentLanguage: string = 'de';
   translateKey: string = '';
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService, public sharedService: SharedService) { }
 
   ngOnInit() {
     let titleUpdated = this.revertProjectNameConverter(this.title);
@@ -100,6 +101,7 @@ export class OverlayComponent {
 
   closeOverlay() {
     this.close.emit();
+    this.sharedService.manageHideShowOverflow(false);
   }
 
   goToNextProject(title: string) {

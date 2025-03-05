@@ -7,6 +7,7 @@ import { projectsData } from './projects.data';
 import { projectsModel } from './projects.model';
 import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-projects',
@@ -44,7 +45,8 @@ export class ProjectsComponent {
 
   currentLanguage: string = "de";
   allProjects: projectsModel = projectsData;
-  constructor(private languageService: LanguageService) {
+
+  constructor(private languageService: LanguageService, public sharedService: SharedService) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
@@ -107,6 +109,7 @@ export class ProjectsComponent {
     } else if (this.isOverlayVisible == false) {
       this.isOverlayVisible = true;
     }
+    this.sharedService.manageHideShowOverflow(true);
     this.generateRemainingProjectInformation();
   }
 
