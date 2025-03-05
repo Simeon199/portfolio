@@ -8,7 +8,7 @@
         <div class="recency-track" [style.transform]="'translateX(' + currentTranslateX + 'px)'"
             [style.transition]="transitionEnabled ? 'transform 0.5s ease-in-out': 'none'">
             <app-single-recency *ngFor="let recencyObject of recencies; let i = index" [recency]="recencyObject.recency"
-                [recencyAuthor]="recencyObject.author" [ngClass]="{'active': i===1}"
+                [index]="i" [recencyAuthor]="recencyObject.author" [ngClass]="{'active': i===1}"
                 [ngStyle]="(i !== 1  && isSmallScreen) ? {'display': 'none'} : {'display': 'flex'}"></app-single-recency>
         </div>
     </div>
