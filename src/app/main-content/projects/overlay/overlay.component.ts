@@ -41,9 +41,6 @@ export class OverlayComponent {
 
   keyValues = Object.keys(this.projectsData);
   projectValues = Object.values(this.projectsData);
-
-
-
   currentLanguage: string = 'de';
   translateKey: string = '';
 
@@ -116,6 +113,15 @@ export class OverlayComponent {
         }
       }
     })
+    this.updateAllNecessaryInfoForNextProject();
+  }
+
+  updateAllNecessaryInfoForNextProject() {
+    this.updateAllVariablesInParentComponent();
+    this.updateTitleAndTranslateKey();
+  }
+
+  updateAllVariablesInParentComponent() {
     this.updateVariablesInParent({
       currentProjectOpened: this.projectValues[this.nextIndex].title,
       currentProjectOpenedDescription: this.projectValues[this.nextIndex].description,
@@ -125,6 +131,9 @@ export class OverlayComponent {
       currentProjectOpenedGitHubLink: this.projectValues[this.nextIndex].gitHubLink,
       currentProjectOpenedProjectLink: this.projectValues[this.nextIndex].projectLink
     });
+  }
+
+  updateTitleAndTranslateKey() {
     let titleUpdated = this.revertProjectNameConverter(this.projectValues[this.nextIndex].title);
     this.translateKey = `allProjectData.${titleUpdated}.description`;
   }
