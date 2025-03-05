@@ -18,7 +18,7 @@ export class OverlayComponent {
   @Input() projectsData: projectsModel = projectsData;
   @Input() allProjectsListed: any;
   @Input() currentProjectOpened: string = '';
-  @Input() index: string = '0';
+  @Input() index: string = '';
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() technologies: any;
@@ -26,6 +26,9 @@ export class OverlayComponent {
   @Input() gitHubLink: string = '';
   @Input() projectLink: string = '';
   @Output() close = new EventEmitter<void>();
+
+  // Kommunikation mit dem Elternelement => projects.component
+
   @Output() updateParentVariables = new EventEmitter<{
     currentProjectOpened: string;
     currentProjectOpenedDescription: string;

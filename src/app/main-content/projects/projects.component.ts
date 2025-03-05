@@ -27,7 +27,7 @@ export class ProjectsComponent {
 
   currentHoveredProject: string = '';
   currentHoveredProjectImageSrc: string = '';
-  currentHoveredProjectIndex: string = '0';
+  currentHoveredProjectIndex: string = '';
 
   hoveredProjectLocation = '';
 
@@ -121,6 +121,7 @@ export class ProjectsComponent {
         this.currentProjectOpenedTechnologies = project.technologyList;
         this.currentProjectOpenedGitHubLink = project.gitHubLink;
         this.currentProjectOpenedProjectLink = project.projectLink;
+        this.currentHoveredProjectIndex = project.projectIndexAsString;
       }
     })
   }
