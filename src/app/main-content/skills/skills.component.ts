@@ -5,6 +5,7 @@ import { LanguageService } from '../../language.service';
 import { CommonModule } from '@angular/common';
 import { technologyListData } from './technology_list_data';
 import { technologyListModel } from './technology_list_model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-skills',
@@ -12,7 +13,8 @@ import { technologyListModel } from './technology_list_model';
   imports: [
     ButtonStyleComponent,
     TranslateModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
