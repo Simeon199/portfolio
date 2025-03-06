@@ -36,7 +36,7 @@
     "allProjectData": {
         "join": {
             "title": "Join",
-            "projectImageSource": "../../../../assets/img/join_image.png",
+            "projectImageSource": "../../../../assets/img/join.png",
             "description": "Bei dieser Anwendung handelt es sich um einen Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Tasks mit Hilfe der Drag-and-Drop-Funktionalität und weisen Benutzer und Kategorien zu.",
             "technologyList": [
                 "HTML",

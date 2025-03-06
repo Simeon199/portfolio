@@ -81,7 +81,7 @@ export class OverlayComponent {
     } else if (key == 'elPolloLoco') {
       return 'El Pollo Loco';
     } else if (key == 'daBubble') {
-      return 'DABubble (Coming Soon)';
+      return 'DABubble - coming soon';
     } else {
       return 'Error';
     }
@@ -92,7 +92,7 @@ export class OverlayComponent {
       return 'join';
     } else if (key == 'El Pollo Loco') {
       return 'elPolloLoco';
-    } else if (key == 'DABubble (Coming Soon)') {
+    } else if (key == 'DABubble - coming soon') {
       return 'daBubble';
     } else {
       return 'Error';

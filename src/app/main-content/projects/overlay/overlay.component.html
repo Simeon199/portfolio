@@ -3,40 +3,49 @@
         <div class="close-button-img" (click)="closeOverlay()">
             <img src="../../../../assets/img/close_button.svg" alt="close-button">
         </div>
-        <div class="project-information">
-            <h1>{{index}}</h1>
-            <h2>{{title}}</h2>
-            <h3>{{"allProjectData.whatIsProjectAbout" | translate}}</h3>
-            <span [translate]="translateKey"></span>
-            <div class="used-technologies" *ngFor="let project of projectValues; let i = index">
-                <div class="test-section" *ngIf="project.title === title">
-                    <div class="list-section" *ngFor="let item of project.technologyList; let i = index">
-                        <ng-container *ngIf="item !== '|'">
-                            <span>{{item}}</span>
-                            <img src={{project.technologyImageIcons[i]}}>
-                        </ng-container>
+        <div class="project-content-wrapper">
+            <!-- <div class="close-button-img" (click)="closeOverlay()">
+                <img src="../../../../assets/img/close_button.svg" alt="close-button">
+            </div> -->
+            <div class="project-information">
+                <h1>{{index}}</h1>
+                <h2>{{title}}</h2>
+                <h3>{{"allProjectData.whatIsProjectAbout" | translate}}</h3>
+                <span [translate]="translateKey"></span>
+                <div class="used-technologies" *ngFor="let project of projectValues; let i = index">
+                    <div class="test-section" *ngIf="project.title === title">
+                        <div class="list-section" *ngFor="let item of project.technologyList; let i = index">
+                            <ng-container *ngIf="item !== '|'">
+                                <span>{{item}}</span>
+                                <img src={{project.technologyImageIcons[i]}}>
+                            </ng-container>
+                        </div>
                     </div>
                 </div>
+                <div class="links-to-project">
+                    <button [class.disabled]="title === 'DABubble (Coming Soon)'">
+                        <a href={{gitHubLink}} target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
+                    </button>
+                    <button [class.disabled]="title === 'DABubble (Coming Soon)'">
+                        <a href={{projectLink}} target="_blank" rel="noopener noreferrer">Live Test</a>
+                        <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
+                    </button>
+                </div>
             </div>
-            <div class="links-to-project">
-                <button [class.disabled]="title === 'DABubble (Coming Soon)'">
-                    <a href={{gitHubLink}} target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
-                </button>
-                <button [class.disabled]="title === 'DABubble (Coming Soon)'">
-                    <a href={{projectLink}} target="_blank" rel="noopener noreferrer">Live Test</a>
-                    <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
-                </button>
+            <div class="all-images">
+                <div class="project-image">
+                    <img src="{{ imageSrc }}" alt="imageSrc">
+                </div>
+                <div class="next-project-image-section" (click)="goToNextProject(title)">
+                    <span>Nex Project</span>
+                    <img src="../../../../assets/img/arrow_right_pop_up.svg" alt="next-project-arrow">
+                </div>
             </div>
-        </div>
-        <div class="all-images">
-            <div class="project-image">
-                <img src="{{ imageSrc }}" alt="imageSrc">
-            </div>
-            <div class="next-project-image-section" (click)="goToNextProject(title)">
+            <!-- <div class="next-project-image-section-responsive" (click)="goToNextProject(title)">
                 <span>Nex Project</span>
                 <img src="../../../../assets/img/arrow_right_pop_up.svg" alt="next-project-arrow">
-            </div>
+            </div> -->
         </div>
         <div class="next-project-image-section-responsive" (click)="goToNextProject(title)">
             <span>Nex Project</span>

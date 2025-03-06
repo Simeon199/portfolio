@@ -36,7 +36,7 @@
     "allProjectData": {
         "join": {
             "title": "Join",
-            "projectImageSource": "../../../../assets/img/join_image.png",
+            "projectImageSource": "../../../../assets/img/join.png",
             "description": "This application is a task manager based on the Kanban system. Create and organize tasks using the drag-and-drop functionality and assign users and categories.",
             "technologyList": [
                 "HTML",

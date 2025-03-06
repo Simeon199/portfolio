@@ -2,7 +2,7 @@ import { projectsModel } from "./projects.model";
 export const projectsData: projectsModel = {
     join: {
         title: 'Join',
-        projectImageSource: '../../../../assets/img/join_image.png',
+        projectImageSource: '../../../../assets/img/join.png',
         description: 'Bei dieser Anwendung handelt es sich um einen Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Tasks mit Hilfe der Drag-and-Drop-Funktionalität und weisen Benutzer und Kategorien zu.',
         technologyList: ['HTML', '|', 'CSS', '|', 'JavaScript'],
         technologyImageIcons: [
@@ -35,7 +35,7 @@ export const projectsData: projectsModel = {
         gitHubLink: 'https://github.com/Simeon199/el_pollo_loco'
     },
     daBubble: {
-        title: 'DABubble (Coming Soon)',
+        title: 'DABubble - coming soon',
         projectImageSource: '../../../../assets/img/dabubble.png',
         description: 'In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht.',
         technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
