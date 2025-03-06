@@ -27,8 +27,6 @@ export class OverlayComponent {
   @Input() projectLink: string = '';
   @Output() close = new EventEmitter<void>();
 
-  // Kommunikation mit dem Elternelement => projects.component
-
   @Output() updateParentVariables = new EventEmitter<{
     currentProjectOpened: string;
     currentProjectOpenedDescription: string;
