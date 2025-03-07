@@ -5,6 +5,7 @@ $breakpoints: (
     screen500: 500px,
     screen600: 600px,
     screen700: 700px,
+    screen800: 800px,
     screen950: 950px,
     screen1200: 1200px,
     screen1350: 1350px,
@@ -53,6 +54,14 @@ $breakpoints: (
 
 @mixin screen700 {
     $value: map-get($breakpoints, screen700);
+
+    @media only screen and (max-width: #{$value}) {
+        @content;
+    }
+}
+
+@mixin screen800 {
+    $value: map-get($breakpoints, screen800);
 
     @media only screen and (max-width: #{$value}) {
         @content;

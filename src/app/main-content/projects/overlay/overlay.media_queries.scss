@@ -138,7 +138,9 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     }
 }
 
-@include breakpoint.screen700 {
+@include breakpoint.screen800 {
+
+    // ehemals screen700
     .content-box {
         height: 96%;
     }
