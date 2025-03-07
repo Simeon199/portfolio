@@ -16,6 +16,7 @@ header {
     top: 0;
     z-index: 100;
     width: 100%;
+    border-radius: 0px 0px 8px 0px;
 }
 
 .navbar-responsive-design {
@@ -45,7 +46,8 @@ header {
 .language-selection-responsive {
     font-size: 12px;
     display: flex;
-    align-items: center;
+    align-self: center;
+    // align-items: center;
     border: 2px solid $standardGreen;
     border-radius: 100px;
 
@@ -165,7 +167,7 @@ nav {
     bottom: 0;
     height: 100vh;
     background: rgba(78, 77, 77, 0.5);
-    z-index: 100;
+    z-index: 120;
 }
 
 // All media queries listed here
@@ -192,7 +194,7 @@ nav {
 
     .dropdown-responsive {
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: space-between;
         z-index: 101;
     }

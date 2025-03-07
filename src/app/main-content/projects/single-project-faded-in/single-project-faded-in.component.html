@@ -1,3 +1,3 @@
-<div class="faded-in-project">
-    <img *ngIf="imageSource" ngSrc="{{ imageSource }}" width="40" height="32" priority="">
+<div [class.faded-in-project]=imageSource>
+    <img *ngIf="imageSource" [src]="imageSource" height="200" priority="">
 </div>
