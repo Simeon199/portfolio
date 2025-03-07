@@ -83,6 +83,7 @@ $standardGreen: rgba(61, 207, 182, 1);
         height: 110px;
         opacity: 0;
         pointer-events: none;
+        z-index: 104;
     }
 
     &:hover::after {
