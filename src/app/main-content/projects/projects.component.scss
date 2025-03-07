@@ -38,7 +38,8 @@ $standardGreen: rgba(61, 207, 182, 1);
 .content-wrapper-without-pop-ups {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    width: 100%;
+    // max-width: 600px;
 }
 
 .content-above-single-projects {
@@ -101,11 +102,11 @@ $standardGreen: rgba(61, 207, 182, 1);
     }
 
     .content-wrapper-without-pop-ups {
-        width: 100%; // ehemals 96%
+        width: 100%;
     }
 
     .content-above-single-projects {
-        width: 100%; // ehemals 90%
+        width: 100%;
         gap: 16px;
     }
 }

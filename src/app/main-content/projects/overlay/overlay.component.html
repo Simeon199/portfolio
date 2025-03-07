@@ -4,9 +4,6 @@
             <img src="../../../../assets/img/close_button.svg" alt="close-button">
         </div>
         <div class="project-content-wrapper">
-            <!-- <div class="close-button-img" (click)="closeOverlay()">
-                <img src="../../../../assets/img/close_button.svg" alt="close-button">
-            </div> -->
             <div class="project-information">
                 <h1>{{index}}</h1>
                 <h2>{{title}}</h2>
@@ -37,15 +34,7 @@
                 <div class="project-image">
                     <img src="{{ imageSrc }}" alt="imageSrc">
                 </div>
-                <div class="next-project-image-section" (click)="goToNextProject(title)">
-                    <span>Nex Project</span>
-                    <img src="../../../../assets/img/arrow_right_pop_up.svg" alt="next-project-arrow">
-                </div>
             </div>
-            <!-- <div class="next-project-image-section-responsive" (click)="goToNextProject(title)">
-                <span>Nex Project</span>
-                <img src="../../../../assets/img/arrow_right_pop_up.svg" alt="next-project-arrow">
-            </div> -->
         </div>
         <div class="next-project-image-section-responsive" (click)="goToNextProject(title)">
             <span>Nex Project</span>
