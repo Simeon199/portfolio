@@ -1,3 +1,4 @@
+// @use './overlay.media_queries.scss';
 @use '../../../breakpoints.scss' as breakpoint;
 
 $standardGreen: rgb(61, 207, 182);
@@ -22,8 +23,10 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     background: $backgroundPattern;
     display: flex;
     align-items: center;
-    width: 1248px;
-    height: 656px;
+    width: 1250px;
+    max-width: 1250px;
+    height: 800px;
+    max-height: 800px;
     border-radius: 30px;
     border: 1px solid $standardGreen;
 
@@ -43,7 +46,7 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         font-family: 'Fira Code';
         font-size: 64px;
         font-weight: 700;
-        line-height: 50px; // ehemals 45px
+        line-height: 62px;
         letter-spacing: -0.03em;
         text-align: left;
         color: $standardWhite;
@@ -91,8 +94,8 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
 .close-button-img {
     position: absolute;
-    top: 4%;
-    right: 2%;
+    top: 0; // ehemals 4%
+    right: 0; // ehemals 2%
     cursor: pointer;
 }
 
@@ -220,11 +223,9 @@ button {
     cursor: not-allowed;
 }
 
-// All media queries listed here
-
 @include breakpoint.screen1350 {
     .content-box {
-        width: 64%;
+        width: 90%; // ehemals 64%
         height: 70%;
 
         h1 {
@@ -269,14 +270,13 @@ button {
         img {
             height: auto;
             align-self: center;
-            width: 80%;
+            width: 90%;
             max-width: unset;
         }
     }
 
     .all-images {
         flex-direction: unset;
-        width: 72%;
         align-items: unset;
         padding-right: unset;
         gap: unset;
@@ -313,14 +313,14 @@ button {
     }
 
     .project-information {
-        width: 72%;
+        width: 80%;
     }
 
-    .project-image {
-        img {
-            width: 72%;
-        }
-    }
+    // .project-image {
+    //     img {
+    //         width: 72%;
+    //     }
+    // }
 }
 
 @include breakpoint.screen950 {
@@ -359,6 +359,11 @@ button {
 @include breakpoint.screen700 {
     .content-box {
         height: 96%;
+        width: 80%;
+
+        h2 {
+            line-height: 35px;
+        }
     }
 
     .all-images {
@@ -380,7 +385,7 @@ button {
 
 @include breakpoint.screen500 {
     .content-box {
-        width: 80%;
+        width: 98%;
 
         h1 {
             font-size: 60px;
@@ -409,7 +414,7 @@ button {
 @include breakpoint.screen450 {
     .content-box {
         height: 96%;
-        width: 98%;
+        // width: 98%;
 
         span {
             line-height: 20px;
@@ -423,6 +428,6 @@ button {
 
 @include breakpoint.screen400 {
     .project-image {
-        height: 220px;
+        height: 240px; // ehemals 220px
     }
 }
