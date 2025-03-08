@@ -4,10 +4,12 @@
             <div class="my-person-box">
                 <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true"
                     (mouseleave)="isMyLogoBeingHovered = false">
-                    <img src="../../../assets/img/my_name_white.svg" alt="name_white"
-                        [ngClass]="{'hidden': isMyLogoBeingHovered}">
-                    <img src="../../../assets/img/my_name_black.svg" alt="my_name_black"
-                        [ngClass]="{'hidden': !isMyLogoBeingHovered}">
+                    <a routerLink="/">
+                        <img src="../../../assets/img/my_name_white.svg" alt="name_white"
+                            [ngClass]="{'hidden': isMyLogoBeingHovered}">
+                        <img src="../../../assets/img/my_name_black.svg" alt="my_name_black"
+                            [ngClass]="{'hidden': !isMyLogoBeingHovered}">
+                    </a>
                 </div>
                 <div class="span-footer-section">
                     <span>{{"footer.jobTitle" | translate}}</span>

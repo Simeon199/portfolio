@@ -1,8 +1,12 @@
 <header (click)="hideDropdown()">
     <div class="navbar-responsive-design">
-        <div class="my-logo-responsive">
+        <div class="my-logo-responsive" (mouseenter)="isMyLogoBeingHovered = true"
+            (mouseleave)="isMyLogoBeingHovered = false">
             <a routerLink="/">
-                <h3>SK</h3>
+                <img src="../../../assets/img/initials_light_green.svg" alt="initials_light_green"
+                    [ngClass]="{'hidden': isMyLogoBeingHovered}">
+                <img src="../../../assets/img/initials_dark_green.svg" alt="initials_dark_green"
+                    [ngClass]="{'hidden': !isMyLogoBeingHovered}">
             </a>
         </div>
         <img src="../../../assets/img/menu_icon.svg"
@@ -47,8 +51,12 @@
         <a routerLink="/" fragment="projects">{{"header.navbarTitleThird" | translate}}</a>
     </nav>
     <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true" (mouseleave)="isMyLogoBeingHovered = false">
-        <img src="../../../assets/img/my_name_white.svg" alt="name_white" [ngClass]="{'hidden': isMyLogoBeingHovered}">
-        <img src="../../../assets/img/my_name_green.svg" alt="name_green" [ngClass]="{'hidden': !isMyLogoBeingHovered}">
+        <a routerLink="/">
+            <img src="../../../assets/img/my_name_white.svg" alt="name_white"
+                [ngClass]="{'hidden': isMyLogoBeingHovered}">
+            <img src="../../../assets/img/my_name_green.svg" alt="name_green"
+                [ngClass]="{'hidden': !isMyLogoBeingHovered}">
+        </a>
     </div>
     <div class="big-header-overlay" (click)="setBigOverlayHeaderBoolean()"
         *ngIf="sharedService.isOverlayActive$ |async"></div>
