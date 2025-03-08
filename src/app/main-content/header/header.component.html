@@ -12,9 +12,14 @@
         <img src="../../../assets/img/menu_icon.svg"
             (click)="setBigOverlayHeaderBoolean(); showDropdown(); stopEventPropagation($event)" alt="menu-icon">
         <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated" (click)="stopEventPropagation($event)">
-            <a routerLink="/" fragment="person-description-section">{{"header.navbarTitleFirst" | translate}}</a>
-            <a routerLink="/" fragment="skills-section">{{"header.navbarTitleSecond" | translate}}</a>
-            <a routerLink="/" fragment="projects">{{"header.navbarTitleThird" | translate}}</a>
+            <a (click)="proveRouteAndCloseOverlay()" routerLink="/"
+                fragment="person-description-section">{{"header.navbarTitleFirst" |
+                translate}}</a>
+            <a (click)="proveRouteAndCloseOverlay()" routerLink="/"
+                fragment="skills-section">{{"header.navbarTitleSecond" |
+                translate}}</a>
+            <a (click)="proveRouteAndCloseOverlay()" routerLink="/" fragment="projects">{{"header.navbarTitleThird" |
+                translate}}</a>
             <div class="language-selection-responsive" *ngIf="!isHiddenRoute()">
                 <div class="languageSelection">
                     <button (click)="toggleLanguage()"
@@ -46,8 +51,10 @@
                 </button>
             </div>
         </div>
-        <a routerLink="/" fragment="person-description-section">{{"header.navbarTitleFirst" | translate}}</a>
-        <a routerLink="/" fragment="skills-section">{{"header.navbarTitleSecond" | translate}}</a>
+        <a routerLink="/" fragment="person-description-section">{{"header.navbarTitleFirst" |
+            translate}}</a>
+        <a routerLink="/" fragment="skills-section">{{"header.navbarTitleSecond" |
+            translate}}</a>
         <a routerLink="/" fragment="projects">{{"header.navbarTitleThird" | translate}}</a>
     </nav>
     <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true" (mouseleave)="isMyLogoBeingHovered = false">

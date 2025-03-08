@@ -24,6 +24,8 @@ export class HeaderComponent {
   isBigOverlayHeaderActivated: boolean = false;
   currentLanguage: string = 'de';
 
+  allRoutesExceptLandingPage = ['/privacy-policy', '/legal-notice'];
+
   constructor(private languageService: LanguageService, public router: Router, public sharedService: SharedService) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
@@ -77,5 +79,11 @@ export class HeaderComponent {
 
   stopEventPropagation(event: Event) {
     event.stopPropagation();
+  }
+
+  proveRouteAndCloseOverlay() {
+    if (this.allRoutesExceptLandingPage.includes(this.router.url)) {
+      this.sharedService.closeOverlay();
+    }
   }
 }
