@@ -18,6 +18,8 @@ import { Router } from '@angular/router';
 })
 
 export class FooterComponent {
+
+  isMyLogoBeingHovered: boolean = false;
   currentLanguage: string = '';
 
   constructor(private languageService: LanguageService, public router: Router) {

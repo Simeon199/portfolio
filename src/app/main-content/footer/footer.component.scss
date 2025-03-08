@@ -24,6 +24,25 @@ footer {
     }
 }
 
+.my-logo {
+    height: 96px;
+    cursor: pointer;
+    position: relative;
+
+    img {
+        width: 96px;
+    }
+
+    img:nth-child(1) {
+        position: absolute;
+        left: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
 .my-person-wrapper {
     display: flex;
     justify-content: space-between;
