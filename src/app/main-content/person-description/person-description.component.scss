@@ -12,10 +12,11 @@ $standardWhite: rgba(255, 255, 255, 0.8);
 
 .person-description-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     color: $standardGreen;
-    margin: 0 auto;
     height: 850px;
+    padding-left: 24px;
+    padding-right: 24px;
     padding-top: 96px;
     padding-bottom: 96px;
     width: 100%;
