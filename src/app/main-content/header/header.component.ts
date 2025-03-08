@@ -20,7 +20,7 @@ export class HeaderComponent {
 
   isGermanButtonActive: boolean = true;
   isDropdownMenuActivated: boolean = false;
-
+  isMyLogoBeingHovered: boolean = false;
   isBigOverlayHeaderActivated: boolean = false;
   currentLanguage: string = 'de';
 

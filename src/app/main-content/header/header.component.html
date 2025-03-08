@@ -46,9 +46,9 @@
         <a routerLink="/" fragment="skills-section">{{"header.navbarTitleSecond" | translate}}</a>
         <a routerLink="/" fragment="projects">{{"header.navbarTitleThird" | translate}}</a>
     </nav>
-    <div class="my-logo">
-        <h3>Simon</h3>
-        <h3>Kiesner</h3>
+    <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true" (mouseleave)="isMyLogoBeingHovered = false">
+        <img src="../../../assets/img/my_name_white.svg" alt="name_white" [ngClass]="{'hidden': isMyLogoBeingHovered}">
+        <img src="../../../assets/img/my_name_green.svg" alt="name_green" [ngClass]="{'hidden': !isMyLogoBeingHovered}">
     </div>
     <div class="big-header-overlay" (click)="setBigOverlayHeaderBoolean()"
         *ngIf="sharedService.isOverlayActive$ |async"></div>

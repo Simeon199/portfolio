@@ -47,7 +47,6 @@ header {
     font-size: 12px;
     display: flex;
     align-self: center;
-    // align-items: center;
     border: 2px solid $standardGreen;
     border-radius: 100px;
 
@@ -119,8 +118,19 @@ nav {
 }
 
 .my-logo {
-    font-size: 24px;
+    height: 93px;
     cursor: pointer;
+    position: relative;
+
+    img:nth-child(1) {
+        position: absolute;
+        right: 6px;
+        top: 2px;
+    }
+}
+
+.hidden {
+    display: none;
 }
 
 .language-selection {
