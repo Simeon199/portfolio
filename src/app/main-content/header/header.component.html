@@ -3,10 +3,14 @@
         <div class="my-logo-responsive" (mouseenter)="isMyLogoBeingHovered = true"
             (mouseleave)="isMyLogoBeingHovered = false">
             <a routerLink="/">
-                <img src="../../../assets/img/initials_light_green.svg" alt="initials_light_green"
+                <img src="../../../assets/img/sk_new_logo_light_green.svg" alt="initials_light_green"
+                    [ngClass]="{'hidden': isMyLogoBeingHovered}">
+                <img src="../../../assets/img/sk_new_logo_dark_green.svg" alt="initials_dark_green"
+                    [ngClass]="{'hidden': !isMyLogoBeingHovered}">
+                <!-- <img src="../../../assets/img/initials_light_green.svg" alt="initials_light_green"
                     [ngClass]="{'hidden': isMyLogoBeingHovered}">
                 <img src="../../../assets/img/initials_dark_green.svg" alt="initials_dark_green"
-                    [ngClass]="{'hidden': !isMyLogoBeingHovered}">
+                    [ngClass]="{'hidden': !isMyLogoBeingHovered}"> -->
             </a>
         </div>
         <img src="../../../assets/img/menu_icon.svg"
