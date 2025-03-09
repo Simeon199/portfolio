@@ -12,6 +12,19 @@ $breakpoints: (
     screen1440: 1440px
 );
 
+@mixin touch-device {
+
+    @media (hover: none) {
+        @content;
+    }
+}
+
+@mixin non-touch-device {
+    @media (hover: hover) {
+        @content;
+    }
+}
+
 @mixin screen360 {
     $value: map-get($breakpoints, screen360);
 

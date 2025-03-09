@@ -50,12 +50,13 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         img {
             height: auto;
             align-self: center;
-            width: 70%;
+            width: 50%; // ehemals 70%
             max-width: unset;
         }
     }
 
     .all-images {
+        width: 100%;
         flex-direction: unset;
         align-items: unset;
         padding-right: unset;
@@ -90,7 +91,14 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
     .project-content-wrapper {
         flex-direction: column-reverse;
+        justify-content: space-around;
         height: 96%;
+    }
+
+    .project-image {
+        img {
+            width: 60%;
+        }
     }
 
     .all-images {
@@ -211,5 +219,83 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
     .project-image {
         height: 240px;
+    }
+}
+
+@include breakpoint.touch-device {
+    .content-box {
+        width: 98%;
+        height: 98%;
+
+        h2 {
+            font-size: 24px;
+            width: 350px;
+        }
+    }
+
+    @include breakpoint.screen1350 {
+        .content-box {
+            width: 80%;
+            height: 60%;
+        }
+
+        .all-images {
+            width: 70%;
+        }
+
+        .project-image {
+            img {
+                width: 70%;
+            }
+        }
+    }
+
+    @include breakpoint.screen1200 {
+        .content-box {
+            width: 96%;
+            height: 96%;
+        }
+
+        .project-image {
+            img {
+                width: 80%;
+            }
+        }
+
+        .project-information {
+            gap: 0;
+            width: 90%;
+            padding: 0;
+        }
+    }
+
+    @include breakpoint.screen700 {
+        .content-box {
+            span {
+                line-height: 20px;
+            }
+        }
+
+        .project-information {
+            width: 85%; // ehemals 90%
+            gap: 8px;
+        }
+
+        .project-image {
+            height: 190px;
+
+            img {
+                width: 70%;
+            }
+        }
+
+        .next-project-image-section-responsive {
+            right: 0;
+            bottom: 0;
+        }
+
+        .all-images {
+            width: 90%; // ehemals 80%
+        }
     }
 }

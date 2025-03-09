@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use './app/breakpoints.scss' as breakpoint;
 @include mat.core();
 
 // general global styling
