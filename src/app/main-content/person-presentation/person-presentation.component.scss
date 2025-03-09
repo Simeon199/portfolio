@@ -287,3 +287,18 @@ $blurFilter: blur(5.300000190734863px);
         right: 16px;
     }
 }
+
+@include breakpoint.touch-device {
+
+    @include breakpoint.screen400 {
+
+        .me-presentation {
+            justify-content: start;
+        }
+
+        .name-and-profession {
+            gap: 20px;
+            padding-top: 120px;
+        }
+    }
+}

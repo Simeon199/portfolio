@@ -6,7 +6,9 @@ $standardWhite: rgba(255, 255, 255, 1);
 $standardGreen: rgba(61, 207, 182, 1);
 
 .skills-section {
-    width: 100%; // ehemals 90%
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
     align-self: center;
     display: flex;
     align-items: center;
@@ -20,7 +22,6 @@ $standardGreen: rgba(61, 207, 182, 1);
     gap: 20px;
     padding-bottom: 96px;
     max-width: 560px;
-    padding: 16px 16px 64px 16px;
 }
 
 .all-skills-listed-section {

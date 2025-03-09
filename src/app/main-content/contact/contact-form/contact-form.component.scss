@@ -178,22 +178,40 @@ input[type="checkbox"]:checked:hover {
 
     .form-group {
         max-width: 560px;
-        width: 100%; // ehemals 90%
+        width: 100%;
     }
 
     .checkbox-and-validation {
         padding-top: 50px;
         align-self: center;
-        width: 100%; // ehemals 90%
+        width: 100%;
 
         label {
             input {
-                width: 36px;
+                width: 24px;
             }
         }
 
         span {
             align-self: center;
+        }
+    }
+}
+
+@include breakpoint.screen600 {
+
+    .checkbox-and-validation {
+        label {
+            flex-direction: column-reverse;
+
+            span {
+                text-align: center;
+            }
+
+            input {
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 }
@@ -218,21 +236,6 @@ input[type="checkbox"]:checked:hover {
     .checkbox-validation-section {
         span {
             text-align: center;
-        }
-    }
-
-    .checkbox-and-validation {
-        label {
-            flex-direction: column-reverse;
-
-            span {
-                text-align: center;
-            }
-
-            input {
-                width: 24px;
-                height: 24px;
-            }
         }
     }
 }
