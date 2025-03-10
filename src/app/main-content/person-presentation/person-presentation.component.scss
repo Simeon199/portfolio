@@ -21,19 +21,13 @@ $blurFilter: blur(5.300000190734863px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    // z-index: 0;
 
     svg {
         filter: $blurFilter;
     }
 }
 
-// .marquee-section-content {
-//     filter: $blurFilter;
-// }
-
 .arrow-image-container {
-    // position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;

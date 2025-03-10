@@ -72,10 +72,9 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     }
 
     .links-to-project {
-
         display: flex;
         justify-content: space-between;
-        padding-bottom: 48px;
+        padding-bottom: 32px;
         padding-top: 16px;
     }
 }
@@ -103,11 +102,15 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 @include breakpoint.screen800 {
 
     .content-box {
-        width: 90%;
+        width: 96%;
     }
 
     .project-content-wrapper {
         flex-direction: column-reverse;
+    }
+
+    .next-project-image-section-responsive {
+        width: 80%;
     }
 
     .project-information {
@@ -127,6 +130,11 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     .test-section {
         gap: 4px;
         flex-wrap: wrap;
+    }
+
+    .links-to-project {
+        padding-bottom: 0;
+        padding-top: 0;
     }
 }
 
@@ -155,6 +163,10 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     }
 
     .all-images {
+        width: 100%;
+    }
+
+    .next-project-image-section-responsive {
         width: 100%;
     }
 }
