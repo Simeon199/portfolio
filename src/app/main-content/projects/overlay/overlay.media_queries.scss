@@ -6,7 +6,6 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 @include breakpoint.screen1350 {
     .content-box {
         width: 90%;
-        height: 70%;
 
         h1 {
             font-size: 72px;
@@ -48,15 +47,11 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
 
         img {
-            height: auto;
             align-self: center;
-            width: 70%;
-            max-width: unset;
         }
     }
 
     .all-images {
-        width: 100%;
         flex-direction: unset;
         align-items: unset;
         padding-right: unset;
@@ -85,38 +80,9 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     }
 }
 
-@include breakpoint.screen1200 {
-
-    .content-box {
-        height: 96%;
-    }
-
-    .project-content-wrapper {
-        flex-direction: column-reverse;
-        justify-content: space-around;
-        height: 96%;
-    }
-
-    .project-image {
-        img {
-            width: 50%;
-        }
-    }
-
-    .all-images {
-        width: 100%;
-    }
-
-    .project-information {
-        width: 80%;
-    }
-}
-
 @include breakpoint.screen950 {
 
     .content-box {
-        flex-direction: column-reverse;
-        height: 96%;
 
         h1 {
             font-size: 64px;
@@ -125,23 +91,11 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
         h2 {
             font-size: 32px;
+            line-height: 36px;
         }
 
         h3 {
             font-size: 20px;
-        }
-    }
-
-    .project-information {
-        width: 100%;
-    }
-
-    .project-image {
-        height: unset;
-
-        img {
-            width: 60%;
-            height: auto;
         }
     }
 }
@@ -149,21 +103,24 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 @include breakpoint.screen800 {
 
     .content-box {
-        height: 96%;
-        width: 80%;
+        width: 90%;
+    }
 
-        h2 {
-            line-height: 35px;
-        }
+    .project-content-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .project-information {
+        width: 80%;
     }
 
     .all-images {
-        width: 100%;
+        width: 80%;
     }
 
-    .project-image {
-        img {
-            width: 80%;
+    .content-box {
+        h2 {
+            line-height: 35px;
         }
     }
 
@@ -176,8 +133,6 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 @include breakpoint.screen500 {
 
     .content-box {
-        width: 98%;
-
         h1 {
             font-size: 60px;
         }
@@ -195,18 +150,18 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         }
     }
 
-    .project-image {
-        img {
-            width: 88%;
-        }
+    .project-information {
+        width: 100%;
+    }
+
+    .all-images {
+        width: 100%;
     }
 }
 
 @include breakpoint.screen450 {
 
     .content-box {
-        height: 96%;
-
         span {
             line-height: 20px;
         }
@@ -227,9 +182,9 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         padding-bottom: 64px;
     }
 
-    .project-image {
-        height: 240px;
-    }
+    // .project-image {
+    //     height: 240px;
+    // }
 }
 
 @import './overlay.media_queries_touch_device.scss';
