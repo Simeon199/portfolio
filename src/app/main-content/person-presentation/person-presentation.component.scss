@@ -266,12 +266,17 @@ $blurFilter: blur(5.300000190734863px);
             }
         }
     }
-}
 
-@include breakpoint.screen500 {
     .left-lateral {
         left: 16px;
     }
+
+    .skills-and-mail {
+        right: 16px;
+    }
+}
+
+@include breakpoint.screen500 {
 
     .contact-and-work-buttons {
         gap: 32px;
@@ -282,9 +287,12 @@ $blurFilter: blur(5.300000190734863px);
             font-size: 44px;
         }
     }
+}
 
-    .skills-and-mail {
-        right: 16px;
+@include breakpoint.screenHeight800 {
+    .me-presentation {
+        justify-content: start;
+        padding-top: 110px;
     }
 }
 
