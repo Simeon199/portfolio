@@ -26,6 +26,7 @@ footer {
 
 .my-logo {
     height: 70px;
+    width: 96px;
     cursor: pointer;
     position: relative;
 
@@ -179,11 +180,12 @@ footer {
 
 @include breakpoint.screen400 {
     .my-person-box {
-        text-align: center;
+        text-align: left;
     }
 
     .platform-links {
         gap: 8px;
+        text-align: center;
 
         a {
             justify-content: center;

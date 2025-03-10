@@ -9,7 +9,9 @@
         <div class="content-above-single-projects">
             <h2>Portfolio</h2>
             <h2>{{"featuredProjects.h2First" | translate}}</h2>
-            <span>{{"featuredProjects.spanFirst" | translate}}</span>
+            <div class="span-about-projects">
+                <span>{{"featuredProjects.spanFirst" | translate}}</span>
+            </div>
         </div>
         <div class="collection-of-single-projects" *ngFor="let singleProject of projectsArray">
             <app-single-project [index]='singleProject.projectIndexAsString' [title]="singleProject.title"

@@ -17,6 +17,7 @@ $standardWhite: rgba(255, 255, 255, 0.8);
     width: 75%;
     max-height: 500px;
     height: 80%;
+    padding-left: 24px;
 }
 
 .h2-contact-section {
@@ -98,7 +99,7 @@ span:nth-child(2) {
 
 @include breakpoint.screen700 {
     .container-without-contact-form {
-        width: 100%; // ehemals 90%
+        width: 100%;
         height: unset;
     }
 
