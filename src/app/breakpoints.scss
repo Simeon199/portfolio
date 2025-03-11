@@ -13,6 +13,8 @@ $breakpoints: (
     screen1440: 1440px
 );
 
+/* --- Media Queries für Touch/Nicht-Touch-Devices --- */
+
 @mixin touch-device {
 
     @media (hover: none) {
@@ -25,6 +27,8 @@ $breakpoints: (
         @content;
     }
 }
+
+/* --- Media Queries für Maximalbreiten --- */
 
 @mixin screen360 {
     $value: map-get($breakpoints, screen360);
@@ -122,7 +126,7 @@ $breakpoints: (
     }
 }
 
-/* --- Media Query für Maximalhöhe bei Touch-Devices --- */
+/* --- Media Queries für Maximalhöhen  --- */
 
 @mixin screenHeight700 {
     $value: map-get($breakpoints, screen700);
@@ -140,11 +144,20 @@ $breakpoints: (
     }
 }
 
-/* --- Media Query für Kombination aus Maximalhöhe und Maximalbreite bei Touch-Devices --- */
+/* --- Media Queries für Kombination aus Maximalhöhen und Maximalbreiten --- */
 
 @mixin screen500AndHeight800 {
     $width: map-get($breakpoints, screen500);
     $height: map-get($breakpoints, screen800);
+
+    @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
+        @content;
+    }
+}
+
+@mixin screen1024AndHeight600 {
+    $width: map-get($breakpoints, screen1024);
+    $height: map-get($breakpoints, screen600);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
         @content;
