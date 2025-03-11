@@ -10,9 +10,9 @@ $breakpoints: (
     screen768: 768px
 );
 
-@mixin screen768AndHeight360 {
-    $width: map-get($breakpoints, screen768);
-    $height: map-get($breakpoints, screen360);
+@mixin screen320AndHeight480 {
+    $width: map-get($breakpoints, screen320);
+    $height: map-get($breakpoints, screen480);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
         @content;
@@ -28,15 +28,6 @@ $breakpoints: (
     }
 }
 
-@mixin screen375AndHeight667 {
-    $width: map-get($breakpoints, screen375);
-    $height: map-get($breakpoints, screen667);
-
-    @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
-        @content;
-    }
-}
-
 @mixin screen320AndHeight568 {
     $width: map-get($breakpoints, screen320);
     $height: map-get($breakpoints, screen568);
@@ -46,14 +37,15 @@ $breakpoints: (
     }
 }
 
-@mixin screen320AndHeight480 {
-    $width: map-get($breakpoints, screen320);
-    $height: map-get($breakpoints, screen480);
+@mixin screen360AndHeight600 {
+    $width: map-get($breakpoints, screen360);
+    $height: map-get($breakpoints, screen600);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
         @content;
     }
 }
+
 
 @mixin screen360AndHeight640 {
     $width: map-get($breakpoints, screen360);
@@ -64,9 +56,18 @@ $breakpoints: (
     }
 }
 
-@mixin screen360AndHeight600 {
-    $width: map-get($breakpoints, screen360);
-    $height: map-get($breakpoints, screen600);
+@mixin screen375AndHeight667 {
+    $width: map-get($breakpoints, screen375);
+    $height: map-get($breakpoints, screen667);
+
+    @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
+        @content;
+    }
+}
+
+@mixin screen768AndHeight360 {
+    $width: map-get($breakpoints, screen768);
+    $height: map-get($breakpoints, screen360);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
         @content;
