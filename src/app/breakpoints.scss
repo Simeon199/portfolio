@@ -140,4 +140,13 @@ $breakpoints: (
     }
 }
 
-/* --- Media Query für Maximalhöhe bei Touch-Devices --- */
+/* --- Media Query für Kombination aus Maximalhöhe und Maximalbreite bei Touch-Devices --- */
+
+@mixin screen500AndHeight800 {
+    $width: map-get($breakpoints, screen500);
+    $height: map-get($breakpoints, screen800);
+
+    @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
+        @content;
+    }
+}
