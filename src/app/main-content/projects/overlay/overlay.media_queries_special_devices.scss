@@ -1,0 +1,11 @@
+@use '../../../breakpoints_special_devices.scss' as breakpoint;
+
+$standardGreen: rgb(61, 207, 182);
+$standardWhite: rgba(255, 255, 255, 0.8);
+$backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+@include breakpoint.screen768AndHeight360 {
+    .close-button-img {
+        padding-top: 448px;
+    }
+}

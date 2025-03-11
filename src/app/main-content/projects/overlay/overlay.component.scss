@@ -80,8 +80,8 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     display: flex;
     justify-content: end;
     align-items: center;
-    cursor: pointer;
     width: 100%;
+    cursor: pointer;
 
     img {
         width: 40px;
@@ -90,7 +90,9 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 }
 
 .close-button-img {
-    align-self: end;
+    display: flex;
+    justify-content: end;
+    width: 100%;
     z-index: 121;
     cursor: pointer;
 }
@@ -191,3 +193,4 @@ button {
 }
 
 @import './overlay.media_queries.scss';
+@import './overlay.media_queries_special_devices.scss';

@@ -1,3 +1,4 @@
+// @use '../../../all_breakpoint_files/breakpoints.scss' as breakpoint;
 @use '../../../breakpoints.scss' as breakpoint;
 $standardGreen: rgb(61, 207, 182);
 $standardWhite: rgba(255, 255, 255, 0.8);
@@ -208,6 +209,17 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 }
 
 @include breakpoint.screen500AndHeight800 {
+
+    .project-information {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 8px;
+    }
+
+    .all-images {
+        padding-top: 120px;
+        width: 90%;
+    }
 
     .content-box {
         width: 100%;
