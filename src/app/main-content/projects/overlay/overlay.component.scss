@@ -4,9 +4,8 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
 .overlay {
     position: fixed;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    place-items: center;
     z-index: 120;
     background-color: rgba(28, 28, 28, 1);
     top: 0;
@@ -193,4 +192,3 @@ button {
 }
 
 @import './overlay.media_queries.scss';
-// @import './overlay.media_queries_special_devices.scss';
