@@ -65,9 +65,9 @@ $breakpoints: (
     }
 }
 
-@mixin screen768AndHeight360 {
-    $width: map-get($breakpoints, screen768);
-    $height: map-get($breakpoints, screen360);
+@mixin screen360AndHeight768 {
+    $width: map-get($breakpoints, screen360);
+    $height: map-get($breakpoints, screen768);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
         @content;
