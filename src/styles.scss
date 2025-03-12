@@ -1,7 +1,5 @@
 @use '@angular/material' as mat;
 @use './app/breakpoints.scss';
-@use './app/breakpoints_special_devices.scss';
-// @use './app/all_breakpoint_files/breakpoints.scss' as breakpoint;
 @include mat.core();
 
 // general global styling

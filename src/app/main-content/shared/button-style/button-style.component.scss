@@ -54,3 +54,13 @@ button:hover p {
         padding: 12px;
     }
 }
+
+@include breakpoint.screen400 {
+    button {
+        padding: 4px;
+    }
+
+    button p {
+        font-size: 16px;
+    }
+}

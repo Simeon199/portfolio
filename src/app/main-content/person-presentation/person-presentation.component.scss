@@ -283,24 +283,30 @@ $blurFilter: blur(5.300000190734863px);
     }
 }
 
-@include breakpoint.screenHeight800 {
-    .me-presentation {
-        justify-content: start;
-        padding-top: 110px;
+@include breakpoint.screen500AndHeight950 {
+    .skills-and-mail {
+        width: unset;
     }
-}
 
-@include breakpoint.touch-device {
+    .name-and-profession {
+        gap: 20px;
 
-    @include breakpoint.screen400 {
-
-        .me-presentation {
-            justify-content: start;
+        h2:nth-child(1) {
+            line-height: 24px;
+            font-size: 24px;
+            text-align: center;
+            flex-wrap: wrap;
+            width: 80%;
         }
 
-        .name-and-profession {
-            gap: 20px;
-            padding-top: 120px;
+        h2:nth-child(2) {
+            line-height: 24px;
+            font-size: 24px;
         }
+    }
+
+    .contact-and-work-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }

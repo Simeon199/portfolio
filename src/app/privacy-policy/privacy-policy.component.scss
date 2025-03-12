@@ -25,7 +25,12 @@ a {
 // All media queries listed here
 
 @include breakpoint.screen500 {
+
     .privacy-policy-container {
         border-radius: unset;
+    }
+
+    .privacy-policy-content-wrapper {
+        padding: 108px 16px 16px 16px;
     }
 }

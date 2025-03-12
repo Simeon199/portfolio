@@ -130,6 +130,14 @@ $breakpoints: (
 
 /* --- Media Queries für Maximalhöhen  --- */
 
+@mixin screenHeight600 {
+    $value: map-get($breakpoints, screen600);
+
+    @media only screen and (max-height: #{$value}) {
+        @content;
+    }
+}
+
 @mixin screenHeight700 {
     $value: map-get($breakpoints, screen700);
 
@@ -148,9 +156,9 @@ $breakpoints: (
 
 /* --- Media Queries für Kombination aus Maximalhöhen und Maximalbreiten --- */
 
-@mixin screen375AndHeight768 {
-    $width: map-get($breakpoints, screen375);
-    $height: map-get($breakpoints, screen768);
+@mixin screen400AndHeight800 {
+    $width: map-get($breakpoints, screen400);
+    $height: map-get($breakpoints, screen800);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
         @content;
@@ -160,6 +168,15 @@ $breakpoints: (
 @mixin screen500AndHeight800 {
     $width: map-get($breakpoints, screen500);
     $height: map-get($breakpoints, screen800);
+
+    @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
+        @content;
+    }
+}
+
+@mixin screen500AndHeight950 {
+    $width: map-get($breakpoints, screen500);
+    $height: map-get($breakpoints, screen950);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
         @content;
