@@ -4,22 +4,20 @@
     background: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
 }
 
-.legal-notice-container {
-    height: 100vh;
-    display: flex;
-}
-
 app-footer {
-    position: absolute;
-    bottom: 0;
-    width: min(100%, 1440px);
+    position: unset;
 }
 
 .legal-notice-content-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     gap: 24px;
+    padding-top: 160px;
+    padding-bottom: 48px;
+    padding-left: 24px;
+    width: 100%;
+    min-height: 75vh;
 }
 
 a {
@@ -27,8 +25,25 @@ a {
     color: blue;
 }
 
+// Media Queries related to height
+
 @include breakpoint.screenHeight800 {
     .legal-notice-content-wrapper {
-        overflow-y: scroll;
+        overflow-y: auto;
+    }
+}
+
+@include breakpoint.screenMinHeight850 {
+    app-footer {
+        position: absolute;
+        width: 100%;
+        max-width: 1440px;
+        bottom: 0;
+    }
+
+    .legal-notice-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
     }
 }

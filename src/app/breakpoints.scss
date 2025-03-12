@@ -8,6 +8,7 @@ $breakpoints: (
     screen700: 700px,
     screen768: 768px,
     screen800: 800px,
+    screen850: 850px,
     screen950: 950px,
     screen1024: 1024px,
     screen1200: 1200px,
@@ -188,6 +189,16 @@ $breakpoints: (
     $height: map-get($breakpoints, screen600);
 
     @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
+        @content;
+    }
+}
+
+/* --- Media Queries für Minimalhöhen --- */
+
+@mixin screenMinHeight850 {
+    $value: map-get($breakpoints, screen850);
+
+    @media only screen and (min-height: #{$value}) {
         @content;
     }
 }
