@@ -61,6 +61,7 @@ export class ContactFormComponent {
   }
 
   mailTest = false;
+
   post = {
     endPoint: 'https://simon-kiesner.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -71,73 +72,6 @@ export class ContactFormComponent {
       },
     },
   };
-
-  //   onSubmit(ngForm: NgForm) {
-  //     this.formSubmitted = true;
-  //     if (ngForm.invalid) {
-  //       Object.values(ngForm.controls).forEach(control => {
-  //         control.markAsTouched();
-  //       });
-  //       return;
-  //     }
-
-  //     if (!this.mailTest) {
-  //       this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //         .subscribe({
-  //           next: (response) => {
-  //             console.log('response: ', response);
-  //             ngForm.resetForm();
-  //             this.formSubmitted = false;
-  //           },
-  //           error: (error) => {
-  //             console.error(error);
-  //           },
-  //           complete: () => console.info('send post complete'),
-  //         });
-  //     } else {
-  //       ngForm.resetForm();
-  //       this.formSubmitted = false;
-  //     }
-  //   }
-  // }
-
-  // onSubmit(ngForm: NgForm) {
-  //   this.formSubmitted = true;
-  //   if (ngForm.invalid) {
-  //     Object.values(ngForm.controls).forEach(control => control.markAsTouched());
-  //     return;
-  //   }
-
-  //   this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
-  //     next: () => {
-  //       debugger;
-  //       this.snackBar.open("Nachricht erfolgreich gesendet!", "Schließen", {
-  //         duration: 3000,
-  //         horizontalPosition: "center",
-  //         verticalPosition: "top",
-  //       });
-  //       ngForm.resetForm();
-  //     },
-  //     error: (error) => console.error(error),
-  //   });
-  //   if (!this.mailTest) {
-  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //       .subscribe({
-  //         next: (response) => {
-  //           console.log('response: ', response);
-  //           ngForm.resetForm();
-  //           this.formSubmitted = false;
-  //         },
-  //         error: (error) => {
-  //           console.error(error);
-  //         },
-  //         complete: () => console.info('send post complete'),
-  //       });
-  //   } else {
-  //     ngForm.resetForm();
-  //     this.formSubmitted = false;
-  //   }
-  // }
 
   onSubmit(ngForm: NgForm) {
     this.formSubmitted = true;
@@ -157,27 +91,53 @@ export class ContactFormComponent {
   private sendMail(ngForm: NgForm) {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
-        next: () => {
-          // debugger;
-          this.snackBar.open("Nachricht erfolgreich gesendet!", "Schließen", {
-            duration: 3000,
-            horizontalPosition: "center",
-            verticalPosition: "top",
-            panelClass: ['custom-snackbar']
-          });
-          this.resetForm(ngForm);
-        },
-        error: (error) => {
-          console.error(error);
-          this.snackBar.open("Fehler beim Senden der Nachricht!", "Schließen", {
-            duration: 3000,
-            horizontalPosition: "center",
-            verticalPosition: "top",
-            panelClass: ['custom-error']
-          });
-        }
+        next: () => this.handleSuccess(ngForm),
+        error: (error) => this.handleError(error)
       });
   }
+
+  private handleSuccess(ngForm: NgForm) {
+    this.showSnackbar("Nachricht erfolgreich gesendet!", ['custom-snackbar']);
+    this.resetForm(ngForm);
+  }
+
+  private handleError(error: any) {
+    console.error(error);
+    this.showSnackbar("Fehler beim Senden der Nachricht!", ['custom-error']);
+  }
+
+  private showSnackbar(message: string, panelClass: string[]) {
+    this.snackBar.open(message, "Schließen", {
+      duration: 3000,
+      horizontalPosition: "center",
+      verticalPosition: "top",
+      panelClass
+    });
+  }
+
+  // private sendMail(ngForm: NgForm) {
+  //   this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  //     .subscribe({
+  //       next: () => {
+  //         this.snackBar.open("Nachricht erfolgreich gesendet!", "Schließen", {
+  //           duration: 3000,
+  //           horizontalPosition: "center",
+  //           verticalPosition: "top",
+  //           panelClass: ['custom-snackbar']
+  //         });
+  //         this.resetForm(ngForm);
+  //       },
+  //       error: (error) => {
+  //         console.error(error);
+  //         this.snackBar.open("Fehler beim Senden der Nachricht!", "Schließen", {
+  //           duration: 3000,
+  //           horizontalPosition: "center",
+  //           verticalPosition: "top",
+  //           panelClass: ['custom-error']
+  //         });
+  //       }
+  //     });
+  // }
 
   private resetForm(ngForm: NgForm) {
     ngForm.resetForm();

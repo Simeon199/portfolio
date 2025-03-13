@@ -98,7 +98,6 @@ export class OverlayComponent {
   }
 
   closeOverlay() {
-    // debugger;
     this.close.emit();
     this.sharedService.manageHideShowOverflow(false);
   }

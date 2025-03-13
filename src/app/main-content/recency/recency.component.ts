@@ -25,7 +25,6 @@ export class RecencyComponent {
   recencies: any = '';
   recencyValues: any = '';
   recencyKeys: any = '';
-
   currentLanguage: string = 'de';
   isLeftArrowHovered: boolean = false;
   isRightArrowHovered: boolean = false;

@@ -28,9 +28,7 @@ export class ProjectsComponent {
   currentHoveredProject: string = '';
   currentHoveredProjectImageSrc: string = '';
   currentHoveredProjectIndex: string = '';
-
   hoveredProjectLocation = '';
-
   currentProjectOpened: string = '';
   currentProjectOpenedDescription: string = '';
   currentProjectOpenedImageSrc: string = '';
@@ -38,11 +36,9 @@ export class ProjectsComponent {
   currentProjectOpenedIndexAsString: string = '';
   currentProjectOpenedGitHubLink: string = '';
   currentProjectOpenedProjectLink: string = '';
-
   isOverlayVisible = false;
   projectsData = projectsData;
   projectsArray = Object.values(this.projectsData);
-
   currentLanguage: string = "de";
   allProjects: projectsModel = projectsData;
 
