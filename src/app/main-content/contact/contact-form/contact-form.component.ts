@@ -115,30 +115,6 @@ export class ContactFormComponent {
     });
   }
 
-  // private sendMail(ngForm: NgForm) {
-  //   this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //     .subscribe({
-  //       next: () => {
-  //         this.snackBar.open("Nachricht erfolgreich gesendet!", "Schließen", {
-  //           duration: 3000,
-  //           horizontalPosition: "center",
-  //           verticalPosition: "top",
-  //           panelClass: ['custom-snackbar']
-  //         });
-  //         this.resetForm(ngForm);
-  //       },
-  //       error: (error) => {
-  //         console.error(error);
-  //         this.snackBar.open("Fehler beim Senden der Nachricht!", "Schließen", {
-  //           duration: 3000,
-  //           horizontalPosition: "center",
-  //           verticalPosition: "top",
-  //           panelClass: ['custom-error']
-  //         });
-  //       }
-  //     });
-  // }
-
   private resetForm(ngForm: NgForm) {
     ngForm.resetForm();
     this.formSubmitted = false;
