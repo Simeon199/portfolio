@@ -19,7 +19,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent {
+
   formSubmitted = false;
+  isCheckboxImgHovered = false;
+  isCheckboxTouched = false;
   http = inject(HttpClient);
 
 
@@ -58,6 +61,15 @@ export class ContactFormComponent {
     this.translate.get('contactFormular.thirdInputPlaceholder').subscribe((thirdInputPlaceholder) => {
       this.messagePlaceHolder = thirdInputPlaceholder;
     })
+  }
+
+  toggleCheckbox() {
+    this.isCheckboxTouched = true;
+    this.contactData.agreedToPrivacy = !this.contactData.agreedToPrivacy
+  }
+
+  toggleCheckboxImgHovered() {
+    this.isCheckboxImgHovered = !this.isCheckboxImgHovered;
   }
 
   mailTest = false;

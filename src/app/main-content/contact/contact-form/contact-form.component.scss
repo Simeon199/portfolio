@@ -50,44 +50,6 @@ form {
     }
 }
 
-input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 28px;
-    height: 20px;
-    align-self: center;
-    border: 2px solid $standardGreen;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-input[type="checkbox"]:hover {
-    background-image: url("../../../../assets/img/checkbox_hover.svg");
-    border: none;
-    background-position: center;
-    background-size: auto;
-}
-
-input[type="checkbox"]:checked {
-    background-image: url("../../../../assets/img/checkbox_checked.svg");
-    border: none;
-    background-position: center;
-    background-size: auto;
-}
-
-input[type="checkbox"]:checked:hover {
-    border: none;
-    background-image: url("../../../../assets/img/checkbox_checked_hover.svg");
-    background-position: center;
-    background-size: auto;
-}
-
-.disabled-button {
-    // Mit TypeScript lösen ! => cursor: not allowed
-    opacity: 0.35;
-}
-
 .form-group {
 
     display: flex;
@@ -143,22 +105,30 @@ input[type="checkbox"]:checked:hover {
 }
 
 #submit-input {
-    cursor: pointer;
     font-family: 'Karla';
     font-size: 18px;
     font-weight: 400;
     line-height: 21.6px;
-    text-align: left;
+    text-align: center;
     color: $standardWhite;
     background-color: #1C1C1C;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    width: 139px;
+    width: 140px;
     height: 48px;
     padding: 0px 24px 0px 24px;
-    gap: 10px;
     border-radius: 100px;
     margin-top: 24px;
     align-self: center;
+}
+
+.disabled-button {
+    opacity: 0.35;
+    cursor: auto;
+}
+
+.active-button {
+    opacity: 1;
+    cursor: pointer;
 }
 
 @include breakpoint.screen1350 {
@@ -186,12 +156,6 @@ input[type="checkbox"]:checked:hover {
         align-self: center;
         width: 100%;
 
-        label {
-            input {
-                width: 24px;
-            }
-        }
-
         span {
             align-self: center;
         }
@@ -206,11 +170,6 @@ input[type="checkbox"]:checked:hover {
 
             span {
                 text-align: center;
-            }
-
-            input {
-                width: 24px;
-                height: 24px;
             }
         }
     }

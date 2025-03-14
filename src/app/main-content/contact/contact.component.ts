@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 
 export class ContactComponent {
+
   currentLanguage: string = "";
 
   constructor(private languageService: LanguageService) {
