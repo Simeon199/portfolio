@@ -81,7 +81,7 @@
             "gitHubLink": "https://github.com/Simeon199/el_pollo_loco"
         },
         "daBubble": {
-            "title": "DABubble (Coming Soon)",
+            "title": "DABubble",
             "projectImageSource": "../../../../assets/img/dabubble.png",
             "description": "In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht.",
             "technologyList": [
@@ -111,7 +111,8 @@
             "projectLink": "Not found",
             "gitHubLink": "Not found"
         },
-        "whatIsProjectAbout": "Worum geht es in diesem Projekt?"
+        "whatIsProjectAbout": "Worum geht es in diesem Projekt?",
+        "nextProject": "Nächstes Projekt"
     },
     "Join": {
         "whatIsProjectAbout": "Worum geht es in diesem Projekt?",

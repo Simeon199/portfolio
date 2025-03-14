@@ -20,7 +20,7 @@ export interface projectsModel {
         projectIndexAsString: string;
         projectLink: string;
         gitHubLink: string;
-    },
+    }
     daBubble: {
         title: string,
         projectImageSource: string,

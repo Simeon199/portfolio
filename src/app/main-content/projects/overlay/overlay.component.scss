@@ -86,6 +86,10 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         width: 40px;
         height: 40px;
     }
+
+    span {
+        color: $standardWhite;
+    }
 }
 
 .close-button-img {

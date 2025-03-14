@@ -81,7 +81,7 @@
             "gitHubLink": "https://github.com/Simeon199/el_pollo_loco"
         },
         "daBubble": {
-            "title": "DABubble (Coming Soon)",
+            "title": "DABubble",
             "projectImageSource": "../../../../assets/img/dabubble.png",
             "description": "Based on Slack, this app offers a user-friendly platform for optimizing team communication. Real-time messages and a structured channel organization make communication within the team noticeably easier.",
             "technologyList": [
@@ -111,7 +111,8 @@
             "projectLink": "Not found",
             "gitHubLink": "Not found"
         },
-        "whatIsProjectAbout": "What's this project about?"
+        "whatIsProjectAbout": "What's this project about?",
+        "nextProject": "Next Project"
     },
     "Join": {
         "whatIsProjectAbout": "What's this project about?",

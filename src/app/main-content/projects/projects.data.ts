@@ -35,7 +35,7 @@ export const projectsData: projectsModel = {
         gitHubLink: 'https://github.com/Simeon199/el_pollo_loco'
     },
     daBubble: {
-        title: 'DABubble - coming soon',
+        title: 'DABubble',
         projectImageSource: '../../../../assets/img/dabubble.png',
         description: 'In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht.',
         technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
