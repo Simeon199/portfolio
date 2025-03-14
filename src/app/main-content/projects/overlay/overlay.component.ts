@@ -107,7 +107,7 @@ export class OverlayComponent {
       let convertedKey = this.projectNameConverter(key);
       if (convertedKey == title) {
         this.currentIndex = this.keyValues.indexOf(key);
-        if (this.currentIndex < 2) {
+        if (this.currentIndex < 1) { // ehemals this.currentIndex < 2
           this.nextIndex = this.currentIndex + 1;
         } else {
           this.nextIndex = 0;

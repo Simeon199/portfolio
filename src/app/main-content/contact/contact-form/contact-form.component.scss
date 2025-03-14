@@ -84,8 +84,8 @@ input[type="checkbox"]:checked:hover {
 }
 
 .disabled-button {
-    opacity: 0.5;
-    cursor: not-allowed;
+    // Mit TypeScript lösen ! => cursor: not allowed
+    opacity: 0.35;
 }
 
 .form-group {

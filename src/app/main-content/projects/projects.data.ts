@@ -33,26 +33,26 @@ export const projectsData: projectsModel = {
         projectIndexAsString: '02',
         projectLink: 'https://el-pollo-loco.simon-kiesner.de/index.html',
         gitHubLink: 'https://github.com/Simeon199/el_pollo_loco'
-    },
-    daBubble: {
-        title: 'DABubble',
-        projectImageSource: '../../../../assets/img/dabubble.png',
-        description: 'In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht.',
-        technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
-        technologyImageIcons: [
-            '../../../../assets/img/angular-technology.svg',
-            '|',
-            '../../../../assets/img/typescript-technology.svg',
-            '|',
-            '../../../../assets/img/firebase-technology.svg',
-            '|',
-            '../../../../assets/img/css-technology.svg',
-            '|',
-            '../../../../assets/img/html-technology.svg'
-        ],
-        projectIndex: 2,
-        projectIndexAsString: '03',
-        projectLink: 'Not found',
-        gitHubLink: 'Not found'
     }
+    // daBubble: {
+    //     title: 'DABubble',
+    //     projectImageSource: '../../../../assets/img/dabubble.png',
+    //     description: 'In Anlehnung an Slack bietet diese App eine benutzerfreundliche Plattform zur Optimierung der Teamkommunikation. Durch Echtzeitnachrichten und eine strukturierte Kanalorganisation wird der Austausch im Team spürbar vereinfacht.',
+    //     technologyList: ['Angular', '|', 'TypeScript', '|', 'Firebase', '|', 'SCSS', '|', 'HTML'],
+    //     technologyImageIcons: [
+    //         '../../../../assets/img/angular-technology.svg',
+    //         '|',
+    //         '../../../../assets/img/typescript-technology.svg',
+    //         '|',
+    //         '../../../../assets/img/firebase-technology.svg',
+    //         '|',
+    //         '../../../../assets/img/css-technology.svg',
+    //         '|',
+    //         '../../../../assets/img/html-technology.svg'
+    //     ],
+    //     projectIndex: 2,
+    //     projectIndexAsString: '03',
+    //     projectLink: 'Not found',
+    //     gitHubLink: 'Not found'
+    // }
 }

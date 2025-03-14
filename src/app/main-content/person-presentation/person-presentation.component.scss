@@ -11,7 +11,7 @@ $blurFilter: blur(5.300000190734863px);
     position: relative;
     flex-direction: column;
     justify-content: center;
-    height: calc(100vh - 92px);
+    height: 100vh;
 }
 
 .left-lateral {
@@ -201,13 +201,9 @@ $blurFilter: blur(5.300000190734863px);
 .git-icons,
 .mail-icons,
 .linkedin-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
 }
 
 .git-icons img {
@@ -219,7 +215,6 @@ $blurFilter: blur(5.300000190734863px);
 .linkedin-icons img {
     position: absolute;
     bottom: 0;
-    left: 0;
 }
 
 .hidden {
