@@ -41,6 +41,26 @@ header {
     border-radius: 30px;
     border: 1px solid $standardGreen;
     background: $backgroundPattern;
+
+    ::after {
+        content: "";
+        position: absolute;
+        left: 32px;
+        transform: scale(0);
+        width: 8px;
+        height: 8px;
+        background-color: $standardGreen;
+        border-radius: 50%;
+        transition: transform 0.1s ease-in-out;
+    }
+
+    a:hover::after {
+        transform: translateX(-50%) translateY(50%) scale(1);
+    }
+
+    a:hover {
+        color: $standardGreen;
+    }
 }
 
 .language-selection-responsive {

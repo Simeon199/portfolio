@@ -79,7 +79,9 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 100%;
+    padding-right: 8px;
+    padding-bottom: 16px;
+    align-self: end;
     cursor: pointer;
 
     img {
@@ -90,12 +92,23 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     span {
         color: $standardWhite;
     }
+
+    &:hover {
+        span {
+            color: $standardGreen;
+        }
+
+        img {
+            transform: scale(1.075);
+            transform: translateX(10%);
+        }
+    }
 }
 
 .close-button-img {
-    display: flex;
-    justify-content: end;
-    width: 100%;
+    align-self: end;
+    padding-right: 8px;
+    padding-top: 8px;
     z-index: 121;
     cursor: pointer;
 }
@@ -137,9 +150,11 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     display: none;
 }
 
-.test-section {
+.technology-section {
     display: flex;
     gap: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     align-items: center;
     max-width: 400px;
     flex-wrap: wrap;
@@ -156,35 +171,51 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     gap: 32px;
 }
 
-button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 16px 24px 16px 24px;
-    gap: 10px;
-    border-radius: 100px;
-    border: 1px solid $standardWhite;
-    background-color: transparent;
+a {
+    text-decoration: none;
 
-    a {
-        text-decoration: none;
-        font-family: 'Karla';
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 21.6px;
-        text-align: left;
-        color: $standardWhite;
-    }
+    button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 16px 24px 16px 24px;
+        gap: 10px;
+        border-radius: 100px;
+        border: 1px solid $standardWhite;
+        background-color: transparent;
 
-    &:hover {
-        border: 1px solid $standardGreen;
-
-        a {
-            color: $standardGreen;
+        span {
+            font-family: 'Karla';
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-align: left;
+            color: $standardWhite;
         }
 
-        img {
-            transform: scale(1.2);
+        // a {
+        //     text-decoration: none;
+        //     font-family: 'Karla';
+        //     font-size: 18px;
+        //     font-weight: 400;
+        //     line-height: 21.6px;
+        //     text-align: left;
+        //     color: $standardWhite;
+        // }
+
+        &:hover {
+            border: 1px solid $standardGreen;
+
+            // a {
+            //     color: $standardGreen;
+            // }
+            span {
+                color: $standardGreen;
+            }
+
+            img {
+                transform: scale(1.2);
+            }
         }
     }
 }

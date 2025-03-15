@@ -10,7 +10,7 @@
                 <h3>{{"allProjectData.whatIsProjectAbout" | translate}}</h3>
                 <span [translate]="translateKey"></span>
                 <div class="used-technologies" *ngFor="let project of projectValues; let i = index">
-                    <div class="test-section" *ngIf="project.title === title">
+                    <div class="technology-section" *ngIf="project.title === title">
                         <div class="list-section" *ngFor="let item of project.technologyList; let i = index">
                             <ng-container *ngIf="item !== '|'">
                                 <span>{{item}}</span>
@@ -20,14 +20,18 @@
                     </div>
                 </div>
                 <div class="links-to-project">
-                    <button>
-                        <a href={{gitHubLink}} target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
-                    </button>
-                    <button>
-                        <a href={{projectLink}} target="_blank" rel="noopener noreferrer">Live Test</a>
-                        <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
-                    </button>
+                    <a href="{{gitHubLink}}" target="_blank" rel="noopener noreferrer">
+                        <button>
+                            <span>GitHub</span>
+                            <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
+                        </button>
+                    </a>
+                    <a href="{{projectLink}}" target="_blank" rel="noopener noreferrer">
+                        <button>
+                            <span>Live Test</span>
+                            <img src="../../../../assets/img/arrow_outward.svg" alt="arrow_outwards">
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="all-images">
