@@ -3,16 +3,18 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
 import { routes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
   ...appConfig,
   providers: [
-    provideRouter(routes, withInMemoryScrolling({
-      anchorScrolling: 'enabled',
-      scrollPositionRestoration: 'enabled'
-    })),
+    provideRouter(routes,
+      withInMemoryScrolling({
+        anchorScrolling: 'enabled',
+        scrollPositionRestoration: 'enabled',
+      })
+    ),
     ...appConfig.providers,
     importProvidersFrom(BrowserAnimationsModule)
   ]
