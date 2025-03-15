@@ -3,7 +3,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withHashLocation } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -24,6 +24,6 @@ export const appConfig: ApplicationConfig = {
         deps: [HttpClient],
       },
     })]),
-    provideRouter(routes),
+    provideRouter(routes, withHashLocation()),
   ]
 };
