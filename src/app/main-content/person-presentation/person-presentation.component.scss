@@ -121,7 +121,7 @@ $blurFilter: blur(5.300000190734863px);
     justify-content: space-evenly;
     color: $standardGreen;
     padding: 12px 32px 12px 32px;
-    gap: 56px;
+    gap: 150px;
     transform: rotate(-3deg);
     width: 100%;
     overflow: hidden;
@@ -145,11 +145,11 @@ $blurFilter: blur(5.300000190734863px);
     }
 
     @keyframes scroll-marquee {
-        0% {
-            transform: translateX(100%);
+        from {
+            transform: translateX(0%);
         }
 
-        100% {
+        to {
             transform: translateX(-100%);
         }
     }

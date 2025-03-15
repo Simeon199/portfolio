@@ -5,6 +5,7 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
 @include breakpoint.screen1350 {
     .content-box {
+        display: flex;
         width: 90%;
 
         h1 {
@@ -30,9 +31,24 @@ $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 
     .next-project-image-section-responsive {
         display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-right: 8px;
+        padding-bottom: 16px;
+        align-self: end;
 
         span {
             color: $standardGreen;
+        }
+
+        &:hover {
+            span {
+                color: $standardWhite;
+            }
+
+            img {
+                transform: scale(1.125);
+            }
         }
     }
 
