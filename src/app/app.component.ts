@@ -27,26 +27,20 @@ export class AppComponent implements AfterViewInit {
     private elRef: ElementRef,
     private renderer: Renderer2
   ) {
-    // Übersetzungen holen und HTML-Inhalt sicher einfügen
     this.translate.get('contactFormular.legalNoticeMessage').subscribe((res: string) => {
       this.legalNoticeMessage = this.sanitizer.bypassSecurityTrustHtml(res);
     });
   }
 
   ngAfterViewInit() {
-    this.bindClickEvent(); // Stelle sicher, dass beim ersten Laden das Event gesetzt wird
-
-    // MutationObserver starten, um Änderungen an `innerHTML` zu erkennen
+    this.bindClickEvent();
     this.observer = new MutationObserver(() => {
       this.bindClickEvent();
     });
-
-    // Observer auf die komplette Komponente anwenden
     this.observer.observe(this.elRef.nativeElement, { childList: true, subtree: true });
   }
 
   bindClickEvent() {
-    // Suche nach dem Link und setze das Event sicher
     const links = this.elRef.nativeElement.querySelectorAll('.legal-link');
     links.forEach((link: HTMLElement) => {
       this.renderer.listen(link, 'click', (event) => {
