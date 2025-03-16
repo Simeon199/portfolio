@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
-import { ViewportScroller } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -18,40 +16,43 @@ import { trigger, transition, style, animate } from '@angular/animations';
   styleUrl: './app.component.scss',
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   legalNoticeMessage: SafeHtml | undefined;
+  observer: MutationObserver | undefined;
 
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
-
-  // constructor(private translate: TranslateService) {
-  //   this.translate.get('contactFormular.legalNoticeMessage').subscribe((text: string) => {
-  //     this.legalNoticeMessage = text.replace('{link}', '<a class="link" routerLink="/datenschutz">Datenschutzerklärung</a>');
-  //   });
-  // }
-
-  // constructor(private translate: TranslateService, private sanitizer: DomSanitizer) {
-  //   this.translate.get('contactFormular.legalNoticeMessage').subscribe((res: string) => {
-  //     this.legalNoticeMessage = this.sanitizer.bypassSecurityTrustHtml(res);
-  //   });
-  // }
-
-  constructor(private translate: TranslateService, private router: Router, private viewportScroller: ViewportScroller, private sanitizer: DomSanitizer) {
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private sanitizer: DomSanitizer,
+    private elRef: ElementRef,
+    private renderer: Renderer2
+  ) {
+    // Übersetzungen holen und HTML-Inhalt sicher einfügen
     this.translate.get('contactFormular.legalNoticeMessage').subscribe((res: string) => {
       this.legalNoticeMessage = this.sanitizer.bypassSecurityTrustHtml(res);
     });
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        setTimeout(() => {
-          this.viewportScroller.scrollToPosition([0, window.scrollY - 200]);
-        }, 1000);
-      }
-    })
   }
 
-  navigateToPrivacy(event: Event) {
-    event.preventDefault();
-    this.router.navigate(['/legal-notice']);
+  ngAfterViewInit() {
+    this.bindClickEvent(); // Stelle sicher, dass beim ersten Laden das Event gesetzt wird
+
+    // MutationObserver starten, um Änderungen an `innerHTML` zu erkennen
+    this.observer = new MutationObserver(() => {
+      this.bindClickEvent();
+    });
+
+    // Observer auf die komplette Komponente anwenden
+    this.observer.observe(this.elRef.nativeElement, { childList: true, subtree: true });
+  }
+
+  bindClickEvent() {
+    // Suche nach dem Link und setze das Event sicher
+    const links = this.elRef.nativeElement.querySelectorAll('.legal-link');
+    links.forEach((link: HTMLElement) => {
+      this.renderer.listen(link, 'click', (event) => {
+        event.preventDefault();
+        this.router.navigate(['/privacy-policy']);
+      });
+    });
   }
 }
