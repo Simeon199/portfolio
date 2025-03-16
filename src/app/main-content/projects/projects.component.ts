@@ -8,6 +8,7 @@ import { projectsModel } from './projects.model';
 import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedService } from '../../shared.service';
+import { FadeComponent } from '../shared/fade/fade.component';
 
 @Component({
   selector: 'app-projects',
