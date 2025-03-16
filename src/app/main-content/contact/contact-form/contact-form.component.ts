@@ -39,6 +39,7 @@ export class ContactFormComponent {
   }
 
   currentLanguage: string = "de";
+  legalNoticeMessage: any;
 
   constructor(private languageService: LanguageService,
     private translate: TranslateService, private snackBar: MatSnackBar) {

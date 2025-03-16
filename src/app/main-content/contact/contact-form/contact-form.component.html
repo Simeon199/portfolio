@@ -42,7 +42,9 @@
                     <img *ngIf="contactData.agreedToPrivacy && isCheckboxImgHovered"
                         (mouseleave)="toggleCheckboxImgHovered()"
                         src="../../../../assets/img/checkbox_checked_hovered.svg" alt="checked_hovered">
-                    <span>{{ "contactFormular.legalNoticeMessage" | translate }}</span>
+                    <span [innerHTML]="'contactFormular.legalNoticeMessage' | translate"></span>
+                    <!-- <p [innerHTML]="legalNoticeMessage"></p> -->
+                    <!-- <span>{{ "contactFormular.legalNoticeMessage" | translate }}</span> -->
                 </label>
                 <input #checkbox="ngModel" [(ngModel)]="contactData.agreedToPrivacy" type="checkbox"
                     name="agreedToPrivacy" required hidden>

@@ -11,11 +11,23 @@ form {
     border-width: 1px, 0px, 1px, 0px;
 }
 
+.specialLinkClass {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+}
+
 .checkbox-validation-section {
     display: flex;
     flex-direction: column;
     gap: 16px;
     justify-content: center;
+}
+
+.link {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
 }
 
 .checkbox-and-validation {
@@ -29,6 +41,18 @@ form {
         display: flex;
         gap: 8px;
         align-items: center;
+
+        a {
+            color: $standardGreen;
+            text-decoration: none;
+        }
+
+        // span {
+        //     a {
+        //         color: $standardGreen;
+        //         text-decoration: none;
+        //     }
+        // }
     }
 
     span {
