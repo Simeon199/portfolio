@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,6 +27,7 @@ export class AppComponent implements AfterViewInit {
   observer: MutationObserver | undefined;
 
   constructor(
+    private viewportScroller: ViewportScroller,
     private translate: TranslateService,
     private router: Router,
     private sanitizer: DomSanitizer,
@@ -49,7 +50,15 @@ export class AppComponent implements AfterViewInit {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           AOS.refresh();
-        }, 50);
+          const fragment = this.router.parseUrl(this.router.url).fragment;
+          if (fragment) {
+            this.viewportScroller.scrollToAnchor(fragment);
+          }
+          setTimeout(() => {
+            const currentY = window.scrollY || document.documentElement.scrollTop;
+            window.scrollTo({ top: Math.max(0, currentY - 200), behavior: 'smooth' });
+          }, 500);
+        }, 100);
       }
     });
   }
