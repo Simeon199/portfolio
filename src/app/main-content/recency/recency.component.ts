@@ -3,8 +3,6 @@ import { Component, HostListener } from '@angular/core';
 import { SingleRecencyComponent } from './single-recency/single-recency.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-recency',

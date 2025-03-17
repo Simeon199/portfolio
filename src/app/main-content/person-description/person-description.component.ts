@@ -3,8 +3,6 @@ import { NgOptimizedImage } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-person-description',

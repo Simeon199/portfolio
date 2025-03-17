@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +35,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    AOS.init();
     this.bindClickEvent();
     this.observer = new MutationObserver(() => {
       this.bindClickEvent();

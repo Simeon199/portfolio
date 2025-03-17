@@ -4,8 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-person-presentation',
