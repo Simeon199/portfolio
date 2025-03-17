@@ -12,7 +12,7 @@ $backgroundPattern: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
     flex-direction: column;
     align-items: unset;
     gap: 24px;
-    padding: 148px 64px 64px 64px;
+    padding: 64px 64px 64px 64px;
     border-radius: 8px;
 }
 
@@ -32,7 +32,7 @@ a {
         border-radius: unset;
     }
 
-    .privacy-policy-content-wrapper {
-        padding: 108px 16px 16px 16px;
-    }
+    // .privacy-policy-content-wrapper {
+    //     padding: 108px 16px 16px 16px;
+    // }
 }

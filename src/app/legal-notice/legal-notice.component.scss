@@ -4,17 +4,13 @@
     background: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
 }
 
-app-footer {
-    position: unset;
-}
-
 .legal-notice-content-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: start;
     gap: 24px;
-    padding-top: 160px;
-    padding-bottom: 48px;
+    padding-top: 24px;
+    padding-bottom: 24px;
     padding-left: 24px;
     width: 100%;
     min-height: 75vh;
@@ -34,16 +30,9 @@ a {
 }
 
 @include breakpoint.screenMinHeight850 {
-    app-footer {
-        position: absolute;
-        width: 100%;
-        max-width: 1440px;
-        bottom: 0;
-    }
 
     .legal-notice-container {
         display: flex;
         flex-direction: column;
-        height: 100vh;
     }
 }

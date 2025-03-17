@@ -47,8 +47,10 @@ export class HeaderComponent {
     this.languageService.setLanguage(newLang);
     if (language == 'german') {
       this.isGermanButtonActive = true;
+      this.sharedService.setGermanButtonActive(true);
     } else if (language == 'english') {
       this.isGermanButtonActive = false;
+      this.sharedService.setGermanButtonActive(false);
     }
   }
 
@@ -82,8 +84,10 @@ export class HeaderComponent {
   }
 
   proveRouteAndCloseOverlay() {
+    // debugger;
     if (this.allRoutesExceptLandingPage.includes(this.router.url)) {
       this.sharedService.closeOverlay();
+      this.hideDropdown();
     }
   }
 }
