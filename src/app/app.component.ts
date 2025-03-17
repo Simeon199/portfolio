@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+// import '/assets/aos/dist/aos.css';
 
 @Component({
   selector: 'app-root',

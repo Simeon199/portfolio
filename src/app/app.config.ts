@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
         deps: [HttpClient],
       },
     })]),
-    provideRouter(routes),
+    [provideRouter(routes), withHashLocation()],
   ]
 };
 
