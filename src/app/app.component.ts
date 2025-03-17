@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -41,6 +41,13 @@ export class AppComponent implements AfterViewInit {
       this.bindClickEvent();
     });
     this.observer.observe(this.elRef.nativeElement, { childList: true, subtree: true });
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => {
+          AOS.refresh();
+        }, 50);
+      }
+    });
   }
 
   bindClickEvent() {
