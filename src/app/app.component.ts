@@ -4,9 +4,10 @@ import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { HeaderComponent } from './main-content/header/header.component';
+import { FooterComponent } from './main-content/footer/footer.component';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-// import '/assets/aos/dist/aos.css';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,8 @@ import 'aos/dist/aos.css';
   imports: [
     CommonModule,
     RouterOutlet,
+    HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

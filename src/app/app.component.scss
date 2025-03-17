@@ -2,15 +2,16 @@
 
 .router-outlet-container {
     margin: 0 auto;
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     z-index: 20;
     min-height: 100vh;
 }
 
 @include breakpoint.screen1440 {
     .router-outlet-container {
-        max-width: 1440px;
-        width: 100%;
+        // max-width: 1440px;
+        // width: 100%;
         flex-wrap: wrap;
     }
 }

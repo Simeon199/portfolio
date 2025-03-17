@@ -12,7 +12,7 @@ header {
     color: $standardWhite;
     max-width: 1440px;
     padding: 24px 24px 24px 24px;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 100;
     width: 100%;
