@@ -283,10 +283,61 @@ $blurFilter: blur(5.300000190734863px);
         max-width: 320px;
         flex-wrap: wrap;
         align-self: center;
+        gap: 8px;
 
-        h2:nth-child(2) {
-            font-size: 56px;
+        h2:nth-child(1) {
             text-align: center;
         }
+
+        h2:nth-child(2) {
+            font-size: 44px;
+            text-align: center;
+            line-height: 48px;
+        }
+    }
+
+    .me-presentation {
+        padding-top: 16px;
+    }
+
+    .marquee-section {
+        bottom: 2%;
+        padding: 4px;
+
+        ul {
+            li {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .left-lateral {
+        padding-left: 2px;
+    }
+
+    .skills-and-mail {
+        padding-right: 2px;
+    }
+
+    .contact-and-work-buttons {
+        gap: 16px;
     }
 }
+
+// @include breakpoint.screen320AndHeight533 {
+//     .me-presentation {
+//         padding-top: 16px;
+//     }
+
+//     .marquee-section {
+//         bottom: 2%;
+//     }
+
+//     .left-lateral {
+//         padding-left: 2px;
+//     }
+
+//     .skills-and-mail {
+//         padding-right: 2px;
+//     }
+// }

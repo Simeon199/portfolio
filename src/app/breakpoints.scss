@@ -193,6 +193,15 @@ $breakpoints: (
     }
 }
 
+@mixin screen320AndHeight533 {
+    $width: map-get($breakpoints, screen320);
+    $height: map-get($breakpoints, screen533);
+
+    @media only screen and (max-width: #{$width}) and (max-height: #{$height}) {
+        @content;
+    }
+}
+
 /* --- Media Queries für Minimalhöhen --- */
 
 @mixin screenMinHeight850 {
