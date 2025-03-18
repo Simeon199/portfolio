@@ -38,8 +38,7 @@ $standardGreen: rgba(61, 207, 182, 1);
 
 @include breakpoint.screen1350 {
     .single-project {
-        max-width: 560px;
-        width: 90%;
+        font-size: 20px;
     }
 }
 
@@ -47,6 +46,7 @@ $standardGreen: rgba(61, 207, 182, 1);
     .single-project {
         max-width: 560px;
         width: 100%;
+        font-size: 16px;
     }
 
     .project-technologies {

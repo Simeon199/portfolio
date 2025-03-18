@@ -30,27 +30,19 @@
         <div class="checkbox-validation-section">
             <div class="checkbox-and-validation">
                 <label (click)="toggleCheckbox()">
-                    <img *ngIf="!contactData.agreedToPrivacy && !isCheckboxImgHovered"
-                        (mouseenter)="toggleCheckboxImgHovered()" src="../../../../assets/img/checkbox_unchecked.svg"
-                        alt="unchecked">
-                    <img *ngIf="contactData.agreedToPrivacy && !isCheckboxImgHovered"
-                        (mouseenter)="toggleCheckboxImgHovered()" src="../../../../assets/img/checkbox_checked.svg"
-                        alt="checked">
-                    <img *ngIf="!contactData.agreedToPrivacy && isCheckboxImgHovered"
-                        (mouseleave)="toggleCheckboxImgHovered()"
-                        src="../../../../assets/img/checkbox_unchecked_hovered.svg" alt="unchecked_hovered">
-                    <img *ngIf="contactData.agreedToPrivacy && isCheckboxImgHovered"
-                        (mouseleave)="toggleCheckboxImgHovered()"
-                        src="../../../../assets/img/checkbox_checked_hovered.svg" alt="checked_hovered">
+                    <img [src]="getCheckboxImageSrc()" (mouseenter)="toggleCheckboxImgHovered()"
+                        (mouseleave)="toggleCheckboxImgHovered()" alt="checkbox">
                     <span [innerHTML]="'contactFormular.legalNoticeMessage' | translate"></span>
                 </label>
                 <input #checkbox="ngModel" [(ngModel)]="contactData.agreedToPrivacy" type="checkbox"
                     name="agreedToPrivacy" required hidden>
             </div>
-            <span *ngIf="!contactData.agreedToPrivacy && (contactForm.submitted || isCheckboxTouched)"
+            @if(!isCheckboxTouchedFirstTime){
+            <span *ngIf="!contactData.agreedToPrivacy && (contactForm.submitted || !isCheckboxTouched)"
                 style="color: #EC7B7BCC; font-size: 16px; align-self: center;">
                 {{ "contactFormular.legalNoticeMessageError" | translate }}
             </span>
+            }
         </div>
         <input id="submit-input" type="submit" value="Say Hello" [ngClass]="{'disabled-button': contactForm.invalid}"
             [style]="contactForm.invalid === true ? 'cursor: auto' : 'cursor: pointer'">

@@ -6,8 +6,9 @@ $standardWhite: rgba(255, 255, 255, 0.8);
 .contact {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 96%;
     padding-bottom: 96px;
+    padding-left: 24px;
 }
 
 .container-without-contact-form {
@@ -17,7 +18,6 @@ $standardWhite: rgba(255, 255, 255, 0.8);
     width: 75%;
     max-height: 500px;
     height: 80%;
-    // padding-left: 24px;
 }
 
 .h2-contact-section {
@@ -73,6 +73,7 @@ span:nth-child(2) {
 
 @include breakpoint.screen1350 {
     .contact {
+        width: 100%;
         flex-direction: column;
         align-items: center;
         gap: 40px;

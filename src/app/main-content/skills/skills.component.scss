@@ -34,6 +34,11 @@ $standardGreen: rgba(61, 207, 182, 1);
     gap: 72px;
 }
 
+.all-skills-listed {
+    max-width: 560px;
+    width: 100%;
+}
+
 .single-technology {
     display: flex;
     flex-direction: column;
@@ -44,7 +49,7 @@ $standardGreen: rgba(61, 207, 182, 1);
     p {
         font-family: "Fira Code";
         font-weight: normal;
-        font-size: 16px;
+        font-size: 20px;
         text-align: center;
     }
 
@@ -144,13 +149,16 @@ h2 {
         padding-top: 0;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
     }
 
     .all-skills-listed-section {
-        max-width: 560px;
+        max-width: 760px;
         display: flex;
         justify-content: center;
+    }
+
+    .my-skillset-description {
+        max-width: 760px;
     }
 
     .skills-description-section {
@@ -172,7 +180,7 @@ h2 {
 
         span {
             font-family: 'Karla';
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 400;
             line-height: 19.2px;
         }
@@ -183,6 +191,10 @@ h2 {
     .skills-description-section {
         h2 {
             font-size: 48px;
+        }
+
+        span {
+            font-size: 18px;
         }
     }
 }
@@ -201,6 +213,10 @@ h2 {
     .skills-description-section {
         h2 {
             font-size: 40px;
+        }
+
+        span {
+            font-size: 16px;
         }
     }
 }

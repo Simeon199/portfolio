@@ -23,6 +23,7 @@ export class ContactFormComponent {
   formSubmitted = false;
   isCheckboxImgHovered = false;
   isCheckboxTouched = false;
+  isCheckboxTouchedFirstTime = true;
   http = inject(HttpClient);
 
 
@@ -62,6 +63,14 @@ export class ContactFormComponent {
     this.translate.get('contactFormular.thirdInputPlaceholder').subscribe((thirdInputPlaceholder) => {
       this.messagePlaceHolder = thirdInputPlaceholder;
     })
+  }
+
+  getCheckboxImageSrc() {
+    if (this.contactData.agreedToPrivacy) {
+      return this.isCheckboxImgHovered ? '../../../../assets/img/checkbox_checked_hovered.svg' : '../../../../assets/img/checkbox_checked.svg';
+    } else {
+      return this.isCheckboxImgHovered ? '../../../../assets/img/checkbox_unchecked_hovered.svg' : '../../../../assets/img/checkbox_unchecked.svg';
+    }
   }
 
   toggleCheckbox() {

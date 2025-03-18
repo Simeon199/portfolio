@@ -80,6 +80,10 @@ app-single-project {
 @include breakpoint.screen1350 {
     .projects {
         justify-content: center;
+
+        span {
+            font-size: 20px;
+        }
     }
 
     .projects {
@@ -92,7 +96,7 @@ app-single-project {
     }
 
     .content-wrapper-without-pop-ups {
-        max-width: 560px;
+        width: unset;
     }
 }
 

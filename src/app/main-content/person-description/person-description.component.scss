@@ -41,6 +41,7 @@ $standardWhite: rgba(255, 255, 255, 0.8);
     background-color: rgb(31, 46, 43);
     border: 1px solid $standardGreen;
     max-width: 560px;
+    width: 100%;
     flex-wrap: wrap;
 
     h2 {
@@ -122,6 +123,8 @@ h2 {
     }
 
     .about-me-description {
+        max-width: 760px;
+
         h2 {
             font-family: 'Fira Code';
             font-size: 56px;
@@ -132,7 +135,7 @@ h2 {
 
         span {
             font-family: 'Karla';
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 400;
             line-height: 19.2px;
         }
@@ -144,6 +147,8 @@ h2 {
         }
 
         img {
+            max-width: 760px;
+            width: 96%;
             align-self: unset;
         }
     }
@@ -160,6 +165,10 @@ h2 {
         h2 {
             font-size: 48px;
         }
+
+        span {
+            font-size: 18px;
+        }
     }
 }
 
@@ -170,16 +179,14 @@ h2 {
         h2 {
             font-size: 40px;
         }
+
+        span {
+            font-size: 16px;
+        }
     }
 
     .me-image-container {
         width: 100%; // ehemals 96%
-    }
-
-    .me-image-container {
-        img {
-            width: 100%;
-        }
     }
 }
 
