@@ -11,8 +11,9 @@ $blurFilter: blur(5.300000190734863px);
     position: relative;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: calc(100vh - 96.16px);
 }
+
 
 .left-lateral {
     position: absolute;
@@ -226,7 +227,7 @@ $blurFilter: blur(5.300000190734863px);
 @include breakpoint.screen1200 {
     .me-presentation {
         justify-content: center;
-        height: 100vh;
+        // height: 100vh;
     }
 
     .name-and-profession {

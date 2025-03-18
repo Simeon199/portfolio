@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HeaderComponent } from './main-content/header/header.component';
 import { FooterComponent } from './main-content/footer/footer.component';
+// import { PersonPresentationComponent } from './main-content/person-presentation/person-presentation.component';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -41,7 +42,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     AOS.init();
-    this.bindClickEvent();
+    // this.bindClickEvent();
     this.observer = new MutationObserver(() => {
       this.bindClickEvent();
     });
@@ -50,21 +51,25 @@ export class AppComponent implements AfterViewInit {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           AOS.refresh();
-          const fragment = this.router.parseUrl(this.router.url).fragment;
-          if (fragment) {
-            this.viewportScroller.scrollToAnchor(fragment);
-          }
-          setTimeout(() => {
-            const currentY = window.scrollY || document.documentElement.scrollTop;
-            window.scrollTo({ top: Math.max(0, currentY - 200), behavior: 'smooth' });
-          }, 500);
+          this.handleScrollDepth();
         }, 100);
       }
     });
   }
 
+  handleScrollDepth() {
+    let fragment = this.router.parseUrl(this.router.url).fragment;
+    if (fragment) {
+      this.viewportScroller.scrollToAnchor(fragment);
+    }
+    setTimeout(() => {
+      let currentY = window.scrollY || document.documentElement.scrollTop;
+      window.scrollTo({ top: Math.max(0, currentY - 200), behavior: 'smooth' });
+    }, 500);
+  }
+
   bindClickEvent() {
-    const links = this.elRef.nativeElement.querySelectorAll('.legal-link');
+    let links = this.elRef.nativeElement.querySelectorAll('.legal-link');
     links.forEach((link: HTMLElement) => {
       this.renderer.listen(link, 'click', (event) => {
         event.preventDefault();

@@ -34,13 +34,6 @@ form {
             color: $standardGreen;
             text-decoration: none;
         }
-
-        // span {
-        //     a {
-        //         color: $standardGreen;
-        //         text-decoration: none;
-        //     }
-        // }
     }
 
     span {
@@ -79,6 +72,9 @@ form {
     }
 
     textarea {
+        resize: vertical;
+        max-height: 240px;
+        min-height: 48px;
         background-color: #1C1C1C;
         border: none;
     }
