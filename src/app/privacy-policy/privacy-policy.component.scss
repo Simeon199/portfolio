@@ -22,8 +22,6 @@ a {
     cursor: pointer;
 }
 
-// All media queries listed here
-
 // Media Queries related to width 
 
 @include breakpoint.screen500 {
@@ -32,7 +30,16 @@ a {
         border-radius: unset;
     }
 
-    // .privacy-policy-content-wrapper {
-    //     padding: 108px 16px 16px 16px;
-    // }
+    .privacy-policy-content-wrapper {
+        padding: 16px;
+    }
+}
+
+@include breakpoint.screen400 {
+    .privacy-policy-content-wrapper {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
 }

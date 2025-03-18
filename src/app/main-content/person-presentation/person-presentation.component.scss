@@ -14,7 +14,6 @@ $blurFilter: blur(5.300000190734863px);
     height: calc(100vh - 96.16px);
 }
 
-
 .left-lateral {
     position: absolute;
     bottom: 0;
@@ -115,7 +114,7 @@ $blurFilter: blur(5.300000190734863px);
 
 .marquee-section {
     position: absolute;
-    bottom: 4%;
+    bottom: 11%;
     left: 0;
     background-color: rgba(255, 255, 255, 0.12);
     display: flex;
@@ -227,7 +226,6 @@ $blurFilter: blur(5.300000190734863px);
 @include breakpoint.screen1200 {
     .me-presentation {
         justify-content: center;
-        // height: 100vh;
     }
 
     .name-and-profession {
@@ -266,43 +264,55 @@ $blurFilter: blur(5.300000190734863px);
     }
 }
 
+@include breakpoint.screen600 {
+    .me-presentation {
+        padding-top: 108px;
+        justify-content: flex-start;
+    }
+}
+
 @include breakpoint.screen500 {
 
     .contact-and-work-buttons {
-        gap: 32px;
+        gap: 48px;
     }
 
     .name-and-profession {
+        max-width: 320px;
+        flex-wrap: wrap;
+        align-self: center;
+
         h2:nth-child(2) {
-            font-size: 44px;
-        }
-    }
-}
-
-@include breakpoint.screen500AndHeight950 {
-    .skills-and-mail {
-        width: unset;
-    }
-
-    .name-and-profession {
-        gap: 20px;
-
-        h2:nth-child(1) {
-            line-height: 24px;
-            font-size: 24px;
+            font-size: 56px;
             text-align: center;
-            flex-wrap: wrap;
-            width: 80%;
         }
-
-        h2:nth-child(2) {
-            line-height: 24px;
-            font-size: 24px;
-        }
-    }
-
-    .contact-and-work-buttons {
-        flex-direction: column;
-        align-items: center;
     }
 }
+
+// @include breakpoint.screen500AndHeight950 {
+//     .skills-and-mail {
+//         width: unset;
+//     }
+
+//     .name-and-profession {
+//         gap: 20px;
+
+//         h2:nth-child(1) {
+//             line-height: 24px;
+//             font-size: 24px;
+//             text-align: center;
+//             flex-wrap: wrap;
+//             width: 80%;
+//         }
+
+//         h2:nth-child(2) {
+//             line-height: 24px;
+//             font-size: 24px;
+//         }
+//     }
+
+//     .contact-and-work-buttons {
+//         flex-direction: column;
+//         align-items: center;
+//     }
+// }

@@ -6,7 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HeaderComponent } from './main-content/header/header.component';
 import { FooterComponent } from './main-content/footer/footer.component';
-// import { PersonPresentationComponent } from './main-content/person-presentation/person-presentation.component';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
