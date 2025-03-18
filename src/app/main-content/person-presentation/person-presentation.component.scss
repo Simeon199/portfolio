@@ -221,7 +221,7 @@ $blurFilter: blur(5.300000190734863px);
     display: none;
 }
 
-// all media queries listed here
+// all media queries related to screen-width
 
 @include breakpoint.screen1200 {
     .me-presentation {
@@ -261,13 +261,6 @@ $blurFilter: blur(5.300000190734863px);
 
     .skills-and-mail {
         right: 16px;
-    }
-}
-
-@include breakpoint.screen600 {
-    .me-presentation {
-        padding-top: 108px;
-        justify-content: flex-start;
     }
 }
 
@@ -324,20 +317,10 @@ $blurFilter: blur(5.300000190734863px);
     }
 }
 
-// @include breakpoint.screen320AndHeight533 {
-//     .me-presentation {
-//         padding-top: 16px;
-//     }
+// all media queries related height screen
 
-//     .marquee-section {
-//         bottom: 2%;
-//     }
-
-//     .left-lateral {
-//         padding-left: 2px;
-//     }
-
-//     .skills-and-mail {
-//         padding-right: 2px;
-//     }
-// }
+@include breakpoint.screenHeight600 {
+    .me-presentation {
+        justify-content: flex-start;
+    }
+}

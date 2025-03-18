@@ -44,9 +44,9 @@ $standardWhite: rgba(255, 255, 255, 0.8);
 
 @include breakpoint.screen500 {
     .single-recency {
-        width: 270px;
+        width: 260px;
         font-size: 14px;
-        padding: 16px;
+        padding: 12px;
     }
 
     .author-section {
