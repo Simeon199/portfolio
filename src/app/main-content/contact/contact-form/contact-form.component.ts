@@ -75,6 +75,7 @@ export class ContactFormComponent {
 
   toggleCheckbox() {
     this.isCheckboxTouched = true;
+    this.isCheckboxTouchedFirstTime = false;
     this.contactData.agreedToPrivacy = !this.contactData.agreedToPrivacy
   }
 
@@ -97,6 +98,9 @@ export class ContactFormComponent {
 
   onSubmit(ngForm: NgForm) {
     this.formSubmitted = true;
+    if (this.isCheckboxTouchedFirstTime == false) {
+      this.isCheckboxTouchedFirstTime = true;
+    }
 
     if (ngForm.invalid) {
       Object.values(ngForm.controls).forEach(control => control.markAsTouched());

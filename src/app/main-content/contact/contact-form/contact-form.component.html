@@ -37,8 +37,8 @@
                 <input #checkbox="ngModel" [(ngModel)]="contactData.agreedToPrivacy" type="checkbox"
                     name="agreedToPrivacy" required hidden>
             </div>
-            @if(!isCheckboxTouchedFirstTime){
-            <span *ngIf="!contactData.agreedToPrivacy && (contactForm.submitted || !isCheckboxTouched)"
+            @if(isCheckboxTouchedFirstTime == false){
+            <span *ngIf="!contactData.agreedToPrivacy && (contactForm.submitted || isCheckboxTouched)"
                 style="color: #EC7B7BCC; font-size: 20px; align-self: center;">
                 {{ "contactFormular.legalNoticeMessageError" | translate }}
             </span>

@@ -230,6 +230,12 @@ $blurFilter: blur(5.300000190734863px);
         padding-top: 108px;
         justify-content: flex-start;
     }
+
+    .name-and-profession {
+        h2 {
+            line-height: 100px;
+        }
+    }
 }
 
 @include breakpoint.screen950 {
