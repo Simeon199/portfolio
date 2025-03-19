@@ -346,10 +346,22 @@ $blurFilter: blur(5.300000190734863px);
 
 // all media queries related height screen
 
-@include breakpoint.screenHeight600 {
+@include breakpoint.screenHeight700 {
 
     .me-presentation {
         padding-top: 16px;
         justify-content: flex-start;
+    }
+
+    .name-and-profession {
+        gap: 24px;
+
+        h2:nth-child(1) {
+            font-size: 24px;
+        }
+
+        h2:nth-child(2) {
+            font-size: 48px;
+        }
     }
 }
