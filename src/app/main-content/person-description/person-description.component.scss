@@ -161,15 +161,15 @@ h2 {
         flex-direction: column;
     }
 
-    .about-me-description {
-        h2 {
-            font-size: 48px;
-        }
+    // .about-me-description {
+    //     h2 {
+    //         font-size: 48px;
+    //     }
 
-        span {
-            font-size: 18px;
-        }
-    }
+    //     span {
+    //         font-size: 18px;
+    //     }
+    // }
 }
 
 @include breakpoint.screen700 {
@@ -181,12 +181,12 @@ h2 {
         }
 
         span {
-            font-size: 16px;
+            font-size: 18px;
         }
     }
 
     .me-image-container {
-        width: 100%; // ehemals 96%
+        width: 100%;
     }
 }
 
@@ -207,6 +207,10 @@ h2 {
         h2 {
             font-size: 24px;
             text-align: center;
+        }
+
+        span {
+            font-size: 16px
         }
     }
 

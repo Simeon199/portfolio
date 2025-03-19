@@ -118,8 +118,26 @@ footer {
 // all media queries listed here
 
 @include breakpoint.screen1350 {
+    .platform-links {
+        font-size: 20px;
+    }
+
     .my-person-wrapper {
         width: 100%;
+    }
+
+    .span-footer-section {
+        font-size: 20px;
+    }
+}
+
+@include breakpoint.screen800 {
+    .platform-links {
+        font-size: 18px;
+    }
+
+    .span-footer-section {
+        font-size: 18px;
     }
 }
 

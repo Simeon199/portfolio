@@ -106,6 +106,14 @@ app-single-project {
             font-size: 48px;
         }
     }
+
+    .span-about-projects {
+        max-width: 600px;
+    }
+
+    app-single-project {
+        max-width: 500px;
+    }
 }
 
 @include breakpoint.screen700 {

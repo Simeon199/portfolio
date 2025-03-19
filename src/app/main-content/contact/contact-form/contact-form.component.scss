@@ -38,9 +38,9 @@ form {
 
     span {
         font-family: 'Karla';
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 400;
-        line-height: 18px;
+        line-height: 20px;
         text-align: left;
         color: $standardWhite;
 
@@ -87,7 +87,7 @@ form {
 
 #mail {
     font-family: 'Karla';
-    font-size: 18px;
+    font-size: 20px; // 18px
     font-weight: 400;
     line-height: 21.6px;
     text-align: left;
@@ -96,7 +96,7 @@ form {
 
 #name {
     font-family: 'Karla';
-    font-size: 18px;
+    font-size: 20px; // 18px
     font-weight: 400;
     line-height: 21.6px;
     text-align: left;
@@ -105,7 +105,7 @@ form {
 
 #subject {
     font-family: 'Karla';
-    font-size: 18px;
+    font-size: 20px; // 18px
     font-weight: 400;
     line-height: 21.6px;
     text-align: left;
@@ -114,7 +114,7 @@ form {
 
 #submit-input {
     font-family: 'Karla';
-    font-size: 18px;
+    font-size: 20px; // 18px
     font-weight: 400;
     line-height: 21.6px;
     text-align: center;
@@ -140,12 +140,45 @@ form {
 }
 
 @include breakpoint.screen1350 {
+    form {
+        max-width: 760px;
+        width: 100%;
+    }
+
     .form-group {
         font-size: 20px;
         font-weight: 500;
         line-height: 24px;
         text-align: left;
     }
+}
+
+@include breakpoint.screen950 {
+    form {
+        max-width: 600px;
+    }
+
+    // .checkbox-and-validation {
+    //     span {
+    //         font-size: 18px;
+    //     }
+    // }
+
+    // #name {
+    //     font-size: 18px;
+    // }
+
+    // #mail {
+    //     font-size: 18px;
+    // }
+
+    // #subject {
+    //     font-size: 18px;
+    // }
+
+    // #submit-input {
+    //     font-size: 18px;
+    // }
 }
 
 @include breakpoint.screen700 {
