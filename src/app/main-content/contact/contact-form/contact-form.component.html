@@ -4,7 +4,8 @@
             <label for="name">{{ "contactFormular.firstInput" | translate }}</label>
             <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
                 [placeholder]="namePlaceHolder" required>
-            <span *ngIf="name.invalid && (name.touched || formSubmitted)" style="color: #EC7B7BCC; font-size: 20px">
+            <span *ngIf="name.invalid && (name.touched || formSubmitted)"
+                style="color: #EC7B7BCC; font-size: 18px; text-align: left;">
                 {{ "contactFormular.firstInputError" | translate }}
             </span>
         </div>
@@ -13,7 +14,8 @@
             <label for="email">{{ "contactFormular.secondInput" | translate }}</label>
             <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="mail" name="email"
                 [placeholder]="emailPlaceHolder" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-            <span *ngIf="email.invalid && (email.touched || formSubmitted)" style="color: #EC7B7BCC; font-size: 20px">
+            <span *ngIf="email.invalid && (email.touched || formSubmitted)"
+                style="color: #EC7B7BCC; font-size: 18px; text-align: left;">
                 {{ "contactFormular.secondInputError" | translate }}
             </span>
         </div>
@@ -23,7 +25,7 @@
             <textarea #message="ngModel" [(ngModel)]="contactData.message" minlength="4" id="subject" name="subject"
                 [placeholder]="messagePlaceHolder" required></textarea>
             <span *ngIf="message.invalid && (message.touched || formSubmitted)"
-                style="color: #EC7B7BCC; font-size: 20px">
+                style="color: #EC7B7BCC; font-size: 18px; text-align: left;">
                 {{ "contactFormular.thirdInputError" | translate }}
             </span>
         </div>
@@ -39,7 +41,7 @@
             </div>
             @if(isCheckboxTouchedFirstTime == false){
             <span *ngIf="!contactData.agreedToPrivacy && (contactForm.submitted || isCheckboxTouched)"
-                style="color: #EC7B7BCC; font-size: 20px; align-self: center;">
+                style="color: #EC7B7BCC; font-size: 18px; text-align: center;">
                 {{ "contactFormular.legalNoticeMessageError" | translate }}
             </span>
             }
