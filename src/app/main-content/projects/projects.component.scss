@@ -121,14 +121,20 @@ app-single-project {
         h2:nth-child(2) {
             font-size: 40px;
         }
+
+        span {
+            font-size: 18px;
+        }
     }
 
     .content-wrapper-without-pop-ups {
         width: 100%;
+        max-width: 500px;
     }
 
     .content-above-single-projects {
         width: 100%;
+        max-width: 500px;
         gap: 16px;
     }
 }
@@ -139,6 +145,10 @@ app-single-project {
 
         h2:nth-child(2) {
             font-size: 32px;
+        }
+
+        span {
+            font-size: 16px;
         }
     }
 }

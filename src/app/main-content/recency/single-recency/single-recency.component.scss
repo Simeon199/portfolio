@@ -29,7 +29,7 @@ $standardWhite: rgba(255, 255, 255, 0.8);
 
 // All media queries listed here
 
-@include breakpoint.screen1200 {
+@include breakpoint.screen1350 {
     .single-recency {
         width: 400px;
         padding: 40px;

@@ -157,38 +157,17 @@ form {
     form {
         max-width: 600px;
     }
-
-    // .checkbox-and-validation {
-    //     span {
-    //         font-size: 18px;
-    //     }
-    // }
-
-    // #name {
-    //     font-size: 18px;
-    // }
-
-    // #mail {
-    //     font-size: 18px;
-    // }
-
-    // #subject {
-    //     font-size: 18px;
-    // }
-
-    // #submit-input {
-    //     font-size: 18px;
-    // }
 }
 
 @include breakpoint.screen700 {
     form {
+        max-width: 500px;
         align-items: center;
         width: unset;
     }
 
     .form-group {
-        max-width: 560px;
+        max-width: 500px;
         width: 100%;
     }
 
@@ -200,6 +179,28 @@ form {
         span {
             align-self: center;
         }
+    }
+
+    .checkbox-and-validation {
+        span {
+            font-size: 18px;
+        }
+    }
+
+    #name {
+        font-size: 18px;
+    }
+
+    #mail {
+        font-size: 18px;
+    }
+
+    #subject {
+        font-size: 18px;
+    }
+
+    #submit-input {
+        font-size: 18px;
     }
 }
 
@@ -213,6 +214,30 @@ form {
                 text-align: center;
             }
         }
+    }
+}
+
+@include breakpoint.screen500 {
+    .checkbox-and-validation {
+        span {
+            font-size: 16px;
+        }
+    }
+
+    #name {
+        font-size: 16px;
+    }
+
+    #mail {
+        font-size: 16px;
+    }
+
+    #subject {
+        font-size: 16px;
+    }
+
+    #submit-input {
+        font-size: 16px;
     }
 }
 

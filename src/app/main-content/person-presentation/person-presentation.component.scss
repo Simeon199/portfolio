@@ -129,6 +129,7 @@ $blurFilter: blur(5.300000190734863px);
 
     ul {
         display: flex;
+        flex-shrink: 0;
         gap: 180px;
         min-width: 150%;
         animation: scroll-marquee 10s linear infinite;
@@ -141,6 +142,7 @@ $blurFilter: blur(5.300000190734863px);
             font-weight: 400;
             line-height: 38.4px;
             text-align: left;
+            flex: none;
         }
     }
 
@@ -225,9 +227,31 @@ $blurFilter: blur(5.300000190734863px);
 
 @include breakpoint.screen1200 {
     .me-presentation {
-        justify-content: center;
+        padding-top: 108px;
+        justify-content: flex-start;
     }
+}
 
+@include breakpoint.screen950 {
+    .name-and-profession {
+        padding-top: unset;
+        justify-content: center;
+
+        h2:nth-child(1) {
+            font-size: 48px;
+            line-height: 48px;
+            text-align: left;
+        }
+
+        h2:nth-child(2) {
+            font-size: 80px;
+            line-height: 80px;
+            text-align: left;
+        }
+    }
+}
+
+@include breakpoint.screen700 {
     .name-and-profession {
         h2:nth-child(1) {
             font-size: 24px;
@@ -236,15 +260,12 @@ $blurFilter: blur(5.300000190734863px);
         }
 
         h2:nth-child(2) {
-            font-family: 'Karla';
             font-size: 62px;
             line-height: 62px;
             text-align: left;
         }
     }
-}
 
-@include breakpoint.screen700 {
     .marquee-section {
         padding: 8px 12px 8px 12px;
 

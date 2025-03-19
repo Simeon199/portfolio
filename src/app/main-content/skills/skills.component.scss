@@ -197,12 +197,20 @@ h2 {
             font-size: 20px;
         }
     }
+
+    .all-skills-listed-section {
+        max-width: 600px;
+    }
 }
 
 @include breakpoint.screen700 {
     .skills-section {
         align-self: center;
         width: 100%;
+    }
+
+    .all-skills-listed-section {
+        max-width: 500px;
     }
 
     .my-skillset-description {
@@ -217,6 +225,12 @@ h2 {
 
         span {
             font-size: 16px;
+        }
+    }
+
+    .single-technology {
+        p {
+            font-size: 18px;
         }
     }
 }
@@ -258,7 +272,7 @@ h2 {
         width: 64px;
 
         p {
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 
