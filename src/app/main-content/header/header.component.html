@@ -13,29 +13,14 @@
             (click)="setBigOverlayHeaderBoolean(); showDropdown(); stopEventPropagation($event)" alt="menu-icon">
         <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated" (click)="stopEventPropagation($event)">
 
-            <a (click)="proveRouteAndCloseOverlay()" routerLink="/" fragment="about-me">{{"header.navbarTitleFirst" |
+            <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+                fragment="about-me">{{"header.navbarTitleFirst" |
                 translate}}</a>
-            <a (click)="proveRouteAndCloseOverlay()" routerLink="/" fragment="skills">{{"header.navbarTitleSecond" |
+            <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+                fragment="skills">{{"header.navbarTitleSecond" | translate}}</a>
+            <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+                fragment="projects">{{"header.navbarTitleThird" |
                 translate}}</a>
-            <a (click)="proveRouteAndCloseOverlay()" routerLink="/" fragment="projects">{{"header.navbarTitleThird" |
-                translate}}</a>
-
-            <!-- <a href="#about-me">{{"header.navbarTitleFirst" |
-                translate}}</a>
-            <a href="#skills">{{"header.navbarTitleSecond" |
-                translate}}</a>
-            <a href="#projects">{{"header.navbarTitleThird" |
-                translate}}</a> -->
-
-            <!-- <a (click)="proveRouteAndCloseOverlay()" routerLink="/"
-                fragment="person-description-section">{{"header.navbarTitleFirst" |
-                translate}}</a>
-            <a (click)="proveRouteAndCloseOverlay()" routerLink="/"
-                fragment="skills-section">{{"header.navbarTitleSecond" |
-                translate}}</a>
-            <a (click)="proveRouteAndCloseOverlay()" routerLink="/"
-                fragment="projects-section">{{"header.navbarTitleThird" |
-                translate}}</a> -->
 
             <div class="language-selection-responsive" *ngIf="!isHiddenRoute()">
                 <div class="languageSelection">
@@ -69,25 +54,20 @@
             </div>
         </div>
 
-        <a (click)="proveRouteAndCloseOverlay()" routerLink="/" fragment="about-me">{{"header.navbarTitleFirst" |
+        <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+            fragment="about-me">{{"header.navbarTitleFirst" |
             translate}}</a>
-        <a (click)="proveRouteAndCloseOverlay()" routerLink="/" fragment="skills">{{"header.navbarTitleSecond" |
-            translate}}</a>
-        <a (click)="proveRouteAndCloseOverlay()" routerLink="/" fragment="projects">{{"header.navbarTitleThird" |
+        <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+            fragment="skills">{{"header.navbarTitleSecond" | translate}}</a>
+        <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+            fragment="projects">{{"header.navbarTitleThird" |
             translate}}</a>
 
-        <!-- <a href="#about-me">{{"header.navbarTitleFirst" |
+        <!-- <a [routerLink]="[]" fragment="about-me">{{"header.navbarTitleFirst" |
             translate}}</a>
-        <a href="#skills">{{"header.navbarTitleSecond" |
-            translate}}</a>
-        <a href="#projects">{{"header.navbarTitleThird" |
+        <a [routerLink]="[]" fragment="skills">{{"header.navbarTitleSecond" | translate}}</a>
+        <a [routerLink]="[]" fragment="projects">{{"header.navbarTitleThird" |
             translate}}</a> -->
-
-        <!-- <a routerLink="/" fragment="person-description-section">{{"header.navbarTitleFirst" |
-            translate}}</a>
-        <a routerLink="/" fragment="skills-section">{{"header.navbarTitleSecond" |
-            translate}}</a>
-        <a routerLink="/" fragment="projects-section">{{"header.navbarTitleThird" | translate}}</a> -->
 
     </nav>
     <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true" (mouseleave)="isMyLogoBeingHovered = false">

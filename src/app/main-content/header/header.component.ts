@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
@@ -16,8 +16,9 @@ import { SharedService } from '../../shared.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
+  isOnHomePage: boolean = true;
   isGermanButtonActive: boolean = true;
   isDropdownMenuActivated: boolean = false;
   isMyLogoBeingHovered: boolean = false;
@@ -30,6 +31,10 @@ export class HeaderComponent {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
+  }
+
+  ngOnInit(): void {
+    this.isOnHomePage = !this.allRoutesExceptLandingPage.includes(this.router.url);
   }
 
   isHiddenRoute() {
@@ -84,8 +89,8 @@ export class HeaderComponent {
   }
 
   proveRouteAndCloseOverlay() {
-    // debugger;
     if (this.allRoutesExceptLandingPage.includes(this.router.url)) {
+      this.isOnHomePage = !this.allRoutesExceptLandingPage.includes(this.router.url);
       this.sharedService.closeOverlay();
       this.hideDropdown();
     }

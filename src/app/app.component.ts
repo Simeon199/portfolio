@@ -41,7 +41,6 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     AOS.init();
-    // this.bindClickEvent();
     this.observer = new MutationObserver(() => {
       this.bindClickEvent();
     });
@@ -50,21 +49,10 @@ export class AppComponent implements AfterViewInit {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           AOS.refresh();
-          this.handleScrollDepth();
+          this.viewportScroller.setOffset([0, 200]);
         }, 100);
       }
     });
-  }
-
-  handleScrollDepth() {
-    let fragment = this.router.parseUrl(this.router.url).fragment;
-    if (fragment) {
-      this.viewportScroller.scrollToAnchor(fragment);
-    }
-    setTimeout(() => {
-      let currentY = window.scrollY || document.documentElement.scrollTop;
-      window.scrollTo({ top: Math.max(0, currentY - 200), behavior: 'smooth' });
-    }, 500);
   }
 
   bindClickEvent() {
