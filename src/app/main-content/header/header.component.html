@@ -62,13 +62,6 @@
         <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
             fragment="projects">{{"header.navbarTitleThird" |
             translate}}</a>
-
-        <!-- <a [routerLink]="[]" fragment="about-me">{{"header.navbarTitleFirst" |
-            translate}}</a>
-        <a [routerLink]="[]" fragment="skills">{{"header.navbarTitleSecond" | translate}}</a>
-        <a [routerLink]="[]" fragment="projects">{{"header.navbarTitleThird" |
-            translate}}</a> -->
-
     </nav>
     <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true" (mouseleave)="isMyLogoBeingHovered = false">
         <a routerLink="/">

@@ -2,8 +2,10 @@
 
 $standardWhite: rgba(255, 255, 255, 0.8);
 $standardGreen: rgba(61, 207, 182, 1);
+$backgroundPattern: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
 
 .projects {
+    background: $backgroundPattern;
     display: flex;
     justify-content: space-between;
     align-items: end;
