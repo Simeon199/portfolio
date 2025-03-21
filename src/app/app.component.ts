@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HeaderComponent } from './main-content/header/header.component';
 import { FooterComponent } from './main-content/footer/footer.component';
+import { SharedService } from './shared.service';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -23,6 +24,7 @@ import 'aos/dist/aos.css';
 })
 
 export class AppComponent implements AfterViewInit {
+
   legalNoticeMessage: SafeHtml | undefined;
   observer: MutationObserver | undefined;
 
@@ -32,7 +34,8 @@ export class AppComponent implements AfterViewInit {
     private router: Router,
     private sanitizer: DomSanitizer,
     private elRef: ElementRef,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    public sharedService: SharedService
   ) {
     this.translate.get('contactFormular.legalNoticeMessage').subscribe((res: string) => {
       this.legalNoticeMessage = this.sanitizer.bypassSecurityTrustHtml(res);
@@ -46,6 +49,11 @@ export class AppComponent implements AfterViewInit {
     });
     this.observer.observe(this.elRef.nativeElement, { childList: true, subtree: true });
     this.router.events.subscribe(event => {
+      // if (!this.sharedService.onlyPrivacyPolicyRoute.includes(this.router.url)) {
+      //   this.sharedService.shouldLanguageSelectionBeShown.next(true);
+      // } else {
+      //   this.sharedService.shouldLanguageSelectionBeShown.next(false);
+      // }
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           AOS.refresh();

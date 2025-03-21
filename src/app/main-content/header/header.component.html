@@ -14,16 +14,17 @@
                 (click)="setBigOverlayHeaderBoolean(); showDropdown(); stopEventPropagation($event)" alt="menu-icon">
             <div class="dropdown-responsive" *ngIf="isDropdownMenuActivated" (click)="stopEventPropagation($event)">
 
-                <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+                <a (click)="proveRouteAndCloseOverlay()" [routerLink]="sharedService.isOnHomePage ? [] : ['/']"
                     fragment="about-me">{{"header.navbarTitleFirst" |
                     translate}}</a>
-                <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+                <a (click)="proveRouteAndCloseOverlay()" [routerLink]="sharedService.isOnHomePage ? [] : ['/']"
                     fragment="skills">{{"header.navbarTitleSecond" | translate}}</a>
-                <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+                <a (click)="proveRouteAndCloseOverlay()" [routerLink]="sharedService.isOnHomePage ? [] : ['/']"
                     fragment="projects">{{"header.navbarTitleThird" |
                     translate}}</a>
 
-                <div class="language-selection-responsive" *ngIf="!isHiddenRoute()">
+                <div class="language-selection-responsive"
+                    *ngIf="sharedService.shouldLanguageSelectionBeShown.getValue()">
                     <div class="languageSelection">
                         <button (click)="toggleLanguage()"
                             [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"
@@ -40,7 +41,7 @@
             </div>
         </div>
         <nav>
-            <div class="language-selection" *ngIf="!isHiddenRoute()">
+            <div class="language-selection" *ngIf="sharedService.shouldLanguageSelectionBeShown.getValue()">
                 <div class="languageSelection">
                     <button (click)="toggleLanguage()"
                         [ngClass]="{'active-button-style': isGermanButtonActive, 'inactive-button-style': !isGermanButtonActive}"
@@ -55,12 +56,12 @@
                 </div>
             </div>
 
-            <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+            <a (click)="proveRouteAndToogleLanguageSelection()" [routerLink]="sharedService.isOnHomePage ? [] : ['/']"
                 fragment="about-me">{{"header.navbarTitleFirst" |
                 translate}}</a>
-            <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+            <a (click)="proveRouteAndToogleLanguageSelection()" [routerLink]="sharedService.isOnHomePage ? [] : ['/']"
                 fragment="skills">{{"header.navbarTitleSecond" | translate}}</a>
-            <a (click)="proveRouteAndCloseOverlay()" [routerLink]="isOnHomePage ? [] : ['/']"
+            <a (click)="proveRouteAndToogleLanguageSelection()" [routerLink]="sharedService.isOnHomePage ? [] : ['/']"
                 fragment="projects">{{"header.navbarTitleThird" |
                 translate}}</a>
         </nav>

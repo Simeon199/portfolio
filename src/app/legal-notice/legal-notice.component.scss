@@ -1,9 +1,5 @@
 @use '../breakpoints.scss' as breakpoint;
 
-* {
-    background: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
-}
-
 .legal-notice-content-wrapper {
     display: flex;
     flex-direction: column;
@@ -13,7 +9,10 @@
     padding-bottom: 24px;
     padding-left: 24px;
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     min-height: 75vh;
+    background: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
 }
 
 a {

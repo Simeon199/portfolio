@@ -18,28 +18,25 @@ import { SharedService } from '../../shared.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isOnHomePage: boolean = true;
   isGermanButtonActive: boolean = true;
   isDropdownMenuActivated: boolean = false;
   isMyLogoBeingHovered: boolean = false;
   isBigOverlayHeaderActivated: boolean = false;
   currentLanguage: string = 'de';
 
-  allRoutesExceptLandingPage = ['/privacy-policy', '/legal-notice'];
-
-  constructor(private languageService: LanguageService, public router: Router, public sharedService: SharedService) {
+  constructor(
+    private languageService: LanguageService,
+    public router: Router,
+    public sharedService: SharedService
+  ) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
   }
 
   ngOnInit(): void {
-    this.isOnHomePage = !this.allRoutesExceptLandingPage.includes(this.router.url);
-  }
-
-  isHiddenRoute() {
-    const hiddenRoutes = ['/privacy-policy'];
-    return hiddenRoutes.includes(this.router.url);
+    // this.sharedService.isOnHomePage = !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
+    this.proveRouteAndToogleLanguageSelection();
   }
 
   toggleLanguage() {
@@ -88,11 +85,33 @@ export class HeaderComponent implements OnInit {
     event.stopPropagation();
   }
 
+  isLocationHompage() {
+    return !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
+  }
+
+  isLocationPrivacyPolicy() {
+    return this.sharedService.onlyPrivacyPolicyRoute.includes(this.router.url);
+  }
+
   proveRouteAndCloseOverlay() {
-    if (this.allRoutesExceptLandingPage.includes(this.router.url)) {
-      this.isOnHomePage = !this.allRoutesExceptLandingPage.includes(this.router.url);
+    this.deactivateOverlayAndHideDropdown();
+    this.proveRouteAndToogleLanguageSelection();
+  }
+
+  deactivateOverlayAndHideDropdown() {
+    if (!this.isLocationHompage()) {
+      this.sharedService.isOnHomePage = !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
       this.sharedService.closeOverlay();
       this.hideDropdown();
+    }
+  }
+
+  proveRouteAndToogleLanguageSelection() {
+    console.log('is on homepage: ', this.sharedService.isOnHomePage);
+    if (this.isLocationPrivacyPolicy()) {
+      this.sharedService.shouldLanguageSelectionBeShown.next(false);
+    } else {
+      this.sharedService.shouldLanguageSelectionBeShown.next(true);
     }
   }
 }

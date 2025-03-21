@@ -4,7 +4,10 @@ $backgroundPattern: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
 
 
 .privacy-policy-container {
+    max-width: 1440px;
+    width: 100%;
     background: $backgroundPattern;
+    margin: 0 auto;
 }
 
 .privacy-policy-content-wrapper {
