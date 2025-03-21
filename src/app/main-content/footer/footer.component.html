@@ -1,33 +1,35 @@
-<footer>
-    <div class="footer-content-wrapper">
-        <div class="my-person-wrapper">
-            <div class="my-person-box">
-                <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true"
-                    (mouseleave)="isMyLogoBeingHovered = false">
-                    <a routerLink="/">
-                        <img src="../../../assets/img/my_name_white.svg" alt="name_white"
-                            [ngClass]="{'hidden': isMyLogoBeingHovered}">
-                        <img src="../../../assets/img/my_name_black.svg" alt="my_name_black"
-                            [ngClass]="{'hidden': !isMyLogoBeingHovered}">
-                    </a>
+<section>
+    <footer>
+        <div class="footer-content-wrapper">
+            <div class="my-person-wrapper">
+                <div class="my-person-box">
+                    <div class="my-logo" (mouseenter)="isMyLogoBeingHovered = true"
+                        (mouseleave)="isMyLogoBeingHovered = false">
+                        <a routerLink="/">
+                            <img src="../../../assets/img/my_name_white.svg" alt="name_white"
+                                [ngClass]="{'hidden': isMyLogoBeingHovered}">
+                            <img src="../../../assets/img/my_name_black.svg" alt="my_name_black"
+                                [ngClass]="{'hidden': !isMyLogoBeingHovered}">
+                        </a>
+                    </div>
+                    <div class="span-footer-section">
+                        <span>{{"footer.jobTitle" | translate}}</span>
+                        <span>{{"footer.location" | translate}}</span>
+                    </div>
                 </div>
-                <div class="span-footer-section">
-                    <span>{{"footer.jobTitle" | translate}}</span>
-                    <span>{{"footer.location" | translate}}</span>
-                </div>
-            </div>
-            <div class="platform-links">
-                <a href="https://github.com/Simeon199" target="_blank" rel="noopener noreferrer">Github</a>
-                <!-- <a href="https://de.linkedin.com/?trk=guest_homepage-basic_nav-header-logo" target="_blank"
+                <div class="platform-links">
+                    <a href="https://github.com/Simeon199" target="_blank" rel="noopener noreferrer">Github</a>
+                    <!-- <a href="https://de.linkedin.com/?trk=guest_homepage-basic_nav-header-logo" target="_blank"
                     rel="noopener noreferrer">LinkedIn</a> -->
-                <a href="mailto:simon.kiesner@gmx.de">Email</a>
-                <a routerLink="/legal-notice">{{"footer.legalNotice" | translate}}</a>
-                <a routerLink="/privacy-policy">{{"footer.privacyPolicy" | translate}}</a>
+                    <a href="mailto:simon.kiesner@gmx.de">Email</a>
+                    <a routerLink="/legal-notice">{{"footer.legalNotice" | translate}}</a>
+                    <a routerLink="/privacy-policy">{{"footer.privacyPolicy" | translate}}</a>
+                </div>
+            </div>
+            <div class="copyright-section">
+                © Simon Kiesner 2025
             </div>
         </div>
-        <div class="copyright-section">
-            © Simon Kiesner 2025
-        </div>
-    </div>
-    <img src="../../../assets/img/signature.svg" alt="signature">
-</footer>
+        <img src="../../../assets/img/signature.svg" alt="signature">
+    </footer>
+</section>

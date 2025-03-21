@@ -1,34 +1,36 @@
-<div class="skills-section" id="skills-section" data-aos="fade-left">
-    <div class="my-skillset-description">
-        <h2>{{"skillSet.h2First" | translate}}</h2>
-        <div class="skills-description-section">
-            <h2>{{"skillSet.h2Second" | translate}}</h2>
-            <span>{{"skillSet.spanFirst" | translate}}</span>
-            <div class="h3-section">
-                <h3>{{"skillSet.h3First" | translate}}</h3>
-                <h3>{{"skillSet.h3Second" | translate}}</h3>
-            </div>
-            <span>{{"skillSet.spanSecond" | translate}}</span>
-            <a [routerLink]=[] fragment="contact">
-                <app-button-style>Let's Talk</app-button-style>
-            </a>
-        </div>
-    </div>
-    <div class="all-skills-listed-section">
-        <div class="single-technology" *ngFor="let singleTechnology of getTechnologyListValues()">
-            <img src={{singleTechnology.imageSrc}} alt="imgSrc">
-            <p>{{singleTechnology.name}}</p>
-        </div>
-        <div class="growth-mindset-wrapper" (mouseenter)="setHovered(true)" (mouseleave)="setHovered(false)">
-            <div class="growth-mindset-unhovered">
-                <img [ngStyle]="{'transform': isHovered ? 'scale(1.125)': 'none'}"
-                    src="../../../../assets/img/growth-mindset-green.svg" alt="growth-mindset-green">
-                @if(isHovered == true){
-                <p [ngStyle]="{'color': 'rgba(61, 207, 182, 1)'}">Growth mindset</p>
-                } @else {
-                <p [ngStyle]="{'color': 'rgba(255, 255, 255, 1)'}">Growth mindset</p>
-                }
+<section>
+    <div class="skills-section" id="skills-section" data-aos="fade-left">
+        <div class="my-skillset-description">
+            <h2>{{"skillSet.h2First" | translate}}</h2>
+            <div class="skills-description-section">
+                <h2>{{"skillSet.h2Second" | translate}}</h2>
+                <span>{{"skillSet.spanFirst" | translate}}</span>
+                <div class="h3-section">
+                    <h3>{{"skillSet.h3First" | translate}}</h3>
+                    <h3>{{"skillSet.h3Second" | translate}}</h3>
+                </div>
+                <span>{{"skillSet.spanSecond" | translate}}</span>
+                <a [routerLink]=[] fragment="contact">
+                    <app-button-style>Let's Talk</app-button-style>
+                </a>
             </div>
         </div>
+        <div class="all-skills-listed-section">
+            <div class="single-technology" *ngFor="let singleTechnology of getTechnologyListValues()">
+                <img src={{singleTechnology.imageSrc}} alt="imgSrc">
+                <p>{{singleTechnology.name}}</p>
+            </div>
+            <div class="growth-mindset-wrapper" (mouseenter)="setHovered(true)" (mouseleave)="setHovered(false)">
+                <div class="growth-mindset-unhovered">
+                    <img [ngStyle]="{'transform': isHovered ? 'scale(1.125)': 'none'}"
+                        src="../../../../assets/img/growth-mindset-green.svg" alt="growth-mindset-green">
+                    @if(isHovered == true){
+                    <p [ngStyle]="{'color': 'rgba(61, 207, 182, 1)'}">Growth mindset</p>
+                    } @else {
+                    <p [ngStyle]="{'color': 'rgba(255, 255, 255, 1)'}">Growth mindset</p>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>

@@ -7,6 +7,11 @@ $backgroundPattern: linear-gradient(55.22deg,
         #1C1C1C 36.26%,
         #08463B 93.28%);
 
+section {
+    width: 100%;
+    background: $backgroundPattern;
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -14,7 +19,10 @@ footer {
     padding-left: 24px;
     padding-top: 24px;
     max-width: 1440px;
-    background: $backgroundColor;
+    width: 100%;
+    margin: 0 auto;
+    // background: $backgroundColor;
+    // background: $backgroundPattern;
 
     img {
         width: 400px;

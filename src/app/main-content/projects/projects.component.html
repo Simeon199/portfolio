@@ -1,27 +1,29 @@
-<div class="projects" id="projects-section" data-aos="fade-right">
-    <app-overlay (close)="closeOverlay()" *ngIf="isOverlayVisible" [index]="currentHoveredProjectIndex"
-        [title]="currentProjectOpened" [description]="currentProjectOpenedDescription"
-        [technologies]="currentProjectOpenedTechnologies" [imageSrc]="currentProjectOpenedImageSrc"
-        [gitHubLink]="currentProjectOpenedGitHubLink" [projectLink]="currentProjectOpenedProjectLink"
-        (updateParentVariables)="updateVariablesFromChild($event)">
-    </app-overlay>
-    <div class="content-wrapper-without-pop-ups">
-        <div class="content-above-single-projects">
-            <h2>Portfolio</h2>
-            <h2>{{"featuredProjects.h2First" | translate}}</h2>
-            <div class="span-about-projects">
-                <span>{{"featuredProjects.spanFirst" | translate}}</span>
+<section>
+    <div class="projects" id="projects-section" data-aos="fade-right">
+        <app-overlay (close)="closeOverlay()" *ngIf="isOverlayVisible" [index]="currentHoveredProjectIndex"
+            [title]="currentProjectOpened" [description]="currentProjectOpenedDescription"
+            [technologies]="currentProjectOpenedTechnologies" [imageSrc]="currentProjectOpenedImageSrc"
+            [gitHubLink]="currentProjectOpenedGitHubLink" [projectLink]="currentProjectOpenedProjectLink"
+            (updateParentVariables)="updateVariablesFromChild($event)">
+        </app-overlay>
+        <div class="content-wrapper-without-pop-ups">
+            <div class="content-above-single-projects">
+                <h2>Portfolio</h2>
+                <h2>{{"featuredProjects.h2First" | translate}}</h2>
+                <div class="span-about-projects">
+                    <span>{{"featuredProjects.spanFirst" | translate}}</span>
+                </div>
+            </div>
+            <div class="collection-of-single-projects" *ngFor="let singleProject of projectsArray">
+                <app-single-project [index]='singleProject.projectIndexAsString' [title]="singleProject.title"
+                    [technologies]="singleProject.technologyList"
+                    (mouseenter)="onMouseEnter(singleProject.title, singleProject.projectImageSource, singleProject.projectIndexAsString)"
+                    (mouseleave)="onMouseLeave()" (click)="openSingleProjectInBigPopUp(singleProject.title)">
+                </app-single-project>
             </div>
         </div>
-        <div class="collection-of-single-projects" *ngFor="let singleProject of projectsArray">
-            <app-single-project [index]='singleProject.projectIndexAsString' [title]="singleProject.title"
-                [technologies]="singleProject.technologyList"
-                (mouseenter)="onMouseEnter(singleProject.title, singleProject.projectImageSource, singleProject.projectIndexAsString)"
-                (mouseleave)="onMouseLeave()" (click)="openSingleProjectInBigPopUp(singleProject.title)">
-            </app-single-project>
+        <div class="text-pop-up" [style]="returnRightLocation(currentHoveredProject)">
+            <app-single-project-faded-in [imageSource]="currentHoveredProjectImageSrc"></app-single-project-faded-in>
         </div>
     </div>
-    <div class="text-pop-up" [style]="returnRightLocation(currentHoveredProject)">
-        <app-single-project-faded-in [imageSource]="currentHoveredProjectImageSrc"></app-single-project-faded-in>
-    </div>
-</div>
+</section>

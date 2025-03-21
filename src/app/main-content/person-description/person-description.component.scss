@@ -1,6 +1,8 @@
 @use '../../breakpoints.scss' as breakpoint;
 
+
 $backgroundColor: #1C1C1C;
+$backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 $background-pattern: repeating-linear-gradient(45deg,
         rgba(61, 207, 182, 0.6) 3px,
         rgba(61, 207, 182, 0.6) 3px,
@@ -9,9 +11,13 @@ $background-pattern: repeating-linear-gradient(45deg,
 $standardGreen: rgba(61, 207, 182, 1);
 $standardWhite: rgba(255, 255, 255, 0.8);
 
+section {
+    width: 100%;
+    background: $backgroundPattern;
+}
 
 .person-description-section {
-    background-color: $backgroundColor;
+    // background-color: $backgroundColor;
     display: flex;
     justify-content: space-between;
     color: $standardGreen;
@@ -21,6 +27,8 @@ $standardWhite: rgba(255, 255, 255, 0.8);
     padding-top: 96px;
     padding-bottom: 96px;
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .who-i-am-section {

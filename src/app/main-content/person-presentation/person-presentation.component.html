@@ -1,41 +1,43 @@
-<div class="me-presentation" id="me-presentation" data-aos="fade-left">
-    <div class="name-and-profession">
-        <h2>{{"personPresentation.frontendTitle" | translate}}</h2>
-        <h2>Simon Kiesner</h2>
-        <div class="contact-and-work-buttons">
-            <a [routerLink]=[] fragment="projects"><app-button-style>{{"personPresentation.buttonContentOne" |
-                    translate}}</app-button-style>
-            </a>
-            <a [routerLink]=[] fragment="contact">
-                <app-button-style>{{"personPresentation.buttonContentTwo" | translate}}</app-button-style>
-            </a>
-        </div>
-        <div class="marquee-section">
-            <ul>
-                <li>{{"personPresentation.sliderContentOne" | translate}}</li>
-                <li>{{"personPresentation.sliderContentTwo" | translate}}</li>
-                <li>{{"personPresentation.sliderContentThree" | translate}}</li>
-                <li>{{"personPresentation.sliderContentFour" | translate}}</li>
-            </ul>
-            <ul aria-hidden="true">
-                <li>{{"personPresentation.sliderContentOne" | translate}}</li>
-                <li>{{"personPresentation.sliderContentTwo" | translate}}</li>
-                <li>{{"personPresentation.sliderContentThree" | translate}}</li>
-                <li>{{"personPresentation.sliderContentFour" | translate}}</li>
-            </ul>
-        </div>
+<section>
+    <div class="me-presentation" id="me-presentation" data-aos="fade-left">
+        <div class="name-and-profession">
+            <h2>{{"personPresentation.frontendTitle" | translate}}</h2>
+            <h2>Simon Kiesner</h2>
+            <div class="contact-and-work-buttons">
+                <a [routerLink]=[] fragment="projects"><app-button-style>{{"personPresentation.buttonContentOne" |
+                        translate}}</app-button-style>
+                </a>
+                <a [routerLink]=[] fragment="contact">
+                    <app-button-style>{{"personPresentation.buttonContentTwo" | translate}}</app-button-style>
+                </a>
+            </div>
+            <div class="marquee-section">
+                <ul>
+                    <li>{{"personPresentation.sliderContentOne" | translate}}</li>
+                    <li>{{"personPresentation.sliderContentTwo" | translate}}</li>
+                    <li>{{"personPresentation.sliderContentThree" | translate}}</li>
+                    <li>{{"personPresentation.sliderContentFour" | translate}}</li>
+                </ul>
+                <ul aria-hidden="true">
+                    <li>{{"personPresentation.sliderContentOne" | translate}}</li>
+                    <li>{{"personPresentation.sliderContentTwo" | translate}}</li>
+                    <li>{{"personPresentation.sliderContentThree" | translate}}</li>
+                    <li>{{"personPresentation.sliderContentFour" | translate}}</li>
+                </ul>
+            </div>
 
-        <div class="skills-and-mail">
-            <div class="icon-container">
-                <div class="git-icons">
-                    <img src="../../../assets/img/github_icon_green.svg" alt="git-icon-green"
-                        (mouseenter)="toggleHover(true, 'github')" [ngClass]="{'hidden': isGithubIconHovered}">
-                    <a href="https://github.com/Simeon199" target="_blank" rel="noopener noreferrer">
-                        <img src="../../../assets/img/github_icon_white.svg" alt="git-icon-white"
-                            (mouseleave)="toggleHover(false, 'github')" [ngClass]="{'hidden': !isGithubIconHovered}">
-                    </a>
-                </div>
-                <!-- <div class="linkedin-icons">
+            <div class="skills-and-mail">
+                <div class="icon-container">
+                    <div class="git-icons">
+                        <img src="../../../assets/img/github_icon_green.svg" alt="git-icon-green"
+                            (mouseenter)="toggleHover(true, 'github')" [ngClass]="{'hidden': isGithubIconHovered}">
+                        <a href="https://github.com/Simeon199" target="_blank" rel="noopener noreferrer">
+                            <img src="../../../assets/img/github_icon_white.svg" alt="git-icon-white"
+                                (mouseleave)="toggleHover(false, 'github')"
+                                [ngClass]="{'hidden': !isGithubIconHovered}">
+                        </a>
+                    </div>
+                    <!-- <div class="linkedin-icons">
                     <img src="../../../assets/img/linkedin_icon_green.svg" alt="linkedin-icon-green"
                         (mouseenter)="toggleHover(true, 'linkedin')" [ngClass]="{'hidden': isLinkedinIconHovered}">
                     <a href="https://de.linkedin.com/?trk=guest_homepage-basic_nav-header-logo" target="_blank"
@@ -45,35 +47,36 @@
                             [ngClass]="{'hidden': !isLinkedinIconHovered}">
                     </a>
                 </div> -->
-                <div class="mail-icons" [ngClass]="{'hidden': !triggerSecondBreakpoint}">
-                    <img src="../../../assets/img/mail_icon_green.svg" alt="mail-icon-green"
-                        (mouseenter)="toggleHover(true, 'mail')" [ngClass]="{'hidden': isMailIconHovered}">
-                    <a href="mailto:simon.kiesner@gmx.de">
-                        <img src="../../../assets/img/mail_icon_white.svg" alt="mail-icon-white"
-                            (mouseleave)="toggleHover(false, 'mail')" [ngClass]="{'hidden': !isMailIconHovered}">
-                    </a>
+                    <div class="mail-icons" [ngClass]="{'hidden': !triggerSecondBreakpoint}">
+                        <img src="../../../assets/img/mail_icon_green.svg" alt="mail-icon-green"
+                            (mouseenter)="toggleHover(true, 'mail')" [ngClass]="{'hidden': isMailIconHovered}">
+                        <a href="mailto:simon.kiesner@gmx.de">
+                            <img src="../../../assets/img/mail_icon_white.svg" alt="mail-icon-white"
+                                (mouseleave)="toggleHover(false, 'mail')" [ngClass]="{'hidden': !isMailIconHovered}">
+                        </a>
+                    </div>
+                    <div class="email-link" [ngClass]="{'hidden': triggerSecondBreakpoint}">
+                        <a href="mailto:simon.kiesner@gmx.de">
+                            simon.kiesner&#64;gmx.de
+                        </a>
+                    </div>
                 </div>
-                <div class="email-link" [ngClass]="{'hidden': triggerSecondBreakpoint}">
-                    <a href="mailto:simon.kiesner@gmx.de">
-                        simon.kiesner&#64;gmx.de
-                    </a>
+                <div class="center-image">
+                    <img src="../../../assets/img/right_lateral.svg" alt="center">
                 </div>
             </div>
-            <div class="center-image">
-                <img src="../../../assets/img/right_lateral.svg" alt="center">
-            </div>
-        </div>
 
-        <div class="left-lateral">
-            <div class="arrow-image-container">
-                <a [routerLink]=[] fragment="contact">
-                    <img src="../../../assets/img/default_arrow_bottom.svg" alt="default_arrow_bottom">
-                    <img src="../../../assets/img/motion_arrow_bottom.svg" alt="motion_arrow_bottom">
-                </a>
-            </div>
-            <div class="center-image">
-                <img src="../../../assets/img/left_lateral_line.svg" alt="left_lateral_line">
+            <div class="left-lateral">
+                <div class="arrow-image-container">
+                    <a [routerLink]=[] fragment="contact">
+                        <img src="../../../assets/img/default_arrow_bottom.svg" alt="default_arrow_bottom">
+                        <img src="../../../assets/img/motion_arrow_bottom.svg" alt="motion_arrow_bottom">
+                    </a>
+                </div>
+                <div class="center-image">
+                    <img src="../../../assets/img/left_lateral_line.svg" alt="left_lateral_line">
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>

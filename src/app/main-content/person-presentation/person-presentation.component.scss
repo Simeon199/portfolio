@@ -5,13 +5,21 @@ $standardWhite: rgba(217, 217, 217, 1);
 $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
 $blurFilter: blur(5.300000190734863px);
 
+section {
+    background: $backgroundPattern;
+    width: 100%;
+}
+
 .me-presentation {
-    background-image: $backgroundPattern;
+    // background-image: $backgroundPattern;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     height: calc(100vh - 96.16px);
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .left-lateral {

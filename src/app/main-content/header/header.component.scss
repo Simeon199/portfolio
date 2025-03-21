@@ -1,21 +1,26 @@
 @use '../../breakpoints.scss' as breakpoint;
 
 $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-
 $standardGreen: rgba(61, 207, 182, 1);
 $standardWhite: rgba(255, 255, 255, 1);
 
+section {
+    background: $backgroundPattern;
+    width: 100%;
+}
+
 header {
-    background-image: $backgroundPattern;
+    // background-image: $backgroundPattern;
     display: flex;
     justify-content: space-between;
     color: $standardWhite;
     max-width: 1440px;
+    width: 100%;
     padding: 24px 24px 24px 24px;
     position: sticky;
     top: 0;
     z-index: 100;
-    width: 100%;
+    margin: 0 auto;
 }
 
 .navbar-responsive-design {
