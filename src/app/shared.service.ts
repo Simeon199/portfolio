@@ -8,11 +8,9 @@ export class SharedService {
 
   private isOverlayActive = new BehaviorSubject<boolean>(false);
   private isGermanButtonActiveSource = new BehaviorSubject<boolean>(false);
-  public shouldLanguageSelectionBeShown = new BehaviorSubject<boolean>(true);
 
   isGermanButtonActive$ = this.isGermanButtonActiveSource.asObservable();
   isOverlayActive$ = this.isOverlayActive.asObservable();
-  shouldLanguageSelectionBeShown$ = this.shouldLanguageSelectionBeShown.asObservable();
 
   isOnHomePage: boolean = true;
   allRoutesExceptLandingPage = ['/privacy-policy', '/legal-notice'];

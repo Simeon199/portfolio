@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
 import { Router, RouterLink } from '@angular/router';
 import { SharedService } from '../../shared.service';
+import { IsOnHomepageService } from '../../is-on-homepage.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,9 @@ import { SharedService } from '../../shared.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+
+  // implements OnInit
 
   isGermanButtonActive: boolean = true;
   isDropdownMenuActivated: boolean = false;
@@ -27,17 +30,17 @@ export class HeaderComponent implements OnInit {
   constructor(
     private languageService: LanguageService,
     public router: Router,
-    public sharedService: SharedService
+    public sharedService: SharedService,
+    public isOnHomePageService: IsOnHomepageService
   ) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
   }
 
-  ngOnInit(): void {
-    // this.sharedService.isOnHomePage = !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
-    this.proveRouteAndToogleLanguageSelection();
-  }
+  // ngOnInit(): void {
+  //   this.proveRouteAndToogleLanguageSelection();
+  // }
 
   toggleLanguage() {
     const newLang = this.currentLanguage === 'de' ? 'en' : 'de';
@@ -95,7 +98,7 @@ export class HeaderComponent implements OnInit {
 
   proveRouteAndCloseOverlay() {
     this.deactivateOverlayAndHideDropdown();
-    this.proveRouteAndToogleLanguageSelection();
+    // this.proveRouteAndToogleLanguageSelection();
   }
 
   deactivateOverlayAndHideDropdown() {
@@ -106,12 +109,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  proveRouteAndToogleLanguageSelection() {
-    console.log('is on homepage: ', this.sharedService.isOnHomePage);
-    if (this.isLocationPrivacyPolicy()) {
-      this.sharedService.shouldLanguageSelectionBeShown.next(false);
-    } else {
-      this.sharedService.shouldLanguageSelectionBeShown.next(true);
-    }
-  }
+  // proveRouteAndToogleLanguageSelection() {
+  //   console.log('is on homepage');
+  //   return;
+  // }
+  //   if (this.isLocationPrivacyPolicy()) {
+  //     this.sharedService.shouldLanguageSelectionBeShown.next(false);
+  //   } else {
+  //     this.sharedService.shouldLanguageSelectionBeShown.next(true);
+  //   }
+  // }
 }
