@@ -11,8 +11,6 @@ export class SharedService {
 
   isGermanButtonActive$ = this.isGermanButtonActiveSource.asObservable();
   isOverlayActive$ = this.isOverlayActive.asObservable();
-
-  isOnHomePage: boolean = true;
   allRoutesExceptLandingPage = ['/privacy-policy', '/legal-notice'];
   onlyPrivacyPolicyRoute = ['/privacy-policy'];
 

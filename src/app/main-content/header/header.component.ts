@@ -38,10 +38,6 @@ export class HeaderComponent {
     });
   }
 
-  // ngOnInit(): void {
-  //   this.proveRouteAndToogleLanguageSelection();
-  // }
-
   toggleLanguage() {
     const newLang = this.currentLanguage === 'de' ? 'en' : 'de';
     this.languageService.setLanguage(newLang);
@@ -98,25 +94,13 @@ export class HeaderComponent {
 
   proveRouteAndCloseOverlay() {
     this.deactivateOverlayAndHideDropdown();
-    // this.proveRouteAndToogleLanguageSelection();
   }
 
   deactivateOverlayAndHideDropdown() {
     if (!this.isLocationHompage()) {
-      this.sharedService.isOnHomePage = !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
+      // this.sharedService.isOnHomePage = !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
       this.sharedService.closeOverlay();
       this.hideDropdown();
     }
   }
-
-  // proveRouteAndToogleLanguageSelection() {
-  //   console.log('is on homepage');
-  //   return;
-  // }
-  //   if (this.isLocationPrivacyPolicy()) {
-  //     this.sharedService.shouldLanguageSelectionBeShown.next(false);
-  //   } else {
-  //     this.sharedService.shouldLanguageSelectionBeShown.next(true);
-  //   }
-  // }
 }

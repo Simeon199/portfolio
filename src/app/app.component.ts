@@ -1,5 +1,4 @@
 import { Component, AfterViewInit, ElementRef, Renderer2, effect, inject, computed } from '@angular/core';
-// import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
@@ -43,11 +42,6 @@ export class AppComponent implements AfterViewInit {
   ) {
     // Setup für Legal Notice Message
     this.setupLegalNoticeMessage();
-
-    // Effekt für Navigation und Seite
-    effect(() => {
-      console.log('Aktuelle Seite:', this.isOnHomepageService.isOnHomePage());
-    });
 
     // Effekt für NavigationEnd-Event
     effect(() => {

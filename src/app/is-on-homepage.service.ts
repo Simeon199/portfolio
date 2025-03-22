@@ -13,6 +13,10 @@ export class IsOnHomepageService {
 
   isOnHomePage(): boolean {
     const event = this.currentRoute();
-    return event instanceof NavigationEnd && event.url === '/';
+    if (event instanceof NavigationEnd) {
+      const cleanUrl = event.urlAfterRedirects.split('#')[0];
+      return event instanceof NavigationEnd && cleanUrl === '/';
+    }
+    return false; // Dieses Statement ist aktuell das Problem, weil false immer getriggert wird, wenn event keine Instanz von NavigationEnd ist !!!
   }
 }
