@@ -22,9 +22,11 @@
                     <!-- <a href="https://de.linkedin.com/?trk=guest_homepage-basic_nav-header-logo" target="_blank"
                     rel="noopener noreferrer">LinkedIn</a> -->
                     <a href="mailto:simon.kiesner@gmx.de">Email</a>
-                    <a routerLink="/legal-notice">{{"footer.legalNotice" |
+                    <a (click)='isOnHomePageService.toggleLanguageSelectionDisplay()'
+                        routerLink="/legal-notice">{{"footer.legalNotice" |
                         translate}}</a>
-                    <a routerLink="/privacy-policy">{{"footer.privacyPolicy" |
+                    <a (click)="isOnHomePageService.toggleLanguageSelectionDisplay()"
+                        routerLink="/privacy-policy">{{"footer.privacyPolicy" |
                         translate}}</a>
                 </div>
             </div>

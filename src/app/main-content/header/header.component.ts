@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
 import { Router, RouterLink } from '@angular/router';
@@ -17,10 +17,9 @@ import { IsOnHomepageService } from '../../is-on-homepage.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
-  // implements OnInit
-
+  isLanguageSelectionEnabled: boolean = true;
   isGermanButtonActive: boolean = true;
   isDropdownMenuActivated: boolean = false;
   isMyLogoBeingHovered: boolean = false;
@@ -31,11 +30,28 @@ export class HeaderComponent {
     private languageService: LanguageService,
     public router: Router,
     public sharedService: SharedService,
-    public isOnHomePageService: IsOnHomepageService
+    public isOnHomePageService: IsOnHomepageService,
+    private viewportScroller: ViewportScroller
   ) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
     });
+  }
+
+  ngOnInit(): void {
+    if (this.sharedService.allRoutesExceptLandingPage.includes(this.router.url)) {
+      this.isLanguageSelectionEnabled = false;
+      console.log('is language selection enabled: ', this.isLanguageSelectionEnabled)
+    } else {
+      this.isLanguageSelectionEnabled = true;
+      console.log('is language selection enabled: ', this.isLanguageSelectionEnabled);
+    }
+  }
+
+  scrollToFragment(fragment: string) {
+    this.router.navigate(['/'], { fragment }).then(() => {
+      this.viewportScroller.scrollToAnchor(fragment);
+    })
   }
 
   toggleLanguage() {
@@ -84,10 +100,6 @@ export class HeaderComponent {
     event.stopPropagation();
   }
 
-  isLocationHompage() {
-    return !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
-  }
-
   isLocationPrivacyPolicy() {
     return this.sharedService.onlyPrivacyPolicyRoute.includes(this.router.url);
   }
@@ -97,8 +109,8 @@ export class HeaderComponent {
   }
 
   deactivateOverlayAndHideDropdown() {
-    if (!this.isLocationHompage()) {
-      // this.sharedService.isOnHomePage = !this.sharedService.allRoutesExceptLandingPage.includes(this.router.url);
+    if (!this.sharedService.isOnHomePage) {
+      // this.sharedService.toggleLanguageSelectionPermission();
       this.sharedService.closeOverlay();
       this.hideDropdown();
     }

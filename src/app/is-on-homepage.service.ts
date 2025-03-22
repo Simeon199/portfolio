@@ -7,16 +7,23 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class IsOnHomepageService {
+  private lastKnownUrl: string = '/';
   public currentRoute = toSignal(this.router.events, { initialValue: new NavigationEnd(0, '/', '/') });
 
   constructor(private router: Router) { }
 
-  isOnHomePage(): boolean {
+  isOnHomePageOrLegalNotice(): boolean {
     const event = this.currentRoute();
     if (event instanceof NavigationEnd) {
       const cleanUrl = event.urlAfterRedirects.split('#')[0];
-      return event instanceof NavigationEnd && cleanUrl === '/';
+      console.log('clean url value: ', cleanUrl);
+      return cleanUrl === '/' || cleanUrl === '/legal-notice';
     }
-    return false; // Dieses Statement ist aktuell das Problem, weil false immer getriggert wird, wenn event keine Instanz von NavigationEnd ist !!!
+    return this.lastKnownUrl === '/' || this.lastKnownUrl === '/legal-notice';
+  }
+
+  toggleLanguageSelectionDisplay() {
+    // debugger;
+    console.log('is on homepage or legal notice page: ', this.isOnHomePageOrLegalNotice());
   }
 }

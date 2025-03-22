@@ -4,6 +4,7 @@ import { LanguageService } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { SharedService } from '../../shared.service';
+import { IsOnHomepageService } from '../../is-on-homepage.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,7 +27,8 @@ export class FooterComponent {
   constructor(
     private languageService: LanguageService,
     public router: Router,
-    public sharedService: SharedService
+    public sharedService: SharedService,
+    public isOnHomePageService: IsOnHomepageService
   ) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
