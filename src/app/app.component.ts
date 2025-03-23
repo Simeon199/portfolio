@@ -60,7 +60,7 @@ export class AppComponent implements AfterViewInit {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           AOS.refresh();
-          this.viewportScroller.setOffset([0, 141]);
+          this.viewportScroller.setOffset([0, 120]);
         }, 100);
       }
     });

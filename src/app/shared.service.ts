@@ -19,14 +19,8 @@ export class SharedService {
   constructor(public isOnHomePageService: IsOnHomepageService) { }
 
   isLanguageSelectionEnabled(): boolean {
-    // console.log('is on homepage or legal notice site:', this.isOnHomePageService.isOnHomePageOrLegalNotice())
     return this.isOnHomePageService.isOnHomePageOrLegalNotice();
   }
-
-  // toggleLanguageSelectionPermission() {
-  //   this.isOnHomePage = !this.isOnHomePage;
-  //   console.log('is on homepage: ', this.isOnHomePage);
-  // }
 
   manageHideShowOverflow(state: boolean) {
     if (state == true) {
