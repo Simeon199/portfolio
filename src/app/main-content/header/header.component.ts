@@ -39,13 +39,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.sharedService.allRoutesExceptLandingPage.includes(this.router.url)) {
-      this.isLanguageSelectionEnabled = false;
-      console.log('is language selection enabled: ', this.isLanguageSelectionEnabled)
-    } else {
-      this.isLanguageSelectionEnabled = true;
-      console.log('is language selection enabled: ', this.isLanguageSelectionEnabled);
-    }
+    this.isOnHomePageService.currentRoute$.subscribe(() => {
+      this.isLanguageSelectionEnabled = this.isOnHomePageService.isOnHomePageOrLegalNotice();
+    })
   }
 
   scrollToFragment(fragment: string) {
@@ -110,7 +106,6 @@ export class HeaderComponent implements OnInit {
 
   deactivateOverlayAndHideDropdown() {
     if (!this.sharedService.isOnHomePage) {
-      // this.sharedService.toggleLanguageSelectionPermission();
       this.sharedService.closeOverlay();
       this.hideDropdown();
     }

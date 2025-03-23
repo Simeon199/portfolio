@@ -40,19 +40,7 @@ export class AppComponent implements AfterViewInit {
     public sharedService: SharedService,
     public isOnHomepageService: IsOnHomepageService
   ) {
-    // Setup für Legal Notice Message
     this.setupLegalNoticeMessage();
-
-    // Effekt für NavigationEnd-Event
-    effect(() => {
-      const event = this.isOnHomepageService.currentRoute();
-      if (event instanceof NavigationEnd) {
-        setTimeout(() => {
-          AOS.refresh();
-          this.viewportScroller.setOffset([0, 141]);
-        }, 100);
-      }
-    });
   }
 
   ngAfterViewInit() {
@@ -68,7 +56,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   private setupRouterEventListener() {
-    // Hier kann normale Logik verwendet werden, aber ohne `effect()`
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {

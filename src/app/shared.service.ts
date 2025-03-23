@@ -19,7 +19,7 @@ export class SharedService {
   constructor(public isOnHomePageService: IsOnHomepageService) { }
 
   isLanguageSelectionEnabled(): boolean {
-    console.log('is on homepage or legal notice site:', this.isOnHomePageService.isOnHomePageOrLegalNotice())
+    // console.log('is on homepage or legal notice site:', this.isOnHomePageService.isOnHomePageOrLegalNotice())
     return this.isOnHomePageService.isOnHomePageOrLegalNotice();
   }
 

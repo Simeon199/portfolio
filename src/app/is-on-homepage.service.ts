@@ -1,29 +1,28 @@
 import { Injectable } from '@angular/core';
-import { NavigationEnd } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { filter } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IsOnHomepageService {
-  private lastKnownUrl: string = '/';
-  public currentRoute = toSignal(this.router.events, { initialValue: new NavigationEnd(0, '/', '/') });
+  private currentRouteSubject = new BehaviorSubject<string>('/');
+  currentRoute$ = this.currentRouteSubject.asObservable();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
+      let cleanUrl = event.urlAfterRedirects.split('#')[0];
+      this.currentRouteSubject.next(cleanUrl);
+    });
+  }
 
   isOnHomePageOrLegalNotice(): boolean {
-    const event = this.currentRoute();
-    if (event instanceof NavigationEnd) {
-      const cleanUrl = event.urlAfterRedirects.split('#')[0];
-      console.log('clean url value: ', cleanUrl);
-      return cleanUrl === '/' || cleanUrl === '/legal-notice';
-    }
-    return this.lastKnownUrl === '/' || this.lastKnownUrl === '/legal-notice';
+    let currentUrl = this.currentRouteSubject.value;
+    return currentUrl === '/' || currentUrl === '/legal-notice';
   }
 
   toggleLanguageSelectionDisplay() {
-    // debugger;
-    console.log('is on homepage or legal notice page: ', this.isOnHomePageOrLegalNotice());
+    return this.isOnHomePageOrLegalNotice();
   }
 }
