@@ -14,7 +14,7 @@ export const projectsData: projectsModel = {
         ],
         projectIndex: 0,
         projectIndexAsString: '01',
-        projectLink: 'https://join.simon-kiesner.de/login.html',
+        projectLink: 'https://join.simon-kiesner.de/pages/login.html',
         gitHubLink: 'https://github.com/Simeon199/Join'
     },
     elPolloLoco: {
