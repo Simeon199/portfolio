@@ -31,6 +31,7 @@ section {
 .all-skills-listed-section {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     max-width: 700px;  // ehemals 600px
     padding-top: 16px;
@@ -151,6 +152,16 @@ h2 {
 
 // All media queries listed
 
+@include breakpoint.screen1600 {
+    .my-skillset-description {
+        max-width: 500px;
+    }
+
+    .all-skills-listed-section {
+        max-width: 600px;
+    }
+}
+
 @include breakpoint.screen1350 {
     .skills-section {
         padding-top: 0;
@@ -161,7 +172,7 @@ h2 {
     .all-skills-listed-section {
         max-width: 760px;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
     }
 
     .my-skillset-description {

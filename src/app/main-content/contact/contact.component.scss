@@ -79,6 +79,12 @@ span:nth-child(2) {
 
 // All media queries listed here
 
+@include breakpoint.screen1600 {
+    .container-without-contact-form {
+        max-width: 600px;
+    }
+}
+
 @include breakpoint.screen1350 {
     .contact {
         width: 100%;

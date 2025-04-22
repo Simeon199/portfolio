@@ -116,6 +116,18 @@ h2 {
 
 // all media queries listed here
 
+@include breakpoint.screen1600 {
+    .about-me-description {
+        max-width: 560px;
+    }
+
+    .me-image-container {
+        img {
+            max-width: 500px;
+        }
+    }
+}
+
 @include breakpoint.screen1350 {
     .person-description-section {
         height: unset;
@@ -131,7 +143,7 @@ h2 {
     }
 
     .about-me-description {
-        max-width: 760px;
+        max-width: 760px; // ehemals 760px
 
         h2 {
             font-family: 'Fira Code';

@@ -13,7 +13,8 @@ $breakpoints: (
     screen1024: 1024px,
     screen1200: 1200px,
     screen1350: 1350px,
-    screen1440: 1440px
+    screen1440: 1440px,
+    screen1600: 1600px
 );
 
 /* --- Media Queries für Touch/Nicht-Touch-Devices --- */
@@ -125,6 +126,14 @@ $breakpoints: (
     $value: map-get($breakpoints, screen1440);
 
     @media only screen and (max-width: #{$value}) {
+        @content;
+    }
+}
+
+@mixin screen1600 {
+    $value: map-get($breakpoints, screen1600);
+
+    @media only screen and (max-width: #{$value}){
         @content;
     }
 }

@@ -144,6 +144,12 @@ form {
     cursor: pointer;
 }
 
+@include breakpoint.screen1600 {
+    .contact-form-container {
+        max-width: 500px;
+    }
+}
+
 @include breakpoint.screen1350 {
     form {
         max-width: 760px;
