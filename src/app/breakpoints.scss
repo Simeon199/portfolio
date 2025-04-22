@@ -15,7 +15,7 @@ $breakpoints: (
     screen1350: 1350px,
     screen1440: 1440px,
     screen1600: 1600px,
-    screen1920: 2200px
+    screen1700: 1700px
 );
 
 /* --- Media Queries für Touch/Nicht-Touch-Devices --- */
@@ -139,6 +139,14 @@ $breakpoints: (
     }
 }
 
+@mixin screen1700 {
+    $value: map-get($breakpoints, screen1700);
+
+    @media only screen and (max-width: #{$value}){
+        @content;
+    }
+}
+
 /* --- Media Queries für Maximalhöhen  --- */
 
 @mixin screenHeight600 {
@@ -224,7 +232,7 @@ $breakpoints: (
 
 /* --- Media Queries für Minimalbreiten --- */
 
-@mixin screenMinWidth2200 {
+@mixin screenMinWidth1700 {
     $value: map-get($breakpoints, screen1920);
 
     @media only screen and (min-width: #{$value}){

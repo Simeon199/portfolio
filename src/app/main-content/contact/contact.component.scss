@@ -81,7 +81,7 @@ span:nth-child(2) {
 
 @include breakpoint.screen1600 {
     .container-without-contact-form {
-        max-width: 600px;
+        max-width: 500px;
     }
 }
 
@@ -93,6 +93,10 @@ span:nth-child(2) {
         gap: 40px;
         padding-left: 24px;
         padding-right: 24px;
+    }
+
+    .container-without-contact-form {
+        max-width: 700px;
     }
 
     .h2-contact-section {
