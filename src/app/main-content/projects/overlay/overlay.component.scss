@@ -193,22 +193,9 @@ a {
             color: $standardWhite;
         }
 
-        // a {
-        //     text-decoration: none;
-        //     font-family: 'Karla';
-        //     font-size: 18px;
-        //     font-weight: 400;
-        //     line-height: 21.6px;
-        //     text-align: left;
-        //     color: $standardWhite;
-        // }
-
         &:hover {
             border: 1px solid $standardGreen;
 
-            // a {
-            //     color: $standardGreen;
-            // }
             span {
                 color: $standardGreen;
             }

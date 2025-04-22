@@ -3,15 +3,12 @@
 $standardWhite: rgba(255, 255, 255, 0.8);
 $standardGreen: rgba(61, 207, 182, 1);
 $backgroundPattern: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-// $backgroundPattern: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
 
 section {
     width: 100%;
-    // background: $backgroundPattern;
 }
 
 .projects {
-    // background: $backgroundPattern;
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -20,7 +17,7 @@ section {
     padding-right: 24px;
     padding-left: 24px;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1920px; // 1440px
     margin: 0 auto;
 
     h2:nth-child(1) {

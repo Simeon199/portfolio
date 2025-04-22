@@ -9,7 +9,6 @@ $backgroundPattern: linear-gradient(55.22deg,
 
 section {
     width: 100%;
-    // background: $backgroundPattern;
 }
 
 footer {
@@ -18,11 +17,9 @@ footer {
     padding-right: 24px;
     padding-left: 24px;
     padding-top: 24px;
-    max-width: 1440px;
+    max-width: 1920px; // 1440px
     width: 100%;
     margin: 0 auto;
-    // background: $backgroundColor;
-    // background: $backgroundPattern;
 
     img {
         width: 400px;
