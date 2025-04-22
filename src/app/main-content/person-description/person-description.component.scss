@@ -20,8 +20,8 @@ section {
     justify-content: space-between;
     color: $standardGreen;
     height: 850px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 96px;
+    padding-right: 96px;
     padding-top: 96px;
     padding-bottom: 96px;
     width: 100%;
@@ -44,10 +44,8 @@ section {
     gap: 16px;
     padding: 32px;
     border-radius: 30px;
-    // background-color: $backgroundColor;
-    // background-color: rgb(31, 46, 43);
     border: 1px solid $standardGreen;
-    max-width: 560px;
+    max-width: 700px; // ehemals 560px
     width: 100%;
     flex-wrap: wrap;
 
@@ -73,13 +71,6 @@ section {
     }
 }
 
-// .image-container {
-//     position: relative;
-//     display: inline-block;
-//     will-change: transform;
-//     transform: translateZ(0);
-// }
-
 .me-image-container {
     position: relative;
     display: inline-block;
@@ -87,7 +78,8 @@ section {
     transform: translateZ(0);
 
     img {
-        width: 520px;
+        width: 100%;
+        max-width: 600px; // ehemals 520px
         height: auto;
         border-radius: 30px;
         align-self: start;

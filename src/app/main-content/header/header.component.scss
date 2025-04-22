@@ -18,7 +18,10 @@ header {
     color: $standardWhite;
     max-width: 1920px; // 1440px
     width: 100%; 
-    padding: 24px 24px 24px 24px;
+    padding-right: 96px;
+    padding-left: 96px;
+    padding-top: 24px;
+    padding-bottom: 24px;
     margin: 0 auto;
 }
 

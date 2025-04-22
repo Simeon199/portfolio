@@ -3,10 +3,15 @@
 $standardGreen: rgba(61, 207, 182, 0.5);
 $standardWhite: rgba(255, 255, 255, 0.8);
 
+.contact-form-container {
+    max-width: 700px;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 90%px; // ehemals 500px
+    max-width: 600px;
     color: $standardGreen;
     border-width: 1px, 0px, 1px, 0px;
 }

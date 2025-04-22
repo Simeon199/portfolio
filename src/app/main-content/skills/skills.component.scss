@@ -12,8 +12,8 @@ section {
     margin: 0 auto;
     max-width: 1920px; // 1920px
     width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 96px;
+    padding-right: 96px;
     align-self: center;
     display: flex;
     align-items: center;
@@ -25,14 +25,14 @@ section {
     flex-direction: column;
     gap: 20px;
     padding-bottom: 96px;
-    max-width: 560px;
+    max-width: 600px; // ehemals 560px
 }
 
 .all-skills-listed-section {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 600px;
+    max-width: 700px;  // ehemals 600px
     padding-top: 16px;
     padding-bottom: 16px;
     padding-right: 16px;
