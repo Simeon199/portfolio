@@ -88,6 +88,7 @@ app-single-project {
 @include breakpoint.screen1350 {
     .projects {
         justify-content: center;
+        padding: 24px;
 
         span {
             font-size: 20px;

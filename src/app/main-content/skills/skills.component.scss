@@ -206,6 +206,10 @@ h2 {
 }
 
 @include breakpoint.screen950 {
+    .skills-section {
+        padding: 24px;
+    }
+    
     .skills-description-section {
         h2 {
             font-size: 48px;

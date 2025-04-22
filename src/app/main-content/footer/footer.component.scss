@@ -136,6 +136,12 @@ footer {
     }
 }
 
+@include breakpoint.screen950 {
+    footer {
+        padding: 24px;
+    }
+}
+
 @include breakpoint.screen800 {
     .platform-links {
         font-size: 18px;

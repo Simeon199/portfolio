@@ -107,6 +107,12 @@ app-description-wrapper {
     }
 }
 
+@include breakpoint.screen950 {
+    .recency-section {
+        padding: 24px;
+    }
+}
+
 @include breakpoint.screen500 {
     .recency-section {
         gap: 32px;

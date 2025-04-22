@@ -113,6 +113,10 @@ span:nth-child(2) {
 }
 
 @include breakpoint.screen950 {
+    .contact {
+        padding: 24px;
+    }
+    
     h2:nth-child(2) {
         font-size: 48px;
     }
