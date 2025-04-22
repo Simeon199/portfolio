@@ -17,7 +17,7 @@
         "h2First": "Wer ich bin",
         "h2Second": "Über Mich",
         "spanFirst": "Als Frontend-Developer aus Rust begeistere ich mich für die Entwicklung ansprechender und intuitiver Webanwendungen.",
-        "spanSecond": "Ich bin sowohl vor Ort als auch remote einsatzbereit – je nach Anforderung.",
+        "spanSecond": "Ich bin sowohl vor Ort als auch Remote einsatzbereit – je nach Anforderung.",
         "spanThird": "Ich lege Wert darauf, mich ständig weiterzuentwickeln, neue Herausforderungen anzunehmen und Ideen in funktionierende und benutzerfreundliche Produkte umzusetzen.",
         "spanFourth": "Ich freue mich auf den Austausch mit Ihnen – vielleicht ergibt sich ja ein spannendes Projekt!"
     },
@@ -27,7 +27,8 @@
         "h3First": "Ihnen fehlt",
         "h3Second": "eine Fähigkeit?",
         "spanFirst": "In meinen Projekten habe ich mit verschiedenen Frontend-Technologien gearbeitet und immer wieder neue Konzepte kennengelernt. Da sich die Webentwicklung ständig weiterentwickelt, bleibe ich neugierig und offen für neue Tools und Methoden.",
-        "spanSecond": "Lassen Sie es mich wissen! Ich bin immer offen dafür, Neues zu lernen und meinen Horizont zu erweitern."
+        "spanSecond": "Lassen Sie es mich wissen! Ich bin immer offen dafür, Neues zu lernen und meinen Horizont zu erweitern.",
+        "buttonContent": "Zum Gespräch"
     },
     "featuredProjects": {
         "h2First": "Vorgestelle Projekte",
@@ -37,7 +38,7 @@
         "join": {
             "title": "Join",
             "projectImageSource": "../../../../assets/img/join.png",
-            "description": "Bei dieser Anwendung handelt es sich um einen Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Tasks mit Hilfe der Drag-and-Drop-Funktionalität und weisen Benutzer und Kategorien zu.",
+            "description": "Bei dieser Anwendung handelt es sich um einen Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Tasks mit Hilfe der Drag-and-Drop-Funktionalität und weisen Sie Benutzer und Kategorien zu.",
             "technologyList": [
                 "HTML",
                 "|",

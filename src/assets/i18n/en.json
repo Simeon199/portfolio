@@ -27,7 +27,8 @@
         "h3First": "Are you missing a",
         "h3Second": "specific skill?",
         "spanFirst": "In my projects, I have worked with various front-end technologies and have continuously learned new concepts. As web development is constantly evolving, I remain curious and open to new tools and methods.",
-        "spanSecond": "Let me know! I'm always open to learning new things and broadening my horizons."
+        "spanSecond": "Let me know! I'm always open to learning new things and broadening my horizons.",
+        "buttonContent": "Let's Talk"
     },
     "featuredProjects": {
         "h2First": "Featured Projects",
