@@ -25,7 +25,8 @@
                     <li>{{"personPresentation.sliderContentFour" | translate}}</li>
                 </ul>
             </div>
-
+        </div>
+        <div class="me-presentation-lower-wrapper-part">
             <div class="skills-and-mail">
                 <div class="icon-container">
                     <div class="git-icons">
@@ -38,14 +39,14 @@
                         </a>
                     </div>
                     <div class="linkedin-icons">
-                     <img src="../../../assets/img/linkedin_icon_green.svg" alt="linkedin-icon-green"
-                         (mouseenter)="toggleHover(true, 'linkedin')" [ngClass]="{'hidden': isLinkedinIconHovered}">
-                     <a href="https://www.linkedin.com/in/simon-kiesner-30093b359/" target="_blank"
-                         rel="noopener noreferrer">
-                         <img src="../../../assets/img/linkedin_icon_white.svg" alt="linkedin_icon_white"
-                             (mouseleave)="toggleHover(false, 'linkedin')"
-                             [ngClass]="{'hidden': !isLinkedinIconHovered}">
-                     </a>
+                    <img src="../../../assets/img/linkedin_icon_green.svg" alt="linkedin-icon-green"
+                        (mouseenter)="toggleHover(true, 'linkedin')" [ngClass]="{'hidden': isLinkedinIconHovered}">
+                    <a href="https://www.linkedin.com/in/simon-kiesner-30093b359/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../../../assets/img/linkedin_icon_white.svg" alt="linkedin_icon_white"
+                            (mouseleave)="toggleHover(false, 'linkedin')"
+                            [ngClass]="{'hidden': !isLinkedinIconHovered}">
+                    </a>
                     </div>
                     <div class="mail-icons" [ngClass]="{'hidden': !triggerSecondBreakpoint}">
                         <img src="../../../assets/img/mail_icon_green.svg" alt="mail-icon-green"
@@ -65,7 +66,6 @@
                     <img src="../../../assets/img/right_lateral.svg" alt="center">
                 </div>
             </div>
-
             <div class="left-lateral">
                 <div class="arrow-image-container">
                     <a [routerLink]=[] fragment="contact">

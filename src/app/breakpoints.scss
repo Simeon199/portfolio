@@ -14,7 +14,8 @@ $breakpoints: (
     screen1200: 1200px,
     screen1350: 1350px,
     screen1440: 1440px,
-    screen1600: 1600px
+    screen1600: 1600px,
+    screen1920: 2200px
 );
 
 /* --- Media Queries für Touch/Nicht-Touch-Devices --- */
@@ -217,6 +218,16 @@ $breakpoints: (
     $value: map-get($breakpoints, screen850);
 
     @media only screen and (min-height: #{$value}) {
+        @content;
+    }
+}
+
+/* --- Media Queries für Minimalbreiten --- */
+
+@mixin screenMinWidth2200 {
+    $value: map-get($breakpoints, screen1920);
+
+    @media only screen and (min-width: #{$value}){
         @content;
     }
 }

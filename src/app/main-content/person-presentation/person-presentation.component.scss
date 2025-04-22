@@ -14,16 +14,26 @@ section {
     position: relative;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
     height: calc(100vh - 96.16px);
     width: 100%;
     max-width: 1920px; // 1440px
     margin: 0 auto;
 }
 
-.left-lateral {
+.me-presentation-lower-wrapper-part {
     position: absolute;
     bottom: 0;
-    left: 96px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    padding-right: 96px;
+    padding-left: 96px;
+}
+
+.left-lateral {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +130,7 @@ section {
 
 .marquee-section {
     position: absolute;
-    bottom: 11%;
+    bottom: 11%; 
     left: 0;
     background-color: rgba(255, 255, 255, 0.12);
     display: flex;
@@ -164,9 +174,6 @@ section {
 }
 
 .skills-and-mail {
-    position: absolute;
-    bottom: 0;
-    right: 96px;
     width: 60px;
     display: flex;
     flex-direction: column;
@@ -175,6 +182,7 @@ section {
     .center-image {
         display: flex;
         justify-content: center;
+        align-items: end;
     }
 }
 
@@ -231,6 +239,12 @@ section {
 
 // all media queries related to screen-width
 
+@include breakpoint.screenMinWidth2200 {
+    .marquee-section {
+        bottom: 5%;
+    }
+}
+
 @include breakpoint.screen1200 {
     .me-presentation {
         padding-top: 108px;
@@ -245,6 +259,11 @@ section {
 }
 
 @include breakpoint.screen950 {
+    .me-presentation-lower-wrapper-part {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
     .name-and-profession {
         padding-top: unset;
         justify-content: center;
