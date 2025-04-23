@@ -7,7 +7,8 @@
     gap: 24px;
     padding-top: 24px;
     padding-bottom: 24px;
-    padding-left: 24px;
+    padding-left: 96px; // 24px
+    padding-right: 96px; // 24px
     width: 100%;
     max-width: 1920px; // 1440px
     margin: 0 auto;
@@ -20,7 +21,15 @@ a {
     color: blue;
 }
 
-// Media Queries related to height
+// Media Queries 
+
+@include breakpoint.screen1350 {
+    .legal-notice-content-wrapper {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        padding-left: 24px;
+    }
+}
 
 @include breakpoint.screenHeight800 {
     .legal-notice-content-wrapper {

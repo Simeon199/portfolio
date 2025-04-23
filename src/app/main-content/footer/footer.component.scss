@@ -134,9 +134,7 @@ footer {
     .span-footer-section {
         font-size: 20px;
     }
-}
 
-@include breakpoint.screen950 {
     footer {
         padding: 24px;
     }

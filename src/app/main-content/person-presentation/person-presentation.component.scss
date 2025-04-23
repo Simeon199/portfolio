@@ -242,6 +242,13 @@ section {
 
 // all media queries related to screen-width
 
+@include breakpoint.screen1350 {
+    .me-presentation-lower-wrapper-part {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
 @include breakpoint.screen1200 {
     .me-presentation {
         padding-top: 108px;
@@ -256,11 +263,6 @@ section {
 }
 
 @include breakpoint.screen950 {
-    .me-presentation-lower-wrapper-part {
-        padding-right: 24px;
-        padding-left: 24px;
-    }
-
     .name-and-profession {
         padding-top: unset;
         justify-content: center;

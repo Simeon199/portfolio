@@ -107,9 +107,10 @@ app-description-wrapper {
     }
 }
 
-@include breakpoint.screen950 {
+@include breakpoint.screen1350 {
     .recency-section {
-        padding: 24px;
+        padding-right: 24px;
+        padding-left: 24px;
     }
 }
 

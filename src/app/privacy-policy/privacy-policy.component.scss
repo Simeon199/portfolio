@@ -14,7 +14,10 @@ $backgroundPattern: linear-gradient(#1C1C1C -5%, #79b5ab 0%);
     flex-direction: column;
     align-items: unset;
     gap: 24px;
-    padding: 64px 64px 64px 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-right: 96px;
+    padding-left: 96px;
     border-radius: 8px;
 }
 
@@ -24,7 +27,14 @@ a {
     cursor: pointer;
 }
 
-// Media Queries related to width 
+// Media Queries 
+
+@include breakpoint.screen1350 {
+    .privacy-policy-content-wrapper {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
 
 @include breakpoint.screen500 {
 
