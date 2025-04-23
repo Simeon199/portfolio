@@ -133,7 +133,7 @@ section {
 
 .marquee-section {
     position: absolute;
-    bottom: 11%; 
+    bottom: 80px; // 11%
     left: 0;
     background-color: rgba(255, 255, 255, 0.12);
     display: flex;
@@ -242,18 +242,6 @@ section {
 
 // all media queries related to screen-width
 
-@include breakpoint.screenMinWidth1700 {
-    .marquee-section {
-        bottom: 5%;
-    }
-}
-
-@include breakpoint.screen1440{
-    .marquee-section {
-        bottom: 11%;
-    }
-}
-
 @include breakpoint.screen1200 {
     .me-presentation {
         padding-top: 108px;
@@ -264,10 +252,6 @@ section {
         h2 {
             line-height: 100px;
         }
-    }
-
-    .marquee-section {
-        bottom: 5%;
     }
 }
 
