@@ -20,11 +20,11 @@ import { IsOnHomepageService } from '../../is-on-homepage.service';
 export class HeaderComponent implements OnInit {
 
   isLanguageSelectionEnabled: boolean = true;
-  isGermanButtonActive: boolean = true;
+  isGermanButtonActive: boolean = false; // true
   isDropdownMenuActivated: boolean = false;
   isMyLogoBeingHovered: boolean = false;
   isBigOverlayHeaderActivated: boolean = false;
-  currentLanguage: string = 'de';
+  currentLanguage: string = 'en';
 
   constructor(
     private languageService: LanguageService,
@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleLanguage() {
-    const newLang = this.currentLanguage === 'de' ? 'en' : 'de';
+    const newLang = this.currentLanguage === 'en' ? 'de' : 'en'; // const newLang = this.currentLanguage === 'de' ? 'en' : 'de';
     this.languageService.setLanguage(newLang);
   }
 
