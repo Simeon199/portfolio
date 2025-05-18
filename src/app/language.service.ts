@@ -12,8 +12,8 @@ export class LanguageService {
 
     constructor(private translate: TranslateService) {
         this.translate.addLangs(['de', 'en']);
-        const browserLang = navigator.language.split('-')[1]; // 0
-        const defaultLang = this.translate.getLangs().includes(browserLang) ? browserLang : 'en'; // de
+        const browserLang = navigator.language.split('-')[0]; 
+        const defaultLang = this.translate.getLangs().includes(browserLang) ? browserLang : 'en'; 
         this.setLanguage(defaultLang);
     }
 

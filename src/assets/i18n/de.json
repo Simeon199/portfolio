@@ -167,6 +167,9 @@
     "legalNoticeContent": {
         "imprint": "Impressum",
         "contact": "Kontakt",
-        "responsible": "Redaktionell verantwortlich"
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "responsible": "Redaktionell verantwortlich",
+        "source": "Quelle"
     }
 }

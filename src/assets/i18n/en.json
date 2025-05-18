@@ -165,8 +165,11 @@
         "privacyPolicy": "Privacy Policy"
     },
     "legalNoticeContent": {
-        "imprint": "Site Notice",
+        "imprint": "Site notice",
         "contact": "Contact",
-        "responsible": "Person responsible for editorial"
+        "phone": "Phone number",
+        "email": "Email",
+        "responsible": "Person responsible for editorial",
+        "source": "Source"
     }
 }
