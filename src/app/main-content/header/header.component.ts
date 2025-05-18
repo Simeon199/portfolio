@@ -20,7 +20,7 @@ import { IsOnHomepageService } from '../../is-on-homepage.service';
 export class HeaderComponent implements OnInit {
 
   isLanguageSelectionEnabled: boolean = true;
-  isGermanButtonActive: boolean = true; 
+  isGermanButtonActive: boolean = false; 
   isDropdownMenuActivated: boolean = false;
   isMyLogoBeingHovered: boolean = false;
   isBigOverlayHeaderActivated: boolean = false;
