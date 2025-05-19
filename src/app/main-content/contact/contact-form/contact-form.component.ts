@@ -123,21 +123,46 @@ export class ContactFormComponent {
   }
 
   private handleSuccess(ngForm: NgForm) {
-    this.showSnackbar("Nachricht erfolgreich gesendet!", ['custom-snackbar']);
+    if(this.currentLanguage === 'de'){
+      this.showSnackbar("Nachricht erfolgreich gesendet!", ['custom-snackbar']);
+    } else if(this.currentLanguage === 'en') {
+      this.showSnackbar("Message sent successfully!", ['custom-snackbar']);
+    }
     this.resetForm(ngForm);
   }
 
   private handleError(error: any) {
     console.error(error);
-    this.showSnackbar("Fehler beim Senden der Nachricht!", ['custom-error']);
+    if(this.currentLanguage === 'de'){
+      this.showSnackbar("Fehler beim Senden der Nachricht!", ['custom-error']);
+    } else if(this.currentLanguage === 'en'){
+      this.showSnackbar("Error while sending the message!", ['custom-error']);
+    }
   }
 
   private showSnackbar(message: string, panelClass: string[]) {
+    if(this.currentLanguage === 'de'){
+      this.showGermanSnackbar(message, panelClass);
+    } else if(this.currentLanguage === 'en') {
+      this.showEnglishSnackbar(message, panelClass);
+    }
+  }
+
+  showGermanSnackbar(message: string, panelClass: string[]){
     this.snackBar.open(message, "Schließen", {
-      duration: 3000,
-      horizontalPosition: "center",
-      verticalPosition: "top",
-      panelClass
+        duration: 3000,
+        horizontalPosition: "center",
+        verticalPosition: "top",
+        panelClass
+    });
+  }
+
+  showEnglishSnackbar(message: string, panelClass: string[]){
+    this.snackBar.open(message, "Close", {
+        duration: 3000,
+        horizontalPosition: "center",
+        verticalPosition: "top",
+        panelClass
     });
   }
 
