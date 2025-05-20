@@ -16,8 +16,6 @@ section {
     justify-content: center; 
     height: 100%;
     height: calc(100vh - var(--header-height));
-    // height: calc(100vh - 96.16px);
-    // overflow: auto;
     width: 100%;
     max-width: 1920px; 
     margin: 0 auto;
@@ -252,11 +250,6 @@ section {
 }
 
 @include breakpoint.screen1200 {
-    .me-presentation {
-        padding-top: 108px;
-        justify-content: flex-start;
-    }
-
     .name-and-profession {
         h2 {
             line-height: 100px;
@@ -331,13 +324,14 @@ section {
     }
 
     .name-and-profession {
-        max-width: 280px;
+        max-width: 255px;
         flex-wrap: wrap;
         align-self: center;
         gap: 32px;
 
         h2:nth-child(1) {
             text-align: center;
+            line-height: 32px;
         }
 
         h2:nth-child(2) {
@@ -345,10 +339,6 @@ section {
             text-align: center;
             line-height: 48px;
         }
-    }
-
-    .me-presentation {
-        padding-top: 80px; // 16px
     }
 
     .marquee-section {
@@ -378,11 +368,6 @@ section {
 // all media queries related height screen
 
 @include breakpoint.screenHeight700 {
-
-    .me-presentation {
-        padding-top: 16px;
-        justify-content: flex-start;
-    }
 
     .name-and-profession {
         gap: 24px;

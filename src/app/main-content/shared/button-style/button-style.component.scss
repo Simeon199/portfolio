@@ -49,18 +49,31 @@ button:hover p {
 
 // All media queries listed here
 
+@include breakpoint.screen700 {
+    button {
+        padding: 10px;
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
 @include breakpoint.screen500 {
     button {
-        padding: 12px;
-    }
-}
-
-@include breakpoint.screen400 {
-    button {
         padding: 8px;
-    }
 
-    button p {
-        font-size: 16px;
+        p {
+            font-size: 16px;
+        }
     }
 }
+
+// @include breakpoint.screen400 {
+
+//     button {
+//         p{
+//             font-size: 14px;
+//         }
+//     }
+// }
