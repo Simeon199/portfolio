@@ -10,12 +10,14 @@ section {
 }
 
 .me-presentation {
-    display: flex;
     position: relative;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; 
     height: 100%;
-    height: calc(100vh - 96.16px);
+    height: calc(100vh - var(--header-height));
+    // height: calc(100vh - 96.16px);
+    // overflow: auto;
     width: 100%;
     max-width: 1920px; 
     margin: 0 auto;
@@ -133,7 +135,7 @@ section {
 
 .marquee-section {
     position: absolute;
-    bottom: 80px; // 11%
+    bottom: 80px; 
     left: 0;
     background-color: rgba(255, 255, 255, 0.12);
     display: flex;

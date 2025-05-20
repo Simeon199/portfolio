@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Renderer2, effect, inject, computed } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Renderer2, inject, OnDestroy } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
@@ -24,10 +24,12 @@ import 'aos/dist/aos.css';
   styleUrl: './app.component.scss',
 })
 
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
 
   private router = inject(Router);
 
+  @ViewChild('headerRef', {read: ElementRef}) headerE1!: ElementRef;
+  resizeObserver!: ResizeObserver;
   legalNoticeMessage: SafeHtml | undefined;
   observer: MutationObserver | undefined;
 
@@ -47,6 +49,12 @@ export class AppComponent implements AfterViewInit {
     AOS.init();
     this.setupMutationObserver();
     this.setupRouterEventListener();
+    this.setHeaderHeightVar();
+    this.resizeObserver = new ResizeObserver(() => {
+      this.setHeaderHeightVar();
+    });
+    this.resizeObserver.observe(this.headerE1.nativeElement);
+    window.addEventListener('resize', this.setHeaderHeightVar);
   }
 
   private setupLegalNoticeMessage() {
@@ -79,5 +87,15 @@ export class AppComponent implements AfterViewInit {
         this.router.navigate(['/privacy-policy']);
       });
     });
+  }
+
+  setHeaderHeightVar = () => {
+    const headerHeight = this.headerE1.nativeElement.offsetHeight;
+    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+  }
+
+  ngOnDestroy(){
+    this.resizeObserver.disconnect();
+    window.removeEventListener('resize', this.setHeaderHeightVar);
   }
 }
