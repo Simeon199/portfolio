@@ -8,6 +8,7 @@ import { HeaderComponent } from './main-content/header/header.component';
 import { FooterComponent } from './main-content/footer/footer.component';
 import { SharedService } from './shared.service';
 import { IsOnHomepageService } from './is-on-homepage.service';
+import { PopupComponent } from './main-content/popup/popup.component';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -18,8 +19,9 @@ import 'aos/dist/aos.css';
     CommonModule,
     RouterOutlet,
     HeaderComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    PopupComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
