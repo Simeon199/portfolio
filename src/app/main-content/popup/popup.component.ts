@@ -23,7 +23,7 @@ export class PopupComponent implements AfterViewInit{
   visible = false;
 
   constructor(){
-    const hasVisited = localStorage.getItem('hasVisited');
+    const hasVisited = sessionStorage.getItem('hasVisited');
     if(hasVisited){
       this.visible = true;
       document.body.classList.add('no-scroll');
@@ -59,6 +59,7 @@ export class PopupComponent implements AfterViewInit{
 
     tl.to(this.popupText.nativeElement, {
       text: 'Welcome to the Portfolio of Simon Kiesner',
+      fontFamily: 'Fira Code',
       duration: 4,
       ease: 'none',
       delay: 0.2
@@ -77,11 +78,15 @@ export class PopupComponent implements AfterViewInit{
       ease: 'power1.inOut'
     });
 
+    tl.set(this.popupContainer.nativeElement, {
+      display: 'none'
+    })
+
     // Nach Ende: Aufräumen
 
     tl.call(() => {
       this.visible = false;
-      localStorage.setItem('hasVisitied', 'true');
+      sessionStorage.setItem('hasVisited', 'true');
       document.body.classList.remove('no-scroll');
       document.documentElement.classList.remove('no-scroll');
     });

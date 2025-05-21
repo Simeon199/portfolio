@@ -1,6 +1,6 @@
 <div class="router-outlet-container">
     <app-header #headerRef></app-header>
-    <app-popup></app-popup>
+    <app-popup *ngIf="showPopUp"></app-popup>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
 </div>

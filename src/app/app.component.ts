@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Renderer2, inject, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Renderer2, OnDestroy } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
@@ -10,6 +10,7 @@ import { SharedService } from './shared.service';
 import { IsOnHomepageService } from './is-on-homepage.service';
 import { PopupComponent } from './main-content/popup/popup.component';
 import AOS from 'aos';
+import { filter } from 'rxjs';
 import 'aos/dist/aos.css';
 
 @Component({
@@ -28,12 +29,13 @@ import 'aos/dist/aos.css';
 
 export class AppComponent implements AfterViewInit, OnDestroy {
 
-  private router = inject(Router);
-
   @ViewChild('headerRef', {read: ElementRef}) headerE1!: ElementRef;
+
   resizeObserver!: ResizeObserver;
   legalNoticeMessage: SafeHtml | undefined;
   observer: MutationObserver | undefined;
+  
+  showPopUp: boolean = false;
 
   constructor(
     private viewportScroller: ViewportScroller,
@@ -42,8 +44,22 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     private elRef: ElementRef,
     private renderer: Renderer2,
     public sharedService: SharedService,
-    public isOnHomepageService: IsOnHomepageService
+    public isOnHomepageService: IsOnHomepageService,
+    private router: Router
   ) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(event => {
+        const hasVisited = sessionStorage.getItem('hasVisited');
+        const isHome: boolean = !(this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
+        console.log('boolean value in if-statement: ', hasVisited, isHome);
+        if(!hasVisited && isHome){
+          console.log('isHome: ', isHome);
+          this.showPopUp = true;
+          sessionStorage.setItem('hasVisited', 'true');
+        }
+        // this.setShowPopupBoolean(hasVisited, isHome);
+      })
     this.setupLegalNoticeMessage();
   }
 
@@ -89,6 +105,13 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         this.router.navigate(['/privacy-policy']);
       });
     });
+  }
+
+  setShowPopupBoolean(hasVisited: string | null, isHome: boolean){
+    if(!hasVisited && isHome){
+      console.log('isHome: ', isHome);
+      this.showPopUp = true;
+    }
   }
 
   setHeaderHeightVar = () => {
