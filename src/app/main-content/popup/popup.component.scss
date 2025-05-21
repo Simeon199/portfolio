@@ -24,3 +24,17 @@
     min-width: 300px;
     width: 70%;
 }
+
+.cursor {
+    display: inline-block;
+    animation: blink 0.7s steps(1) infinite;
+    font-weight: bold;
+    font-family: monospace;
+    color: #08463B;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0;}
+}

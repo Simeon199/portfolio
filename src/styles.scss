@@ -23,6 +23,16 @@ body.no-scroll {
     height: 100%;
 }
 
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .custom-snackbar {
     background-color: rgb(4, 5, 4);

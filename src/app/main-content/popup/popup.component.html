@@ -1,5 +1,7 @@
-<div class="popup-container" *ngIf="visible">
+<div class="popup-container" *ngIf="visible" #popupContainer>
     <div class="popup-content" #popupContent>
-        <h1 #popupText></h1>
+        <h1>
+            <span #popupText class="typed-text"></span><span class="cursor">|</span>
+        </h1>
     </div>
 </div>

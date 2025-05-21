@@ -16,6 +16,7 @@ gsap.registerPlugin(TextPlugin);
 })
 export class PopupComponent implements AfterViewInit{
 
+  @ViewChild('popupContainer') popupContainer!: ElementRef;
   @ViewChild('popupContent') popupContent!: ElementRef;
   @ViewChild('popupText') popupText!: ElementRef;
 
@@ -57,7 +58,7 @@ export class PopupComponent implements AfterViewInit{
     // Typewriter Effekt
 
     tl.to(this.popupText.nativeElement, {
-      text: 'Welcome to my Portfolio...',
+      text: 'Welcome to the Portfolio of Simon Kiesner',
       duration: 4,
       ease: 'none',
       delay: 0.2
@@ -69,7 +70,7 @@ export class PopupComponent implements AfterViewInit{
 
     // Ausblenden
 
-    tl.to(this.popupContent.nativeElement, {
+    tl.to(this.popupContainer.nativeElement, {
       opacity: 0,
       scale: 0.9,
       duration: 0.6,
