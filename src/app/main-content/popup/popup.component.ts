@@ -19,6 +19,8 @@ export class PopupComponent implements AfterViewInit{
   @ViewChild('popupContainer') popupContainer!: ElementRef;
   @ViewChild('popupContent') popupContent!: ElementRef;
   @ViewChild('popupText') popupText!: ElementRef;
+  @ViewChild('logo') logo!: ElementRef;
+  @ViewChild('cursor') cursor!: ElementRef;
 
   visible = false;
 
@@ -46,15 +48,6 @@ export class PopupComponent implements AfterViewInit{
   private animatePopupWithTimeline(){
     const tl = gsap.timeline();
 
-    // Einstieg: Pop-Up Container skalieren
-
-    tl.from(this.popupContent.nativeElement, {
-      scale: 0.5,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'back.out(1.7)'
-    });
-
     // Typewriter Effekt
 
     tl.to(this.popupText.nativeElement, {
@@ -63,6 +56,22 @@ export class PopupComponent implements AfterViewInit{
       duration: 4,
       ease: 'none',
       delay: 0.2
+    });
+
+    // Logo ausblenden
+
+    tl.to(this.cursor.nativeElement, { 
+      opacity: 0, 
+      duration: 0.3 
+    });
+
+     // Logo einblenden
+
+    tl.from(this.logo.nativeElement, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'back.out(1.7)'
     });
 
     // Kleine Pause nach dem Typing
@@ -74,7 +83,7 @@ export class PopupComponent implements AfterViewInit{
     tl.to(this.popupContainer.nativeElement, {
       opacity: 0,
       scale: 0.9,
-      duration: 0.6,
+      duration: 0.6, 
       ease: 'power1.inOut'
     });
 

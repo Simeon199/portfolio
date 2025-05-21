@@ -52,13 +52,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       .subscribe(event => {
         const hasVisited = sessionStorage.getItem('hasVisited');
         const isHome: boolean = !(this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
-        console.log('boolean value in if-statement: ', hasVisited, isHome);
-        if(!hasVisited && isHome){
-          console.log('isHome: ', isHome);
+        if(hasVisited && isHome){ // !hasVisited
           this.showPopUp = true;
           sessionStorage.setItem('hasVisited', 'true');
         }
-        // this.setShowPopupBoolean(hasVisited, isHome);
       })
     this.setupLegalNoticeMessage();
   }
@@ -105,13 +102,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         this.router.navigate(['/privacy-policy']);
       });
     });
-  }
-
-  setShowPopupBoolean(hasVisited: string | null, isHome: boolean){
-    if(!hasVisited && isHome){
-      console.log('isHome: ', isHome);
-      this.showPopUp = true;
-    }
   }
 
   setHeaderHeightVar = () => {
