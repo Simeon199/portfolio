@@ -20,7 +20,7 @@
 .popup-logo {
     margin-bottom: 1.5rem;
     animation: fadeIn 1s ease-in-out;
-    filter: drop-shadow(0 0 5px rgb(224, 204, 204)); // Glow original: #0ff
+    // filter: drop-shadow(0 0 5px rgb(89, 118, 214)); // Glow original: #0ff
 
     img {
         width: 250px;
@@ -30,11 +30,16 @@
 
 .cursor {
     display: inline-block;
-    animation: blink 0.7s steps(1) infinite;
+    animation: blink 0.8s steps(2, start) infinite;
     font-weight: bold;
     font-family: 'Fira Code'; 
     color: white;
     margin-left: 2px;
+}
+
+.cursor.hidden {
+    animation: none !important;
+    opacity: 0 !important;
 }
 
 @keyframes fadeIn {
@@ -49,6 +54,9 @@
 }
 
 @keyframes blink {
-    0%, 100% {opacity: 1;}
+    0% {opacity: 1;}
     50% {opacity: 0;}
+    100% {opacity: 1;}
+    // 0%, 100% {opacity: 1;}
+    // 50% {opacity: 0;}
 }

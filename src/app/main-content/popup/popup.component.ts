@@ -58,11 +58,16 @@ export class PopupComponent implements AfterViewInit{
       delay: 0.2
     });
 
-    // Logo ausblenden
+    // Cursor ausblenden
 
-    tl.to(this.cursor.nativeElement, { 
-      opacity: 0, 
-      duration: 0.3 
+    tl.to(this.cursor.nativeElement, {
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power1.out'
+    });
+
+    tl.call(() => { 
+      this.cursor.nativeElement.classList.add('hidden');
     });
 
      // Logo einblenden
