@@ -36,6 +36,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   observer: MutationObserver | undefined;
   
   showPopUp: boolean = false;
+  headerHeight: number = 0;
 
   constructor(
     private viewportScroller: ViewportScroller,
@@ -52,7 +53,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       .subscribe(event => {
         const hasVisited = sessionStorage.getItem('hasVisited');
         const isHome: boolean = !(this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
-        if(hasVisited && isHome){ // !hasVisited
+        if(!hasVisited && isHome){
           this.showPopUp = true;
           sessionStorage.setItem('hasVisited', 'true');
         }
@@ -83,7 +84,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           AOS.refresh();
-          this.viewportScroller.setOffset([0, 120]);
+          this.viewportScroller.setOffset([0, this.headerHeight]);
         }, 100);
       }
     });
@@ -105,8 +106,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   setHeaderHeightVar = () => {
-    const headerHeight = this.headerE1.nativeElement.offsetHeight;
-    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+    this.headerHeight = this.headerE1.nativeElement.offsetHeight;
+    document.documentElement.style.setProperty('--header-height', `${this.headerHeight}px`);
   }
 
   ngOnDestroy(){

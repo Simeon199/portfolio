@@ -149,11 +149,12 @@ section {
     ul {
         display: flex;
         flex-shrink: 0;
-        gap: 180px;
-        min-width: 150%;
+        gap: clamp(60px, 10vw, 180px);
+        min-width: max-content;
         animation: scroll-marquee 10s linear infinite;
         will-change: transform;
         white-space: nowrap;
+        padding-inline: clamp(30px, 5vw, 90px);
 
         li {
             font-family: 'Karla';
@@ -342,7 +343,6 @@ section {
     }
 
     .marquee-section {
-        bottom: 2%;
         padding: 4px;
 
         ul {
