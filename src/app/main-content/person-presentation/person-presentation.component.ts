@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-person-presentation',
@@ -29,6 +30,21 @@ export class PersonPresentationComponent {
   constructor(private languageService: LanguageService) {
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLanguage = lang;
+    });
+  }
+
+  ngAfterViewInit(){
+    const track = document.querySelector('.marquee-track');
+    const width = track!.scrollWidth / 2;
+
+    gsap.to(track, {
+      x: `-=${width / 2}`,
+      duration: 10,
+      ease: 'linear',
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % width) // nahtloses Looping
+      }
     });
   }
 

@@ -47,30 +47,30 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     public sharedService: SharedService,
     public isOnHomepageService: IsOnHomepageService,
     private router: Router
-  ) {
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(event => {
-        const hasVisited = sessionStorage.getItem('hasVisited');
-        const isHome: boolean = !(this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
-        if(!hasVisited && isHome){
-          this.showPopUp = true;
-          sessionStorage.setItem('hasVisited', 'true');
-        }
-      })
-    this.setupLegalNoticeMessage();
-  }
+  ) {}
 
   ngAfterViewInit() {
     AOS.init();
     this.setupMutationObserver();
-    this.setupRouterEventListener();
     this.setHeaderHeightVar();
     this.resizeObserver = new ResizeObserver(() => {
       this.setHeaderHeightVar();
     });
     this.resizeObserver.observe(this.headerE1.nativeElement);
     window.addEventListener('resize', this.setHeaderHeightVar);
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const hasVisited = sessionStorage.getItem('hasVisited');
+        const isHome: boolean = !(this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
+        if(!hasVisited && isHome){
+          this.showPopUp = true;
+          sessionStorage.setItem('hasVisited', 'true');
+        }
+      this.setupRouterEventListener();
+      });
+    this.setupLegalNoticeMessage();
   }
 
   private setupLegalNoticeMessage() {
@@ -80,14 +80,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupRouterEventListener() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        setTimeout(() => {
-          AOS.refresh();
-          this.viewportScroller.setOffset([0, this.headerHeight]);
-        }, 100);
-      }
-    });
+    setTimeout(() => {
+      AOS.refresh();
+      this.viewportScroller.setOffset([0, this.headerHeight]);
+    }, 100);
   }
 
   private setupMutationObserver() {
