@@ -256,6 +256,13 @@ h2 {
     }
 }
 
+@include breakpoint.screen600 {
+    .h3-section {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
 @include breakpoint.screen500 {
     .skills-section {
         width: 100%;
