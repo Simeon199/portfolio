@@ -131,75 +131,51 @@ section {
     z-index: 10;
 }
 
-.marquee-wrapper {
-    overflow: hidden;
-    width: 100%;
+.marquee-section {
     position: absolute;
     bottom: 80px; 
     left: 0;
-    transform: rotate(-3deg);
     background-color: rgba(255, 255, 255, 0.12);
-    color: $standardGreen;
-    padding: 12px 32px;
-}
-
-.marquee-track {
     display: flex;
-    white-space: nowrap;
-    will-change: transform;
+    justify-content: space-evenly;
+    color: $standardGreen;
+    padding: 12px 32px; 
+    transform: rotate(-3deg);
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    backdrop-filter: $blurFilter;
+
+    ul {
+        display: flex;
+        flex-shrink: 0;
+        gap: clamp(60px, 10vw, 180px);
+        min-width: max-content;
+        animation: scroll-marquee 10s linear infinite;
+        will-change: transform;
+        white-space: nowrap;
+        padding-inline: clamp(30px, 5vw, 90px);
+
+        li {
+            font-family: 'Karla';
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 38.4px;
+            text-align: left;
+            flex: none;
+        }
+    }
+
+    @keyframes scroll-marquee {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%); 
+        }
+    }
 }
-
-.marquee-item {
-    margin-right: 80px;
-    font-size: 32px;
-    flex: none;
-}
-
-// .marquee-section {
-//     position: absolute;
-//     bottom: 80px; 
-//     left: 0;
-//     background-color: rgba(255, 255, 255, 0.12);
-//     display: flex;
-//     justify-content: space-evenly;
-//     color: $standardGreen;
-//     padding: 12px 32px; 
-//     transform: rotate(-3deg);
-//     width: 100%;
-//     overflow: hidden;
-//     z-index: 10;
-//     backdrop-filter: $blurFilter;
-
-//     ul {
-//         display: flex;
-//         flex-shrink: 0;
-//         gap: clamp(60px, 10vw, 180px);
-//         min-width: max-content;
-//         animation: scroll-marquee 10s linear infinite;
-//         will-change: transform;
-//         white-space: nowrap;
-//         padding-inline: clamp(30px, 5vw, 90px);
-
-//         li {
-//             font-family: 'Karla';
-//             font-size: 32px;
-//             font-weight: 400;
-//             line-height: 38.4px;
-//             text-align: left;
-//             flex: none;
-//         }
-//     }
-
-//     @keyframes scroll-marquee {
-//         from {
-//             transform: translateX(0);
-//         }
-
-//         to {
-//             transform: translateX(-50%); // ehemals 100%
-//         }
-//     }
-// }
 
 .skills-and-mail {
     width: 60px;
@@ -316,15 +292,15 @@ section {
         }
     }
 
-    // .marquee-section {
-    //     padding: 8px 12px 8px 12px;
+    .marquee-section {
+        padding: 8px 12px 8px 12px;
 
-    //     ul {
-    //         li {
-    //             font-size: 24px;
-    //         }
-    //     }
-    // }
+        ul {
+            li {
+                font-size: 24px;
+            }
+        }
+    }
 
     .left-lateral {
         left: 16px;
@@ -365,16 +341,6 @@ section {
             line-height: 48px;
         }
     }
-
-    // .marquee-section {
-    //     padding: 4px;
-
-    //     ul {
-    //         li {
-    //             font-size: 20px;
-    //         }
-    //     }
-    // }
 
     .left-lateral {
         padding-left: 2px;
