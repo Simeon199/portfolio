@@ -151,7 +151,7 @@ section {
         flex-shrink: 0;
         gap: clamp(60px, 10vw, 180px);
         min-width: max-content;
-        animation: scroll-marquee 10s linear infinite;
+        animation: none; 
         will-change: transform;
         white-space: nowrap;
         padding-inline: clamp(30px, 5vw, 90px);
@@ -163,6 +163,12 @@ section {
             line-height: 38.4px;
             text-align: left;
             flex: none;
+        }
+    }
+
+    &.is-ready {
+        ul {
+            animation: scroll-marquee 10s linear infinite;
         }
     }
 

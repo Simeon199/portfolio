@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ButtonStyleComponent } from '../shared/button-style/button-style.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../language.service';
@@ -20,6 +20,8 @@ import { RouterLink } from '@angular/router';
 
 export class PersonPresentationComponent {
 
+  @ViewChild('marquee', {static: false}) marqueeRef!: ElementRef<HTMLDivElement>;
+
   isGithubIconHovered: boolean = false;
   isMailIconHovered: boolean = false;
   isLinkedinIconHovered: boolean = false;
@@ -31,6 +33,16 @@ export class PersonPresentationComponent {
       this.currentLanguage = lang;
     });
   }
+
+  ngAfterViewInit():void{
+    document.fonts.ready.then(() => {
+      requestAnimationFrame(() => {
+      if(this.marqueeRef?.nativeElement){
+        this.marqueeRef.nativeElement.classList.add('is-ready');
+      }
+    });
+  });
+}
 
   @HostListener('window: resize', ['$event'])
   onResize(event: any) {
