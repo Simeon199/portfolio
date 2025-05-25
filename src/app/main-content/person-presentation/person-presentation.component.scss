@@ -371,11 +371,12 @@ section {
 
 @include breakpoint.screenHeight700 {
     .marquee-section {
-        position: unset;
+        position: relative;
         padding: 0;
     }
 
     .name-and-profession {
+        padding-top: 32px;
         max-width: unset;
         gap: 100px; 
 
