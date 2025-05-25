@@ -64,7 +64,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       .subscribe(() => {
         const hasVisited = sessionStorage.getItem('hasVisited');
         const isHome: boolean = !(this.router.url === '/legal-notice' || this.router.url === '/privacy-policy');
-        if(!hasVisited && isHome){
+        if(hasVisited && isHome){
           this.showPopUp = true;
           sessionStorage.setItem('hasVisited', 'true');
         }

@@ -1,15 +1,17 @@
 <section>
     <div class="me-presentation" id="me-presentation" data-aos="fade-left">
         <div class="name-and-profession">
-            <h2>{{"personPresentation.frontendTitle" | translate}}</h2>
-            <h2>Simon Kiesner</h2>
-            <div class="contact-and-work-buttons">
-                <a [routerLink]=[] fragment="projects">
-                    <app-button-style>{{"personPresentation.buttonContentOne" | translate}}</app-button-style>
-                </a>
-                <a [routerLink]=[] fragment="contact">
-                    <app-button-style>{{"personPresentation.buttonContentTwo" | translate}}</app-button-style>
-                </a>
+            <div class="name-and-profession-wrapper">
+                <h2>{{"personPresentation.frontendTitle" | translate}}</h2>
+                <h2>Simon Kiesner</h2>
+                <div class="contact-and-work-buttons">
+                    <a [routerLink]=[] fragment="projects">
+                        <app-button-style>{{"personPresentation.buttonContentOne" | translate}}</app-button-style>
+                    </a>
+                    <a [routerLink]=[] fragment="contact">
+                        <app-button-style>{{"personPresentation.buttonContentTwo" | translate}}</app-button-style>
+                    </a>
+                </div>
             </div>
             <div class="marquee-section" #marquee>
                 <ul>

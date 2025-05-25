@@ -25,7 +25,7 @@ export class PersonPresentationComponent {
   isGithubIconHovered: boolean = false;
   isMailIconHovered: boolean = false;
   isLinkedinIconHovered: boolean = false;
-  triggerSecondBreakpoint: boolean = window.innerWidth < 1200;
+  triggerSecondBreakpoint: boolean = window.innerWidth < 1200 || window.innerHeight < 700;
   currentLanguage: string = "de";
 
   constructor(private languageService: LanguageService) {
@@ -50,7 +50,7 @@ export class PersonPresentationComponent {
   }
 
   checkScreenSize() {
-    this.triggerSecondBreakpoint = window.innerWidth < 1200;
+    this.triggerSecondBreakpoint = window.innerWidth < 1200 || window.innerHeight < 700;
   }
 
   toggleHover(state: boolean, icon: string) {

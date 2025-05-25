@@ -149,6 +149,14 @@ $breakpoints: (
 
 /* --- Media Queries für Maximalhöhen  --- */
 
+@mixin screenHeight500 {
+    $value: map-get($breakpoints, screen500);
+
+    @media only screen and (max-height: #{$value}) {
+        @content;
+    }
+}
+
 @mixin screenHeight600 {
     $value: map-get($breakpoints, screen600);
 

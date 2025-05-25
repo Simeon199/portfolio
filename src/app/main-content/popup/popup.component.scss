@@ -1,3 +1,5 @@
+@use '../../breakpoints.scss' as breakpoint;
+
 .popup-container {
     position: fixed;
     top: 0;
@@ -9,7 +11,6 @@
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
     font-weight: bold;
     color: white;
     padding: 40px;
@@ -60,6 +61,21 @@ span {
     0% {opacity: 1;}
     50% {opacity: 0;}
     100% {opacity: 1;}
-    // 0%, 100% {opacity: 1;}
-    // 50% {opacity: 0;}
+}
+
+@include breakpoint.screenHeight700{
+    .popup-container {
+        padding: 24px;
+    }
+
+    .popup-logo {
+        img {
+            width: 125px;
+            height: 125px;
+        }
+    }
+
+    span {
+        font-size: 32px;
+    }
 }

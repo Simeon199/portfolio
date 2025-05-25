@@ -106,7 +106,6 @@ section {
     gap: 40px;
     text-align: center;
     align-self: center;
-    padding-top: 48px;
 
     h2:nth-child(1) {
         font-family: 'Fira Code';
@@ -125,6 +124,14 @@ section {
     }
 }
 
+.name-and-profession-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; // ehemals center
+    align-items: center;
+    gap: 24px;
+}
+
 .contact-and-work-buttons {
     display: flex;
     gap: 48px;
@@ -133,7 +140,7 @@ section {
 
 .marquee-section {
     position: absolute;
-    bottom: 80px; 
+    bottom: clamp(24px, 10vh, 80px); 
     left: 0;
     background-color: rgba(255, 255, 255, 0.12);
     display: flex;
@@ -331,7 +338,6 @@ section {
     }
 
     .name-and-profession {
-        max-width: 255px;
         flex-wrap: wrap;
         align-self: center;
         gap: 32px;
@@ -364,9 +370,14 @@ section {
 // all media queries related height screen
 
 @include breakpoint.screenHeight700 {
+    .marquee-section {
+        position: unset;
+        padding: 0;
+    }
 
     .name-and-profession {
-        gap: 24px;
+        max-width: unset;
+        gap: 100px; 
 
         h2:nth-child(1) {
             font-size: 24px;
@@ -375,5 +386,9 @@ section {
         h2:nth-child(2) {
             font-size: 48px;
         }
+    }
+
+    .name-and-profession-wrapper {
+        max-width: 300px;
     }
 }

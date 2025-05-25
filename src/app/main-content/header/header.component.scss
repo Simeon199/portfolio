@@ -32,6 +32,12 @@ header {
 .my-logo-responsive {
     font-size: 32px;
     color: $standardGreen;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .dropdown-responsive {
@@ -247,5 +253,13 @@ nav {
 
     .my-logo {
         display: none;
+    }
+}
+
+@include breakpoint.screen700 {
+    .my-logo-responsive {
+        img {
+            width: 48px;
+        }
     }
 }
