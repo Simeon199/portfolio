@@ -389,6 +389,6 @@ section {
     }
 
     .name-and-profession-wrapper {
-        max-width: 300px;
+        max-width: clamp(300px, 90vw, 500px);
     }
 }
