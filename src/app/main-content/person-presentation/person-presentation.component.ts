@@ -42,15 +42,15 @@ export class PersonPresentationComponent {
       }
     });
   });
-}
+  }
 
   @HostListener('window: resize', ['$event'])
-  onResize(event: any) {
+  onResize() {
     this.checkScreenSize();
   }
 
   checkScreenSize() {
-    this.triggerSecondBreakpoint = window.innerWidth < 1200 || window.innerHeight < 700;
+    this.triggerSecondBreakpoint = (window.innerWidth < 1200 || window.visualViewport!.height < 700);
   }
 
   toggleHover(state: boolean, icon: string) {

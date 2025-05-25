@@ -325,7 +325,6 @@ section {
 }
 
 @include breakpoint.screen500 {
-
     .me-presentation-lower-wrapper-part {
         padding-right: 0;
         padding-left: 0;
@@ -369,10 +368,18 @@ section {
 
 // all media queries related height screen
 
+@include breakpoint.screenHeight800 {
+    .me-presentation-lower-wrapper-part {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
 @include breakpoint.screenHeight700 {
     .marquee-section {
         position: relative;
         padding: 0;
+        bottom: clamp(24px, 0vh, 80px);
     }
 
     .name-and-profession {
