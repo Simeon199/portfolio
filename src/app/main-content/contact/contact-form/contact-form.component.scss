@@ -144,6 +144,12 @@ form {
     cursor: pointer;
 }
 
+.error-message-style-class {
+    font-size: 18px;
+    color: #EC7B7BCC;
+    text-align: left;
+}
+
 @include breakpoint.screen1700 {
     .contact-form-container {
         max-width: 500px;
@@ -261,6 +267,16 @@ form {
 
     #submit-input {
         font-size: 16px;
+    }
+
+    span {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .error-message-style-class {
+        font-size: 16px;
+        text-align: center;
     }
 }
 
