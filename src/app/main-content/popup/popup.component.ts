@@ -51,7 +51,7 @@ export class PopupComponent implements AfterViewInit{
     // Typewriter Effekt
 
     tl.to(this.popupText.nativeElement, {
-      text: 'Willkommen zum Portfolio von Simon Kiesner',
+      text: 'Welcome to the Portfolio of Simon Kiesner',
       fontFamily: 'Fira Code',
       duration: 4,
       ease: 'none',
