@@ -64,3 +64,13 @@ $standardGreen: rgba(61, 207, 182, 1);
         flex-wrap: wrap;
     }
 }
+
+@include breakpoint.screen500 {
+    .single-project {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: unset;
+        padding-right: unset;
+        gap: 16px;
+    }
+}

@@ -25,7 +25,7 @@ section {
     flex-direction: column;
     gap: 20px;
     padding-bottom: 96px;
-    max-width: 600px; // ehemals 560px
+    max-width: 600px; 
 }
 
 .all-skills-listed-section {
@@ -33,7 +33,7 @@ section {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 700px;  // ehemals 600px
+    max-width: 700px; 
     padding-top: 16px;
     padding-bottom: 16px;
     padding-right: 16px;
@@ -174,7 +174,6 @@ h2 {
     .all-skills-listed-section {
         max-width: 760px;
         display: flex;
-        // justify-content: center;
     }
 
     .my-skillset-description {
@@ -332,8 +331,9 @@ h2 {
         justify-content: center;
     }
 
-    app-button-style {
-        align-self: center;
+    a {
+        display: flex;
+        justify-content: center;
     }
 }
 

@@ -10,7 +10,7 @@ $standardWhite: rgba(255, 255, 255, 0.8);
 form {
     display: flex;
     flex-direction: column;
-    width: 90%px; // ehemals 500px
+    width: 90%; // ehemals 500px
     max-width: 600px;
     color: $standardGreen;
     border-width: 1px, 0px, 1px, 0px;
@@ -234,6 +234,13 @@ form {
 }
 
 @include breakpoint.screen500 {
+    .form-group {
+        padding: 16px;
+        label {
+            font-size: 18px;
+        }
+    }
+
     .checkbox-and-validation {
         span {
             font-size: 16px;
