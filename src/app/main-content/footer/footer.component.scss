@@ -17,7 +17,7 @@ footer {
     padding-right: 96px;
     padding-left: 96px;
     padding-top: 24px;
-    max-width: 1920px; // 1440px
+    max-width: 1920px; 
     width: 100%;
     margin: 0 auto;
 
@@ -36,12 +36,9 @@ footer {
     position: relative;
 
     img {
-        width: 96px;
-    }
-
-    img:nth-child(1) {
         position: absolute;
         left: 0;
+        width: 96px;
     }
 }
 
