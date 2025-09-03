@@ -310,7 +310,7 @@ h2 {
     }
 
     .growth-mindset-wrapper {
-        width: 64px;
+        width: 200px;
         flex-wrap: wrap;
 
         p {
@@ -327,7 +327,7 @@ h2 {
     .growth-mindset-unhovered::after {
         top: -100px;
         right: 32px;
-        width: 64px; 
+        width: 125px;
         height: 102px; 
         opacity: 0;
         pointer-events: none;
